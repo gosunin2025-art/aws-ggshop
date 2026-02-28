@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Menu</title>
+    <link rel="stylesheet" th:href="@{/css/company-admin/top.css}" />
+</head>
+
+<body>
+
+<div th:fragment="top">
+
+    <!-- 상단 바 -->
+<!--    <div style="-->
+<!--        display: flex;-->
+<!--        justify-content: space-between;-->
+<!--        align-items: center;-->
+<!--        background-color: white;-->
+<!--        padding: 10px 20px;-->
+<!--    ">-->
+<!--        <div class="item">-->
+<!--            <h4>GG#</h4>-->
+<!--        </div>-->
+
+<!--        <div class="item" style="display: flex; gap: 15px; align-items: center;">-->
+<!--            &lt;!&ndash; 비로그인 &ndash;&gt;-->
+<!--            <th:block th:if="${session.member == null}">-->
+<!--                <a th:href="@{/ev/company/login}">로그인</a>-->
+<!--                <a th:href="@{/ev/evcharger}">회원가입</a>-->
+<!--            </th:block>-->
+
+<!--            &lt;!&ndash; 로그인 &ndash;&gt;-->
+<!--            <th:block th:if="${session.member != null}">-->
+<!--                <span style="font-weight: 500;">-->
+<!--                    <span th:text="${session.member.memberName}">사용자</span>님-->
+<!--                </span>-->
+<!--                <a th:href="@{/member/logout}" style="color: #dc3545;">로그아웃</a>-->
+<!--            </th:block>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!-- 상단 바 -->
+    <div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    height: 60px;
+">
+        <div class="item" style="display: flex; align-items: center;">
+            <h4 style="margin: 0; font-size: 20px; font-weight: 600;">PHOENIX</h4>
+        </div>
+
+        <div class="item" style="display: flex; gap: 15px; align-items: center;">
+            <!-- 비로그인 -->
+            <th:block th:if="${session.member == null}">
+                <a th:href="@{/ev/company/login}"
+                   style="text-decoration: none; color: #333; font-size: 14px;">로그인</a>
+                <a th:href="@{/ev/evcharger}"
+                   style="text-decoration: none; color: #333; font-size: 14px;">회원가입</a>
+            </th:block>
+
+            <!-- 로그인 -->
+            <th:block th:if="${session.member != null}">
+            <span style="font-weight: 500; font-size: 14px; color: #333;">
+                <span th:text="${session.member.memberName}">사용자</span>님
+            </span>
+
+                <!-- 카카오 로그아웃 -->
+                <a th:if="${session.member.provider != null && session.member.provider.value == 'kakao'}"
+                   href="https://kauth.kakao.com/oauth/logout?client_id=6c18b17524346d570019e84351780311&logout_redirect_uri=http://localhost:10000/member/logout"
+                   style="color: #dc3545; text-decoration: none; font-size: 14px;">
+                    로그아웃
+                </a>
+
+                <!-- 일반 로그아웃 -->
+                <a th:unless="${session.member.provider != null && session.member.provider.value == 'kakao'}"
+                   th:href="@{/member/logout}"
+                   style="color: #dc3545; text-decoration: none; font-size: 14px;">
+                    로그아웃
+                </a>
+            </th:block>
+        </div>
+    </div>
+
+    <!-- 네비게이션 -->
+    <nav class="nav" style="background-color: #00c4c4;">
+        <div class="inner-container nav-inner">
+            <ul class="menu">
+                <li><a th:href="@{/ev/main}">홈</a></li>
+
+                <li class="has-sub">
+                    <a href="#"> 회원 관리 </a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/member/list/1}"> 회원 목록 </a></li>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a href="#"> 충전소 관리 </a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/ev/evcharger}">새 충전소 등록</a></li>
+                        <li><a th:href="@{/ev/evcharger/list/1}">충전소 목록</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a href="#"> 임직원 관리 </a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/ev/company/write}">임직원 등록</a></li>
+                        <li><a th:href="@{/ev/company/emp/list}">임직원 목록</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a href="#">전력거래목록</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/vtog/transaction/create}"> 전력거래등록 </a></li>
+                        <li><a th:href="@{/vtog/transaction/list}"> 전력거래목록 </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+</body>
+</html>

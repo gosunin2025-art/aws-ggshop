@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알림설정</title>
+    <link rel="stylesheet" href="/static/css/MyPageSettings/notificationSetting.css">
+</head>
+
+<body>
+    <div id="main-app" class="page-wrapper">
+        <header class="Header_container Header_sticky">
+            <div class="Header_content">
+                <div class="Header_left"><button class="StyledComponent_container" aria-label="뒤로 가기" type="button"><svg
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps_icon"
+                            style="height: 24px; width: 24px;">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.076 2.576l.848.848L8.35 12l8.575 8.576-.848.848L6.65 12l9.425-9.424z"
+                                fill="#495057"></path>
+                        </svg></button></div>
+                <div class="Header_center" style="max-width: calc(-160px + 100vw);">
+                    <h1 class="StyledComponent_container Title_container Title_center">알림 설정</h1>
+                </div>
+                <div class="Header_right"><a class="StyledComponent_container" aria-label="홈으로 가기" href="http://127.0.0.1:5500/templates/User%20Profile/profile.html"><svg
+                            viewBox="0 0 24 24" xmlns="http://127.0.0.1:5500/templates/User%20Profile/profile.html" width="24" class="WithProps_icon"
+                            style="height: 24px; width: 24px;">
+                            <path d="M21.6 7.679l-9.6-6.4-9.6 6.4V21h1.2V8.321l8.4-5.6 8.4 5.6V21h1.2V7.679z"
+                                fill="#495057"></path>
+                            <path d="M15.6 21v-8.6H8.4V21h1.2v-7.4h4.8V21h1.2z" fill="#495057"></path>
+                        </svg></a></div>
+            </div>
+        </header>
+        <main>
+            <div class="MarketingNotificationSettingsPage_container">
+                <div class="MarketingNotificationSettingsPage_inner">
+                    <div class="MarketingNotificationSettingsHeader_header-C">
+                        <h1 class="MarketingNotificationSettingsHeader_title__tqZVG">알림 설정</h1>
+                    </div>
+                    <div class="MarketingNotificationSettingsList_container">
+                        <h2 class="MarketingNotificationSettingsList_title-">
+                            <div class="MarketingNotificationSettingsItem_row"><label for="funding_allow">회원・서비스
+                                    이벤트 혜택 알림 동의</label>
+                                <div class="MarketingNotificationSettingsToggle_toggle"><label for="funding_allow"
+                                        class="MarketingNotificationSettingsToggle_switch- MarketingNotificationSettingsToggle_active"></label><input
+                                        type="checkbox" id="funding_allow" name="funding_allow"
+                                        class="MarketingNotificationSettingsToggle_input" checked=""></div>
+                            </div>
+                        </h2>
+                        <div class="MarketingNotificationSettingsList_description_">혜택.이벤트 및 기타 푸시 알림</div>
+                        <ul>
+                            <li>
+                                <div class="MarketingNotificationSettingsItem_row"><label for="funding_APP">푸쉬
+                                        알림</label>
+                                    <div class="MarketingNotificationSettingsToggle_toggle"><label for="funding_APP"
+                                            class="MarketingNotificationSettingsToggle_switch-"></label><input
+                                            type="checkbox" id="funding_APP" name="funding_APP"
+                                            class="MarketingNotificationSettingsToggle_input"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="MarketingNotificationSettingsItem_row"><label for="funding_EMAIL">마케팅
+                                        수신 동의</label>
+                                    <div class="MarketingNotificationSettingsToggle_toggle"><label for="funding_EMAIL"
+                                            class="MarketingNotificationSettingsToggle_switch-"></label><input
+                                            type="checkbox" id="funding_EMAIL" name="funding_EMAIL"
+                                            class="MarketingNotificationSettingsToggle_input"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div aria-atomic="true" aria-live="assertive"
+                            class="MarketingNotificationSettingsLoading_loading MarketingNotificationSettingsList_loading">
+                        </div>
+                    </div>
+                    <div class="MarketingNotificationSettingsSection_container">
+                        <h1 class="MarketingNotificationSettingsSection_title">활동 알림</h1>
+                        <div class="MarketingNotificationSettingsLink_row">채팅 알림<span
+                                class="MarketingNotificationSettingsLink_arrowIcon__UAMvX" aria-hidden="true">
+                                <div class="MarketingNotificationSettingsToggle_toggle"><label for="funding_CAR"
+                                        class="MarketingNotificationSettingsToggle_switch-"></label><input
+                                        type="checkbox" id="funding_CAR" name="funding_EMAIL"
+                                        class="MarketingNotificationSettingsToggle_input"></div>
+                            </span></div>
+                        <div class="MarketingNotificationSettingsLink_row">팔로잉/팔로워 알림<span
+                                class="MarketingNotificationSettingsLink_arrowIcon__UAMvX" aria-hidden="true">
+                                <div class="MarketingNotificationSettingsToggle_toggle"><label for="funding_FOLLOW"
+                                        class="MarketingNotificationSettingsToggle_switch-"></label><input
+                                        type="checkbox" id="funding_FOLLOW" name="funding_EMAIL"
+                                        class="MarketingNotificationSettingsToggle_input"></div>
+                            </span></div>
+                    </div>
+                    <div class="MarketingNotificationSettingsContainer_bottomGuide">수신거부 설정이 시스템에 실시간 반영되지 않은 경우
+                        알림이 발송 될 수 있습니다. (1시간 내 반영)</div>
+                </div>
+            </div>
+            <footer id="footer" class="web-footer show-actionbar visible">
+                <div class="FooterMenu_container"></div>
+                <div class="FooterContainer_container_">
+                    <div class="FooterContainer_inner"></div>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+<script src="/static/js/MypageSettings/notification.js"></script>
+
+</html>

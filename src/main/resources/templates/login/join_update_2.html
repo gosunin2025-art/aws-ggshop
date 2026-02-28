@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login/join_1.css">
+    <title>회원가입</title>
+</head>
+<body>
+<div id="root">
+    <main>
+        <div class="content-width-560 padding-y-0">
+            <div class="EmailValidationForm-module_container__8fd6e">
+                <div class="EmailValidationForm-module_headerAndTitle__583ce">
+                    <div class="EmailValidationForm-module_header__ac5b4">
+                        <header class="Header-module_container__da545">
+                            <div class="Header-module_content__31d4e">
+                                <div class="Header-module_left__45013">
+                                    <button class="StyledComponent-module_container__2d5ce"
+                                            aria-label="뒤로 가기"
+                                            type="button"
+                                            onclick="history.back()">
+                                        <svg viewBox="0 0 24 24"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             width="24"
+                                             class="WithProps-module_icon__d564b"
+                                             style="height: 24px; width: 24px;">
+                                            <path fill-rule="evenodd"
+                                                  clip-rule="evenodd"
+                                                  d="M16.0757 2.57573L16.9243 3.42426L8.34851 12L16.9243 20.5757L16.0757 21.4243L6.65146 12L16.0757 2.57573Z"
+                                                  fill="#495057">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="Header-module_center__3afb0"></div>
+                                <div class="Header-module_right__6c908">
+                                    <a class="StyledComponent-module_container__2d5ce"
+                                       aria-label="홈으로 가기"
+                                       th:href="@{/ev/main}">
+                                        <svg viewBox="0 0 24 24"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             width="24"
+                                             class="WithProps-module_icon__d564b"
+                                             style="height: 24px; width: 24px;">
+                                            <path d="M21.6 7.67893L12 1.27893L2.40002 7.67893V21H3.60002V8.32115L12 2.72115L20.4 8.32115V21H21.6V7.67893Z" fill="#495057"></path>
+                                            <path d="15.6 21V12.4H8.40002V21H9.60002V13.6H14.4V21H15.6Z" fill="#495057"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="EmailValidationForm-module_title__31f35">
+                        <span>회원가입</span>
+                    </div>
+                </div>
+
+                <div class="EmailValidationForm-module_changeEmail__6c1fe">
+                    <!-- ✅ 회원가입 Form -->
+                    <form class="EmailValidationForm-module_emailForm__a4d0f"
+                          th:action="@{/ev/company/signup}"
+                          method="post"
+                          id="signupForm">
+
+                        <div class="EmailValidationForm-module_emailGroup__1b759">
+                            <div class="EmailValidationForm-module_emailInputWrapper__970d8">
+                                <div class="EmailValidationForm-module_inputFields__2aa2d">
+
+                                    <!-- ✅ 이메일 (읽기 전용) -->
+                                    <div class="TextField-module_textField__404b4 TextField-module_lg__11d56">
+                                        <label for="email">
+                                            <span><span>이메일</span></span>
+                                            <span class="TextField-module_isRequired__294b9">*</span>
+                                        </label>
+                                        <div class="TextField-module_field__4d1fc">
+                                            <input type="email"
+                                                   name="memberEmail"
+                                                   id="email"
+                                                   th:value="${memberEmail}"
+                                                   readonly
+                                                   style="background-color: #f5f5f5; cursor: not-allowed;"
+                                                   class="Input-module_input__210a1 Input-module_lg__592e9">
+                                        </div>
+                                    </div>
+
+                                    <!-- ✅ 이름 -->
+                                    <div class="TextField-module_textField__404b4 TextField-module_lg__11d56">
+                                        <label for="name">
+                                            <span><span>이름</span></span>
+                                            <span class="TextField-module_isRequired__294b9">*</span>
+                                        </label>
+                                        <div class="TextField-module_field__4d1fc">
+                                            <input type="text"
+                                                   name="memberName"
+                                                   id="name"
+                                                   placeholder="이름 입력"
+                                                   required
+                                                   class="Input-module_input__210a1 Input-module_lg__592e9">
+                                        </div>
+                                    </div>
+
+                                    <!-- ✅ 비밀번호 -->
+                                    <div class="TextField-module_textField__404b4 TextField-module_lg__11d56">
+                                        <label for="password">
+                                            <span>비밀번호</span>
+                                            <span class="TextField-module_isRequired__294b9">*</span>
+                                        </label>
+                                        <div class="TextField-module_field__4d1fc TextField-module_hasEndIcon">
+                                            <input type="password"
+                                                   name="memberPassword"
+                                                   id="password"
+                                                   placeholder="비밀번호 입력 (8자리 이상)"
+                                                   required
+                                                   minlength="8"
+                                                   class="Input-module_input__210a1 Input-module_lg__592e9">
+
+                                            <button aria-label="비밀번호 보기"
+                                                    class="Button-module_button__d78c2
+                                                                Button-module_text__47ff4
+                                                                Button-module_lg__53dd9
+                                                                Button-module_iconOnly__0a115
+                                                                iconButton TextField-module_endIcon__aab7d
+                                                                TextField-module_passwordIcon__92654"
+                                                    type="button"
+                                                    onclick="togglePassword()">
+                                                    <span><span>
+                                                        <svg viewBox="0 0 24 24"
+                                                             xmlns="http://www.w3.org/2000/svg"
+                                                             class="WithProps-module_icon__d564b">
+                                                            <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" fill="#495057"></path>
+                                                            <path fill-rule="evenodd"
+                                                                  clip-rule="evenodd"
+                                                                  d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                                                                  fill="#495057">
+                                                            </path>
+                                                        </svg>
+                                                    </span></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ✅ 가입 버튼 -->
+                                <button id="signupButton"
+                                        class="Button-module_button__d78c2
+                                                   Button-module_mint__1c1d6
+                                                   Button-module_contained__ecf2a
+                                                   Button-module_lg__53dd9
+                                                   Button-module_block__d6eff
+                                                   Button-module_disabled__2ebf2"
+                                        disabled
+                                        type="submit">
+                                    <span><span>회원가입</span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const nameInput = document.getElementById('name');
+        const passwordInput = document.getElementById('password');
+        const signupButton = document.getElementById('signupButton');
+
+        // 입력 검증
+        function validateForm() {
+            const nameValid = nameInput.value.trim().length > 0;
+            const passwordValid = passwordInput.value.length >= 8;
+
+            if (nameValid && passwordValid) {
+                signupButton.disabled = false;
+                signupButton.classList.remove('Button-module_disabled__2ebf2');
+            } else {
+                signupButton.disabled = true;
+                signupButton.classList.add('Button-module_disabled__2ebf2');
+            }
+        }
+
+        nameInput.addEventListener('input', validateForm);
+        passwordInput.addEventListener('input', validateForm);
+    });
+
+    // 비밀번호 보기/숨기기
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/common/font.css" />
+    <link rel="stylesheet" href="../../static/css/common/reset.css" />
+    <link rel="stylesheet" href="../../static/css/common/fontawesome.css" />
+    <link rel="stylesheet" href="../../static/css/common/common.css" />
+    <link rel="stylesheet" href="../../static/css/common/util.css" />
+    <link rel="stylesheet" href="../../static/css/components/modals/modal-m.css">
+    <link rel="stylesheet" href="/static/css/User Profile/userprofile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/User Profile/profile.css">
+</head>
+
+<body>
+    <div id="toast" class="toast-container">
+        <div class="toast-wrap">
+            <div id="toast1" class="toast_hide show-container none">
+                <div class="show-content">차단되었습니다.</div>
+            </div>
+            <div id="toast2" class="toast_hide show-container none">
+                <div class="show-content">차단 해체 되었습니다.</div>
+            </div>
+            <div id="toast3" class="toast_hide show-container none">
+                <div class="show-content">팔로우 되었습니다.</div>
+            </div>
+        </div>
+    </div>
+    <div id="main-app" class="page-wrapper">
+        <header class="Header_container Header_sticky">
+            <div class="Header_content">
+                <div class="Header_left"><button class="StyledComponent_container" aria-label="뒤로 가기" type="button"><svg
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps_icon"
+                            style="height: 24px; width: 24px;">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.076 2.576l.848.848L8.35 12l8.575 8.576-.848.848L6.65 12l9.425-9.424z"
+                                fill="#495057"></path>
+                        </svg></button></div>
+                <div class="Header_center" style="max-width: calc(-160px + 100vw);">
+                    <h1 class="StyledComponent_container Title_container Title_center">프로필</h1>
+                </div>
+                <div class="Header_right">
+                    <a class="StyledComponent_container" aria-label="홈으로 가기" href="/web/main"><svg viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps_icon"
+                            style="height: 24px; width: 24px;">
+                            <path d="M21.6 7.679l-9.6-6.4-9.6 6.4V21h1.2V8.321l8.4-5.6 8.4 5.6V21h1.2V7.679z"
+                                fill="#495057"></path>
+                            <path d="M15.6 21v-8.6H8.4V21h1.2v-7.4h4.8V21h1.2z" fill="#495057"></path>
+                        </svg></a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="SupporterProfileContainer_container_">
+                <div class="SupporterProfileContainer_contents">
+                    <section class="SupporterProfile_supporterProfile">
+                        <div class="SupporterProfile_inner">
+                            <div class="SupporterProfile_profileArea">
+                                <div class="SupporterProfileInfo_content_rH">
+                                    <h3 class="BlindText_textBlind"></h3><img class="SupporterProfileInfo_avatar"
+                                        aria-hidden="true" src="https://static.wadiz.kr/assets/icon/profile-icon-5.png"
+                                        alt="profileImage">
+                                    <div
+                                        class="SupporterProfileInfo_supporterInfo SupporterProfileInfo_emptySupporterInfo">
+                                        <dl class="SupporterProfileInfo_infoBox" aria-label="서포터 정보">
+                                            <dt class="BlindText_textBlind">서포터 닉네임</dt>
+                                            <dd class="SupporterProfileInfo_nickname">닉네임을 등록해주세요</dd>
+                                            <div class="battery-wrapper">
+                                                <i class="fa-solid fa-battery-empty"></i>
+                                                <i class="fa-solid fa-battery-quarter"></i>
+                                                <i class="fa-solid fa-battery-half"></i>
+                                                <i class="fa-solid fa-battery-three-quarters"></i>
+                                                <i class="fa-solid fa-battery-full"></i>
+                                            </div>
+                                            <button class="SupporterProfileContextMenu_contextMenuButton" type="button"
+                                                aria-label=""><svg viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                    class="WithProps_icon">
+                                                    <path
+                                                        d="M9.4 4a2.6 2.6 0 105.2 0 2.6 2.6 0 00-5.2 0zM9.4 12a2.6 2.6 0 105.2 0 2.6 2.6 0 00-5.2 0zM9.4 20a2.6 2.6 0 105.2 0 2.6 2.6 0 00-5.2 0z"
+                                                        fill="#495057"></path>
+                                                </svg></button>
+                                        </dl><strong class="BlindText_textBlind">관심 카테고리</strong>
+                                        <ul class="SupporterProfileInterestKeyword_interestList"></ul>
+                                    </div>
+                                </div><button id="followBtn"
+                                    class="Button_button Button_mint Button_md Button_block SupporterProfileInfoCTAButton_button"
+                                    type="button"><span><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            width="14" class="WithProps_icon Button_icon"
+                                            style="height: 14px; width: 14px;">
+                                            <path d="M11.4 12.6V22h1.2v-9.4H22v-1.2h-9.4V2h-1.2v9.4H2v1.2h9.4z"
+                                                fill="#495057"></path>
+                                        </svg><span>팔로우</span></span></button>
+
+                            </div>
+                            <div class="SupporterProfileActivityInfo_wrapper">
+                                <dl class="SupporterProfileActivityInfo_infoCountBox"><a
+                                        href="/web/social/following/10345111218"
+                                        class="SupporterProfileActivityInfo_item SupporterProfileActivityInfo_divider"><span
+                                            class="BlindText_textBlind">상세 페이지</span>
+                                        <dt>팔로잉</dt>
+                                        <dd>0<span class="BlindText_textBlind">명</span></dd>
+                                    </a><a class="SupporterProfileActivityInfo_item"
+                                        href="/web/social/follower/10345111218"><span class="BlindText_textBlind">상세
+                                            페이지</span>
+                                        <dt>팔로워</dt>
+                                        <dd>1<span class="BlindText_textBlind">명</span></dd>
+                                    </a></dl>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="SupporterProfileContainer_tabsWrapper">
+                        <nav class="Tabs_tabsWrapper">
+                            <ul class="Tabs_tabs SupporterProfileContainer_tabs">
+                                <li data-index="0"><button type="button"
+                                        class="Tab_tab Tab_first Tab_active undefined Tab_md SupporterProfileContainer_tab"
+                                        role="tab" data-value="0"><span>
+                                            <p>게시글 </p>
+                                        </span></button></li>
+                                <li data-index="1"><button type="button"
+                                        class="Tab_tab undefined Tab_md SupporterProfileContainer_tab" role="tab"
+                                        data-value="1"><span>
+                                            <p>받은 후기 </p>
+                                        </span></button></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div>
+                        <div class="TabPanels_tabPanels">
+                            <div class="TableLayout_container SupporterProfilePostt_table"
+                                style="grid-template-columns: repeat(1, calc(100% + 0px)); gap: 16px 24px;">
+                                <div class="SupporterFundingCard_wrapper">
+                                    <div class="SupporterFundingCard_innerWrapper">
+                                        <div class=""></div>
+                                        <div class="SupporterProfileHomeVerticalCard_container"><a
+                                                class="SupporterProfileHomeVerticalCard_content"
+                                                href="/web/campaign/detail/227749" data-ec-id="227749"
+                                                data-ec-name="[14,642%앵콜] 척추전문가가 만든 편안함&amp;가벼움 HBB 물방울백"
+                                                data-ec-signature-discount-rate="0" data-ec-brand="세이브힐즈 (주)포스팀"
+                                                data-ec-contenttype="PREORDER">
+                                                <div class="SupporterProfileHomeVerticalCard_thumbnailBox-g1v">
+                                                    <div class="SupporterProfileHomeVerticalCard_thumbnailWrap-y">
+                                                        <div
+                                                            class="ThumbnailImage_container SupporterProfileHomeVerticalCard_thumbnail">
+                                                            <img class="ThumbnailImage_img"
+                                                                alt="[14,642%앵콜] 척추전문가가 만든 편안함&amp;가벼움 HBB 물방울백"
+                                                                src="https://cdn.wadiz.kr/wwwwadiz/green001/2023/0901/20230901111329584_227749.jpg/wadiz/resize/1200/format/jpg/quality/85/">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="SupporterProfileHomeVerticalCard_infoBox">
+                                                    <div class="SupporterProfileHomeVerticalCard_info">
+                                                        <p
+                                                            class="InfoStringWrapper_infoString InfoStringWrapper_isFinished_ SupporterProfileHomeVerticalCard_infoString">
+                                                            4,224% 달성</p><strong
+                                                            class="Title_title SupporterProfileHomeVerticalCard_title">[14,642%앵콜]
+                                                            척추전문가가 만든 편안함&amp;가벼움 HBB 물방울백</strong>
+                                                        <div class="SupporterProfileHomeVerticalCard_makerArea">
+                                                            <div class="MakerWrapper_container-">
+                                                                <p class="MakerWrapper_makerName">세이브힐즈 (주)포스팀
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="SupporterProfileHomeVerticalCard_badgeGroup">
+                                                        <div class="RewardBadgeGroup_container"><span
+                                                                class="LabelBadge_container"><span
+                                                                    class="LabelBadge_badge LabelBadge_sm LabelBadge_gray LabelBadge_tint">예약구매</span></span><span
+                                                                class="LabelBadge_container"><span
+                                                                    class="LabelBadge_badge LabelBadge_sm LabelBadge_gray LabelBadge_solid">종료</span></span><span
+                                                                class="LabelBadge_container"><span
+                                                                    class="LabelBadge_badge LabelBadge_sm LabelBadge_gray LabelBadge_tint">2,112만
+                                                                    원+</span></span></div>
+                                                    </div>
+                                                </div>
+                                            </a></div>
+                                    </div>
+                                </div>
+                                <div class="SupporterFundingCard_wrapper">
+                                    <div class="SupporterFundingCard_innerWrapper">
+                                        <div class=""></div>
+                                        <div class="SupporterProfileHomeVerticalCard_container"><a
+                                                class="SupporterProfileHomeVerticalCard_content"
+                                                href="/web/campaign/detail/231167" data-ec-id="231167"
+                                                data-ec-name="[풀무원 등장] 요리에서 세척까지 깔끔 그 자체! 글라스쿡 에어프라이어"
+                                                data-ec-signature-discount-rate="0" data-ec-brand="풀무원 건강생활"
+                                                data-ec-contenttype="PREORDER">
+                                                <div class="SupporterProfileHomeVerticalCard_thumbnailBox-g1v">
+                                                    <div class="SupporterProfileHomeVerticalCard_thumbnailWrap-y">
+                                                        <div
+                                                            class="ThumbnailImage_container SupporterProfileHomeVerticalCard_thumbnail">
+                                                            <img class="ThumbnailImage_img"
+                                                                alt="[풀무원 등장] 요리에서 세척까지 깔끔 그 자체! 글라스쿡 에어프라이어"
+                                                                src="https://cdn.wadiz.kr/wwwwadiz/green001/2023/0809/20230809164838320_231167.png/wadiz/resize/1200/format/jpg/quality/85/">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="SupporterProfileHomeVerticalCard_infoBox">
+                                                    <div class="SupporterProfileHomeVerticalCard_info">
+                                                        <p
+                                                            class="InfoStringWrapper_infoString InfoStringWrapper_isFinished_ SupporterProfileHomeVerticalCard_infoString">
+                                                            2,433% 달성</p><strong
+                                                            class="Title_title SupporterProfileHomeVerticalCard_title">[풀무원
+                                                            등장] 요리에서 세척까지 깔끔 그 자체! 글라스쿡 에어프라이어</strong>
+                                                        <div class="SupporterProfileHomeVerticalCard_makerArea__aSnGe">
+                                                            <div class="MakerWrapper_container-">
+                                                                <p class="MakerWrapper_makerName-">풀무원 건강생활</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="SupporterProfileHomeVerticalCard_badgeGroup">
+                                                        <div class="RewardBadgeGroup_container"><span
+                                                                class="LabelBadge_container"><span
+                                                                    class="LabelBadge_badge LabelBadge_sm LabelBadge_gray LabelBadge_tint">예약구매</span></span><span
+                                                                class="LabelBadge_container"><span
+                                                                    class="LabelBadge_badge LabelBadge_sm LabelBadge_gray LabelBadge_solid">종료</span></span><span
+                                                                class="LabelBadge_container"><span
+                                                                    class="LabelBadge_badge LabelBadge_sm LabelBadge_gray LabelBadge_tint">2,433만
+                                                                    원+</span></span></div>
+                                                    </div>
+                                                </div>
+                                            </a></div>
+                                    </div>
+                                </div>
+                                <div class="SupporterFundingCard_wrapper">
+                                    <div class="SupporterFundingCard_innerWrapper">
+                                        <div class=""></div>
+                                        <div class="SupporterProfileHomeVerticalCard_container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="TableLayout_container SupporterProfileReviewList_table "
+                                style="grid-template-columns: repeat(1,calc(100% +0px)); gap: 16px 24px; ">
+                                <div class="CommentContainer_commentWrapper">
+                                    <div>
+                                        <div class="CommentItem_commentItem">
+                                            <div class="CommentProfile_profileContainer"><a
+                                                    class="CommentProfile_profile"
+                                                    href="/web/profile/supporter/9430175313">
+                                                    <div class="CommentProfile_avatarWrapper"><span
+                                                            class="Avatar_avatar Avatar_xs"><span
+                                                                class="Avatar_inner Avatar_noBorder"><img
+                                                                    src="https://static.wadiz.kr/assets/icon/profile-icon-6.png"></span></span>
+                                                    </div>
+                                                    <div class="CommentProfile_writerArea">
+                                                        <div class="CommentProfile_nickNameArea"><span
+                                                                class="CommentProfile_nickName">오유진</span></div>
+                                                        <span class="CommentProfile_date">한 시간 전</span>
+                                                    </div>
+                                                </a>
+                                                <div class="CommentProfile_followArea"><button
+                                                        class="Button_button Button_mint Button_sm Buttonremove"
+                                                        type="button" onclick="showToast('toast3');"><span><svg
+                                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                                width="14" class="WithProps_icon Button_icon"
+                                                                style="height: 14px; width: 14px;">
+                                                                <path
+                                                                    d="M11.4 12.6V22h1.2v-9.4H22v-1.2h-9.4V2h-1.2v9.4H2v1.2h9.4z"
+                                                                    fill="#495057"></path>
+                                                            </svg><span>팔로우</span></span></button>
+                                                    <div class="CommentProfile_more">
+                                                        <div class="PopMenu_wrap ReportPopMenu_itemAction">
+                                                            <button aria-label="메뉴 더보기"
+                                                                class="PopMenu_toggle PopMenu_editBtn__ttQwn"><svg
+                                                                    viewBox="0 0 24 24"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                    class="WithProps_icon"
+                                                                    style="height: 16px; width: 16px;">
+                                                                    <path
+                                                                        d="M9.4 4a2.6 2.6 0 105.2 0 2.6 2.6 0 00-5.2 0zM9.4 12a2.6 2.6 0 105.2 0 2.6 2.6 0 00-5.2 0zM9.4 20a2.6 2.6 0 105.2 0 2.6 2.6 0 00-5.2 0z"
+                                                                        fill="#495057"></path>
+                                                                </svg></button>
+                                                            <div class="PopMenu_box" style="display: none;">
+                                                                <button type="button" class="PopMenu_menu">신고</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="CommentContent_contentWrapper">
+                                                <div class="CommentContentHeader_headerContainer">
+                                                    <div class="CommentContentHeader_left">
+                                                        <div class="CommentContentBadges_badgeContainer"><span
+                                                                class="LabelBadge_container"><span
+                                                                    class="LabelBadge_badge LabelBadge_sm LabelBadge_yellow LabelBadge_solid">응원</span></span><span
+                                                                class="LabelBadge_container"><span
+                                                                    class="LabelBadge_badge LabelBadge_sm LabelBadge_mint LabelBadge_solid CommentContentBadges_participationBadge">리뷰
+                                                                    추천</span></span></div>
+                                                    </div>
+                                                    <div class="CommentContentHeader_right"></div>
+                                                </div>
+                                                <p class="CommentContentArea_fullComment">
+                                                    ㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱ</p>
+                                            </div>
+                                            <div class="CommunityArea_container">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="CommentItem_commentItem">
+                                        <div class="CommentProfile_profileContainer"><a class="CommentProfile_profile"
+                                                href="/web/profile/supporter/6183001515">
+                                                <div class="CommentProfile_avatarWrapper"><span
+                                                        class="Avatar_avatar Avatar_xs"><span class="Avatar_inner"><img
+                                                                src="https://cdn.wadiz.kr/wwwwadiz/green001/2025/0531/20250531193521623_4122001.jpg/wadiz/resize/108/quality/90/"></span></span><span
+                                                        class="CommentProfile_supporterClub"><svg viewBox="0 0 40 40"
+                                                            fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                            class="artwork">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M22.979 6.269a1 1 0 00-1.39.443l-4.306 9.038H40L22.979 6.269z"
+                                                                fill="#0CC"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M1 15.75a1 1 0 00-1 1v15.5a1 1 0 001 1h34.893L40 15.75H1z"
+                                                                fill="currentColor"></path>
+                                                            <path
+                                                                d="M8.667 20.75C6.302 20.75 5 22.272 5 24.141c0 1.852 1.127 3.337 3.556 3.337 1.155 0 2.044-.366 2.512-.687V25.15h-.01c-.686.513-1.392.853-2.346.853-1.292 0-2.007-.78-2.007-1.87 0-1.119.751-1.908 2.016-1.908.954 0 1.632.404 2.338.872h.01v-1.623c-.514-.367-1.34-.724-2.402-.724zM14.3 20.905h-1.678v6.417h5.143l.064-1.485H14.3v-4.931zM18.873 24.829v-3.924h1.686v3.814c0 .962.697 1.265 1.485 1.265.789 0 1.494-.284 1.494-1.228v-3.85h1.678v3.887c0 1.989-1.357 2.704-3.181 2.704-1.834 0-3.162-.715-3.162-2.668z"
+                                                                fill="#fff"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M30.754 20.905h-3.85v6.417h3.694c1.412 0 2.42-.476 2.42-1.805 0-.761-.394-1.201-1.219-1.532.797-.238 1.081-.75 1.081-1.466 0-1.063-.797-1.613-2.126-1.613zm.587 4.392c0 .458-.238.66-.853.669l-1.934.009v-1.338h1.934c.633 0 .853.22.853.66zm-.128-2.448c0 .458-.23.633-.807.633h-1.852v-1.229h1.852c.55 0 .807.174.807.596z"
+                                                                fill="#fff"></path>
+                                                        </svg></span></div>
+                                                <div class="CommentProfile_writerArea">
+                                                    <div class="CommentProfile_nickNameArea">
+                                                        <span class="CommentProfile_nickName_Rp4">쮸~°</span>
+                                                    </div><span class="CommentProfile_date">5시간
+                                                        전</span>
+                                                </div>
+                                            </a>
+                                            <div class="CommentProfile_followArea"><button
+                                                    class="Button_button Button_mint Button_sm Buttonremove"
+                                                    type="button"><span><svg viewBox="0 0 24 24"
+                                                            xmlns="http://www.w3.org/2000/svg" width="14"
+                                                            class="WithProps_icon Button_icon" s
+                                                            style="height: 14px; width: 14px;">
+                                                            <path
+                                                                d="M11.4 12.6V22h1.2v-9.4H22v-1.2h-9.4V2h-1.2v9.4H2v1.2h9.4z"
+                                                                fill="#495057"></path>
+                                                        </svg><span>팔로우</span></span></button>
+                                                <div class="CommentProfile_more">
+                                                    <div class="PopMenu_wrap ReportPopMenu_itemAction">
+                                                        <button aria-label="메뉴 더보기"
+                                                            class="PopMenu_toggle PopMenu_editBtn__ttQwn"><svg
+                                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                                width="16" class="WithProps_icon"
+                                                                style="height: 16px; width: 16px;">
+                                                                <path
+                                                                    d="M9.4 4a2.6 2.6 0 105.2 0 2.6 2.6 0 00-5.2 0zM9.4 12a2.6 2.6 0 105.2 0 2.6 2.6 0 00-5.2 0zM9.4 20a2.6 2.6 0 105.2 0 2.6 2.6 0 00-5.2 0z"
+                                                                    fill="#495057"></path>
+                                                            </svg></button>
+                                                        <div class="PopMenu_box" style="display: none;">
+                                                            <button type="button" class="PopMenu_menu">신고</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="CommentContent_contentWrapper">
+                                            <div class="CommentContentHeader_headerContainer">
+                                                <div class="CommentContentHeader_left">
+                                                    <div class="CommentContentBadges_badgeContainer">
+                                                        <span class="LabelBadge_container"><span
+                                                                class="LabelBadge_badge LabelBadge_sm LabelBadge_yellow LabelBadge_solid">응원</span></span><span
+                                                            class="LabelBadge_container"><span
+                                                                class="LabelBadge_badge LabelBadge_sm LabelBadge_mint LabelBadge_solid CommentContentBadges_participationBadge">리뷰
+                                                                추천</span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="CommentContentHeader_right"></div>
+                                            </div>
+                                            <p class="CommentContentArea_fullComment">
+                                                가나다라마바사아자차카타파하
+                                            </p>
+                                        </div>
+                                        <div class="CommunityArea_container">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height: 120px;"></div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </main>
+    </div>
+    <div>
+        <div id="backbodal" class="ContextMenu_background"></div>
+        <div class="ContextMenu_container" style="top: 75.5px;left: 210.4px;">
+            <button class="ContextMenu_warning" type="button" onclick="">신고하기</button>
+            <button class="ContextMenubt" type="button">차단하기</button>
+        </div>
+    </div>
+    <div class="ReactModalPortal">
+        <!-- ===== MODAL1: 차단하기 모달 (초기: 숨김) ===== -->
+        <div is="modal1" class="ConfirmModal_overlay "
+            style="background-color: rgba(0, 0, 0, 0.2); display: none;">
+            <div class="ConfirmModal_confirmModal-6 ConfirmModal_sizeMobile ConfirmModal_contentAfterOpen" tabindex="-1"
+                role="dialog" aria-modal="true">
+                <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
+                            class="Button_button Button_text Button_md closebutton" type="button"><span><span><svg
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        class="WithProps_icon" style="height: 24px; width: 24px;">
+                                        <path
+                                            d="M12 11.152L4.424 3.576l-.849.848L11.151 12l-7.576 7.576.849.848L12 12.85l7.576 7.575.848-.848L12.848 12l7.576-7.576-.848-.848L12 11.15z"
+                                            fill="#495057"></path>
+                                    </svg></span></span></button></div>
+                    <div class="ConfirmModal_title">OO 님을 차단하시나요?</div>
+                </div>
+                <div class="ConfirmModal_content undefined" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_message">
+                        <div>
+                            <p>차단 시 팔로우가 취소돼요.</p>
+                            <p>GG# 내에서 상대방의 프로필이나 글을 확인할 수 없어요.</p>
+                            <p>상대방에게는 서포터님이 차단했다는 정보를 알리지 않아요.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ConfirmModal_footer" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_buttonGroup"><button
+                            class="Button_button Button_lg ConfirmModal_negativeButton closebutton"
+                            type="button"><span><span>취소</span></span></button><button
+                            class="Button_button Button_mint Button_contained Button_lg blockButton"
+                            type="button "><span><span>차단하기</span></span></button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MODAL2: 신고하기 모달 (초기: 숨김) ===== -->
+        <div id="modal2" class="ConfirmModal_overlay "
+            style="background-color: rgba(0, 0, 0, 0.2); display: none;">
+            <div class="ConfirmModal_confirmModal-6 ConfirmModal_sizeMobile ConfirmModal_contentAfterOpen" tabindex="-1"
+                role="dialog" aria-modal="true">
+                <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
+                            class="Button_button Button_text Button_md closebutton" type="button"><span><span><svg
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        class="WithProps_icon" style="height: 24px; width: 24px;">
+                                        <path
+                                            d="M12 11.152L4.424 3.576l-.849.848L11.151 12l-7.576 7.576.849.848L12 12.85l7.576 7.575.848-.848L12.848 12l7.576-7.576-.848-.848L12 11.15z"
+                                            fill="#495057"></path>
+                                    </svg></span></span></button></div>
+                    <div class="ConfirmModal_title">신고하기</div>
+                </div>
+                <div class="ConfirmModal_content undefined" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ReportInfoModal_modalContainer">
+                        <p class="ReportInfoModal_message"><span><svg viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" class="WithProps_icon ReportInfoModal_mailOIcon">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M22.6 4.4H1.4v15.2h21.2V4.4zm-20 2.447V18.4h18.8V6.847l-9.4 8.46-9.4-8.46zM20.992 5.6H3.008L12 13.693 20.992 5.6z"
+                                        fill="#495057"></path>
+                                </svg>info@wadiz.kr</span></p>
+                        <p class="ReportInfoModal_message">이 계정을 신고하는 이유를 이메일로 보내주세요.</p>
+                        <p class="ReportInfoModal_example__QiCuc"><span>예)</span>타인을 모욕, 명예훼손하는 내용이 있어요.<br>개인정보를 침해하는
+                            내용이 있어요.<br>차별, 음란, 범죄, 욕설 등 부적절한 내용이 있어요.</p>
+                        <h5>아래 신고 접수 사항을 반드시 적어주세요.</h5>
+                        <ol>
+                            <li><span>1. 신고인 아이디 <var>(필수)</var></span></li>
+                            <li><span>2. 게시물 작성자 아이디 <var>(필수)</var></span></li>
+                            <li><span>3. 프로젝트 이름 또는 URL <var>(필수)</var></span></li>
+                        </ol>
+                        <p class="ReportInfoModal_message">※신고인의 정보 및 신고 내용은 안전하게 보호되며 외부에 제공되지 않습니다.</p><a
+                            target="_blank" class="Button_button Button_md ReportInfoModal_button"
+                            href="/web/wterms/community"><span><span>커뮤니티 정책 보기<svg viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="WithProps_icon ReportInfoModal_openLinkIcon">
+                                        <path d="M15.1 4.2h4.551l-7.975 7.976.848.848L20.5 5.05V9.6h1.2V3h-6.6v1.2z"
+                                            fill="#495057"></path>
+                                        <path d="M10.1 3H2.5v18.2h19.2v-6.6h-1.2V20H3.7V4.2h6.4V3z" fill="#495057">
+                                        </path>
+                                    </svg></span></span></a>
+                    </div>
+                </div>
+                <div class="ConfirmModal_footer" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_buttonGroup"><button
+                            class="Button_button Button_gray Button_tint__ Button_lg ConfirmModal_negativeButton closebutton"
+                            type="button"><span><span>닫기</span></span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/js/User Profile/userpropile.js"></script>
+<script src="../../static/js/modals/modal-m.js"></script>
+
+</html>

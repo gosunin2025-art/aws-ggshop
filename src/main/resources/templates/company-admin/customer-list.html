@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업 메인 - 회원 관리 목록</title>
+    <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/common/font.css" />
+    <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/common/fontawesome.css">
+    <link rel="stylesheet" href="/css/common/util.css" />
+    <link rel="stylesheet" href="/css/company-admin/company-charger.css" />
+    <link type="text/css" th:href="@{/css/company-admin/top.css}" rel="stylesheet" />
+    <link type="text/css" th:href="@{/css/company-admin/menu-flex.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div th:replace="~{/company-admin/top::top}" style="margin-bottom: 20px;"></div>
+
+<main class="board">
+    <div class="ui-header">
+        <h2 class="title">회원 관리</h2>
+    </div>
+
+    <div class="segmented-tabs">
+        <ul>
+            <li class="active"><a href="#" onclick="goToList(); return false;">회원 목록</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+    <div class="board-main">
+        <ul>
+            <li th:each="member : ${memberList}">
+                <a th:href="@{/member/detail/{id}(id=${member.id})}" class="article no-thumb">
+                    <div class="info-box">
+                        <div class="info-inner">
+                            <!-- 이름 / 이메일 -->
+                            <h3 class="title"
+                                th:text="|${member.memberName} (${member.memberEmail})|">
+                                이름 (이메일)
+                            </h3>
+                            <!-- 주소 -->
+                            <p class="description"
+                               th:text="${member.memberAddress != null ? member.memberAddress : '주소 없음'}">
+                                주소
+                            </p>
+                            <!-- 상태 / 가입일 -->
+                            <span class="created-at">
+                            <span th:text="${member.memberStatus}">상태</span>
+                            &nbsp;|&nbsp;
+                            가입일 :
+                            <span th:text="${member.createdDate}">날짜</span>
+                        </span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="board-footer">
+        <div class="pagination">
+            <div class="page">
+                <div class="desktop-only" style="display: flex; gap: 5px; align-items: center; justify-content: center;">
+
+                    <!-- 이전 버튼 -->
+                    <a th:if="${pagination.page > 1}"
+                       th:href="@{/member/list/{page}(page=${pagination.page - 1})}"
+                       style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #ddd; background: white; color: #333; text-decoration: none; border-radius: 4px; font-size: 18px;">
+                        ‹
+                    </a>
+                    <span th:unless="${pagination.page > 1}"
+                          style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #e5e5e5; background: #f9f9f9; color: #ccc; border-radius: 4px; font-size: 18px;">
+                        ‹
+                    </span>
+
+                    <!-- 페이지 번호들 -->
+                    <th:block th:each="i : ${#numbers.sequence(pagination.startPage, pagination.endPage)}">
+                        <a th:href="@{/member/list/{page}(page=${i})}"
+                           th:style="${i == pagination.page} ?
+                               'display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 8px; background: #333; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;' :
+                               'display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 8px; border: 1px solid #ddd; background: white; color: #333; text-decoration: none; border-radius: 4px;'"
+                           th:text="${i}">1</a>
+                    </th:block>
+
+                    <!-- 다음 버튼 -->
+                    <a th:if="${pagination.page < pagination.realEnd}"
+                       th:href="@{/member/list/{page}(page=${pagination.page + 1})}"
+                       style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #ddd; background: white; color: #333; text-decoration: none; border-radius: 4px; font-size: 18px;">
+                        ›
+                    </a>
+                    <span th:unless="${pagination.page < pagination.realEnd}"
+                          style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #e5e5e5; background: #f9f9f9; color: #ccc; border-radius: 4px; font-size: 18px;">
+                        ›
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 검색 폼 -->
+        <div class="search-box" style="margin-top: 30px; text-align: center;">
+            <form th:action="@{/member/list/1}" method="get">
+                <select name="searchType" style="padding: 8px;">
+                    <option value="all" th:selected="${searchType == 'all' or searchType == null}">전체</option>
+                    <option value="memberName" th:selected="${searchType == 'memberName'}">이름</option>
+                    <option value="memberEmail" th:selected="${searchType == 'memberEmail'}">이메일</option>
+                    <option value="memberAddress" th:selected="${searchType == 'memberAddress'}">주소</option>
+                </select>
+                <input type="text"
+                       name="keyword"
+                       th:value="${keyword}"
+                       placeholder="검색어를 입력하세요"
+                       style="padding: 8px; width: 300px;"
+                       required>
+                <button type="submit"
+                        style="padding: 8px 20px; background: #00c4c4; color: white; border: none; cursor: pointer;">
+                    검색
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+</body>
+
+<script>
+    function goToList() {
+        location.href = '/member/list/1';
+    }
+
+    function goToRegister() {
+        location.href = '/member/write';
+    }
+</script>
+</html>

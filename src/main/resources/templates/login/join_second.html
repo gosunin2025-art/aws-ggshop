@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login/join_second.css">
+    <title>회원가입</title>
+</head>
+<body>
+
+<div id="root">
+    <main>
+        <header class="Header-module_container__da545">
+            <div class="Header-module_content__31d4e">
+                <div class="Header-module_left__45013">
+                    <button class="StyledComponent-module_container__2d5ce"
+                            aria-label="뒤로 가기"
+                            type="button"
+                            onclick="history.back()">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-module_icon__d564b" style="height: 24px; width: 24px;">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0757 2.57573L16.9243 3.42426L8.34851 12L16.9243 20.5757L16.0757 21.4243L6.65146 12L16.0757 2.57573Z" fill="#495057"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="Header-module_center__3afb0"></div>
+                <div class="Header-module_right__6c908">
+                    <a class="StyledComponent-module_container__2d5ce"
+                       aria-label="홈으로 가기"
+                       th:href="@{/ev/main}">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-module_icon__d564b" style="height: 24px; width: 24px;">
+                            <path d="M21.6 7.67893L12 1.27893L2.40002 7.67893V21H3.60002V8.32115L12 2.72115L20.4 8.32115V21H21.6V7.67893Z" fill="#495057"></path>
+                            <path d="15.6 21V12.4H8.40002V21H9.60002V13.6H14.4V21H15.6Z" fill="#495057"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="padding-16">
+            <div class="SignupForm-module_container__7536d">
+                <div class="SignupForm-module_titleContainer__fb197">
+                    <div class="SignupForm-module_title__d581c">이메일 가입하기</div>
+                    <span class="SignupForm-module_description__3422b">최소한의 정보를 받고 있어요.</span>
+                </div>
+
+                <div class="SignupForm-module_content__a4f9d">
+                    <!--  회원가입 Form -->
+                    <form th:action="@{/ev/company/signup}" method="post" id="signupForm" autocomplete="off">
+
+                        <!--  이메일 (읽기 전용) -->
+<!--                        <div class="EmailAuthField-module_emailAuthField__1a4fe">-->
+<!--                            <label class="EmailAuthField-module_fieldLabel__4f476">이메일-->
+<!--                                <span class="EmailAuthField-module_isRequired__e9c44">*</span>-->
+<!--                            </label>-->
+<!--                            <div class="EmailAuthField-module_inputFieldContainer__dfec5">-->
+<!--                                <div class="EmailAuthField-module_inputField__6a914">-->
+<!--                                    <input placeholder="이메일 입력"-->
+<!--                                           th:value="${memberEmail}"-->
+<!--                                           name="memberEmail"-->
+<!--                                           type="email"-->
+<!--                                           class="Input-module_input__210a1 Input-module_lg__592e9"-->
+<!--                                           aria-invalid="false"-->
+<!--                                           readonly-->
+<!--                                           style="background-color: #f5f5f5; cursor: not-allowed;">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                        <!--  이메일 + 인증코드 영역 -->
+                        <div class="EmailAuthField-module_emailAuthField__1a4fe">
+                            <label class="EmailAuthField-module_fieldLabel__4f476">이메일
+                                <span class="EmailAuthField-module_isRequired__e9c44">*</span>
+                            </label>
+                            <div class="EmailAuthField-module_inputFieldContainer__dfec5">
+                                <div class="EmailAuthField-module_inputField__6a914" style="display:flex; gap:8px;">
+                                    <input placeholder="이메일 입력"
+                                           th:value="${memberEmail}"
+                                           name="memberEmail"
+                                           id="memberEmail"
+                                           type="email"
+                                           class="Input-module_input__210a1 Input-module_lg__592e9"
+                                           aria-invalid="false"
+                                           readonly
+                                           style="background-color: #f5f5f5; cursor: not-allowed;">
+                                    <button type="button"
+                                            id="sendCodeBtn"
+                                            onclick="sendCode()"
+                                            style="white-space:nowrap; padding: 0 16px; background:#00c4c4; color:white; border:none; border-radius:6px; cursor:pointer; font-size:14px;">
+                                        인증코드 발송
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 인증코드 입력 영역 (처음엔 숨김) -->
+                            <div id="codeArea" style="display:none; margin-top:8px;">
+                                <div style="display:flex; gap:8px; align-items:center;">
+                                    <input type="text"
+                                           id="codeInput"
+                                           placeholder="인증코드 6자리"
+                                           maxlength="6"
+                                           class="Input-module_input__210a1 Input-module_lg__592e9"
+                                           style="flex:1;">
+                                    <span id="timer" style="color:#f66; font-weight:bold; white-space:nowrap;">03:00</span>
+                                    <button type="button"
+                                            onclick="verifyCode()"
+                                            style="white-space:nowrap; padding: 0 16px; background:#333; color:white; border:none; border-radius:6px; cursor:pointer; font-size:14px; height:48px;">
+                                        확인
+                                    </button>
+                                </div>
+                                <span id="codeMsg" style="font-size:13px; margin-top:4px; display:block;"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="SignupForm-module_textFieldGroup__e4d83">
+                            <!--  비밀번호 -->
+                            <div class="TextField-module_textField__404b4 TextField-module_lg__11d56 undefined">
+                                <label>
+                                    <span>
+                                        <div class="SignupForm-module_textFieldLabel__4a2d9">비밀번호</div>
+                                    </span>
+                                    <span class="TextField-module_isRequired__294b9">*</span>
+                                </label>
+                                <div class="TextField-module_field__4d1fc TextField-module_noStartText__b3da2 TextField-module_noEndText__0e7c7 TextField-module_hasEndIcon__96e6e">
+                                    <input autocomplete="new-password"
+                                           placeholder="비밀번호 입력"
+                                           name="memberPassword"
+                                           type="password"
+                                           class="Input-module_input__210a1 Input-module_lg__592e9"
+                                           aria-invalid="false"
+                                           aria-autocomplete="list"
+                                           required
+                                           minlength="8">
+                                    <button aria-label="비밀번호 보기"
+                                            class="Button-module_button__d78c2 Button-module_text__47ff4 Button-module_lg__53dd9 Button-module_iconOnly__0a115 iconButton TextField-module_endIcon__aab7d TextField-module_passwordIcon__92654"
+                                            type="button">
+                                        <span><span>
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps-module_icon__d564b">
+                                                <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" fill="#495057"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#495057"></path>
+                                            </svg>
+                                        </span></span>
+                                    </button>
+                                </div>
+                                <div class="HelperMessage-module_helperMessage__06cff">
+                                    <span class="SignupForm-module_error__025b5"></span>
+                                    <span class="SignupForm-module_error__025b5">영어, 숫자, 특수 문자를 조합한 8자 이상으로 입력해 주세요.</span>
+                                </div>
+                            </div>
+
+                            <!--  비밀번호 확인 -->
+                            <div class="TextField-module_textField__404b4 TextField-module_lg__11d56 undefined">
+                                <label></label>
+                                <div class="TextField-module_field__4d1fc TextField-module_noStartText__b3da2 TextField-module_noEndText__0e7c7 TextField-module_hasEndIcon__96e6e">
+                                    <input autocomplete="new-password"
+                                           placeholder="비밀번호 확인"
+                                           name="verifyPassword"
+                                           type="password"
+                                           class="Input-module_input__210a1 Input-module_lg__592e9"
+                                           aria-invalid="false">
+                                    <button aria-label="비밀번호 보기"
+                                            class="Button-module_button__d78c2 Button-module_text__47ff4 Button-module_lg__53dd9 Button-module_iconOnly__0a115 iconButton TextField-module_endIcon__aab7d TextField-module_passwordIcon__92654"
+                                            type="button">
+                                        <span><span>
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps-module_icon__d564b">
+                                                <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" fill="#495057"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#495057"></path>
+                                            </svg>
+                                        </span></span>
+                                    </button>
+                                </div>
+                                <div class="HelperMessage-module_helperMessage__06cff">
+                                    <span class="SignupForm-module_error__025b5"></span>
+                                    <span class="SignupForm-module_error__025b5">동일한 비밀번호를 입력해 주세요.</span>
+                                </div>
+                            </div>
+
+                            <!--  이름 -->
+                            <div class="TextField-module_textField__404b4 TextField-module_lg__11d56 undefined">
+                                <label>
+                                    <span>
+                                        <div class="SignupForm-module_textFieldLabel__4a2d9">이름</div>
+                                    </span>
+                                    <span class="TextField-module_isRequired__294b9">*</span>
+                                </label>
+                                <div class="TextField-module_field__4d1fc TextField-module_noStartText__b3da2 TextField-module_noEndText__0e7c7">
+                                    <input autocomplete="name"
+                                           placeholder="이름 입력"
+                                           name="memberName"
+                                           type="text"
+                                           class="Input-module_input__210a1 Input-module_lg__592e9"
+                                           aria-invalid="false"
+                                           required>
+                                </div>
+                            </div>
+
+                            <!--  주소 -->
+                            <div class="TextField-module_textField__404b4 TextField-module_lg__11d56 undefined">
+                                <label>
+                                    <span>
+                                        <div class="SignupForm-module_textFieldLabel__4a2d9">주소 입력</div>
+                                    </span>
+                                    <span class="TextField-module_isRequired__294b9">*</span>
+                                </label>
+                                <div class="TextField-module_field__4d1fc TextField-module_noStartText__b3da2 TextField-module_noEndText__0e7c7">
+<!--                                    <input id="addressInput"-->
+<!--                                           placeholder="새로운 주소를 입력하세요."-->
+<!--                                           maxlength="100"-->
+<!--                                           name="memberAddress"-->
+<!--                                           type="text"-->
+<!--                                           class="Input-module_input__210a1 Input-module_lg__592e9"-->
+<!--                                           style="height: 48px; cursor: pointer;"-->
+<!--                                           aria-invalid="false"-->
+<!--                                           onclick="sample4_execDaumPostcode();"-->
+<!--                                           readonly-->
+<!--                                           required>-->
+
+                                    <input
+                                            id="addressInput"
+                                            name="memberAddress"
+                                            placeholder="새로운 주소를 입력하세요."
+                                            maxlength="40"
+                                            type="text"
+                                            style ="height: 48px;"
+                                            aria-invalid="false"
+                                            value=""
+                                            onclick="sample4_execDaumPostcode();"
+                                            readonly
+                                    >
+
+
+                            </div>
+                        </div>
+
+                        <!--   가입 완료 버튼 -->
+                        <button class="Button-module_button__d78c2 Button-module_mint__1c1d6 Button-module_contained__ecf2a Button-module_lg__53dd9 Button-module_block__d6eff Button-module_disabled__2ebf2 SignupForm-module_termsButton__fdaf7"
+                                disabled
+                                type="submit"
+                                id="submitButton">
+                            <span><span>가입 완료하기</span></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+
+<!-- 비밀번호 검증 스크립트 -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const passwordInput = document.querySelector('input[name="memberPassword"]');
+        const verifyPasswordInput = document.querySelector('input[name="verifyPassword"]');
+        const nameInput = document.querySelector('input[name="memberName"]');
+        const addressInput = document.querySelector('input[name="memberAddress"]');
+        const submitButton = document.getElementById('submitButton');
+
+        const passwordError = passwordInput.closest(".TextField-module_textField__404b4").querySelectorAll(".SignupForm-module_error__025b5")[1];
+        const verifyPasswordError = verifyPasswordInput.closest(".TextField-module_textField__404b4").querySelectorAll(".SignupForm-module_error__025b5")[1];
+
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+        function setError(input, errorEl, message) {
+            input.style.border = "1px solid #f66";
+            errorEl.textContent = message;
+        }
+
+        function clearError(input, errorEl) {
+            input.style.border = "";
+            errorEl.textContent = "";
+        }
+
+        function validatePassword() {
+            const value = passwordInput.value;
+            if (!passwordRegex.test(value)) {
+                setError(passwordInput, passwordError, "영어, 숫자, 특수 문자를 조합한 8자 이상으로 입력해 주세요.");
+                return false;
+            }
+            clearError(passwordInput, passwordError);
+            return true;
+        }
+
+        function validateVerifyPassword() {
+            if (verifyPasswordInput.value === "" || verifyPasswordInput.value !== passwordInput.value) {
+                setError(verifyPasswordInput, verifyPasswordError, "동일한 비밀번호를 입력해 주세요.");
+                return false;
+            }
+            clearError(verifyPasswordInput, verifyPasswordError);
+            return true;
+        }
+
+        function updateSubmitButton() {
+            const isPasswordValid = validatePassword();
+            const isVerifyValid = validateVerifyPassword();
+            const isNameValid = nameInput.value.trim().length > 0;
+            const isAddressValid = addressInput.value.trim().length > 0;
+
+            const allValid = isPasswordValid && isVerifyValid && isNameValid && isAddressValid;
+
+            submitButton.disabled = !allValid;
+            submitButton.classList.toggle("Button-module_disabled__2ebf2", submitButton.disabled);
+        }
+
+        passwordInput.addEventListener("input", updateSubmitButton);
+        verifyPasswordInput.addEventListener("input", updateSubmitButton);
+        nameInput.addEventListener("input", updateSubmitButton);
+        addressInput.addEventListener("input", updateSubmitButton);
+    });
+</script>
+
+<!--  비밀번호 보기/숨기기 -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleButtons = document.querySelectorAll('.TextField-module_passwordIcon__92654');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const input = button.closest(".TextField-module_field__4d1fc").querySelector("input");
+                const svg = button.querySelector("svg");
+
+                if (input.type === "password") {
+                    input.type = "text";
+                    svg.innerHTML = `
+                    <path d="M2 2L22 22" stroke="#495057" stroke-width="2"/>
+                    <path d="M12 5C7.5 5 3.7 7.9 2 12 C2.6 13.4 3.5 14.6 4.6 15.6 M9.9 9.9A3 3 0 0 0 12 15 C13.7 15 15 13.7 15 12 A3 3 0 0 0 14.1 9.9 M19.4 15.6C20.5 14.6 21.4 13.4 22 12 C20.3 7.9 16.5 5 12 5" fill="none" stroke="#495057" stroke-width="2"/>
+                `;
+                } else {
+                    input.type = "password";
+                    svg.innerHTML = `
+                    <path d="M15 12C15 13.6569 13.6569 15 12 15 C10.3431 15 9 13.6569 9 12 C9 10.3431 10.3431 9 12 9 C13.6569 9 15 10.3431 15 12Z" fill="#495057"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C20.5443 7.33923 16.6167 4 12 4 C7.38322 4 3.45561 7.33923 2 12 C3.45561 16.6608 7.38322 20 12 20 C16.6167 20 20.5443 16.6608 22 12Z M17 12C17 14.7614 14.7614 17 12 17 C9.23858 17 7 14.7614 7 12 C7 9.23858 9.23858 7 12 7 C14.7614 7 17 9.23858 17 12Z" fill="#495057"/>
+                `;
+                }
+            });
+        });
+    });
+</script>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    // const checkbox = document.getElementById("chk");
+    const addressInput = document.getElementById("addressInput");
+    const defaultAddress = "서울특별시 용산구 새창로 181";
+
+    /* 우편번호 주소 찾기 */
+
+    // //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+    // function sample4_execDaumPostcode() {
+    //     new daum.Postcode({
+    //         oncomplete: function (data) {
+    //             const roadAddr = data.roadAddress;
+    //             // 주소 input에 값 넣기
+    //             const addressInput = document.getElementById("addressInput");
+    //             addressInput.value = roadAddr;
+    //         }
+    //     }).open();
+    // }
+
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function (data) {
+                const roadAddr = data.roadAddress;
+                const addressInput = document.getElementById("addressInput");
+                addressInput.value = roadAddr;
+
+                // 검증 트리거
+                const event = new Event('input', { bubbles: true });
+                addressInput.dispatchEvent(event);
+            }
+        }).open();
+    }
+</script>
+</html>

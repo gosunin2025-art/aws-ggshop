@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차단/신고 목록</title>
+    <link rel="stylesheet" href="/static/css/User Profile/Report List.css">
+</head>
+
+<body>
+    <div id="root">
+        <header class="Header-module_container Header-module_sticky">
+            <div class="Header-module_content">
+                <div class="Header-module_left">
+                    <button class="stylledcomponent_container" aria-label="뒤로 가기" type="button">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                            class="WithProps-module_icon" style="height: 24px; width: 24px;">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.0757 2.57573L16.9243 3.42426L8.34851 12L16.9243 20.5757L16.0757 21.4243L6.65146 12L16.0757 2.57573Z"
+                                fill="#495057"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="Header-module_center" style="max-width: calc(-240px + 100vw);"></div>
+                <div class="Header-module_right">
+                    <div class="stylledcomponent_container" style="padding: 4px;;"></div>
+                    <a href="" class="stylledcomponent_container">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                            class="WithProps-module_icon" style="height: 24px; width: 24px;">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M2.57422 5.21378C3.62326 3.74512 5.30433 2.90002 6.99996 2.90002C9.58255 2.90002 11.1644 4.24801 12 5.36874C12.8355 4.24801 14.4174 2.90002 17 2.90002C18.6956 2.90002 20.3767 3.74512 21.4257 5.21378C22.4859 6.69802 22.8736 8.77655 22.0692 11.1898C21.4192 13.1397 19.6136 15.2683 17.7161 17.0948C15.7971 18.9419 13.6958 20.5622 12.3399 21.4944C12.1351 21.6352 11.8648 21.6352 11.66 21.4944C10.3041 20.5622 8.20277 18.9419 6.28386 17.0948C4.38631 15.2683 2.58074 13.1397 1.93074 11.1898C1.12634 8.77655 1.51404 6.69802 2.57422 5.21378ZM3.5507 5.91126C2.73587 7.05202 2.37356 8.72348 3.06916 10.8103C3.61917 12.4603 5.23026 14.4151 7.11605 16.2302C8.82624 17.8764 10.6915 19.3416 12 20.2683C13.3085 19.3416 15.1737 17.8764 16.8839 16.2302C18.7697 14.4151 20.3808 12.4603 20.9308 10.8103C21.6264 8.72348 21.264 7.05202 20.4492 5.91126C19.6233 4.75492 18.3043 4.10002 17 4.10002C14.3152 4.10002 12.9814 5.87878 12.5366 6.76834C12.435 6.97161 12.2272 7.10002 12 7.10002C11.7727 7.10002 11.5649 6.97161 11.4633 6.76834C11.0185 5.87877 9.68475 4.10002 6.99996 4.10002C5.69559 4.10002 4.37666 4.75492 3.5507 5.91126Z"
+                                fill="#495057"></path>
+                        </svg>
+                    </a>
+                    <a href="" aria-label="홈으로" class="stylledcomponent_container">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                            class="WithProps-module_icon" style="height: 24px; width: 24px;">
+                            <path
+                                d="M21.6 7.67893L12 1.27893L2.40002 7.67893V21H3.60002V8.32115L12 2.72115L20.4 8.32115V21H21.6V7.67893Z"
+                                fill="#495057"></path>
+                            <path d="M15.6 21V12.4H8.40002V21H9.60002V13.6H14.4V21H15.6Z" fill="#495057"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="content-width">
+                <div class="MyFriends-module_container">
+                    <div class="MyFriends-module_contents">
+                        <div class="MyFriends-module_tabsWrapper">
+                            <nav class="Tabs-module_tabsWrapper">
+                                <ul class="Tabs-module_tabs MyFriends-module_tabs">
+                                    <li data-index="0"></li>
+                                    <li data-index="1"><button type="button"
+                                            class="Tab-module_tab undefined Tab-module_md" role="tab"
+                                            data-value="1"><span>
+                                                <p>차단 목록 <sup class="MyFriends-module_sup"></sup></p>
+                                            </span></button></li>
+                                    <li data-index="2"></li>
+                                    <li data-index="3"><button type="button"
+                                            class="Tab-module_tab Tab-module_active undefined Tab-module_md" role="tab"
+                                            data-value="3"><span>
+                                                <p>신고 목록 <sup
+                                                        class="MyFriends-module_sup MyFriends-module_supSelected">2</sup>
+                                                </p>
+                                            </span></button></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div>
+                            <div class="TabPanels-module_tabPanels">
+                                <ul class="BlockedSupporter-module_container">
+                                    <li class="BlockedSupporter-module_blockingSupporter">
+                                        <div class="BlockedSupporterCard-module_blockSupporterCard"><a
+                                                href="/web/profile/supporter/5554515414"><span aria-hidden="true"
+                                                    class="Avatar-module_avatar_ Avatar-module_xs"><span
+                                                        class="Avatar-module_inner"><img
+                                                            src="https://cdn.wadiz.kr/wwwwadiz/green001/2024/0620/20240620095342091_3967511.jpg/wadiz/format/jpg/quality/80/optimize"></span></span><strong
+                                                    class="BlockedSupporterCard-module_nickname">손창희</strong>
+                                            </a>
+                                            <button class="Button-module_button Button-module_gray Button-module_sm close_button"
+                                                type="button"><span>
+                                                    <span>차단 해제</span>
+                                                </span></button>
+                                        </div>
+                                    </li>
+                                    <li class="BlockedSupporter-module_blockingSupporter">
+                                        <div class="BlockedSupporterCard-module_blockSupporterCard"><a
+                                                href="/web/profile/supporter/946387407"><span aria-hidden="true"
+                                                    class="Avatar-module_avatar_ Avatar-module_xs"><span
+                                                        class="Avatar-module_inner Avatar-module_noBorder"><img
+                                                            src="https://static.wadiz.kr/assets/icon/profile-icon-3.png"></span></span><strong
+                                                    class="BlockedSupporterCard-module_nickname">Alex</strong></a><button
+                                                class="Button-module_button Button-module_gray Button-module_sm close_button"
+                                                type="button"><span><span>차단 해제</span></span></button></div>
+                                    </li>
+                                </ul>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="Toast-container">
+        <div class="ToastContainer-module_container">
+            <div class="Toast-module_container Toast-module_showMobile">
+                <div class="Toast-module_content">차단 해제했어요.</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/js/User Profile/ReortList.js"></script>
+
+</html>

@@ -1,0 +1,613 @@
+.app-navbar-layout-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    flex-flow: column;
+    transform: translate(-180%);
+    transition: transform .2s;
+    z-index: 16;
+    background-color: #fff;
+    width: 324px;
+}
+
+.app-navbar-layout-container {
+    position: relative;
+    transform: none;
+    transition: width .2s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+    width: 0;
+    border-right: 1px solid #f2f4f6;
+}
+
+.app-navbar-layout-container.app-navbar-layout-expand {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    width: 240px;
+}
+
+.app-navbar-layout-container.app-navbar-layout-scroll {
+    height: calc(100vh - 72px);
+    overflow-y: hidden;
+}
+
+.app-navbar-layout-content {
+    padding-bottom: 80px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.app-navbar-layout-content {
+    overflow: visible;
+}
+
+.app-navbar-layout-container.app-navbar-layout-scroll .app-navbar-layout-content {
+    padding-bottom: 0;
+}
+
+.project-info-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin: 12px 16px;
+    border: 1px solid #f2f4f6;
+    border-radius: 8px;
+    border-color: #f2f4f6;
+    padding: 16px;
+}
+
+.project-info-container {
+    margin: 0;
+}
+
+.app-navbar-project-info-pc {
+    margin: 12px 16px;
+}
+
+.project-info-container .project-info-project-no {
+    display: flex;
+    align-items: center;
+    color: #212529;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.project-info-container .project-info-project-no .project-info-vertical-divider {
+    border: none;
+    background-color: #f2f4f6;
+    width: 1px;
+    height: 12px;
+}
+
+.project-info-container .project-info-project-no .project-info-emphasis {
+    color: #00c4c4;
+    font-weight: 700;
+}
+
+.project-info-divide {
+    margin: 8px 0;
+}
+
+.project-info-container .project-info-divide {
+    margin: 16px 0 0;
+    border: none;
+    background-color: #f2f4f6;
+    width: 100%;
+    height: 1px;
+}
+
+.project-info-info-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    width: 100%;
+    color: #868e96;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.project-info-drop-down-container .project-info-info-button {
+    width: 100%;
+}
+
+.project-info-drop-down-container .project-info-info-button {
+    padding: 0;
+}
+
+.project-info-container .project-info-text {
+    margin-left: 12px;
+    color: #495057;
+}
+
+.project-info-info-button svg {
+    color: #495057;
+}
+/* 프로필 테두리 색 변화 */
+.project-info-container.project-info-expand {
+    border: 1px solid #00c4c4;
+}
+
+/* 더보기 클릭 토글 */
+.project-info-infobox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    width: 100%;
+    gap: 16px;
+}
+
+.project-info-infobox[hidden] {
+    display: none !important;
+}
+
+/* 변경 */
+.project-info-infobox {
+    position: fixed;
+    z-index: 100; 
+
+    border-radius: 16px;
+    box-shadow: 0 0 5px #2125290f, 0 32px 40px -2px #2125291f;
+    background-color: #153153;
+    padding: 24px;
+    width: 280px;
+}
+
+/* 기존 */
+/* .project-info-infobox {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 125px;
+    margin-left: 16px;
+    border-radius: 16px;
+    box-shadow: 0 0 5px #2125290f, 0 32px 40px -2px #2125291f;
+    background-color: #fff;
+    padding: 24px;
+    width: 280px;
+} */
+
+.blind-text-text-blind {
+    position: absolute;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.project-info-infobox .project-info-content {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 8px;
+}
+
+.project-info-infobox .project-info-content:first-of-type {
+    margin-top: 0;
+}
+
+.avatar-avatar {
+    display: inline-flex;
+    position: relative;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    padding: 0;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.avatar-avatar.avatar-lg {
+    width: 80px;
+    height: 80px;
+}
+
+.project-info-infobox .project-info-profile-image {
+    border: 1px solid rgba(0, 0, 0, .05);
+    border-radius: 50%;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+}
+
+.avatar-avatar>.avatar-inner {
+    display: inline-block;
+    border: 1px solid #e9ecef;
+    border-radius: 100%;
+}
+
+.avatar-avatar>.avatar-inner>img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.project-info-infobox .project-info-name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.project-info-statebox {
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.project-info-infobox .project-info-content {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 8px;
+}
+
+.project-info-statebox .project-info-state {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    border-radius: 4px;
+    background-color: #f2f4f6;
+    padding: 1px 6px;
+    color: #495057;
+}
+
+/* 더보기 클릭 시 화살표 회전 */
+.project-info-arrow {
+    transition: transform .2s ease;
+}
+
+.project-info-container.project-info-expand .project-info-arrow {
+    transform: rotate(180deg);
+}
+
+/* URL복사 버튼 */
+.button-button{
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+.button-button.button-block {
+    width: 100%;
+}
+
+.button-button.button-sm {
+    padding-inline: 12px;
+    height: 32px;
+    font-size: 14px;
+}
+
+.button-button span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
+
+.button-button.button-mint {
+    border-color: #00c4c4;
+    color: #00c4c4;
+}
+
+.with-props-icon {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+.button-button span svg {
+    display: inline-block;
+}
+
+.button-button.button-sm svg.button-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.button-button.button-sm svg.button-icon:first-child {
+    margin-right: 4px;
+}
+/* ------------------------- */
+
+.app-navbar-menu {
+    position: relative;
+}
+
+.app-navbar-menu:before {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    left: 16px;
+    z-index: 1;
+    background-color: #0000001a;
+    height: 2px;
+    content: "";
+}
+
+.app-navbar-link-menu {
+    height: calc(100vh - 192px);
+}
+
+.menu-items-section {
+    padding: 0;
+}
+
+.menu-items-section:first-of-type, .menu-items-section:nth-of-type(2) {
+    border-bottom: 1px solid #f2f4f6;
+}
+
+.menu-items-section.menu-items-cx-center {
+    padding: 16px 0;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.menu-items-title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 8px;
+    padding: 0 16px;
+    color: #adb5bd;
+}
+
+.zendesk-button-menu-zendesk-button {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.zendesk-button-menu-zendesk-button .zendesk-button-menu-label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: #212529;
+    gap: 12px;
+}
+
+.zendesk-button-menu-zendesk-button .zendesk-button-menu-label svg {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-items-menu {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 16px;
+    width: 100%;
+}
+
+.menu-items-section.menu-items-cx-center .menu-items-menu {
+    padding: 8px 16px;
+}
+
+.menu-items-menu .menu-items-label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    color: #495057;
+    gap: 12px;
+}
+
+.menu-items-section.menu-items-cx-center .menu-items-menu .menu-items-label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.with-props-icon {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+.menu-items-menu .menu-items-label svg {
+    width: 16px;
+    height: 16px;
+}
+
+.menu-items-section.menu-items-cx-center .menu-items-menu .menu-items-label svg {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-items-section {
+    padding: 0;
+}
+
+.menu-items-section:first-of-type, .menu-items-section:nth-of-type(2) {
+    border-bottom: 1px solid #f2f4f6;
+}
+
+/* [추가/수정] has-submenu에서도 .menu-items-menu의 레이아웃을 통일하기 위해 
+   display:block → display:flex로 변경 */
+.menu-items-menu.menu-items-has-submenu {
+    display: flex;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.menu-items-active .menu-items-label {
+    color: #212529;
+    font-weight: 700;
+}
+
+/* [추가] 모든 .menu-items-menu에서 화살표(.menu-items-down-icon)가 
+   동일 위치(오른쪽 16px, 세로 중앙)에 고정되도록 통일 적용 */
+.menu-items-menu .menu-items-down-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -8px;
+    color: #adb5bd;
+}
+
+/* [추가] 화살표 열림 상태 회전 (JS 붙일 때 menu-items-open 토글용) */
+.menu-items-menu .menu-items-down-icon.menu-items-open {
+    transform: rotate(180deg);
+}
+
+.menu-items-menu.menu-items-has-submenu .menu-items-down-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -8px;
+    color: #adb5bd;
+}
+
+.menu-items-menu.menu-items-has-submenu .menu-items-down-icon.menu-items-open {
+    transform: rotate(180deg);
+}
+
+/* 서브 메뉴 */
+.menu-items-submenu-container {
+    transition: height .3s ease-out;
+    height: 0;
+    overflow-y: hidden;
+}
+
+.menu-items-submenu-container .menuitems-submenu {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: #f9fafb;
+    padding: 12px 16px 12px 44px;
+    color: #495057;
+    gap: 4px;
+}
+
+.menu-items-submenu-container .menuitems-submenu.menuitems-active {
+    color: #212529;
+    font-weight: 700;
+}
+
+/* ----------- */
+
+/* 자물쇠 아이콘 */
+/* .menu-items-menu.menu-items-disabled {
+    position: relative;
+} */
+
+.menu-items-menu.menu-items-disabled .menu-items-dim {
+    display: none;
+}
+
+.menu-items-menu.menu-items-disabled .menu-items-label {
+    color: #adb5bd;
+}
+
+.menu-items-menu.menu-items-disabled .menu-items-lock-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -6px;
+    width: 12px;
+    height: 12px;
+}
+
+.menu-items-section.menu-items-boosting {
+    padding: 16px 0;
+}
+
+.menu-items-title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 8px;
+    padding: 0 16px;
+    color: #adb5bd;
+}
+
+.menu-items-menu.menu-items-disabled .menu-items-lock-icon {
+    display: none;
+}
+
+.menu-items-menu.menu-items-disabled .menu-items-label {
+    color: #495057;
+}
+
+/* 화살표 기본값: 숨김 */
+.arrow-status {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .15s ease, transform .15s ease;
+    pointer-events: none;
+}
+
+/* 메인메뉴 hover시 화살표 표시(is-open) */
+.menu-items-menu:hover .arrow-status,
+.menu-items-menu.is-open .arrow-status {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 열림 상태: 화살표 회전 */
+.menu-items-menu.is-open .arrow-status {
+    transform: rotate(180deg);
+}
+
+/* 서브메뉴 hover: 배경색 */
+.menu-items-submenu-container .menuitems-submenu:hover {
+    background-color: #f2f4f6;
+}

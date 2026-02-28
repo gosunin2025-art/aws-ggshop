@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업 - 충전소 등록</title>
+
+    <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/common/font.css">
+    <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/common/fontawesome.css">
+    <link rel="stylesheet" href="/css/common/util.css" />
+    <link rel="stylesheet" href="/css/company-admin/company-charger.css" />
+
+    <link type="text/css" th:href="@{/css/company-admin/top.css}" rel="stylesheet" />
+    <link type="text/css" th:href="@{/css/company-admin/menu-flex.css}" rel="stylesheet" />
+</head>
+
+<body>
+    <div th:replace="/company-admin/top::top" style="margin-bottom: 20px;"></div>
+
+    <main class="board">
+        <div class="ui-header">
+            <h2 class="title">충전소 관리</h2>
+        </div>
+
+        <div class="segmented-tabs">
+            <ul>
+                <li><a href="#" onclick="goToList(); return false;">충전소 목록</a></li>
+                <li class="active"><a href="#" onclick="goToRegister(); return false;">새 충전소 등록</a></li>
+            </ul>
+        </div>
+
+        <div class="board-main" style="padding: 24px;">
+            <form id="new-request"
+                  th:action="@{/ev/evcharger}"
+                  method="post"
+                  style="max-width: 600px;">
+
+                <!-- 설치일자 -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">설치일자</label>
+                    <input type="date" name="installDate"
+                           style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+                </div>
+
+                <!-- 충전소 번호 -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">충전소 번호</label>
+                    <div style="display: flex; gap: 8px; height: 45px;">
+                        <input type="text" name="stationNumber" id="stationNumber"
+                               style="flex: 1; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+                        <button type="button" onclick="checkDuplicate()"
+                                style="height: 45px; padding: 0 16px; background: #333; color: white; border: none; border-radius: 4px; font-size: 14px; cursor: pointer; white-space: nowrap;">
+                            중복확인
+                        </button>
+                    </div>
+                    <span id="duplicateMsg" style="font-size: 13px; margin-top: 4px; display: block;"></span>
+                </div>
+
+                <!-- 설치주소 -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">설치주소</label>
+                    <input id="addressInput"
+                           name="installAddress"
+                           placeholder="클릭하여 주소를 검색하세요."
+                           maxlength="40"
+                           type="text"
+                           style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; cursor: pointer; background: #fafafa;"
+                           onclick="sample4_execDaumPostcode();"
+                           readonly>
+                </div>
+
+                <!-- 특이사항 -->
+                <div style="margin-bottom: 28px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">특이사항</label>
+                    <textarea name="chargerNote"
+                              style="width: 100%; height: 100px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; resize: vertical; font-family: inherit;"></textarea>
+                </div>
+
+                <!-- 버튼 -->
+                <div style="display: flex; gap: 8px;">
+                    <input type="button"
+                           value="취소"
+                           th:onclick="|location.href='@{/ev/evcharger}'|"
+                           style="flex: 1; height: 45px; background: white; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; cursor: pointer; color: #333;">
+                    <input type="submit"
+                           value="완료"
+                           style="flex: 1; height: 45px; background: #333; color: white; border: none; border-radius: 4px; font-size: 14px; cursor: pointer; font-weight: 600;">
+                </div>
+
+            </form>
+        </div>
+    </main>
+</body>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function (data) {
+                document.getElementById("addressInput").value = data.roadAddress;
+            }
+        }).open();
+    }
+</script>
+
+<script>
+    let isDuplicateChecked = false;
+
+    function checkDuplicate() {
+        const stationNumber = document.getElementById("stationNumber").value.trim();
+        if (!stationNumber) {
+            alert("충전소 번호를 입력해주세요.");
+            return;
+        }
+
+        fetch(`/ev/evcharger/check-duplicate?stationNumber=${encodeURIComponent(stationNumber)}`)
+            .then(res => res.json())
+            .then(data => {
+                const msg = document.getElementById("duplicateMsg");
+                if (data.isDuplicate) {
+                    msg.style.color = "red";
+                    msg.textContent = "이미 사용 중인 충전소 번호입니다.";
+                    isDuplicateChecked = false;
+                } else {
+                    msg.style.color = "green";
+                    msg.textContent = "사용 가능한 충전소 번호입니다.";
+                    isDuplicateChecked = true;
+                }
+            });
+    }
+
+    document.getElementById("new-request").addEventListener("submit", function(e) {
+        if (!isDuplicateChecked) {
+            e.preventDefault();
+            alert("충전소 번호 중복확인을 해주세요.");
+        }
+    });
+
+    document.getElementById("stationNumber").addEventListener("input", function() {
+        isDuplicateChecked = false;
+        document.getElementById("duplicateMsg").textContent = "";
+    });
+</script>
+
+<script src="/js/company-admin/company-charger.js"></script>
+</html>

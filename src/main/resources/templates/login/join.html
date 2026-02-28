@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="/css/assets/font.css">
+    <link rel="stylesheet" href="/css/assets/reset.css">
+    <link rel="stylesheet" href="/css/assets/common.css">
+    <link rel="stylesheet" href="/css/assets/join.css">
+</head>
+
+<body>
+    <!-- 로그인(회원가입 폼) -->
+    <div id="login">
+        <header id="Header" class="Header_container">
+            <div class="Header_content">
+                <div class="Header_content-center">
+                    <a href="#!" class="Header-logo">
+                        <svg viewBox="0 0 115 40" xmlns="http://www.w3.org/2000/svg" width="80" class="artwork">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M79.2303 4.31213H82.098V33.2057H79.9234C78.9302 33.198 78.0489 32.5679 77.7216 31.6314C73.2514 34.8668 67.1648 34.7111 62.8664 31.2514C60.3092 29.1785 58.9162 25.997 59.1288 22.715C59.4285 18.7532 61.9662 15.3095 65.6651 13.8454C69.364 12.3813 73.5753 13.1535 76.512 15.8343V7.02642C76.512 5.52736 77.729 4.31213 79.2303 4.31213ZM70.6678 29.5821C73.92 29.4353 76.4445 26.6963 76.3218 23.4478C76.5035 21.3089 75.4635 19.25 73.6328 18.1247C71.8021 16.9994 69.4927 16.9994 67.662 18.1247C65.8313 19.25 64.7913 21.3089 64.973 23.4478C64.8506 26.7115 67.3995 29.4571 70.6678 29.5821ZM56.8183 33.2057H54.7524C53.7492 33.2095 52.854 32.5773 52.5234 31.6314C48.0532 34.8668 41.9666 34.7111 37.6682 31.2514C35.111 29.1785 33.718 25.997 33.9306 22.715C34.2096 18.7254 36.7588 15.2505 40.4841 13.7817C44.2094 12.3129 48.4483 13.1113 51.3818 15.8343C51.5217 14.4979 52.6198 13.4649 53.9641 13.405H56.8183V33.2057ZM45.388 29.5821H45.4152C48.6654 29.4354 51.1861 26.694 51.0556 23.4478C51.1781 20.1968 48.6435 17.4595 45.388 17.3271C42.1326 17.4595 39.5979 20.1968 39.7205 23.4478C39.5978 26.7014 42.1305 29.4426 45.388 29.5821ZM113.181 13.4186V16.2821L103.572 28.5778H113.168V33.2871H95.499V30.4371L105.122 18.1278H96.1242V16.1328C96.1242 14.6338 97.3412 13.4186 98.8425 13.4186H113.181ZM89.247 11.1928C87.3855 11.1928 85.8764 9.68597 85.8764 7.82713C85.8764 5.9683 87.3855 4.46142 89.247 4.46142C91.1086 4.46142 92.6177 5.9683 92.6177 7.82713C92.6177 9.68597 91.1086 11.1928 89.247 11.1928ZM28.562 13.4186H34.1888L27.5835 33.2193H21.9431L17.5803 20.5164L13.2175 33.2193H7.57712L0.985352 13.4186H6.59855L10.608 25.7143L14.0058 15.21C14.3824 14.1339 15.3923 13.4074 16.5338 13.3914H20.4752L24.5526 25.7143L28.562 13.4186ZM86.5288 33.2193L86.4744 16.1328C86.4744 14.6338 87.6914 13.4186 89.1927 13.4186H92.0605V33.2193H86.5288Z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <hr class="Header-line">
+        <!-- join -->
+        <div id="Join">
+            <div class="flex-column-start-32 padding-y-48 content-width-560">
+                <div class="wrap">
+                    <!-- container -->
+                    <div class="Join_container">
+                        
+                        <!-- title -->
+                        <div class="Join-title_container">
+                            <div class="Join-title">이메일 가입하기</div>
+                            <div class="Join-description">최소한의 정보를 받고 있어요.</div>
+                        </div>
+                        <!-- /title -->
+                        
+                        <!-- content -->
+                        <div class="Join_content">
+                            <div class="wrap">
+
+                                <!-- email -->
+                                <form action="" class="email_container">
+                                    <div class="email-wrap">
+                                        <label for="" class="email-labelfield">이메일<span class="required">*</span></label>
+                                        <div class="email-inputfield_container">
+                                            <div class="inputfield-wrap">
+                                                <input type="text" class="email_input input-lg input" value="test@test.com" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- /email -->
+                                
+                                <!-- emailauth -->
+                                <form action="" class="emailauth_container">
+                                    <input name="second" type="hidden">
+                                    <div class="emailauth-wrap">
+                                        <label for="" class="emailauth-labelfield">인증 번호<span class="required">*</span></label>
+                                        <div class="emailauth-inputfield_container">
+                                            <div class="inputfield-wrap">
+                                                <input type="text" class="emailauth_input input-lg input" placeholder="인증 번호 입력">
+                                                <span class="emailauth_count" only-disabled>2:29</span>
+                                            </div>
+                                            <button class="button button-contained button-mint button-lg ml-8">
+                                                <span>확인</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- emailauth -->
+                                
+                                <div class="resend-wrap"><span class="resend">인증 번호 다시 보내기</span></div>
+                            </div>
+                            
+                            <!-- 비밀번호폼입력() -->
+                            <form action="" class="password_container">
+                                <div class="flex-column gap-4">
+                                    <div class="password-wrap password-lg">
+                                        <label for="" class="password-labelfield">
+                                            <span>
+                                                <div class="font-resizing">
+                                                    비밀번호
+                                                </div>
+                                            </span>
+                                            <span class="required ml-0">*</span>
+                                        </label>
+                                        <div class="password-content">
+                                            <div class="password-inputfield_container">
+                                                <div class="inputfield-wrap">
+                                                    <input type="text" class="password_input input-lg input button-disabled" placeholder="비밀번호 입력" disabled>
+                                                    <button class="icon-only icon-lg">
+                                                        <span>
+                                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps-module_icon__d564b">
+                                                                <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" fill="#495057"></path>
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#495057"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="password-helper_container"></div>
+                                        </div>
+                                    </div>
+                                    <div class="password-content">
+                                        <label></label>
+                                        <div class="password-inputfield_container">
+                                            <div class="inputfield-wrap">
+                                                <input type="text" class="password_input input-lg input button-disabled" placeholder="비밀번호 확인" disabled>
+                                                <button class="icon-only icon-lg">
+                                                    <span>
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps-module_icon__d564b">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.59085 17.5606L2.57568 20.5757L3.42421 21.4243L21.4242 3.42427L20.5757 2.57574L17.4483 5.70317C15.856 4.62176 13.9921 4 12 4C7.38322 4 3.45561 7.33923 2 12C2.69632 14.2296 3.95832 16.1567 5.59085 17.5606ZM8.06558 15.0858L9.49702 13.6544C9.18292 13.1802 9 12.6114 9 12C9 10.3431 10.3431 9 12 9C12.6114 9 13.1802 9.18292 13.6544 9.49702L15.0858 8.06558C14.236 7.39808 13.1645 7 12 7C9.23858 7 7 9.23858 7 12C7 13.1645 7.39808 14.236 8.06558 15.0858Z" fill="#495057"></path>
+                                                            <path d="M7.33956 18.7818C8.74616 19.562 10.3279 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12C21.4003 10.0801 20.3812 8.38441 19.0673 7.05403L16.4341 9.68723C16.7956 10.3788 17 11.1656 17 12C17 14.7614 14.7614 17 12 17C11.1656 17 10.3788 16.7956 9.68723 16.4341L7.33956 18.7818Z" fill="#495057"></path>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="password-helper_container"></div>
+                                    </div>
+                                </div>
+                                <button class="button button-contained button-mint button-block button-turms" disabled>
+                                    <span>
+                                        <span>약관 동의 후 가입 완료하기</span>
+                                    </span>
+                                </button>
+                            </form>
+                            <!-- 비밀번호 입력 -->
+                        </div>
+                        <!-- /content -->
+                    </div>
+                    <!-- /container -->
+                    
+                </div>
+                
+            </div>
+        </div>
+        <!-- /join -->
+    </div>
+</body>
+
+</html>

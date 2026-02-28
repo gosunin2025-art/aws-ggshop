@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.ggshop.v1.mapper.MemberMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_member (member_email, member_password, member_name ,member_address)
+        values(#{memberEmail}, #{memberPassword}, #{memberName}, #{memberAddress})
+    </insert>
+
+    <insert id="insertOauth">
+        insert into tbl_member_oauth(id, provider)
+        values(#{id}, #{provider})
+    </insert>
+
+    <select id="selectMemberForLogin">
+        select id, member_email, member_password, member_name, member_status, created_date, updated_date
+        from tbl_member
+        where member_email = #{memberEmail} and member_password = #{memberPassword}
+    </select>
+
+    <select id="selectByMemberEmail">
+        select id, member_email, member_password, member_name, member_status, created_date, updated_date
+        from tbl_member
+        where member_email = #{memberEmail}
+    </select>
+
+
+    <!-- 이메일 존재 여부 확인 -->
+    <select id="existsByEmail" resultType="boolean">
+        SELECT COUNT(*) > 0
+        FROM tbl_member
+        WHERE member_email = #{memberEmail}
+    </select>
+
+
+    <!-- 목록 조회 -->
+    <select id="findAll" parameterType="map" resultType="com.app.ggshop.v1.dto.MemberDTO">
+        SELECT id, member_email AS memberEmail, member_name AS memberName,
+        member_address AS memberAddress, member_status AS memberStatus,
+        created_date AS createdDate
+        FROM tbl_member
+        <where>
+            <if test="searchType == 'memberName'">
+                AND member_name LIKE CONCAT('%', #{keyword}, '%')
+            </if>
+            <if test="searchType == 'memberEmail'">
+                AND member_email LIKE CONCAT('%', #{keyword}, '%')
+            </if>
+            <if test="searchType == 'memberAddress'">
+                AND member_address LIKE CONCAT('%', #{keyword}, '%')
+            </if>
+        </where>
+        ORDER BY created_date DESC
+        LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+    <!-- 전체 수 조회 -->
+    <select id="countAll" parameterType="map" resultType="int">
+        SELECT COUNT(*) FROM tbl_member
+        <where>
+            <if test="searchType == 'memberName'">
+                AND member_name LIKE CONCAT('%', #{keyword}, '%')
+            </if>
+            <if test="searchType == 'memberEmail'">
+                AND member_email LIKE CONCAT('%', #{keyword}, '%')
+            </if>
+            <if test="searchType == 'memberAddress'">
+                AND member_address LIKE CONCAT('%', #{keyword}, '%')
+            </if>
+        </where>
+    </select>
+
+    <!-- 회원 단건 조회 -->
+    <select id="findById" parameterType="long" resultType="com.app.ggshop.v1.dto.MemberDTO">
+        SELECT id,
+               member_email    AS memberEmail,
+               member_name     AS memberName,
+               member_nickname AS memberNickname,
+               member_birth    AS memberBirth,
+               member_address  AS memberAddress,
+               member_status   AS memberStatus,
+               created_date    AS createdDate
+        FROM tbl_member
+        WHERE id = #{id}
+    </select>
+
+    <!-- 회원 수정 -->
+    <update id="update" parameterType="MemberDTO">
+        UPDATE tbl_member
+        SET member_name     = #{memberName},
+            member_nickname = #{memberNickname},
+            member_birth    = #{memberBirth},
+            member_address  = #{memberAddress},
+            member_status   = #{memberStatus}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 회원 삭제 -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM tbl_member
+        WHERE id = #{id}
+    </delete>
+
+    <!-- tbl_member_oauth 먼저 삭제 후 회원 삭제 -->
+<!--    tbl_member_oauth의 PK가 id이고 이게 tbl_member(id)를 참조하는 구조,  WHERE id = #{memberId} 컬럼명이 id로 같아서 헷갈림.-->
+
+    <delete id="deleteOauthByMemberId" parameterType="long">
+        DELETE FROM tbl_member_oauth
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
+
+

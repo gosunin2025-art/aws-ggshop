@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모달 - 비밀번호변경폼</title>
+<link rel="stylesheet" href="/css/common/font.css"/>
+<link rel="stylesheet" href="/css/common/reset.css"/>
+<link rel="stylesheet" href="/css/common/fontawesome.css"/>
+<link rel="stylesheet" href="/css/common/common.css"/>
+<link rel="stylesheet" href="/css/common/util.css"/>
+<link rel="stylesheet" href="/css/components/modals/modal-m.css">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/manifest.json">
+</head>
+<body>
+<!-- 예시 -->
+<div style="height: 200vh;">
+    <div style="height: 100vh; background: #fff;">
+        <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+            <button class="button button-size button-mint button-confirm" type="button" onclick="modalOpen('modal')">
+                <span>
+                    <span>확인</span> 
+                </span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 100vh; background: #aaa;">
+        <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+            <button class="button button-size button-mint button-confirm">
+                <span>
+                    <span>확인</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- //예시 -->
+<div id="modal" class="modal active"> <!-- active 컨트롤 필요 -->
+    <div class="Modal_overlay">
+        
+        <div id="FormModal" class="FormModal-container">
+            <div class="FormModal-header">
+                <div class="FormModal-button">
+                    <button class="button button-close" onclick="modalCloses()">
+                        <span>
+                            <span>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon" style="height: 24px; width: 24px;">
+                                    <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+                <div class="FormModal-title">비밀번호 변경</div>
+            </div>
+            <div class="FormModal-content">
+                <div class="FormModal-wrap">
+                    <form action="" class="passwordForm">
+                        <div class="currentPassword-container">
+                            <div class="currentPassword-wrap">
+                                <label for="currentPassword">
+                                    <span>기존 비밀번호</span>
+                                </label>
+                                <div class="inputField">
+                                    <input type="password" id="currentPassword" class="input input-lg input-hasIcon input-hasIcon input-ph-sm" placeholder="비밀번호 입력">
+                                    <button class="button button-icon button-inInput button-lg icon-pass" aria-details="button-pass-fade" type="button">
+                                        <span>
+                                            <span>
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps-icon pass-icon"><path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" fill="#495057"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#495057"></path></svg>
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="newPassword-container">
+                            <div class="newPassword-wrap">
+                                <label for="newPassword">
+                                    <span>새로운 비밀번호</span>
+                                </label>
+                                <div class="inputField">
+                                    <input type="password" id="newPassword" class="input input-lg input-hasIcon input-hasIcon input-ph-sm" placeholder="비밀번호 입력">
+                                    <button class="button button-icon button-inInput button-lg icon-pass" aria-details="button-pass-fade" type="button">
+                                        <span>
+                                            <span>
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps-icon pass-icon"><path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" fill="#495057"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#495057"></path></svg>
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="input-message nomal">영문, 숫자, 특수문자 !@#$%^&amp;*+=-를 조합한 8자 이상으로 입력해 주세요.</p>
+                            </div>
+                        </div>
+                        <div class="newPasswordConfirm-container">
+                            <div class="newPasswordConfirm-wrap">
+                                <label for="newPasswordConfirm">
+                                    <span>새로운 비밀번호 확인</span>
+                                </label>
+                                <div class="inputField">
+                                    <input type="password" id="newPasswordConfirm" class="input input-lg input-hasIcon input-hasIcon input-ph-sm" placeholder="비밀번호 입력">
+                                    <button class="button button-icon button-inInput button-lg icon-pass" aria-details="button-pass-fade" type="button">
+                                        <span>
+                                            <span>
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps-icon pass-icon"><path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" fill="#495057"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#495057"></path></svg>
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="input-message error none">새 비밀번호가 일치하지 않아요.</p>
+                            </div>
+                        </div>
+                        <button class="button button-contain button-mint button-lg button-submit button-disabled" disabled><!-- class="button-disabled" disabled -->
+                            <span><span>변경 완료</span></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/js/modals/modal-m.js"></script>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.ggshop.v1.mapper.VtogPaymentMapper">
+
+    <!-- V2G 거래내역 전체 조회 -->
+<!--    <select id="findAll" resultType="com.app.ggshop.v1.dto.VtogPaymentDTO">-->
+<!--        SELECT-->
+<!--            v.id,-->
+<!--            v.created_date                AS createdDate,-->
+<!--            v.vtog_transaction_number     AS vtogTransactionNumber,-->
+<!--            m.member_name                 AS memberName,-->
+<!--            e.ev_charger_uid              AS evChargerUid,-->
+<!--            v.vtog_payment_sales_kwh      AS vtogPaymentSalesKwh,-->
+<!--            v.vtog_payment_sales_price    AS vtogPaymentSalesPrice-->
+<!--        FROM tbl_vtog_payment v-->
+<!--                 JOIN tbl_car c        ON v.vtog_car_id = c.id-->
+<!--                 JOIN tbl_member m     ON c.car_member_id = m.id-->
+<!--                 JOIN tbl_ev_charger e ON v.vtog_ev_charger_id = e.id-->
+<!--        ORDER BY v.created_date DESC-->
+<!--    </select>-->
+
+    <!-- V2G 거래내역 전체 조회 (페이징) -->
+<!--    <select id="findAll" resultType="com.app.ggshop.v1.dto.VtogPaymentDTO">-->
+<!--        SELECT-->
+<!--            v.id,-->
+<!--            v.created_date                AS createdDate,-->
+<!--            v.vtog_transaction_number     AS vtogTransactionNumber,-->
+<!--            m.member_name                 AS memberName,-->
+<!--            e.ev_charger_uid              AS evChargerUid,-->
+<!--            v.vtog_payment_sales_kwh      AS vtogPaymentSalesKwh,-->
+<!--            v.vtog_payment_sales_price    AS vtogPaymentSalesPrice-->
+<!--        FROM tbl_vtog_payment v-->
+<!--                 JOIN tbl_car c        ON v.vtog_car_id = c.id-->
+<!--                 JOIN tbl_member m     ON c.car_member_id = m.id-->
+<!--                 JOIN tbl_ev_charger e ON v.vtog_ev_charger_id = e.id-->
+<!--        ORDER BY v.created_date DESC-->
+<!--            LIMIT #{rowCount} OFFSET #{offset}-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash; V2G 거래내역 전체 카운트 &ndash;&gt;-->
+<!--    <select id="countAll" resultType="int">-->
+<!--        SELECT COUNT(*)-->
+<!--        FROM tbl_vtog_payment v-->
+<!--                 JOIN tbl_car c        ON v.vtog_car_id = c.id-->
+<!--                 JOIN tbl_member m     ON c.car_member_id = m.id-->
+<!--                 JOIN tbl_ev_charger e ON v.vtog_ev_charger_id = e.id-->
+<!--    </select>-->
+
+    <!-- V2G 거래내역 조회 (페이징 + 기간 필터) -->
+    <select id="findAll" resultType="com.app.ggshop.v1.dto.VtogPaymentDTO">
+        SELECT
+            v.id,
+            v.created_date                AS createdDate,
+            v.vtog_transaction_number     AS vtogTransactionNumber,
+            m.member_name                 AS memberName,
+            e.ev_charger_uid              AS evChargerUid,
+            v.vtog_payment_sales_kwh      AS vtogPaymentSalesKwh,
+            v.vtog_payment_sales_price    AS vtogPaymentSalesPrice
+        FROM tbl_vtog_payment v
+                 JOIN tbl_car c        ON v.vtog_car_id = c.id
+                 JOIN tbl_member m     ON c.car_member_id = m.id
+                 JOIN tbl_ev_charger e ON v.vtog_ev_charger_id = e.id
+        WHERE v.created_date BETWEEN #{startDate} AND #{endDate}
+        ORDER BY v.created_date DESC
+            LIMIT #{rowCount} OFFSET #{offset}
+    </select>
+
+    <!-- V2G 거래내역 카운트 (기간 필터) -->
+    <select id="countAll" resultType="int">
+        SELECT COUNT(*)
+        FROM tbl_vtog_payment v
+                 JOIN tbl_car c        ON v.vtog_car_id = c.id
+                 JOIN tbl_member m     ON c.car_member_id = m.id
+                 JOIN tbl_ev_charger e ON v.vtog_ev_charger_id = e.id
+        WHERE v.created_date BETWEEN #{startDate} AND #{endDate}
+    </select>
+
+</mapper>

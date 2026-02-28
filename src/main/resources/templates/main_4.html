@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/common/font.css" />
+    <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/common/fontawesome.css" />
+    <link rel="stylesheet" href="/css/common/common.css" />
+    <link rel="stylesheet" href="/css/common/util.css" />
+    <link rel="stylesheet" href="/css/components/headers/header-m.css" />
+    <link rel="stylesheet" href="/css/components/navigations/navigation-m.css" />
+    <link rel="stylesheet" href="/css/components/modals/modal-m.css" />
+    <link rel="stylesheet" href="/css/main/style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <title>Main</title>
+</head>
+<body>
+<div id="app" class="main">
+    <!-- 세션 디버깅 - 확인 후 삭제 -->
+    <div th:text="${session}" style="font-size:12px; color:red; padding:10px;"></div>
+
+    <!-- 세션 디버깅 - 확인 후 삭제 -->
+    <div th:each="entry : ${session}" th:text="${entry.key} + ' = ' + ${entry.value}"
+         style="font-size:12px; color:red; padding:4px;"></div>
+    <!-- 상단 배너 영역 -->
+    <div class="headBanner-container">
+        <div class="headBanner-left">
+            <div class="headBanner-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 654 363" class="WithProps-icon icon-zzone">
+                    <g transform="translate(0,382) scale(0.1,-0.1)" fill="#000000" stroke="none">
+                        <path d="M480 3809 c-167 -22 -317 -154 -370 -327 -25 -80 -27 -231 -5 -317 39 -149 150 -267 304 -321 56 -20 86 -24 193 -24 133 0 158 -4 158 -25 0 -14 -37 -97 -126 -280 -57 -118 -57 -121 -58 -210 -1 -75 3 -97 21 -130 44 -82 112 -132 189 -141 85 -9 94 -13 94 -35 0 -22 -48 -83 -456 -580 -291 -355 -305 -373 -339 -442 -39 -81 -59 -219 -45 -316 27 -180 108 -308 253 -395 114 -68 73 -66 1304 -66 1206 0 1160 -2 1275 56 77 39 162 129 203 216 117 247 29 550 -192 662 -100 50 -96 50 -673 55 -490 5 -545 8 -548 22 -2 9 67 102 154 210 255 313 1074 1337 1143 1427 76 100 124 200 145 304 20 96 20 147 1 240 -40 193 -165 342 -338 402 -62 21 -66 21 -1142 22 -594 1 -1109 -2 -1145 -7z m1522 -338 c12 -16 17 -33 13 -48 -3 -13 -96 -182 -207 -375 -154 -271 -198 -355 -191 -367 9 -14 48 -17 260 -21 271 -5 283 -8 283 -60 0 -35 6 -28 -390 -496 -144 -170 -229 -271 -436 -519 -222 -267 -408 -480 -421 -483 -7 -2 -13 1 -13 6 0 16 45 130 121 302 39 91 93 215 120 276 45 105 177 406 221 502 35 79 43 76 -224 82 -214 5 -238 7 -257 24 -30 27 -26 68 15 161 19 44 46 107 59 140 13 33 51 125 85 205 34 80 83 197 110 260 156 380 171 411 204 426 25 11 93 13 329 11 l299 -2 20 -24z" />
+                        <path d="M3860 3810 c-120 -21 -220 -83 -291 -179 -60 -82 -89 -162 -96 -267 -17 -250 104 -445 328 -526 63 -23 70 -23 599 -28 485 -5 535 -7 538 -21 2 -9 -19 -43 -46 -75 -109 -130 -396 -472 -542 -645 -85 -101 -224 -267 -309 -369 -85 -102 -234 -279 -331 -395 -97 -115 -191 -231 -208 -256 -44 -61 -83 -176 -89 -263 -7 -96 19 -234 59 -309 41 -76 129 -169 201 -211 118 -70 63 -67 1337 -64 l1145 3 57 22 c160 61 273 191 303 348 27 142 13 270 -41 377 -49 97 -164 187 -281 221 -24 7 -247 13 -613 16 -520 5 -575 8 -578 22 -2 10 71 106 170 225 96 115 210 254 255 309 44 55 140 172 213 260 72 88 174 212 225 275 52 63 145 176 207 251 365 441 383 467 414 584 19 68 18 237 -1 310 -46 176 -176 309 -365 371 -52 18 -117 19 -1135 20 -594 1 -1100 -2 -1125 -6z" />
+                    </g>
+                </svg>
+            </div>
+            <div class="headBanner-content">
+                <div class="headBanner-title">
+                    거래가 완료되었어요.<br>
+                    거래 목록은 마이페이지에서 확인 할 수 있어요!
+                </div>
+            </div>
+        </div>
+        <div class="headBanner-right">
+            <button class="headBanner-link button button-sm button-mint" href="#!"><span><span>바로 가기</span></span></button>
+            <div class="headBanner-close">
+                <button class="button button-close" type="button" onclick="bannerClose();">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon" style="height: 16px; width: 16px">
+                        <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#fff"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 헤더 영역 -->
+    <div class="header-container type1">
+        <div class="header-wrap">
+            <div class="logo-container">
+                <a class="addessPin-container" href="javascript:void(0);">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="currentColor" />
+                        <circle cx="12" cy="9" r="3" fill="white" />
+                    </svg>
+                    <p class="txt-left">강남구</p>
+                </a>
+            </div>
+            <div class="service-container">
+                <a class="notice-container" href="javascript:void(0);">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps_icon" style="height: 24px; width: 24px">
+                        <path d="M9.865 1.653c1.545-.338 2.725-.338 4.27 0 3.166.693 5.742 3.414 5.859 6.678.067 1.888.062 3.272.043 5.133-.014 1.348.694 2.716 1.42 4.113a.7.7 0 01-.621 1.022H3.164a.7.7 0 01-.621-1.022l.27-.522c.622-1.216 1.162-2.411 1.15-3.591-.02-1.861-.025-3.245.043-5.133.116-3.264 2.692-5.985 5.859-6.678zm4.014 1.173c-1.377-.301-2.382-.301-3.758 0-2.703.592-4.822 2.902-4.916 5.548-.067 1.86-.062 3.222-.042 5.077.014 1.406-.587 2.772-1.182 3.95h16.037c-.595-1.178-1.196-2.544-1.181-3.95.019-1.855.024-3.217-.042-5.077-.095-2.646-2.213-4.956-4.916-5.548z" fill="#495057"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.367 18.6a2.4 2.4 0 11-4.734 0h-1.21a3.6 3.6 0 107.156 0h-1.212z" fill="#495057"></path>
+                    </svg>
+                    <span class="NotificationBadge type-new type-number active">11</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="main-container">
+        <div class="main-wrap">
+            <div class="main-content card-container">
+                <div class="section-wrap section-header mt5 mb15">
+                    <div class="sectionTitle-container">
+                        <h2 class="sectionTitle-txt title_md">찜한 구매 항목이에요.</h2>
+                    </div>
+                </div>
+                <div class="card-wrap card_hasShadow">
+                    <a class="card-content" href="#!">
+                        <div class="thumb-container">
+                            <img class="thumb-img" src="/image/genesis.png" alt="" />
+                            <div class="thumb_overlay">
+                                <div class="thumb_topLeft"></div>
+                                <div class="thumb_topRight">
+                                    <button class="wishbtn" type="button">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon icon-wish" style="height: 24px; width: 24px">
+                                            <path d="M7 2.9c-1.696 0-3.377.845-4.426 2.314-1.06 1.484-1.448 3.563-.643 5.976.65 1.95 2.455 4.078 4.353 5.905a45.28 45.28 0 005.376 4.4.6.6 0 00.68 0 45.286 45.286 0 005.376-4.4c1.898-1.827 3.703-3.955 4.353-5.905.805-2.413.417-4.492-.643-5.976C20.376 3.745 18.696 2.9 17 2.9c-2.582 0-4.164 1.348-5 2.469C11.165 4.248 9.583 2.9 7 2.9z" fill="#495057"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_container">
+                            <div class="status_container">
+                                <div class="title title-mint title-lg">타이틀영역입니다.</div>
+                            </div>
+                            <div class="title-container">[구매] 내용입니다.</div>
+                            <div class="maker-container">
+                                <span class="maker-name">게시자 이름</span>
+                                <i class="fa-solid fa-battery-quarter mt1" style="display: flex; align-items: center; color: #ffc53d;"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <button class="button button-contain button-mint button-lg button-submit button-link mb30" type="button">
+                <span><span>더 보기</span></span>
+            </button>
+
+            <div class="main-content section-container">
+                <div class="section-wrap section-header">
+                    <div class="sectionTitle-container">
+                        <h2 class="sectionTitle-txt title_md">구매/판매 실시간 베스트</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 하단 네비게이션 영역 -->
+    <div id="GNB" class="navigationBar-container">
+        <a class="NavigationTab-container active" th:href="@{/ev/main}">
+            <div class="NavigationTab-icon"><i class="fa-solid fa-house"></i></div>
+            <div class="NavigationTab-name">홈</div>
+            <span class="NotificationBadge type-new">N</span>
+        </a>
+        <a class="NavigationTab-container" th:href="@{/ev/p2p/list}">
+            <div class="NavigationTab-icon"><i class="fa-solid fa-comments-dollar"></i></div>
+            <div class="NavigationTab-name">개인 거래</div>
+            <span class="NotificationBadge type-new active">N</span>
+        </a>
+        <a class="NavigationTab-container" th:href="@{/ev/evcharger}">
+            <div class="NavigationTab-icon"><i class="fa-regular fa-user"></i></div>
+            <div class="NavigationTab-name">마이GG#</div>
+            <span class="NotificationBadge type-new active">N</span>
+        </a>
+    </div>
+
+    <!-- 퀵메뉴 영역 -->
+    <aside id="Quick" class="quickButton-container">
+        <button type="button" class="quickButton-pageTop">
+            <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg" width="32" style="height: 32px; width: 32px">
+                <path d="M4 5.4h16v1.2H4V5.4zM5.424 18.424l-.848-.848L12 10.15l7.424 7.425-.848.848L12 11.85l-6.576 6.575z" fill="#222"></path>
+            </svg>
+        </button>
+        <button type="button" id="QuickV2G" class="quickButton-V2G" onclick="modalOpen('modalBottomSheet')">
+            <span class="zz1OpenButton_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 654 363" class="WithProps-icon icon-zzone">
+                    <g transform="translate(0,382) scale(0.1,-0.1)" fill="#000000" stroke="none">
+                        <path d="M480 3809 c-167 -22 -317 -154 -370 -327 -25 -80 -27 -231 -5 -317 39 -149 150 -267 304 -321 56 -20 86 -24 193 -24 133 0 158 -4 158 -25 0 -14 -37 -97 -126 -280 -57 -118 -57 -121 -58 -210 -1 -75 3 -97 21 -130 44 -82 112 -132 189 -141 85 -9 94 -13 94 -35 0 -22 -48 -83 -456 -580 -291 -355 -305 -373 -339 -442 -39 -81 -59 -219 -45 -316 27 -180 108 -308 253 -395 114 -68 73 -66 1304 -66 1206 0 1160 -2 1275 56 77 39 162 129 203 216 117 247 29 550 -192 662 -100 50 -96 50 -673 55 -490 5 -545 8 -548 22 -2 9 67 102 154 210 255 313 1074 1337 1143 1427 76 100 124 200 145 304 20 96 20 147 1 240 -40 193 -165 342 -338 402 -62 21 -66 21 -1142 22 -594 1 -1109 -2 -1145 -7z" />
+                        <path d="M3860 3810 c-120 -21 -220 -83 -291 -179 -60 -82 -89 -162 -96 -267 -17 -250 104 -445 328 -526 63 -23 70 -23 599 -28 485 -5 535 -7 538 -21 2 -9 -19 -43 -46 -75 -109 -130 -396 -472 -542 -645 -85 -101 -224 -267 -309 -369 -85 -102 -234 -279 -331 -395 -97 -115 -191 -231 -208 -256 -44 -61 -83 -176 -89 -263 -7 -96 19 -234 59 -309 41 -76 129 -169 201 -211 118 -70 63 -67 1337 -64 l1145 3 57 22 c160 61 273 191 303 348 27 142 13 270 -41 377 -49 97 -164 187 -281 221 -24 7 -247 13 -613 16 -520 5 -575 8 -578 22 -2 10 71 106 170 225 96 115 210 254 255 309 44 55 140 172 213 260 72 88 174 212 225 275 52 63 145 176 207 251 365 441 383 467 414 584 19 68 18 237 -1 310 -46 176 -176 309 -365 371 -52 18 -117 19 -1135 20 -594 1 -1100 -2 -1125 -6z" />
+                    </g>
+                </svg>
+            </span>
+        </button>
+        <span class="NotificationBadge type-new">N</span>
+    </aside>
+
+    <!-- =============================================
+         모달 - ZZ1 판매 폼 (bottomSheet)
+         ============================================= -->
+    <div id="modalBottomSheet" class="modal bottomSheet">
+        <div class="Modal_overlay">
+            <div id="ZZ1Modal" class="ZZ1Modal-container">
+                <div class="ZZ1Modal-header">
+                    <div class="ZZ1Modal-button">
+                        <button class="button button-close" type="button" onclick="modalCloses()">
+                            <span><span>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" style="height:24px;width:24px">
+                                    <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                </svg>
+                            </span></span>
+                        </button>
+                    </div>
+                    <!-- ① 회원명 Thymeleaf로 주입 -->
+
+
+                    <strong class="ZZ1Modal-title">
+                        <span th:if="${session.member != null}"
+                              th:text="${session.member.memberName} + '님 한전에 전기를 팔 수 있어요!'">
+                            한전에 전기를 팔 수 있어요!
+                        </span>
+                                            <span th:if="${session.member == null}">
+                            한전에 전기를 팔 수 있어요!
+                        </span>
+                    </strong>
+
+                </div>
+                <div class="ZZ1Modal-content mt0 pt0">
+                    <div class="ZZ1Modal-wrap mt0">
+                        <form action="" class="ZZOneForm">
+                            <!-- 차트 -->
+                            <div class="main-content chart-container">
+                                <div class="chart-wrap chart-shadow avgChart">
+                                    <div class="mb25">
+                                        <h3 id="periodTitle" style="color:#adb5bd;font-size:14px;margin:0;font-weight:500">오늘의 실시간 SMP 단가</h3>
+                                        <div style="display:flex;align-items:baseline;gap:8px;margin-top:4px">
+                                            <span id="profitAmount" class="chart-krw">로딩중...</span>
+                                            <span id="profitPercent" class="chart-percent"></span>
+                                        </div>
+                                    </div>
+                                    <div style="height:250px;position:relative">
+                                        <canvas id="avgChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ② 가격(KRW) - 현재 시간 SMP 단가 자동 입력 -->
+                            <div class="KRW-container">
+                                <div class="KRW-wrap">
+                                    <label for="KRW"><span>현재 SMP 단가 (원/kWh)</span></label>
+                                    <div class="inputField mt6">
+                                        <input type="text" id="KRW"
+                                               class="input input-lg input-ph-sm tr pr0"
+                                               value="로딩중..." readonly />
+                                        <span>원/kWh</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 내 전기량 - 스킵(표시만) -->
+                            <div class="MyKWH-container">
+                                <div class="MyKWH-wrap">
+                                    <label for="KWH"><span>내 전기량(KWH)</span></label>
+                                    <div class="inputField mt6">
+                                        <input type="text" id="KWH"
+                                               class="input input-lg input-ph-sm tr pr0"
+                                               value="999,999" readonly />
+                                        <span>KWH</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ③ 판매할 전기량 입력 -->
+                            <div class="KWH-container">
+                                <div class="KWH-wrap">
+                                    <label for="KWH_input"><span>판매할 전기량(KWH)</span></label>
+                                    <div class="inputField mt6">
+                                        <input type="text" id="KWH_input"
+                                               class="input input-lg input-ph-sm tr pr0"
+                                               placeholder="와트를 입력해주세요."
+                                               oninput="this.value=this.value.replace(/[^0-9.]/g,'')" />
+                                        <span>KWH</span>
+                                    </div>
+                                    <p class="input-message color-mint tr">판매 가능한 전기량: 999,999KWH</p>
+                                </div>
+                            </div>
+
+                            <!-- 판매 버튼 → 확인 모달 열기 전 계산 -->
+                            <button class="button button-contain button-mint button-lg button-submit"
+                                    type="button"
+                                    onclick="openConfirmWithCalc()">
+                                <span><span>판매</span></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============================================
+         모달 - ZZ1 확인 (confirm)
+         ============================================= -->
+    <div id="modalConfirm" class="modal">
+        <div class="Modal_overlay">
+            <div class="confirmModal-container">
+                <div class="confirmModal-header">
+                    <div class="confirmModal-button">
+                        <button class="button button-close" type="button"
+                                onclick="modalCloses(); showToast('ZZ1Cancel');">
+                            <span><span>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" style="height:24px;width:24px">
+                                    <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                </svg>
+                            </span></span>
+                        </button>
+                    </div>
+                    <div class="confirmModal-title">ZZ1 판매 확인</div>
+                </div>
+                <div class="confirmModal-content">
+                    <div class="confirmModal-message">
+                        <span class="notice-txt">
+                            안전한 에너지 거래를 위해 판매 내역을 확인해 주세요.<br />
+                            국가 전력망으로 전송된 에너지는 취소가 불가능합니다.
+                        </span>
+                    </div>
+                    <!-- ③ 판매량 / 정산금액 동적 표시 -->
+                    <div class="confirmModal-message mv5">
+                        <strong>
+                            판매량: <span id="confirmSalesKwh">-</span> kWh<br />
+                            정산 예정 금액: <span id="confirmSalesPrice">-</span> 원<br />
+                            (한전 SMP 단가 기준)
+                        </strong>
+                    </div>
+                    <div class="confirmModal-message">
+                        <span class="notice-txt">판매된 전력은 다음 달 전기량에서 차감되거나 현금으로 정산됩니다.</span>
+                    </div>
+                </div>
+                <div class="confirmModal-footer">
+                    <div class="buttonGroup">
+                        <button class="button button-size button-confirm" onclick="onlyClose('modalConfirm')">
+                            <span><span>돌아가기</span></span>
+                        </button>
+                        <button class="button button-size button-mint button-confirm" type="button" onclick="zzoneInsert();">
+                            <span><span>에너지 기여하기</span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - alarm 확인 -->
+    <div id="modalAlarmConfirm" class="modal">
+        <div class="Modal_overlay">
+            <div class="confirmModal-container">
+                <div class="confirmModal-header">
+                    <div class="confirmModal-button">
+                        <button class="button button-close" type="button" onclick="modalCloses()">
+                            <span><span>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" style="height:24px;width:24px">
+                                    <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                </svg>
+                            </span></span>
+                        </button>
+                    </div>
+                    <div class="confirmModal-title">정말 취소하시겠어요?</div>
+                </div>
+                <div class="confirmModal-content">
+                    <div class="confirmModal-message">해당 거래 알림과 혜택을 받을 수 없어요.</div>
+                </div>
+                <div class="confirmModal-footer">
+                    <div class="buttonGroup">
+                        <button class="button button-size button-mint button-confirm button-contain" type="button" onclick="confirmAlarmCancel()">
+                            <span><span>취소하기</span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 토스트 영역 -->
+    <div id="toast" class="toast-container">
+        <div class="toast-wrap">
+            <div id="wishAdd" class="toast_hide show-container none">
+                <div class="show-content">
+                    <div class="Activity_container">
+                        <p class="Activity-text">위시리스트에 추가하였습니다.</p>
+                        <a class="Activity-link" href="#!">바로 가기</a>
+                    </div>
+                </div>
+            </div>
+            <div id="wishRemove" class="toast_hide show-container none"><div class="show-content">위시리스트를 제외했어요.</div></div>
+            <div id="alarmAdd" class="toast_hide show-container none">
+                <div class="show-content">
+                    <div class="Activity_container">
+                        <p class="Activity-text">알림 신청을 완료했어요.</p>
+                        <a class="Activity-link" href="#!">바로 가기</a>
+                    </div>
+                </div>
+            </div>
+            <div id="alarmRemove" class="toast_hide show-container none"><div class="show-content">알람 신청을 취소했어요.</div></div>
+            <div id="ZZ1Cancel" class="toast_hide show-container none"><div class="show-content">ZZ1 거래를 취소하였어요.</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- Event handler -->
+<script src="/js/headers/header-m.js"></script>
+<script src="/js/modals/modal-m.js"></script>
+<script src="/js/navigations/navigation-m.js"></script>
+<script src="/js/navigations/quick_navigation-m.js"></script>
+<script src="/js/main/event.js"></script>
+<script src="/js/banner/banner.js"></script>
+
+<!-- Chart.js -->
+<script src="/js/api/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+
+<script>
+    let avgChartInstance = null;
+    let currentSmpPrice  = 0;   // ② 현재 시간 SMP 단가 저장용
+
+    function getTodayStr() {
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, '0');
+        const d = String(now.getDate()).padStart(2, '0');
+        return `${y}${m}${d}`;
+    }
+
+    async function loadSmpChart() {
+        try {
+            const today = getTodayStr();
+            const url = `https://apis.data.go.kr/B552115/SmpWithForecastDemand/getSmpWithForecastDemand`
+                + `?serviceKey=cad6b49a2d56987689ed5b310c86ab5dab20fa983be99195e1e1cfe857170c8f`
+                + `&pageNo=1&numOfRows=24&dataType=json&date=${today}`;
+
+            const response = await fetch(url);
+            const result   = await response.json();
+            const items    = result.response.body.items.item;
+
+            const labels = items.map(i => `${i.hour}시`);
+            const values = items.map(i => parseFloat(i.smp));
+
+            // ② 현재 시각에 해당하는 SMP 단가 찾기
+            const currentHour = new Date().getHours();  // 0~23
+            const matchedItem = items.find(i => parseInt(i.hour) === currentHour)
+                || items[items.length - 1]; // 없으면 마지막 항목
+            currentSmpPrice = parseFloat(matchedItem.smp);
+
+            // 가격 input 업데이트
+            document.getElementById('KRW').value = currentSmpPrice.toLocaleString();
+
+            // 헤더 표시
+            const latestSmp = values[values.length - 1];
+            const prevSmp   = values[values.length - 2] || latestSmp;
+            const diff      = (((latestSmp - prevSmp) / prevSmp) * 100).toFixed(1);
+            const isUp      = diff >= 0;
+
+            document.getElementById('periodTitle').innerText  = `오늘(${today.slice(4,6)}/${today.slice(6,8)}) 실시간 SMP 단가`;
+            document.getElementById('profitAmount').innerText = `${currentSmpPrice.toLocaleString()}원/kWh`;
+            const pctEl = document.getElementById('profitPercent');
+            pctEl.innerText = `${isUp ? '+' : ''}${diff}%`;
+            pctEl.className = `chart-percent ${isUp ? '' : 'down'}`;
+
+            // 평균선
+            const avg = values.reduce((a, b) => a + b, 0) / values.length;
+
+            const canvas = document.getElementById('avgChart');
+            const ctx    = canvas.getContext('2d');
+            if (avgChartInstance) avgChartInstance.destroy();
+
+            avgChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [
+                        {
+                            label: 'SMP(원/kWh)',
+                            data: values,
+                            borderWidth: 3,
+                            pointRadius: 0,
+                            hoverRadius: 6,
+                            tension: 0.4,
+                            borderColor: '#3182f6',
+                            segment: {
+                                borderColor: c =>
+                                    c.p1.parsed.y > c.p0.parsed.y ? '#f63131' : '#3182f6'
+                            }
+                        },
+                        {
+                            label: '평균',
+                            data: new Array(values.length).fill(avg),
+                            borderWidth: 1,
+                            borderColor: '#adb5bd',
+                            borderDash: [5, 5],
+                            pointRadius: 0,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { intersect: false, mode: 'index' },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: '#1c1c1e',
+                            padding: 10,
+                            callbacks: {
+                                label: c => {
+                                    if (c.datasetIndex === 1) return ` 평균: ${c.parsed.y.toFixed(2)}원`;
+                                    return ` SMP: ${c.parsed.y.toFixed(2)}원/kWh`;
+                                }
+                            }
+                        },
+                        zoom: {
+                            pan:  { enabled: true, mode: 'x' },
+                            zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' }
+                        }
+                    },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { color: '#4e5968' } },
+                        y: { display: false }
+                    }
+                }
+            });
+
+        } catch (e) {
+            console.error('SMP 데이터 로드 실패:', e);
+            document.getElementById('profitAmount').innerText = '데이터 로드 실패';
+            document.getElementById('KRW').value = '0';
+        }
+    }
+
+    // ③ 판매 버튼 클릭 → 판매량/정산금액 계산 후 확인 모달 오픈
+    function openConfirmWithCalc() {
+        const kwhInput = document.getElementById('KWH_input').value.trim();
+
+        if (!kwhInput || parseFloat(kwhInput) <= 0) {
+            alert('판매할 전기량을 입력해주세요.');
+            return;
+        }
+
+        const salesKwh   = parseFloat(kwhInput);
+        const salesPrice = Math.round(salesKwh * currentSmpPrice);  // 판매량 × 단가
+
+        // 확인 모달에 값 주입
+        document.getElementById('confirmSalesKwh').innerText   = salesKwh.toLocaleString();
+        document.getElementById('confirmSalesPrice').innerText = salesPrice.toLocaleString();
+
+        modalOpen('modalConfirm');
+    }
+
+    // ZZ1 서버 전송
+    function zzoneInsert() {
+        const salesKwh   = parseFloat(document.getElementById('KWH_input').value.replace(/,/g, ''));
+        const salesPrice = Math.round(salesKwh * currentSmpPrice);
+
+        if (!salesKwh || salesKwh <= 0) {
+            alert('판매할 전기량을 입력해주세요.');
+            return;
+        }
+        fetch('/vtog/transaction/zzone/insert', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ salesKwh, salesPrice })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    modalCloses();
+                    bannerOpen();
+                } else {
+                    alert('오류: ' + data.message);
+                }
+            })
+            .catch(() => alert('에너지 기여 중 오류가 발생했습니다.'));
+    }
+
+    // 퀵버튼 클릭 시 최신 데이터 로드
+    document.getElementById('QuickV2G').addEventListener('click', () => {
+        loadSmpChart();
+    });
+
+    // 페이지 로드 시 1회 미리 로드
+    loadSmpChart();
+</script>
+
+</body>
+</html>

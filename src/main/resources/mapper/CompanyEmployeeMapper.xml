@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.ggshop.v1.mapper.CompanyEmployeeMapper">
+
+    <!-- 임직원 등록 -->
+    <insert id="insertEmployee" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tbl_company_employee (
+            company_employee_name,
+            company_employee_rank,
+            company_employee_email,
+            company_employee_number,
+            company_employee_department,
+            ev_charger_content,
+            company_employee_status,
+            created_date,
+            employee_company_id
+        ) VALUES (
+                     #{employeeName},
+                     #{position},
+                     #{email},
+                     #{employeeNumber},
+                     #{department},
+                     #{employeeNote},
+                     'active',
+                     #{joinDate},
+                     #{employeeCompanyId}
+                 )
+    </insert>
+
+    <!-- 임직원 목록 조회 (페이징) -->
+    <select id="selectAll" resultType="com.app.ggshop.v1.dto.CompanyEmployeeDTO">
+        SELECT
+            id,
+            company_employee_name AS employeeName,
+            company_employee_rank AS position,
+            company_employee_email AS email,
+            company_employee_number AS employeeNumber,
+            company_employee_department AS department,
+            ev_charger_content AS employeeNote,
+            company_employee_status,
+            created_date AS joinDate,
+            updated_date AS updatedDatetime,
+            employee_company_id AS employeeCompanyId
+        FROM tbl_company_employee
+        ORDER BY created_date DESC
+        LIMIT #{criteria.rowCount} OFFSET #{criteria.offset}
+    </select>
+
+    <!-- 임직원 전체 개수 -->
+    <select id="selectTotal" resultType="int">
+        SELECT COUNT(*)
+        FROM tbl_company_employee
+    </select>
+
+    <!-- 임직원 ID로 조회 -->
+    <select id="selectById" resultType="com.app.ggshop.v1.dto.CompanyEmployeeDTO">
+        SELECT
+            id,
+            company_employee_name AS employeeName,
+            company_employee_rank AS position,
+            company_employee_email AS email,
+            company_employee_number AS employeeNumber,
+            company_employee_department AS department,
+            ev_charger_content AS employeeNote,
+            company_employee_status,
+            created_date AS joinDate,
+            updated_date AS updatedDatetime,
+            employee_company_id AS employeeCompanyId
+        FROM tbl_company_employee
+        WHERE id = #{id}
+    </select>
+
+    <!-- 임직원 삭제 -->
+    <delete id="deleteById">
+        DELETE FROM tbl_company_employee
+        WHERE id = #{id}
+    </delete>
+
+    <!-- 임직원 수정 -->
+    <update id="updateEmployee">
+        UPDATE tbl_company_employee
+        SET company_employee_name = #{employeeName},
+            company_employee_rank = #{position},
+            company_employee_email = #{email},
+            company_employee_department = #{department},
+            ev_charger_content = #{employeeNote},
+            updated_date = NOW()
+        WHERE id = #{id}
+    </update>
+
+    <!-- 검색 조건 포함 목록 조회 -->
+    <select id="selectAllWithSearch" resultType="com.app.ggshop.v1.dto.CompanyEmployeeDTO">
+        SELECT
+        id,
+        company_employee_name AS employeeName,
+        company_employee_rank AS position,
+        company_employee_department AS department,
+        company_employee_email AS email,
+        company_employee_number AS employeeNumber,
+        ev_charger_content AS employeeNote,
+        created_date AS joinDate
+        FROM tbl_company_employee
+        WHERE 1=1
+        <choose>
+            <when test="searchType == 'employeeName'">
+                AND company_employee_name LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="searchType == 'employeeNumber'">
+                AND company_employee_number LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="searchType == 'department'">
+                AND company_employee_department LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <otherwise>
+                AND (
+                company_employee_name LIKE CONCAT('%', #{keyword}, '%')
+                OR company_employee_number LIKE CONCAT('%', #{keyword}, '%')
+                OR company_employee_department LIKE CONCAT('%', #{keyword}, '%')
+                )
+            </otherwise>
+        </choose>
+        ORDER BY created_date DESC
+        LIMIT #{criteria.rowCount} OFFSET #{criteria.offset}
+    </select>
+
+    <!-- 검색 조건 포함 전체 개수 -->
+    <select id="selectTotalWithSearch" resultType="int">
+        SELECT COUNT(*)
+        FROM tbl_company_employee
+        WHERE 1=1
+        <choose>
+            <when test="searchType == 'employeeName'">
+                AND company_employee_name LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="searchType == 'employeeNumber'">
+                AND company_employee_number LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="searchType == 'department'">
+                AND company_employee_department LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <otherwise>
+                AND (
+                company_employee_name LIKE CONCAT('%', #{keyword}, '%')
+                OR company_employee_number LIKE CONCAT('%', #{keyword}, '%')
+                OR company_employee_department LIKE CONCAT('%', #{keyword}, '%')
+                )
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="countByEmployeeNumber" parameterType="String" resultType="int">
+        SELECT COUNT(*) FROM tbl_company_employee WHERE company_employee_number = #{employeeNumber}
+    </select>
+
+</mapper>

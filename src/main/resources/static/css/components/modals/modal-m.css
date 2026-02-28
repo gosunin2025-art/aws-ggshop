@@ -1,0 +1,422 @@
+/* common */
+.modal{position: relative; z-index: 999; visibility: hidden; opacity: 0; transition: opacity 0.3s, visibility 0s, background 0.3s;}
+.modal.active{visibility: visible; opacity: 1; transition: .5s;}
+.modal.bottomSheet{opacity: 1; transition: opacity 0.3s, visibility 0s 0s;}
+.modal.bottomSheet.active{transition: opacity 0s, visibility 0s 0s;}
+.modal.bottomSheet > div > div{transform: translate(0, 100%); transition: transform 0.3s ease-in-out;}
+.modal.bottomSheet.active > div > div{transform: translate(0, 0);}
+
+
+/* inputField,input */
+.inputField{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-inline: 16px;
+    border: 1px solid #dde2e6;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.inputField.focus{
+    
+    border-color: #00c4c4;
+}
+.inputField.blur{
+    border-color: #868e96;
+}
+.input{
+    display: block;
+    transition-property: border-color, background-color, color;
+    transition-duration: .15s;
+    outline: none;
+    border: 1px solid #dde2e6;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 0 16px;
+    width: 100%;
+    height: 40px;
+    vertical-align: middle;
+    color: #212529;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.input::placeholder {
+    color: #adb5bd
+}
+.input-ph-sm::placeholder {
+    font-size: 14px;
+}
+.input-message {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 4px;
+}
+.input-message.nomal {
+    color: #868e96;
+}
+.input-message.color-mint {
+    color: #00c4c4;
+}
+.Field-box {}
+.inputField .input{
+    flex-grow: 1;
+    border: 0;
+    max-width: 100%;
+    border-radius: 0;
+    padding: 0 16px;
+}
+.inputField .input.input-hasIcon{
+    padding-right: 44px;
+    padding-left: 16px;
+}
+
+.Modal_overlay {
+    display: inline-flex;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    /* z-index: 32; */
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: .3s;
+    /* animation: confirmModal-module_overlayInit__d02cc .25s; */
+}
+/* modal style */
+ /* alert modal */
+.confirmModal-container{
+    position: relative;
+    display: flex;
+    width: 400px;
+    max-width: calc(100% - 32px);
+    flex-direction: column;
+    outline: none;
+    border-radius: 16px;
+    box-shadow: 0 32px 40px -2px #0a16461f, 0 0 5px #0a16460f;
+    background: #fff;
+    padding-block: 24px;
+    max-height: calc(100vh - 160px);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+.confirmModal-container > div {
+    padding: 0 24px;
+}
+.confirmModal-header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+    padding: 0 16px;
+}
+.confirmModal-content{
+    display: inline-flex;
+    flex-direction: column;
+    overflow: auto;
+    color: #495057;
+    margin-top: 12px;
+}
+.confirmModal-footer{
+    position: relative;
+    margin-top: 24px;
+}
+
+.confirmModal-button{
+    flex-shrink: 0;
+    margin-left: auto;
+}
+.confirmModal-title{
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5;
+        color: #212529;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+}
+.confirmModal-message{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 0;
+    width: 100%;
+    resize: none;
+}
+.confirmModal-message .notice-txt{
+    font-size: 14px;
+    
+}
+
+ /* form modal */
+.FormModal-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 1023px;
+    max-height: 100vh;
+    padding-top: 24px;
+    padding-block: 24px;
+    outline: none;
+    box-shadow: 0 32px 40px -2px #0a16461f, 0 0 5px #0a16460f;
+    background: #fff;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    transform: translateY(0);
+    transition-timing-function: ease-in;
+    transition-delay: 0ms;
+    transition: .15s ease-out 50ms;
+    transition-property: transform;
+    border-radius: 0;
+    
+}
+/* 임시 UI 맞춤 */
+.FormModal-container .button-close {
+    margin-top: 1px;
+}
+.FormModal-container > div {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.FormModal-header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+}
+.FormModal-button{
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.FormModal-title{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.FormModal-content{
+    display: inline-flex;
+    flex-direction: column;
+    overflow: auto;
+    color: #495057;
+    margin-top: 12px;
+}
+
+.FormModal-wrap{
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+ /* ZZ1 modal */
+.ZZ1Modal-container{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: 95%;
+    background: #fff;
+    border-radius: 16px 16px 0 0;
+    padding-top: 0;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+    padding-block: 24px;
+    outline: none;
+    overflow: visible;
+    box-shadow: 0 32px 40px -2px #0a16461f, 0 0 5px #0a16460f;
+    transform: translateY(0);
+    transition-timing-function: ease-in;
+    transition-delay: 0ms;
+    transition: .15s ease-out 50ms;
+    transition-property: transform;
+}
+/* 임시 UI 맞춤 */
+.ZZ1Modal-container .button-close {
+    margin-top: 1px;
+}
+.ZZ1Modal-container > div {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.ZZ1Modal-header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-bottom: 10px;
+}
+.ZZ1Modal-button{
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.ZZ1Modal-title{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.ZZ1Modal-content{
+    display: inline-flex;
+    flex-direction: column;
+    overflow: auto;
+    color: #495057;
+    margin-top: 12px;
+    padding-top: 20px;
+}
+
+.ZZ1Modal-wrap{
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+
+
+.ZZOneForm,
+.passwordForm{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 560px;
+}
+.ZZOneForm .inputField input{
+}
+.ZZOneForm .inputField span{
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0 16px 0 6px;
+}
+
+.currentPassword-container{
+    display: flex;
+    flex-direction: column;
+}
+.currentPassword-wrap{
+    display: block;
+    position: relative;
+}
+.currentPassword-container label,
+.newPassword-container label,
+.newPasswordConfirm-container label{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 4px;
+}
+/* .currentPassword-container label span{} */
+.ZZ1Modal-container .inputField,
+.currentPassword-container .inputField,
+.newPassword-container .inputField,
+.newPasswordConfirm-container .inputField{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/* 토스트(toast) 영역 */
+.toast-wrap{
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    width: 100%;
+    pointer-events: none;
+}
+.toast_show{
+    animation-name: toast_show;
+    animation-duration: .35s;
+    animation-timing-function: cubic-bezier(.08, .95, .16, 1);
+}
+@keyframes toast_show {
+    0% {
+        transform: translateY(-100%);
+        opacity: .2
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+.toast_show.active{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.toast_hide{
+    animation-name: toast_hide;
+    animation-duration: .55s;
+    animation-timing-function: cubic-bezier(.08, .95, .16, 1);
+}
+@keyframes toast_hide {
+    0% {
+        transform: translateY(0);
+        opacity: 1
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0
+    }
+}
+.toast_hide.active{
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.show-container{
+    position: absolute;
+    top: 0;
+    right: 16px;
+    left: 16px;
+    animation-fill-mode: forwards;
+    margin: 12px auto 0;
+    border-radius: 8px;
+    background-color: #212529;
+    padding: 16px;
+    box-sizing: border-box;
+    
+}
+.show-content{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    pointer-events: all;
+}
+.Activity_container{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+.Activity_container .Activity-text{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    flex: 1 0 0;
+    white-space: pre-line;
+}
+.Activity_container .Activity-link{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #00c4c4;
+}

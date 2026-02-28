@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/p2p/p2p_write.css">
+    <link rel="stylesheet" href="/css/p2p/p2p_write_modal.css">
+
+    <title>Document</title>
+
+
+    <style>
+
+        .ReactModalPortal {
+            display: none;
+            /* display:block; */
+        }
+
+ 
+        input[readonly] {
+            background-color: #f5f5f5;
+            cursor: not-allowed;
+        }         
+
+    </style>
+
+
+</head>
+<body>
+
+        <div id="root">
+
+            <div id="AppLayout_Container" class="AppLayout_container__ZDJjM">
+
+                    <div class="MobileHeadUpBanner_container__NDgwZ">
+                        <div class="MobileHeadUpBanner_content__NDBhY">
+                        <button aria-label="close banner" class="Button_button__OGUxN Button_text__N2NkZ Button_md__OWU3N Button_iconOnly__NzhkM iconButton MobileHeadUpBanner_closeButton__MjczO" type="button">
+                            <span>
+                                <span>
+                                    <svg width="20" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N" style="height: 20px; width: 20px;">
+                                        <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
+                        <div class="MobileHeadUpBanner_waIcon__NzU1M" aria-hidden="true">
+                            <svg width="22" height="8" viewBox="0 0 115 40" xmlns="http://www.w3.org/2000/svg" class="artwork">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M110.384 0.68791V38.484L106.314 38.4549C104.422 38.4718 102.719 37.3131 102.04 35.5475C93.5244 41.7441 81.908 41.446 73.7218 34.8207C68.8453 30.8588 66.1906 24.7799 66.5987 18.5102C67.1074 10.8765 71.9626 4.21647 79.0746 1.39651C86.1866 -1.42345 94.2865 0.099787 99.8883 5.31066C100.101 2.69288 102.292 0.679297 104.918 0.68791H110.384ZM77.7921 19.9058C77.5955 26.0933 82.4221 31.2832 88.6076 31.5353C94.7931 31.2832 99.6197 26.0933 99.4231 19.9058C99.6197 13.7183 94.7931 8.52836 88.6076 8.2762C82.4221 8.52836 77.5955 13.7183 77.7921 19.9058Z"></path>
+                                <path d="M48.8054 24.325L56.4519 0.658836L67.1801 0.68791L54.5911 38.484H43.8338L35.5186 14.2073L27.1744 38.484H16.4171L3.85715 0.775132H14.5854L22.2319 24.325L28.7735 4.264C29.4437 2.18156 31.3831 0.771105 33.5707 0.775132H41.1008L48.8054 24.325Z"></path>
+                            </svg>
+                        </div>
+                        <div class="MobileHeadUpBanner_textBox__MmVmY">
+                            <strong>
+                                <span>앱에서 편리하게
+                                </span>프로젝트를 관리해 보세요
+                            </strong>
+                        </div>
+                        </div>
+                        <div class="MobileHeadUpBanner_buttonContainer__YzVmN">
+                            <button class="Button_button__OGUxN Button_gray__ZmRjZ Button_contained__OTFhN Button_sm__YjBhN" type="button">
+                                <span>
+                                    <span>앱 열기</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="AppGNBbar_container__ZGY0Y">
+                        <button type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N" style="height: 24px; width: 24px;">
+                                <path d="M2 5.40002H22V6.60003L2 6.60002V5.40002Z" fill="#495057"></path>
+                                <path d="M2 11.4L22 11.4V12.6L2 12.6V11.4Z" fill="#495057"></path>
+                                <path d="M22 17.4L2 17.4V18.6L22 18.6V17.4Z" fill="#495057"></path>
+                            </svg>
+                        </button>
+                        <div> 개인간 전력거래 서비스 </div>
+                        <div class="AppGNBbar_flex__MTUyY AppGNBbar_rightBox__YTYyN">
+                            <div class="AppGNBbar_announcementIcon__NjEzO"></div>
+                        </div>
+                    </div>
+                    <div class="AppLayout_main__OTk0Y">
+                        <div class="AppNavbarLayout_backdrop__ODdkO"></div>
+
+                        <div id="AppLayout_Contents" class="AppLayout_contents__N2Q2M">
+                        
+                            <main class="FundingPage_container__NmZmM">
+                                <div id="FundingPage_Content" class="FundingPage_box__NmQyY FundingPage_footer__Nzg5N">
+                                    <section>
+                                        <div class="FundingPage_headBanner__MzQwM"></div>
+                                    </section> <!-- FundingPage_headBanner  -->
+                                    <section class="FundingPage_presentation__OWEzN">
+                                        <div class="FundingPage_content__OGVjM">
+                                            <div class="StoryAI_container__MmI0M spacing-9">
+                                                <div class="StoryAIReview_container__YWMxN">
+                                                    <button class="StoryAIReview_accordion__NzljN StoryAIReview_expand__Yzk4Y" type="button">
+                                                    <!--    <span class="StoryAIReview_header__ODZlN">AI 심사   -->
+
+                                                        <span class="StoryAIReview_header__ODZlN"> 개인간 전력거래 AI 최적 매칭 시스템                                                               
+
+                                                        </span> 
+                                                        <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N StoryAIReview_icon__MmZmM">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057">
+                                                            </path>
+                                                        </svg>
+                                                    </button>
+                                                    <p class="StoryAIReview_title__NjIwZ">
+                                                        <i class="StoryAIReview_icon__MmZmM">
+                                                        </i> 현재 위치 주소를 입력 하여 전력거래할 장소의 최적 매칭 서비스를 이용해 보세요.
+                                                    </p>
+
+                                                    <div>
+                                                        <img src="./p2p_v2v.png">
+
+                                                    </div>
+
+                                                    <div class="StoryAIReview_description__M2QxM">
+                                                        <ul class="StoryAIReview_tooltipList__NTI5Z">
+                                                            <div class="MarkdownToHtml_container__NTYxY">
+                                                                <ul>
+                                                                    <li> 최적 매칭은 최대 약 1분 내외 소요돼요.</li>
+                                                                    <li>
+                                                                        <strong style="font-weight: 700">AI 심사는 제출 전까지 5회 이용 가능해요.</strong>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <li> 개인간 전력거래 최적 매칭이 완료되면 카카오 알림이 발송됩니다., 화면 새로고침 후 매칭 결과를 확인해 주세요.</li>
+                                                        </ul>
+                                                    </div>
+
+<!-- 회원가입때 주소 -->
+                                                    <h5 class="Section_title__MDg2N Section_isRequired__YzhiZ"> * 서비스 이용 주소  </h5>
+<!-- 
+
+                                                    <div>
+                                                        <input type="checkbox" id="chk">
+                                                        <span> 새로운 주소 사용 </span>
+                                                    </div>
+
+                                                    <input
+                                                    id="addressInput"
+                                                    placeholder="새로운 주소를 입력하세요."
+                                                    maxlength="40"
+                                                    type="text"
+                                                    class="Input_input__YTViM Input_lg__N2QwY"
+                                                    aria-invalid="false"
+                                                    value="서울특별시 노원구 동일로 241길"
+                                                    readonly
+                                                  > -->
+
+                                                  <div class="LoginFormAndSocialButtons-module_rememberMe__1c8e4">
+                                                        <!--  와디즈 체크 박스 -->
+                                                    <label class="Checkbox-module_checkbox__69023 
+                                                                    Checkbox-module_sm__1dbd2 
+                                                                    Checkbox-module_labeled__89ffe">
+                                                        <!-- <input class="Checkbox-module_input__7487d" id="chk" type="checkbox" checked> -->
+                                                        <input class="Checkbox-module_input__7487d" id="chk" type="checkbox">
+                                                        <span aria-hidden="true" class="Checkbox-module_icon__cf099">
+                                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" 
+                                                                class="WithProps-module_icon__d564b Checkbox-module_removeIcon__06586">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 11.4L22 11.4L22 12.6L2 12.6L2 11.4Z" fill="#495057">
+                                                                </path>
+                                                            </svg>
+                                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" 
+                                                                class="WithProps-module_icon__d564b Checkbox-module_checkIcon__0ab64">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.8485 6.84852L8.99999 19.697L2.15146 12.8485L3.84852 11.1515L8.99999 16.3029L20.1515 5.15146L21.8485 6.84852Z" fill="#495057">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="Checkbox-module_content__942dc">
+                                                            <span class="Checkbox-module_text__82fcd">새로운 주소 사용</span>
+                                                        </span>
+                                                    </label>                                                  
+                                                </div>
+
+                                                  
+
+                                                <div class="AddressInputWrapper" style="display: block;">
+
+                                                    <input
+                                                    id="addressInput"
+                                                    placeholder="새로운 주소를 입력하세요."
+                                                    maxlength="40"
+                                                    type="text"
+                                                    class="Input_input__YTViM Input_lg__N2QwY"
+                                                    aria-invalid="false"
+                                                    value="서울특별시 용산구 새창로 181"
+                                                    onclick="event.stopPropagation(); sample4_execDaumPostcode();"
+                                                    readonly
+                                                    >
+                                                  </div>
+
+
+
+
+
+                                                  
+                                                  <!-- <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br> -->
+                                                <div style="display: none;">
+                                                   <input type="text" id="sample4_postcode" placeholder="우편번호"> 
+                                                  <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                                                  <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+                                                  <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                                                  <span id="guide" style="color:#999;display:none"></span>
+                                                  <input type="text" id="sample4_detailAddress" placeholder="상세주소"> 
+                                                   <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+                                                </div>
+                                                  
+                                                    <!-- <div class="Section_content__OGY2N">
+                                                        <div class="TextField_textField__OTAzM TextField_lg__Njc2M">
+                                                            <label>
+                                                            </label>
+                                                            <div class="TextField_field__YmFiM TextField_noStartText__OWY2Z TextField_noEndText__NWJmO"> -->
+                                                                <!-- <input placeholder="제목을 입력해 주세요" maxlength="40" type="text" class="Input_input__YTViM Input_lg__N2QwY" aria-invalid="false" value=""> -->
+                                                                <!-- <input placeholder="새로운 주소를 입력하세요. " 
+                                                                        maxlength="40" 
+                                                                        type="text" 
+                                                                        class="Input_input__YTViM Input_lg__N2QwY" 
+                                                                        aria-invalid="false" 
+                                                                        value="서울특별시 노원구 동일로 241길 "
+                                                                        readonly> -->
+
+
+                                                                        <!-- <input
+                                                                        id="addressInput"
+                                                                        placeholder="새로운 주소를 입력하세요."
+                                                                        maxlength="40"
+                                                                        type="text"
+                                                                        class="Input_input__YTViM Input_lg__N2QwY"
+                                                                        aria-invalid="false"
+                                                                        value="서울특별시 노원구 동일로 241길"
+                                                                        readonly
+                                                                      >
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <br>
+<!-- 수정 주소 -->
+                                                    <!-- <h5 class="Section_title__MDg2N Section_isRequired__YzhiZ"> - 수정 할 주소 </h5>
+                                                    <div class="Section_content__OGY2N">
+                                                        <div class="TextField_textField__OTAzM TextField_lg__Njc2M">
+                                                            <label>
+                                                            </label>
+                                                            <div class="TextField_field__YmFiM TextField_noStartText__OWY2Z TextField_noEndText__NWJmO">
+                                                                <input placeholder="제목을 입력해 주세요" maxlength="40" type="text" class="Input_input__YTViM Input_lg__N2QwY" aria-invalid="false" value="">
+                                                            </div>
+                                                        </div>
+                                                    </div>                           -->
+
+<!--
+    주소입력 은 하나의 input tag 로 하고  read only 로 T/F 지정 할수 있다. value 는 빈 문자열로 나옴  
+    체크 박스를 사용해서 체크되어 있으면 새로운 주소 사용하고 value 는 빈 문자열로 
+
+                                                        <div id="map" style="width:100%;height:350px;"></div>
+-->
+
+                                                    <!-- KAKAO Map, 주소 입력하면 위도, 경도로 변환되는 라이브러리 적용  -->
+                                                    <div id="map" style="width:100%;height:350px;"></div>
+
+                                                    <br>
+
+                                                    <button class="Button_button__OGUxN Button_mint__MDExN Button_md__OWU3N Button_block__MDAyN Button_disabled__MGIxO StoryAIReview_reviewButton__ZmQ2M" disabled="" type="button">
+                                                        <span>
+                                                            <span> 최적 매칭 결과 &nbsp;
+                                                                <span> 0/5 </span>
+                                                            </span>
+                                                        </span>
+                                                    </button>
+                                                    <div class="StoryAIReview_categoryLinkWrapper__MzA0N">
+                                                        <p> 개인간 전력거래 이용 정보 - 주소 매칭이 이뤄지면 서비스를 이용할 수 있어요.</p>
+                                                        <a class="Button_button__OGUxN Button_text__N2NkZ Button_md__OWU3N StoryAIReview_link__MTVkY" href="/studio/reward/391199/funding/screening">
+                                                            <span>
+                                                                <span> 서비스 이용 설명  
+                                                                    <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.92428 2.57573L7.07575 3.42426L15.6515 12L7.07575 20.5757L7.92428 21.4243L17.3485 12L7.92428 2.57573Z" fill="#495057"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="StoryForm_container__YzRiN">
+
+                                                <div class="">
+                                                    <section class="Section_container__OWY4N spacing-9" style="max-width: 1024px;">
+                                                        <div style="max-width: 1024px;">
+                                                            <div class="Section_header__ZDUxN spacing-4">
+<!--                                                                <h3 class="Section_title__MDg2N Section_isRequired__YzhiZ">프로젝트 제목    -->
+                                                                    <h3 class="Section_title__MDg2N Section_isRequired__YzhiZ"> 구매자/판매자 요청/응답 제목 
+                                                                    <span class="BlindText_textBlind__NTY4O">필수</span>
+                                                                    <div class="Tooltip_tootipWrapper__ZGE0M Section_tooltip__ZWIwN">
+                                                                        <button type="button" class="Tooltip_button__YWVkM Section_tooltip__ZWIwN" aria-describedby="Tooltip_46">
+                                                                            <span class="Tooltip_label__ZGIwY">프로젝트 제목 정보</span>
+                                                                            <span class="Tooltip_helpIconWrap__OGFmY">
+                                                                                <svg width="16" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N Tooltip_helpOutlineIcon__NjhhN" style="height: 16px; width: 16px;">
+                                                                                    <path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#495057"></path>
+                                                                                    <path d="M9.60002 8.50002C9.60002 7.17454 10.6745 6.10002 12 6.10002C13.3255 6.10002 14.4 7.17454 14.4 8.50002C14.4 9.26494 14.0429 9.94609 13.4838 10.3866C13.0487 10.7294 12.5378 11.1492 12.1367 11.6426C11.7329 12.1392 11.4 12.7592 11.4 13.5V14.5H12.6V13.5C12.6 13.1363 12.7609 12.777 13.0678 12.3996C13.3773 12.0189 13.794 11.6699 14.2265 11.3291C15.0619 10.6709 15.6 9.64815 15.6 8.50002C15.6 6.5118 13.9882 4.90002 12 4.90002C10.0118 4.90002 8.40002 6.5118 8.40002 8.50002H9.60002Z" fill="#495057"></path>
+                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.40002 12C1.40002 6.14581 6.14581 1.40002 12 1.40002C17.8542 1.40002 22.6 6.14581 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM12 2.60002C6.80855 2.60002 2.60002 6.80855 2.60002 12C2.60002 17.1915 6.80855 21.4 12 21.4C17.1915 21.4 21.4 17.1915 21.4 12C21.4 6.80855 17.1915 2.60002 12 2.60002Z" fill="#495057"></path>
+                                                                                </svg>
+                                                                                <svg width="16" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N Tooltip_helpIcon__YWE2Z" style="height: 16px; width: 16px;">
+                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.40002 12C1.40002 6.14578 6.14581 1.39999 12 1.39999C17.8542 1.39999 22.6 6.14578 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM12 6.09999C10.6745 6.09999 9.60002 7.17451 9.60002 8.49999H8.40002C8.40002 6.51177 10.0118 4.89999 12 4.89999C13.9882 4.89999 15.6 6.51177 15.6 8.49999C15.6 9.64812 15.0619 10.6709 14.2265 11.3291C13.794 11.6699 13.3773 12.0189 13.0678 12.3995C12.7609 12.777 12.6 13.1363 12.6 13.5V14.5H11.4V13.5C11.4 12.7591 11.7329 12.1391 12.1367 11.6425C12.5378 11.1491 13.0487 10.7294 13.4838 10.3865C14.0429 9.94606 14.4 9.26491 14.4 8.49999C14.4 7.17451 13.3255 6.09999 12 6.09999ZM13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#495057"></path>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
+                                                                </h3>
+                                                                <!-- <div class="Section_guide__ZDNhO">
+                                                                    <div class="Section_helperMessage__MDgyN">
+                                                                        <button type="button" class="link">AI 추천받기</button>
+                                                                    </div>
+                                                                </div> -->
+                                                            </div>
+                                                            <div class="Section_content__OGY2N">
+                                                                <div class="TextField_textField__OTAzM TextField_lg__Njc2M">
+                                                                    <label>
+                                                                    </label>
+                                                                    <div class="TextField_field__YmFiM TextField_noStartText__OWY2Z TextField_noEndText__NWJmO">
+                                                                        <input placeholder="제목을 입력해 주세요" maxlength="40" type="text" class="Input_input__YTViM Input_lg__N2QwY" aria-invalid="false" value="">
+                                                                    </div>
+                                                                    <div class="HelperMessage_helperMessage__YmE4O">40자 남음</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+
+                                                    <section class="Section_container__OWY4N" style="max-width: 1024px;">
+                                                        <div style="max-width: 1024px;">
+                                                            <div class="Section_header__ZDUxN">
+                                                        <!--       <h3 class="Section_title__MDg2N Section_isRequired__YzhiZ">소개 영상·사진    --> 
+
+                                                                <h3 class="Section_title__MDg2N Section_isRequired__YzhiZ"> 구매자/판매자 요청/응답글 영상·사진                                                                  
+                                                                    <span class="BlindText_textBlind__NTY4O">필수</span>
+                                                                </h3>
+                                                            </div>
+                                                            <div class="Section_description__MGNlY">
+                                                                <p> 구매자/판매자 요청/응답글 사진을 통해 추가 정보를 제공합니다. </p>
+                                                            </div>
+                                                            <div class="Section_content__OGY2N">
+                                                                <div class="StoryVideoOrImageField_container__NjUxM">
+                                                                    <div id="story-panel-image" role="tabpanel" tabindex="0" aria-labelledby="story-tab-image">
+                                                                        <div color="mint" class="MessageBox_messageBox__YzhjZ MessageBox_mint__ZjU1Z MessageBox_vertical__N2I3Z StoryVideoOrImageField_messageBox__MzhjM">
+                                                                            <div class="MessageBox_header__NmFmM">
+                                                                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N MessageBox_icon__ODc3Y">
+                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.40002 12C1.40002 6.14578 6.14581 1.39999 12 1.39999C17.8542 1.39999 22.6 6.14578 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM13 6.99997C13 6.44768 12.5523 5.99997 12 5.99997C11.4477 5.99997 11 6.44768 11 6.99997C11 7.55225 11.4477 7.99997 12 7.99997C12.5523 7.99997 13 7.55225 13 6.99997ZM11.4 9.99997V18H12.6L12.6 9.99997H11.4Z" fill="#495057"></path>
+                                                                                </svg>
+                                                                                <div class="MessageBox_title__M2EyN">소개 사진 등록 가이드</div>
+                                                                            </div>
+                                                                            <div class="MessageBox_content__OTcyM">
+                                                                                <div>
+                                                                                    <ul>
+                                                                                        <li>이미지 용량 제한 및 권장 사이즈</li>
+                                                                                    </ul>
+                                                                                    <ul style="margin-left: 15px;">
+                                                                                        <li>JPG, JPEG, PNG : 용량 10MB 이하, 해상도 800x480 픽셀 이상</li>
+                                                                                        <li>GIF : 용량 2MB 이하, 해상도 800x480 픽셀~1440x864 픽셀</li>
+                                                                                    </ul>
+                                                                                    <ul>
+                                                                                        <li>이미지는 최대 10장까지 등록 가능할 수 있어요. </li>
+                                                                                        <li>사진 선택 후, 이미지를 자르거나 회전할 수 있어요. 단, GIF 이미지는 편집할 수 없어요.</li>
+                                                                                        <li>사진 등록 후, 길게 누르고 드래그하면 사진 순서를 변경할 수 있어요.</li>
+                                                                                        <li>대표 이미지와 마찬가지로 리워드의 특징이 명확하게 드러나고, 텍스트가 포함되지 않은 이미지를 등록해 주세요.</li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- 썸네일 추가 01.28-->
+                                                                        <!-- <div style="display: flex;"> -->
+
+                                                                            <div class="StoryImageField_container__OGEzZ">
+                                                                                <div class="ImageUploader_container__ZmUzN StoryImageField_imageUploader__NDFlN">
+
+
+
+                                                                                    <strong class="BlindText_textBlind__NTY4O">업로드 이미지</strong>
+
+                                                                                    <ul class="UploadedImageList_container__YTYxY" style="display: flex; " id="imageList">
+
+                                                                                        <!-- <li class="UploadedImageList_listItem__YzA5N" data-rbd-draggable-context-id="3" data-rbd-draggable-id="item.name.0" tabindex="0" role="button" aria-describedby="rbd-hidden-text-3-hidden-text-11" data-rbd-drag-handle-draggable-id="item.name.0" data-rbd-drag-handle-context-id="3" draggable="false">
+                                                                                        </li> -->
+
+                                                                                        <!-- <li class="UploadedImageList_listItem__YzA5N" data-rbd-draggable-context-id="3" data-rbd-draggable-id="item.name.0" tabindex="0" role="button" aria-describedby="rbd-hidden-text-3-hidden-text-11" data-rbd-drag-handle-draggable-id="item.name.0" data-rbd-drag-handle-context-id="3" draggable="false">
+                                                                                            <div class="UploadedImage_container__ODBkN" style="background-image: url(&quot;https://cdn3.wadiz.kr/studio/images/2026/01/28/b2a88a35-cbbd-440d-ba9e-a114958a43e0.jpg&quot;);">
+                                                                                                <button class="UploadedImage_editButton__MTU4M" type="button" aria-label="이미지 편집하기">편집</button>
+                                                                                                <button class="UploadedImage_removeButton__NGJkZ" aria-label="이미지 제거하기" type="button">
+                                                                                                    <svg width="18" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N" style="height: 18px; width: 18px;">
+                                                                                                        <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                                                                                    </svg>
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <li class="UploadedImageList_listItem__YzA5N" data-rbd-draggable-context-id="3" data-rbd-draggable-id="item.name.1" tabindex="0" role="button" aria-describedby="rbd-hidden-text-3-hidden-text-11" data-rbd-drag-handle-draggable-id="item.name.1" data-rbd-drag-handle-context-id="3" draggable="false">
+                                                                                            <div class="UploadedImage_container__ODBkN" style="background-image: url(&quot;https://cdn3.wadiz.kr/studio/images/2026/01/28/2139b090-878e-4fdc-acc8-cc5379ae0608.jpg&quot;);">
+                                                                                                <button class="UploadedImage_editButton__MTU4M" type="button" aria-label="이미지 편집하기">편집</button>
+                                                                                                <button class="UploadedImage_removeButton__NGJkZ" aria-label="이미지 제거하기" type="button">
+                                                                                                    <svg width="18" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N" style="height: 18px; width: 18px;">
+                                                                                                        <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                                                                                    </svg>
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <li class="UploadedImageList_listItem__YzA5N" data-rbd-draggable-context-id="3" data-rbd-draggable-id="item.name.2" tabindex="0" role="button" aria-describedby="rbd-hidden-text-3-hidden-text-11" data-rbd-drag-handle-draggable-id="item.name.2" data-rbd-drag-handle-context-id="3" draggable="false">
+                                                                                            <div class="UploadedImage_container__ODBkN" style="background-image: url(&quot;https://cdn3.wadiz.kr/studio/images/2026/01/28/f7cfc6f7-da85-4b75-809b-bc9d9c49ced4.jpg&quot;);">
+                                                                                                <button class="UploadedImage_editButton__MTU4M" type="button" aria-label="이미지 편집하기">편집</button>
+                                                                                                <button class="UploadedImage_removeButton__NGJkZ" aria-label="이미지 제거하기" type="button">
+                                                                                                    <svg width="18" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N" style="height: 18px; width: 18px;">
+                                                                                                        <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                                                                                    </svg>
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </li> -->
+                                                                                    </ul>
+
+
+                                                                                    <!-- <input
+                                                                                    type="file"
+                                                                                    hidden
+                                                                                    id="story-image-upload"
+                                                                                    multiple
+                                                                                    accept="image/jpeg, image/jpg, image/png, image/gif"
+                                                                                  />
+                                                                                  
+                                                                                  <ul class="UploadedImageList_container__YTYxY" id="imageList"></ul>
+                                                                                  
+                                                                                  <div class="ImageUploadButton_container__Y2FiO" id="uploadButton">
+                                                                                    ...
+                                                                                  </div> -->
+
+
+
+
+                                                                                    <div class="ImageUploadButton_container__Y2FiO" id="uploadButton">
+                                                                                        <div class="ImageUploadButton_imageUploadContent__ZTk2N">
+                                                                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N ImageUploadButton_cameraIcon__OWRkY" style="height: 24px; width: 24px;">
+                                                                                                <path d="M8.60002 13C8.60002 11.1222 10.1223 9.59999 12 9.59999C13.8778 9.59999 15.4 11.1222 15.4 13C15.4 14.8778 13.8778 16.4 12 16.4C10.1223 16.4 8.60002 14.8778 8.60002 13Z" fill="#495057"></path>
+                                                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.219 3.39999H14.781L17.281 6.39999H22.6V20.6H1.40002V6.39999H6.719L9.219 3.39999ZM12 8.39999C9.45951 8.39999 7.40002 10.4595 7.40002 13C7.40002 15.5405 9.45951 17.6 12 17.6C14.5405 17.6 16.6 15.5405 16.6 13C16.6 10.4595 14.5405 8.39999 12 8.39999Z" fill="#495057"></path>
+                                                                                            </svg>
+                                                                                            <div class="ImageUploadButton_count__OWQxM">
+                                                                                                <span id="uploadCount">0/3</span>
+
+                                                                                                <!-- <dl>
+                                                                                                    <dt class="ImageUploadButton_blindText__MDcxN">업로드 된 이미지 수</dt>
+                                                                                                    <dd>0</dd>
+                                                                                                </dl>/
+                                                                                                <dl>
+                                                                                                    <dt class="ImageUploadButton_blindText__MDcxN">업로드 가능한 최대 이미지 수</dt>
+                                                                                                    <dd>3</dd>
+                                                                                                </dl> -->
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <label class="ImageUploadButton_uploadLabel__YTRhY" for="story-image-upload">
+                                                                                            <span class="ImageUploadButton_blindText__MDcxN">이미지 업로드하기</span>
+                                                                                        </label>
+                                                                                        <input type="file" hidden="" id="story-image-upload" multiple="" accept="image/jpeg, image/jpg, image/png, image/gif">
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            <!-- </div> -->
+    
+                                                                            <!-- 이미지 썸네일 만들기 -->
+
+                                                                        </div>
+
+                                                                        <!-- 이미지 썸네일 만들기 -->
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <section class="Section_container__OWY4N" style="max-width: 1024px;">
+                                                        <div style="max-width: 1024px;">
+                                                            <div class="Section_header__ZDUxN">
+                                                        <!--       <h3 class="Section_title__MDg2N Section_isRequired__YzhiZ">프로젝트 요약     --> 
+                                                                <h3 class="Section_title__MDg2N Section_isRequired__YzhiZ"> 구매자/판매자 요청/응답글 요약                                                                    
+                                                                    <span class="BlindText_textBlind__NTY4O">필수</span>
+                                                                    <div class="Tooltip_tootipWrapper__ZGE0M Section_tooltip__ZWIwN">
+                                                                        <button type="button" class="Tooltip_button__YWVkM Section_tooltip__ZWIwN" aria-describedby="Tooltip_49">
+                                                                            <span class="Tooltip_label__ZGIwY">프로젝트 요약 정보</span>
+                                                                            <span class="Tooltip_helpIconWrap__OGFmY">
+                                                                                <svg width="16" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N Tooltip_helpOutlineIcon__NjhhN" style="height: 16px; width: 16px;">
+                                                                                    <path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#495057"></path>
+                                                                                    <path d="M9.60002 8.50002C9.60002 7.17454 10.6745 6.10002 12 6.10002C13.3255 6.10002 14.4 7.17454 14.4 8.50002C14.4 9.26494 14.0429 9.94609 13.4838 10.3866C13.0487 10.7294 12.5378 11.1492 12.1367 11.6426C11.7329 12.1392 11.4 12.7592 11.4 13.5V14.5H12.6V13.5C12.6 13.1363 12.7609 12.777 13.0678 12.3996C13.3773 12.0189 13.794 11.6699 14.2265 11.3291C15.0619 10.6709 15.6 9.64815 15.6 8.50002C15.6 6.5118 13.9882 4.90002 12 4.90002C10.0118 4.90002 8.40002 6.5118 8.40002 8.50002H9.60002Z" fill="#495057"></path>
+                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.40002 12C1.40002 6.14581 6.14581 1.40002 12 1.40002C17.8542 1.40002 22.6 6.14581 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM12 2.60002C6.80855 2.60002 2.60002 6.80855 2.60002 12C2.60002 17.1915 6.80855 21.4 12 21.4C17.1915 21.4 21.4 17.1915 21.4 12C21.4 6.80855 17.1915 2.60002 12 2.60002Z" fill="#495057"></path>
+                                                                                </svg>
+                                                                                <svg width="16" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N Tooltip_helpIcon__YWE2Z" style="height: 16px; width: 16px;">
+                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.40002 12C1.40002 6.14578 6.14581 1.39999 12 1.39999C17.8542 1.39999 22.6 6.14578 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM12 6.09999C10.6745 6.09999 9.60002 7.17451 9.60002 8.49999H8.40002C8.40002 6.51177 10.0118 4.89999 12 4.89999C13.9882 4.89999 15.6 6.51177 15.6 8.49999C15.6 9.64812 15.0619 10.6709 14.2265 11.3291C13.794 11.6699 13.3773 12.0189 13.0678 12.3995C12.7609 12.777 12.6 13.1363 12.6 13.5V14.5H11.4V13.5C11.4 12.7591 11.7329 12.1391 12.1367 11.6425C12.5378 11.1491 13.0487 10.7294 13.4838 10.3865C14.0429 9.94606 14.4 9.26491 14.4 8.49999C14.4 7.17451 13.3255 6.09999 12 6.09999ZM13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#495057"></path>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
+                                                                </h3>
+                                                                <!-- <div class="Section_guide__ZDNhO">
+                                                                    <div class="Section_helperMessage__MDgyN">
+                                                                        <button type="button" class="link">AI 추천받기</button>
+                                                                    </div>
+                                                                </div> -->
+                                                            </div>
+                                                            <div class="Section_description__MGNlY">
+                                                    <!--            <p>소개 영상이나 사진과 함께 보이는 글이에요. 프로젝트를 쉽고 간결하게 소개해 주세요.</p>   -->
+                                                                <p> 구매자/판매자 요청/응답글과 함께 소개 영상이나 사진과 함께 보이는 글이에요.  구매자/판매자 요청/응답글을 간결하게 소개해 주세요.</p>                                                                
+                                                            </div>
+                                                            <div class="Section_content__OGY2N">
+                                                                <div class="StorySummaryField_container__NGVmN">
+                                                                    <textarea maxlength="100" placeholder="요약을 입력해 주세요" class="Textarea_textarea__NDZkZ Textarea_md__MDFjY" aria-invalid="false"></textarea>
+                                                                    <p class="StorySummaryField_text__ZDkxM">100자 남음</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+
+                                                    <input type="hidden" name="isAppliedComingSoon" value="true">
+                                                    <input type="hidden" name="comingStory.story" value="">
+                                                    <section class="Section_container__OWY4N TagsField_container__ODIzM" style="max-width: 1024px;">
+                                                        <div style="max-width: 1024px;">
+                                                            <div class="Section_header__ZDUxN">
+                                                                <h3 class="Section_title__MDg2N Section_isRequired__YzhiZ">검색용 태그(#)
+                                                                    <span class="BlindText_textBlind__NTY4O">필수</span>
+                                                                    <div class="Tooltip_tootipWrapper__ZGE0M Section_tooltip__ZWIwN">
+                                                                        <button type="button" class="Tooltip_button__YWVkM Section_tooltip__ZWIwN" aria-describedby="Tooltip_50">
+                                                                            <span class="Tooltip_label__ZGIwY">검색용 태그 정보</span>
+                                                                            <span class="Tooltip_helpIconWrap__OGFmY">
+                                                                                <svg width="16" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N Tooltip_helpOutlineIcon__NjhhN" style="height: 16px; width: 16px;">
+                                                                                    <path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#495057"></path>
+                                                                                    <path d="M9.60002 8.50002C9.60002 7.17454 10.6745 6.10002 12 6.10002C13.3255 6.10002 14.4 7.17454 14.4 8.50002C14.4 9.26494 14.0429 9.94609 13.4838 10.3866C13.0487 10.7294 12.5378 11.1492 12.1367 11.6426C11.7329 12.1392 11.4 12.7592 11.4 13.5V14.5H12.6V13.5C12.6 13.1363 12.7609 12.777 13.0678 12.3996C13.3773 12.0189 13.794 11.6699 14.2265 11.3291C15.0619 10.6709 15.6 9.64815 15.6 8.50002C15.6 6.5118 13.9882 4.90002 12 4.90002C10.0118 4.90002 8.40002 6.5118 8.40002 8.50002H9.60002Z" fill="#495057">
+                                                                                    </path>
+                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.40002 12C1.40002 6.14581 6.14581 1.40002 12 1.40002C17.8542 1.40002 22.6 6.14581 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM12 2.60002C6.80855 2.60002 2.60002 6.80855 2.60002 12C2.60002 17.1915 6.80855 21.4 12 21.4C17.1915 21.4 21.4 17.1915 21.4 12C21.4 6.80855 17.1915 2.60002 12 2.60002Z" fill="#495057"></path>
+                                                                                </svg>
+                                                                                <svg width="16" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N Tooltip_helpIcon__YWE2Z" style="height: 16px; width: 16px;">
+                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.40002 12C1.40002 6.14578 6.14581 1.39999 12 1.39999C17.8542 1.39999 22.6 6.14578 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM12 6.09999C10.6745 6.09999 9.60002 7.17451 9.60002 8.49999H8.40002C8.40002 6.51177 10.0118 4.89999 12 4.89999C13.9882 4.89999 15.6 6.51177 15.6 8.49999C15.6 9.64812 15.0619 10.6709 14.2265 11.3291C13.794 11.6699 13.3773 12.0189 13.0678 12.3995C12.7609 12.777 12.6 13.1363 12.6 13.5V14.5H11.4V13.5C11.4 12.7591 11.7329 12.1391 12.1367 11.6425C12.5378 11.1491 13.0487 10.7294 13.4838 10.3865C14.0429 9.94606 14.4 9.26491 14.4 8.49999C14.4 7.17451 13.3255 6.09999 12 6.09999ZM13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#495057"></path>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
+                                                                </h3>
+                                                                <div class="Section_guide__ZDNhO">
+                                                                    <div class="Section_helperMessage__MDgyN">
+                                                                        <a class="link" href="https://makercenter.wadiz.kr/board/card/231" target="_blank" rel="nofollow noopener noreferrer">더 알아보기
+                                                                            <svg width="14" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N WithProps_inline__ZTgyZ icon" style="height: 14px; width: 14px;">
+                                                                                <path d="M15.0999 4.2H19.6514L11.6757 12.1757L12.5242 13.0243L20.4999 5.04853V9.6H21.6999V3H15.0999V4.2Z" fill="#495057"></path>
+                                                                                <path d="M10.1 3H2.5V21.2H21.7V14.6H20.5V20H3.7V4.2H10.1V3Z" fill="#495057"></path>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="Section_description__MGNlY">
+                                                                <p>프로젝트가 더 잘 검색될 수 있도록 연관성이 높은 태그를 입력해 주세요.<br>예시) 캠핑의자 → 캠핑</p>
+                                                            </div>
+                                                            <div class="Section_content__OGY2N">
+                                                                <div class="TagField_container__NWVkZ">
+                                                                    <div class="TextField_textField__OTAzM TextField_lg__Njc2M TagField_textField__OWYwY">
+                                                                        <label></label>
+                                                                        <div class="TextField_field__YmFiM TextField_noStartText__OWY2Z TextField_noEndText__NWJmO">
+                                                                            <input placeholder="엔터를 누르면 최대 10개까지 태그를 입력할 수 있어요" maxlength="10" type="text" class="Input_input__YTViM Input_lg__N2QwY" aria-invalid="false" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="TagField_tagCountLabel__NWM1N">0/10개의 태그</div>
+                                                                    <ul class="TagField_tagGroup__NTkzY">                   
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+
+                                                </div> <!-- "" -->
+
+                                            </div> <!-- StoryForm_container  -->
+
+                                            <div class="SaveButtonFooter_footer__MjA4M">
+                                                <div class="SaveButtonFooter_btnWrapper__Y2M1M">
+                                                    <button class="Button_button__OGUxN Button_mint__MDExN Button_md__OWU3N StoryForm_submitBtn__ODBlO" type="button">
+                                                        <span>
+                                                            <span>임시 저장</span>
+                                                        </span>
+                                                    </button>
+                                                    <div class="StoryForm_saveButtonWrapper__OGNhM">
+                                                        <button class="Button_button__OGUxN Button_mint__MDExN Button_contained__OTFhN Button_md__OWU3N StoryForm_submitBtn__ODBlO" type="button">
+                                                            <span>
+                                                                <span>저장</span>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </div> <!-- SaveButtonFooter_footer  -->
+
+                                        </div> <!-- FundingPage_content  -->
+
+                                    </section> <!-- FundingPage_presentation  -->
+                                </div> <!-- "FundingPage_Content  -->
+                            </main>
+
+                        </div> <!-- "AppLayout_Contents  -->
+                     </div>   <!-- AppLayout_main  -->
+
+            </div> <!-- AppLayout_Container  -->
+
+        </div> <!-- root  -->
+
+        <div class="ReactModalPortal">
+            <div class="ConfirmModal_overlay__MThlZ waffle__modal__overlay " style="background-color: rgba(0, 0, 0, 0.2);">
+                <div class="ConfirmModal_confirmModal__M2IzZ ConfirmModal_sizeMd__Mjk1Z ConfirmModal_contentAfterOpen__MGM1Y" tabindex="-1" role="dialog" aria-modal="true">
+                    <div class="ConfirmModal_header__MmJjO" style="padding-left: 24px; padding-right: 24px;">
+                        <div class="ConfirmModal_title__Y2NjM">08:43
+                            
+                        </div>
+                    </div>
+                    <div class="ConfirmModal_content__ODY3N undefined" style="padding-left: 24px; padding-right: 24px;">
+                        <div> 구매자/판매자 요청글 작성 접속 후 50분 동안 한 페이지에 머물러 있어, 위 시간이 지나면 보안을 위해 자동 로그아웃이 돼요. 원치 않으면 [계속해서 작성하기]를 눌러 주세요.
+    
+                        </div>
+                        <button class="Button_button__OGUxN Button_mint__MDExN Button_contained__OTFhN Button_lg__ZWM1O Button_block__MDAyN" type="button" style="margin-top: 24px;">
+                            <span>
+                                <span>계속해서 작성하기</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e8abd7f9f7efcae4865ac9b93d267f9a&libraries=services"></script>
+        <!-- <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=&libraries=services"></script> -->
+        <script type="text/javascript" src="./p2p_write_gg.js"></script>
+
+<script>
+    // 한동성 강사님 주소 입력, 위도 경도로 변경하는 라이브러리 적용 
+
+    // let mapContainer = document.getElementById("map"), // 지도를 표시할 div
+    //     mapOption = {
+    //         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    //         level: 3, // 지도의 확대 레벨
+    //     };
+
+    // // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+    // let map = new kakao.maps.Map(mapContainer, mapOption);
+
+    // let geocoder = new kakao.maps.services.Geocoder();
+    // geocoder.addressSearch(
+    //     "서울특별시 용산구 새창로 181",
+    //     (result, status) => {
+    //         if (status === kakao.maps.services.Status.OK) {
+    //             let coords = new kakao.maps.LatLng(
+    //                 result[0].y,
+    //                 result[0].x
+    //             );
+
+    //             let mapContainer = document.getElementById("map"), // 지도를 표시할 div
+    //                 mapOption = {
+    //                     center: coords,
+    //                     level: 3, // 지도의 확대 레벨
+    //                 };
+
+    //             // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+    //             let map = new kakao.maps.Map(mapContainer, mapOption);
+
+    //             // 결과값으로 받은 위치를 마커로 표시합니다
+    //             let marker = new kakao.maps.Marker({
+    //                 map: map,
+    //                 position: coords,
+    //             });
+
+    //             // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+    //             map.setCenter(coords);
+    //         }
+    //     }
+    // );
+
+
+
+
+
+
+const fileInput = document.getElementById("story-image-upload");
+  const imageList = document.getElementById("imageList");
+  const uploadButton = document.getElementById("uploadButton");
+
+  const MAX_COUNT = 3;
+
+  fileInput.addEventListener("change", () => {
+    const files = Array.from(fileInput.files);
+
+    for (let file of files) {
+      if (imageList.children.length >= MAX_COUNT) break;
+
+      if (!file.type.startsWith("image/")) continue;
+
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const index = imageList.children.length;
+
+        const li = document.createElement("li");
+        li.className = "UploadedImageList_listItem__YzA5N";
+        li.setAttribute("data-rbd-draggable-id", `item.name.${index}`);
+        li.setAttribute("tabindex", "0");
+        li.setAttribute("role", "button");
+
+        // li.innerHTML = `
+        //   <div class="UploadedImage_container__ODBkN"
+        //        style="background-image: url('${e.target.result}')">
+        //     <button class="UploadedImage_editButton__MTU4M" type="button">
+        //       편집
+        //     </button>
+        //     <button class="UploadedImage_removeButton__NGJkZ" type="button">
+        //       <svg width="18" height="24" viewBox="0 0 24 24">
+        //         <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567Z"
+        //               fill="#495057"/>
+        //       </svg>
+        //     </button>
+        //   </div>
+        // `;
+
+        // <li class="UploadedImageList_listItem__YzA5N" data-rbd-draggable-context-id="3" data-rbd-draggable-id="item.name.2" tabindex="0" role="button" aria-describedby="rbd-hidden-text-3-hidden-text-11" data-rbd-drag-handle-draggable-id="item.name.2" data-rbd-drag-handle-context-id="3" draggable="false">
+        //     <div class="UploadedImage_container__ODBkN" style="background-image: url(&quot;https://cdn3.wadiz.kr/studio/images/2026/01/28/f7cfc6f7-da85-4b75-809b-bc9d9c49ced4.jpg&quot;);">
+        //         <button class="UploadedImage_editButton__MTU4M" type="button" aria-label="이미지 편집하기">편집</button>
+        //         <button class="UploadedImage_removeButton__NGJkZ" aria-label="이미지 제거하기" type="button">
+        //             <svg width="18" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N" style="height: 18px; width: 18px;">
+        //                 <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+        //             </svg>
+        //         </button>
+        //     </div>
+        // </li>
+
+
+        li.innerHTML = `
+          <div class="UploadedImage_container__ODBkN"
+               style="background-image: url('${e.target.result}')">
+            <button class="UploadedImage_editButton__MTU4M" type="button">
+              편집
+            </button>
+            <button class="UploadedImage_removeButton__NGJkZ" type="button">
+                <svg width="18" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__NDI4N" style="height: 18px; width: 18px;">
+                <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567Z"
+                      fill="#495057"/>
+              </svg>
+            </button>
+          </div>
+        `;
+
+
+
+
+
+        imageList.appendChild(li);
+        updateUploadButton();
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    // 같은 파일 다시 선택 가능하도록 초기화
+    fileInput.value = "";
+  });
+
+  // 삭제 버튼 이벤트 (이벤트 위임)
+  imageList.addEventListener("click", (e) => {
+    const removeBtn = e.target.closest(".UploadedImage_removeButton__NGJkZ");
+    if (!removeBtn) return;
+
+    const li = removeBtn.closest("li");
+    li.remove();
+    updateUploadButton();
+  });
+
+  function updateUploadButton() {
+    const count = imageList.children.length;
+    uploadButton.style.display = count >= MAX_COUNT ? "none" : "block";
+  }
+
+// 이미지 개수 카운트 
+
+  const uploadCountEl = document.getElementById("uploadCount");
+
+function updateUploadButton() {
+  const count = imageList.children.length;
+
+  uploadCountEl.textContent = `${count}/${MAX_COUNT}`;
+  uploadButton.style.display =
+    count >= MAX_COUNT ? "none" : "block";
+}
+
+
+
+
+/* 이미지 썸네일 3개 이상이면 추가 안되게 하는 js*/
+// const imageList = document.getElementById("imageList");
+// const uploadButton = document.getElementById("uploadButton");
+// const MAX_COUNT = 3;
+
+// function updateUploadButton() {
+//     const imageCount = imageList.querySelectorAll("li").length;
+
+//     if (imageCount >= MAX_COUNT) {
+//         uploadButton.style.display = "none";
+//     } else {
+//         uploadButton.style.display = "block";
+//     }
+// }
+
+// 초기 로딩 시 체크
+// updateUploadButton();
+
+// 이미지 삭제 버튼 클릭 시
+// imageList.addEventListener("click", (e) => {
+//     const removeBtn = e.target.closest(".UploadedImage_removeButton__NGJkZ");
+
+//     if (removeBtn) {
+//         const li = removeBtn.closest("li");
+//         li.remove();
+//         updateUploadButton();
+//     }
+// });
+
+
+//   function addImageThumbnail(imageUrl) {
+//   const li = document.createElement("li");
+//   li.className = "UploadedImageList_listItem__YzA5N";
+
+//   li.innerHTML = `
+//     <div class="UploadedImage_container__ODBkN" style="background-image:url('${imageUrl}')">
+//       <button class="UploadedImage_editButton__MTU4M">편집</button>
+//       <button class="UploadedImage_removeButton__NGJkZ">삭제</button>
+//     </div>
+//   `;
+
+//   imageList.appendChild(li);
+//   updateUploadButton();
+// }
+
+
+</script>
+
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<script>
+
+const checkbox = document.getElementById("chk");
+const addressInput = document.getElementById("addressInput");
+
+const defaultAddress = "서울특별시 용산구 새창로 181";
+
+checkbox.addEventListener("change", () => {
+  if (checkbox.checked) {
+    // 새로운 주소 사용
+    addressInput.readOnly = false;
+    addressInput.value = "";
+    addressInput.focus();
+  } else {
+    // 기존 주소 사용
+    addressInput.readOnly = true;
+    addressInput.value = defaultAddress;
+  }
+});
+
+/* 우편번호 주소 찾기 */
+
+    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var roadAddr = data.roadAddress; // 도로명 주소 변수
+                var extraRoadAddr = ''; // 참고 항목 변수
+
+                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraRoadAddr += data.bname;
+                }
+                // 건물명이 있고, 공동주택일 경우 추가한다.
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                if(extraRoadAddr !== ''){
+                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                }
+
+                // id="addressInput"
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample4_postcode').value = data.zonecode;
+                document.getElementById("sample4_roadAddress").value = roadAddr;
+                document.getElementById("addressInput").value = roadAddr;
+
+                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+                
+                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+                if(roadAddr !== ''){
+                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+                } else {
+                    document.getElementById("sample4_extraAddress").value = '';
+                }
+
+                var guideTextBox = document.getElementById("guide");
+                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+                if(data.autoRoadAddress) {
+                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+                    guideTextBox.style.display = 'block';
+
+                } else if(data.autoJibunAddress) {
+                    var expJibunAddr = data.autoJibunAddress;
+                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+                    guideTextBox.style.display = 'block';
+                } else {
+                    guideTextBox.innerHTML = '';
+                    guideTextBox.style.display = 'none';
+                }
+            }
+        }).open();
+    }
+
+
+</script>
+
+
+<script>
+//     let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+//         mapOption = {
+//             center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+//             level: 3 // 지도의 확대 레벨
+//         };  
+    
+//     // 지도를 생성합니다    
+//     let map = new kakao.maps.Map(mapContainer, mapOption); 
+    
+//     // 주소-좌표 변환 객체를 생성합니다
+//     let geocoder = new kakao.maps.services.Geocoder();
+    
+//     // 주소로 좌표를 검색합니다
+//     geocoder.addressSearch('서울특별시 용산구 새창로 181', function(result, status) {
+    
+//         // 정상적으로 검색이 완료됐으면 
+//          if (status === kakao.maps.services.Status.OK) {
+    
+//             let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+    
+//             // 결과값으로 받은 위치를 마커로 표시합니다
+//             let marker = new kakao.maps.Marker({
+//                 map: map,
+//                 position: coords
+//             });
+    
+//             // 인포윈도우로 장소에 대한 설명을 표시합니다
+//             let infowindow = new kakao.maps.InfoWindow({
+//                 content: '<div style="width:150px;text-align:center;padding:6px 0;"> 구매자 </div>'
+//             });
+//             infowindow.open(map, marker);
+    
+//             // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+//             map.setCenter(coords);
+//         } 
+//     });    
+
+
+//     // 주소로 좌표를 검색합니다
+//     geocoder.addressSearch('서울특별시 용산구 새창로 100', function(result, status) {
+    
+//     // 정상적으로 검색이 완료됐으면 
+//      if (status === kakao.maps.services.Status.OK) {
+
+//         let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+//         // 결과값으로 받은 위치를 마커로 표시합니다
+//         let marker = new kakao.maps.Marker({
+//             map: map,
+//             position: coords
+//         });
+
+//         // 인포윈도우로 장소에 대한 설명을 표시합니다
+//         let infowindow = new kakao.maps.InfoWindow({
+//             content: '<div style="width:150px;text-align:center;padding:6px 0;"> 판매자 </div>'
+//         });
+//         infowindow.open(map, marker);
+
+//         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+//         map.setCenter(coords);
+//     } 
+// });    
+
+    </script>
+
+</body>
+
+
+
+</html>

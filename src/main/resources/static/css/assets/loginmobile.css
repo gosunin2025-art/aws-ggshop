@@ -1,0 +1,167 @@
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_content__5843f .LoginFormAndSocialButtons-module_socialContainer__a4f39 .LoginFormAndSocialButtons-module_fullWidthButtonList__2755b .LoginFormAndSocialButtons-module_fullWidthButton__92ef8 {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    border-color: #e9ecef;
+    height: 48px;
+}
+
+.Button-module_button__d78c2.Button-module_xl__6be7d {
+    padding-inline: 18px;
+    height: 56px;
+    font-size: 18px;
+}
+
+.Button-module_button__d78c2.Button-module_block__d6eff {
+    width: 100%;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.Button-module_button__d78c2 {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+button {
+    font-size: inherit;
+}
+
+html, body, button, input, textarea, select, h1, h2, h3, h4, h5, h6, p {
+    color: inherit;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+button {
+    background-color: transparent;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+address, article, aside, b, body, a, button, canvas, caption, dl, dt, dd, div, html, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, big, cite, code, del, dfn, em, img, small, strike, strong, sub, sup, var, u, i, center, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, select, textarea, input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+button {
+    appearance: auto;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-variant-alternates: ;
+    font-variant-position: ;
+    font-variant-emoji: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    font-optical-sizing: ;
+    font-size-adjust: ;
+    font-kerning: ;
+    font-feature-settings: ;
+    font-variation-settings: ;
+    font-language-override: ;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em 0em 0em 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+
+.LoginFormAndSocialButtons-module_buttonContents__68303 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.LoginFormAndSocialButtons-module_buttonContents__68303 svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* 버튼 자체를 가운데 정렬 */
+.LoginFormAndSocialButtons-module_fullWidthButton__92ef8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 아이콘 + 텍스트 정렬 */
+.LoginFormAndSocialButtons-module_buttonContents__68303 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.LoginFormAndSocialButtons-module_buttonContents__68303 svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_content__5843f .LoginFormAndSocialButtons-module_socialContainer__a4f39 .LoginFormAndSocialButtons-module_circularButtonList__f8ffd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 12px;
+    margin-top: 40px;
+}
+
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_content__5843f .LoginFormAndSocialButtons-module_socialContainer__a4f39 .LoginFormAndSocialButtons-module_circularButtonList__f8ffd .LoginFormAndSocialButtons-module_buttonWrapper__a9aaf .LoginFormAndSocialButtons-module_circularButton__57ecb {
+    width: 48px;
+    height: 48px;
+    border-radius: 36px;
+    border: 1px solid #e9ecef;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

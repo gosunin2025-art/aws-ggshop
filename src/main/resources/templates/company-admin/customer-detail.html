@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업 메인 - 회원 상세</title>
+    <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/common/font.css" />
+    <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/common/fontawesome.css">
+    <link rel="stylesheet" href="/css/common/util.css" />
+    <link rel="stylesheet" href="/css/company-admin/company-charger.css" />
+    <link type="text/css" th:href="@{/css/company-admin/top.css}" rel="stylesheet" />
+    <link type="text/css" th:href="@{/css/company-admin/menu-flex.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div th:replace="~{/company-admin/top::top}" style="margin-bottom: 20px;"></div>
+
+<main class="board">
+    <div class="ui-header">
+        <h2 class="title">회원 상세 정보</h2>
+    </div>
+
+    <div class="board-main">
+
+        <!-- ===== 1. 회원 기본 정보 ===== -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #00c4c4;">회원 기본 정보</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <tbody>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <th style="padding: 12px 16px; background: #f9f9f9; width: 150px; text-align: left;">이메일</th>
+                    <td style="padding: 12px 16px;" th:text="${member.memberEmail}">-</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <th style="padding: 12px 16px; background: #f9f9f9; text-align: left;">이름</th>
+                    <td style="padding: 12px 16px;" th:text="${member.memberName}">-</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <th style="padding: 12px 16px; background: #f9f9f9; text-align: left;">닉네임</th>
+                    <td style="padding: 12px 16px;" th:text="${member.memberNickname}">-</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <th style="padding: 12px 16px; background: #f9f9f9; text-align: left;">생년월일</th>
+                    <td style="padding: 12px 16px;" th:text="${member.memberBirth}">-</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <th style="padding: 12px 16px; background: #f9f9f9; text-align: left;">주소</th>
+                    <td style="padding: 12px 16px;" th:text="${member.memberAddress}">-</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <th style="padding: 12px 16px; background: #f9f9f9; text-align: left;">회원 상태</th>
+                    <td style="padding: 12px 16px;" th:text="${member.memberStatus}">-</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <th style="padding: 12px 16px; background: #f9f9f9; text-align: left;">가입일</th>
+                    <td style="padding: 12px 16px;" th:text="${member.createdDate}">-</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== 2. 차량 정보 ===== -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #00c4c4;">차량 정보</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 12px 16px; text-align: left;">차량번호</th>
+                    <th style="padding: 12px 16px; text-align: center;">배터리 잔량</th>
+                    <th style="padding: 12px 16px; text-align: center;">충전 방식</th>
+                    <th style="padding: 12px 16px; text-align: center;">상태</th>
+                    <th style="padding: 12px 16px; text-align: center;">등록일</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="car : ${carList}" style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 12px 16px;" th:text="${car.carPlateNumber}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${car.carEnergyGauge}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${car.carFilter}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${car.carStatus}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${car.createdDate}">-</td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(carList)}">
+                    <td colspan="5" style="padding: 40px; text-align: center; color: #999;">등록된 차량이 없습니다.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== 3. VtoG 거래내역 ===== -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #00c4c4;">VtoG 거래내역</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 12px 16px; text-align: left;">거래일</th>
+                    <th style="padding: 12px 16px; text-align: center;">판매 kWh</th>
+                    <th style="padding: 12px 16px; text-align: center;">판매 금액(원)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="vtog : ${vtogList}" style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 12px 16px;" th:text="${vtog.createdDate}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${vtog.vtogPaymentSalesKwh}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${vtog.vtogPaymentSalesPrice}">-</td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(vtogList)}">
+                    <td colspan="3" style="padding: 40px; text-align: center; color: #999;">VtoG 거래내역이 없습니다.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- ===== 5. 게시글 (판매/구매 등록) ===== -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #00c4c4;">게시글 내역 (판매/구매 등록)</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 12px 16px; text-align: left;">등록일</th>
+                    <th style="padding: 12px 16px; text-align: center;">제목</th>
+                    <th style="padding: 12px 16px; text-align: center;">거래 유형</th>
+                    <th style="padding: 12px 16px; text-align: center;">게시글 상태</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="board : ${boardList}" style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 12px 16px;" th:text="${board.createdDate}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${board.title}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${board.boardFilter}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${board.boardStatus}">-</td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(boardList)}">
+                    <td colspan="4" style="padding: 40px; text-align: center; color: #999;">등록된 게시글이 없습니다.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== 6. 개인간 거래 - 구매자로 참여한 내역 ===== -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #00c4c4;">구매 참여 내역</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 12px 16px; text-align: left;">거래일</th>
+                    <th style="padding: 12px 16px; text-align: center;">거래 kWh</th>
+                    <th style="padding: 12px 16px; text-align: center;">거래 금액(원)</th>
+                    <th style="padding: 12px 16px; text-align: center;">거래 상태</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="payment : ${boardPaymentList}" style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 12px 16px;" th:text="${payment.createdDate}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${payment.boardPaymentSalesKwh}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${payment.boardPaymentSalesPrice}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${payment.paymentStatus}">-</td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(boardPaymentList)}">
+                    <td colspan="4" style="padding: 40px; text-align: center; color: #999;">구매 참여 내역이 없습니다.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== 8. 개인간 거래 - 판매자로 참여한 내역 ===== -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #00c4c4;">판매 참여 내역 (V2V)</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 12px 16px; text-align: left;">거래일</th>
+                    <th style="padding: 12px 16px; text-align: center;">게시글 제목</th>
+                    <th style="padding: 12px 16px; text-align: center;">판매 kWh</th>
+                    <th style="padding: 12px 16px; text-align: center;">판매 금액(원)</th>
+                    <th style="padding: 12px 16px; text-align: center;">거래 상태</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="sell : ${boardSellList}" style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 12px 16px;" th:text="${sell.createdDate}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${sell.title}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${sell.boardPaymentSalesKwh}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${sell.boardPaymentSalesPrice}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${sell.paymentStatus}">-</td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(boardSellList)}">
+                    <td colspan="5" style="padding: 40px; text-align: center; color: #999;">판매 참여 내역이 없습니다.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== 7. 팔로우 / 팔로잉 ===== -->
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #00c4c4;">팔로우 / 팔로잉</h3>
+
+            <!-- 팔로워 목록 (나를 팔로우하는 사람) -->
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">
+                팔로워 <span th:text="|${#lists.size(followerList)}명|" style="color:#00c4c4;">0명</span>
+            </h4>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 24px;">
+                <thead>
+                <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 12px 16px; text-align: left;">이름</th>
+                    <th style="padding: 12px 16px; text-align: center;">이메일</th>
+                    <th style="padding: 12px 16px; text-align: center;">팔로우 일자</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="follower : ${followerList}" style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 12px 16px;" th:text="${follower.memberName}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${follower.memberEmail}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${follower.createdDate}">-</td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(followerList)}">
+                    <td colspan="3" style="padding: 40px; text-align: center; color: #999;">팔로워가 없습니다.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- 팔로잉 목록 (내가 팔로우하는 사람) -->
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">
+                팔로잉 <span th:text="|${#lists.size(followingList)}명|" style="color:#00c4c4;">0명</span>
+            </h4>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 12px 16px; text-align: left;">이름</th>
+                    <th style="padding: 12px 16px; text-align: center;">이메일</th>
+                    <th style="padding: 12px 16px; text-align: center;">팔로잉 일자</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="following : ${followingList}" style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 12px 16px;" th:text="${following.memberName}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${following.memberEmail}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${following.createdDate}">-</td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(followingList)}">
+                    <td colspan="3" style="padding: 40px; text-align: center; color: #999;">팔로잉이 없습니다.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <script>
+            function confirmDelete(id) {
+                if (confirm("정말 삭제하시겠습니까? 삭제된 데이터는 복구할 수 없습니다.")) {
+                    location.href = '/member/delete/' + id;
+                }
+            }
+        </script>
+
+        <!-- 목록으로 버튼 -->
+        <div style="text-align: center; margin-top: 20px;">
+            <a th:href="@{/member/update/{id}(id=${member.id})}"
+               style="padding: 10px 30px; background: #00c4c4; color: white; text-decoration: none; border-radius: 4px; margin-right: 8px;">
+                수정
+            </a>
+            <a href="/member/list/1"
+               style="padding: 10px 30px; background: #333; color: white; text-decoration: none; border-radius: 4px; margin-right: 8px;">
+                목록으로
+            </a>
+            <button th:onclick="'confirmDelete(' + ${member.id} + ')'"
+                    style="padding: 10px 30px; background: #f66; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                삭제
+            </button>
+        </div>
+
+
+    </div>
+</main>
+
+</body>
+
+
+</html>

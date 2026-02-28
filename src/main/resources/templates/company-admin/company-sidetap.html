@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기업 메인 - 탭</title>
+    <!-- favicon -->
+
+    <link rel="stylesheet" th:href="@{/images/favicon/favicon.ico}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/apple-icon-57x57.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/apple-icon-60x60.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/apple-icon-72x72.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/apple-icon-76x76.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/apple-icon-114x114.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/apple-icon-120x120.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/apple-icon-144x144.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/apple-icon-152x152.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/apple-icon-180x180.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/android-icon-192x192.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/favicon-32x32.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/favicon-96x96.png}" />
+    <link rel="stylesheet" th:href="@{/images/favicon/favicon-16x16.png}" />
+
+
+    <link rel="stylesheet" th:href="@{/css/common/font.css}" />
+    <link rel="stylesheet" th:href="@{/css/common/reset.css}" />
+    <link rel="stylesheet" th:href="@{/css/common/common.css}" />
+    <link rel="stylesheet" th:href="@{/css/common/fontawesome.css}" />
+    <link rel="stylesheet" th:href="@{/css/common/util.css}" />
+    <link rel="stylesheet" th:href="@{/css/company-admin/company-sidetap.css}" />
+
+    <link type="text/css" th:href="@{/css/company-admin/top.css}" rel="stylesheet" />
+    <link type="text/css" th:href="@{/css/company-admin/menu-flex.css}" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div th:replace="/company-admin/top::top" style="margin-bottom: 20px;"></div>
+
+
+    <nav id="app-navbar-layout-nav"
+         class="app-navbar-layout-container app-navbar-layout-expand app-navbar-layout-scroll">
+
+        <div class="app-navbar-layout-content">
+            <!-- 최상단: 회사명, 이름 -->
+            <div class="project-info-container app-navbar-project-info-pc project-info-drop-down-container">
+                <div class="project-info-project-no">
+                    코리아 기업
+                    <hr class="project-info-vertical-divider" />
+                    <span class="project-info-emphasis">ㅇㅇㅇ님</span>
+                </div>
+
+                <hr class="project-info-divide" />
+
+                <button type="button" id="project-info-box" class="project-info-info-button" aria-controls="project-info-box" aria-expanded="false">
+                    <span class="project-info-text">더보기</span>
+                    <svg width="16" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon project-info-arrow" style="height: 16px; width: 16px"><path d="M19.1211 7.39999H4.87889L12 18.0817L19.1211 7.39999Z" fill="#495057"></path></svg>
+                </button>
+            </div>
+
+            <!-- 더보기 클릭시 표시될 드롭다운 박스 -->
+            <div class="project-info-infobox" hidden>
+                <dl>
+                    <dt class="blind-text-text-blind"></dt>
+                    <dd class="project-info-content">
+                            <span class="avatar-avatar avatar-lg project-info-profile-image">
+                                <span class="avatar-inner">
+                                    <img src="/static/images/icon_basic_profile.svg">
+                                </span>
+                            </span>
+                        <span class="project-info-name">ㅇㅇㅇ</span>
+                    </dd>
+                    <dd class="project-info-content project-info-statebox">
+                        <span class="project-info-state">고객지원팀</span>
+                    </dd>
+                </dl>
+
+                <button type="button" class="button-button button-mint button-sm button-block">
+                        <span>
+                            <!-- 링크 이미지 -->
+                            <!-- <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon button-icon"><path d="M20.2024 10.3029L18.0811 12.4243L17.2326 11.5757L19.3539 9.45442C20.6817 8.12664 20.6817 5.97388 19.3539 4.64609C18.0261 3.31831 15.8734 3.31831 14.5456 4.64609L11.01 8.18163C9.68226 9.50941 9.68226 11.6622 11.01 12.99C11.5386 13.5186 12.198 13.8367 12.884 13.9444L11.8984 14.93C11.264 14.7092 10.6684 14.3453 10.1615 13.8385C8.36511 12.0421 8.36511 9.12951 10.1615 7.3331L13.6971 3.79756C15.4935 2.00115 18.406 2.00115 20.2024 3.79756C21.9988 5.59398 21.9988 8.50654 20.2024 10.3029Z" fill="#495057"></path><path d="M3.79763 13.6971L5.91895 11.5757L6.76748 12.4243L4.64615 14.5456C3.31837 15.8734 3.31837 18.0261 4.64615 19.3539C5.97394 20.6817 8.1267 20.6817 9.45448 19.3539L13.6971 15.1113C15.0249 13.7835 15.0249 11.6307 13.6971 10.303C13.1685 9.77436 12.5092 9.4562 11.8232 9.34848L12.8087 8.36292C13.4431 8.58376 14.0388 8.94759 14.5456 9.45443C16.3421 11.2508 16.3421 14.1634 14.5456 15.9598L10.303 20.2025C8.5066 21.9989 5.59404 21.9989 3.79763 20.2025C2.00121 18.406 2.00121 15.4935 3.79763 13.6971Z" fill="#495057"></path></svg> -->
+                            <span>내 정보 수정</span>
+                        </span>
+                </button>
+
+            </div>
+
+
+
+            <!-- 메인메뉴 영역 -->
+            <div class="menu-items-section">
+                <a aria-current="page" class="menu-items-menu menu-items-has-submenu menu-items-active" href="#!">
+
+                    <!-- 메인 메뉴 -->
+                    <a class="menu-items-menu" href="#!">
+                                <span class="menu-items-label">
+                                    <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon">
+                                        <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M21.5 9.40846C21.5 3.82576 16.5956 -0.587118 10.8981 0.0637592L10.8965 0.0639424C6.58293 0.570641 3.07364 4.04076 2.56082 8.32014L2.56028 8.32507C2.19566 11.6463 3.50863 14.6959 5.86128 16.5884L5.86969 16.5949C6.359 16.9717 6.64463 17.5737 6.64463 18.2564V20.5C6.64463 22.433 8.21163 24 10.1446 24H13.8434C15.7764 24 17.3434 22.433 17.3434 20.5V18.325C17.3434 17.6756 17.6724 17.0497 18.2129 16.5741C20.1807 14.8423 21.5 12.3091 21.5 9.40846ZM3.55404 8.43666C4.01212 4.62395 7.15253 1.51097 11.0124 1.0572C16.1217 0.473999 20.5 4.42878 20.5 9.40846C20.5 11.9949 19.3254 14.2629 17.5522 15.8234C17.0226 16.2895 16.6077 16.9024 16.4332 17.6H12.49C12.4966 17.5677 12.5 17.5342 12.5 17.5V13.7071L15.3536 10.8535C15.5488 10.6583 15.5488 10.3417 15.3536 10.1464C15.1583 9.95115 14.8417 9.95115 14.6464 10.1464L12 12.7929L9.35355 10.1464C9.15829 9.95115 8.84171 9.95115 8.64645 10.1464C8.45118 10.3417 8.45118 10.6583 8.64645 10.8535L11.5 13.7071V17.5C11.5 17.5342 11.5034 17.5677 11.51 17.6H7.57993C7.4378 16.8924 7.06408 16.2543 6.48428 15.806C4.40619 14.1322 3.22702 11.4228 3.55404 8.43666ZM7.64463 18.6V19.4H16.3434V18.6H7.64463ZM16.3434 20.4H7.64463V20.5C7.64463 21.8807 8.76392 23 10.1446 23H13.8434C15.2241 23 16.3434 21.8807 16.3434 20.5V20.4Z"
+                                                fill="#495057"></path>
+                                    </svg>
+                                    충전소 관리
+                                </span>
+
+                        <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
+                        </svg>
+                    </a>
+
+                    <!-- 서브 메뉴 -->
+                    <div class="menu-items-submenu-container">
+                        <a class="menuitems-submenu" href="#!" aria-current="page">충전소 목록</a>
+                        <a class="menuitems-submenu" href="#!" aria-current="page">충전소 상세 정보</a>
+                        <a class="menuitems-submenu" href="#!" aria-current="page">새 충전소 등록</a>
+                        <a class="menuitems-submenu" href="#!" aria-current="page">충전소 정보 수정</a>
+                    </div>
+
+
+
+                    <!-- 메인 메뉴 -->
+                    <div class="menu-items-menu">
+                                <span class="menu-items-label">
+                                    <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon">
+                                        <path d="M15.9167 7.17108H17V8.64477H15.5L14.5833 11.5H13.4167L12 6.98687L10.5833 11.5H9.33333L8.5 8.64477H7V7.17108H8.08333L7.25 4.50003H8.75L10 9.1974L11.4167 4.50003H12.5833L14 9.1974L15.25 4.50003H16.75L15.9167 7.17108Z" fill="#495057"></path>
+                                        <path d="M6.40039 15C6.40039 14.6687 6.66902 14.4 7.00039 14.4H17.0004C17.3318 14.4 17.6004 14.6687 17.6004 15C17.6004 15.3314 17.3318 15.6 17.0004 15.6H7.00039C6.66902 15.6 6.40039 15.3314 6.40039 15Z" fill="#495057"></path>
+                                        <path d="M7.00039 18.4C6.66902 18.4 6.40039 18.6687 6.40039 19C6.40039 19.3314 6.66902 19.6 7.00039 19.6H13.0004C13.3318 19.6 13.6004 19.3314 13.6004 19C13.6004 18.6687 13.3318 18.4 13.0004 18.4H7.00039Z" fill="#495057"></path>
+                                        <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M4.00039 0.400024C3.11673 0.400024 2.40039 1.11637 2.40039 2.00002V22C2.40039 22.8837 3.11674 23.6 4.00039 23.6H20.0004C20.884 23.6 21.6004 22.8837 21.6004 22V2.00002C21.6004 1.11637 20.884 0.400024 20.0004 0.400024H4.00039ZM3.60039 2.00002C3.60039 1.77911 3.77948 1.60002 4.00039 1.60002H20.0004C20.2213 1.60002 20.4004 1.77911 20.4004 2.00002V22C20.4004 22.2209 20.2213 22.4 20.0004 22.4H4.00039C3.77948 22.4 3.60039 22.2209 3.60039 22V2.00002Z"
+                                                fill="#495057"></path>
+                                    </svg>
+                                    전력거래 내역
+                                </span>
+
+                        <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
+                        </svg>
+                    </div>
+
+                    <!-- 서브 메뉴 -->
+                    <div class="menu-items-submenu-container">
+                        <a class="menuitems-submenu" href="#!" aria-current="page">일간 내역</a>
+                        <a class="menuitems-submenu" href="#!" aria-current="page">주간 내역</a>
+                        <a class="menuitems-submenu" href="#!" aria-current="page">월간 내역</a>
+                    </div>
+
+                    <!-- 아이콘 -->
+                    <!-- <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon">
+                        <path
+                            d="M17.1577 6.98027L12.9416 11.0575L11.5815 9.96141C11.3693 9.79041 11.0685 9.7839 10.8491 9.94555L4.64453 14.517C4.37775 14.7135 4.32082 15.0891 4.51738 15.3559C4.71394 15.6227 5.08955 15.6796 5.35633 15.4831L11.1886 11.186L12.6012 12.3244C12.8369 12.5143 13.1772 12.4989 13.3948 12.2885L18.2524 7.591L18.1293 8.94571C18.0993 9.27572 18.3425 9.56757 18.6725 9.59757C19.0025 9.62757 19.2943 9.38436 19.3243 9.05435L19.5971 6.05435C19.6142 5.86583 19.5414 5.68027 19.4006 5.55374C19.2598 5.42721 19.0675 5.37456 18.8819 5.41168L15.8819 6.01168C15.5569 6.07667 15.3462 6.39277 15.4112 6.7177C15.4762 7.04264 15.7923 7.25337 16.1172 7.18838L17.1577 6.98027Z"
+                            fill="#495057"></path>
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0.400391 2.40005C0.400391 2.06868 0.66902 1.80005 1.00039 1.80005H23.0004C23.3318 1.80005 23.6004 2.06868 23.6004 2.40005C23.6004 2.73142 23.3318 3.00005 23.0004 3.00005H22.6004V18C22.6004 18.3314 22.3318 18.6 22.0004 18.6H18.4489L21.4247 21.5758C21.659 21.8101 21.659 22.19 21.4247 22.4243C21.1903 22.6586 20.8104 22.6586 20.5761 22.4243L16.7519 18.6H12.6004V22C12.6004 22.3314 12.3318 22.6 12.0004 22.6C11.669 22.6 11.4004 22.3314 11.4004 22V18.6H7.24892L3.42465 22.4243C3.19034 22.6586 2.81044 22.6586 2.57613 22.4243C2.34181 22.19 2.34181 21.8101 2.57613 21.5758L5.55186 18.6H2.00039C1.66902 18.6 1.40039 18.3314 1.40039 18V3.00005H1.00039C0.66902 3.00005 0.400391 2.73142 0.400391 2.40005ZM21.4004 17.4V3.00005H2.60039V17.4L12.0004 17.4L21.4004 17.4Z"
+                            fill="#495057"></path>
+                    </svg> -->
+
+                    <!-- 아이콘 -->
+                    <!-- <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon">
+                        <path d="M15.8996 2.99998C15.8996 2.50292 15.4967 2.09998 14.9996 2.09998C14.5026 2.09998 14.0996 2.50292 14.0996 2.99998V22C14.0996 22.497 14.5026 22.9 14.9996 22.9C15.4967 22.9 15.8996 22.497 15.8996 22V2.99998Z" fill="#495057"></path>
+                        <path d="M9.89961 12C9.89961 11.5029 9.49667 11.1 8.99961 11.1C8.50255 11.1 8.09961 11.5029 8.09961 12L8.09961 22C8.09961 22.497 8.50255 22.9 8.99961 22.9C9.49667 22.9 9.89961 22.497 9.89961 22L9.89961 12Z" fill="#495057"></path>
+                        <path d="M3.89961 16C3.89961 15.5029 3.49667 15.1 2.99961 15.1C2.50255 15.1 2.09961 15.5029 2.09961 16V22C2.09961 22.497 2.50255 22.9 2.99961 22.9C3.49667 22.9 3.89961 22.497 3.89961 22V16Z" fill="#495057"></path>
+                        <path d="M20.9996 11.1C21.4967 11.1 21.8996 11.5029 21.8996 12L21.8996 22C21.8996 22.497 21.4967 22.9 20.9996 22.9C20.5026 22.9 20.0996 22.497 20.0996 22V12C20.0996 11.5029 20.5026 11.1 20.9996 11.1Z" fill="#495057"></path>
+                    </svg> -->
+
+                    <!-- 메인 메뉴 -->
+                    <div class="menu-items-menu">
+                                <span class="menu-items-label">
+                                    <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon">
+                                        <path
+                                                d="M15.9699 0.988684C15.6365 1.078 15.4387 1.42068 15.528 1.75409L16.1206 3.96483C16.2099 4.29824 16.5527 4.49612 16.8861 4.40681C17.2195 4.31749 17.4174 3.97481 17.328 3.6414L17.1564 3.00103C17.2268 3.04142 17.2966 3.08262 17.366 3.1246C20.3698 4.943 22.375 8.23938 22.375 12.0033C22.375 17.7312 17.7301 22.375 12 22.375C6.26987 22.375 1.625 17.7312 1.625 12.0033C1.625 9.02847 2.87697 6.34697 4.88475 4.45486C6.7428 2.70385 9.24544 1.63154 12 1.63154C12.3452 1.63154 12.625 1.35172 12.625 1.00654C12.625 0.661364 12.3452 0.381542 12 0.381542C8.91432 0.381542 6.10824 1.58425 4.02746 3.54516C1.77956 5.66356 0.375 8.66992 0.375 12.0033C0.375 18.4219 5.57986 23.625 12 23.625C18.4201 23.625 23.625 18.4219 23.625 12.0033C23.625 7.78401 21.3756 4.09065 18.0133 2.05527C17.8891 1.98006 17.7633 1.9071 17.636 1.83645L18.5049 1.6037C18.8384 1.51439 19.0362 1.1717 18.9468 0.838293C18.8575 0.504883 18.5147 0.307004 18.1813 0.396318L15.9699 0.988684Z"
+                                                fill="#495057"></path>
+                                        <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M7.25 5.37501C6.21447 5.37501 5.375 6.21448 5.375 7.25001V16.75C5.375 17.7855 6.21447 18.625 7.25 18.625H16.75C17.7855 18.625 18.625 17.7855 18.625 16.75V7.25001C18.625 6.21448 17.7855 5.37501 16.75 5.37501H7.25ZM6.625 7.25001C6.625 6.90483 6.90482 6.62501 7.25 6.62501H9.375V8.00001C9.375 8.34519 9.65482 8.62501 10 8.62501H14C14.3452 8.62501 14.625 8.34519 14.625 8.00001V6.62501H16.75C17.0952 6.62501 17.375 6.90483 17.375 7.25001V16.75C17.375 17.0952 17.0952 17.375 16.75 17.375H7.25C6.90482 17.375 6.625 17.0952 6.625 16.75V7.25001ZM13.375 6.62501H10.625V7.37501H13.375V6.62501Z"
+                                                fill="#495057"></path>
+                                    </svg>
+                                    임직원 관리
+                                </span>
+
+                        <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
+                        </svg>
+                    </div>
+
+                    <!-- 서브 메뉴 -->
+                    <div class="menu-items-submenu-container">
+                        <a class="menuitems-submenu" href="#!" aria-current="page">임직원 목록</a>
+                        <a class="menuitems-submenu" href="#!" aria-current="page">임직원 등록</a>
+                        <a class="menuitems-submenu" href="#!" aria-current="page">직원 정보 수정</a>
+                    </div>
+
+
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+</body>
+<script src="/js/company-admin/company-sidetap.js"></script>
+</html>
+dd

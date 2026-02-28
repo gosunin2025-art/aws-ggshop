@@ -1,0 +1,825 @@
+:root {
+    --scrollbar-width: 0;
+    --safe-area-inset-top: env(safe-area-inset-top);
+    --safe-area-inset-right: env(safe-area-inset-right);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    --safe-area-inset-left: env(safe-area-inset-left);
+}
+
+.content-width-560 {
+    box-sizing: border-box;
+    margin-inline: auto;
+    padding: 16px;
+    max-width: 560px;
+}
+
+.padding-y-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_loginContainer__eae04 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 72px;
+}        
+
+.Header-module_container__da545 {
+    background-color: #fff;
+}
+
+.Header-module_container__da545 .Header-module_content__31d4e {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: content-box;
+    max-width: 1296px;
+    height: 56px;
+    margin: auto;
+    padding-inline: 8px;
+}      
+
+.Header-module_container__da545 .Header-module_content__31d4e .Header-module_left__45013 {
+    display: flex;
+    align-items: center;
+}        
+
+.Header-module_container__da545 .Header-module_content__31d4e .Header-module_center__3afb0 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Header-module_container__da545 .Header-module_content__31d4e .Header-module_right__6c908 {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+/* AppLaunchButton-module_container__30af7 클래스 아래  */
+
+.AppLaunchButton-module_container__30af7 {
+    margin-top: 12px;
+}
+
+.Popper-module_container__15a83:not(.Popper-module_hasOutsideChildren__16f9e) {
+    position: relative;
+}
+
+.Button-module_button__d78c2.Button-module_tint__04199.Button-module_mint__1c1d6 {
+    border-color: #e7f9f9;
+    background-color: #e7f9f9;
+    color: #00c4c4;
+}
+
+.Button-module_button__d78c2.Button-module_mint__1c1d6 {
+    border-color: #00c4c4;
+    color: #00c4c4;
+}
+
+.Button-module_button__d78c2.Button-module_circular__e1a14 {
+    border-radius: 999em;
+}
+
+.Button-module_button__d78c2.Button-module_lg__53dd9 {
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.Button-module_button__d78c2.Button-module_block__d6eff {
+    width: 100%;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.LoginFormAndSocialButtons-module_innerButton__790a3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.Button-module_button__d78c2 {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+button {
+    font-size: inherit;
+}
+
+html, body, button, input, textarea, select, h1, h2, h3, h4, h5, h6, p {
+    color: inherit;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+button {
+    background-color: transparent;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+address, article, aside, b, body, a, button, canvas, caption, dl, dt, dd, div, html, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, big, cite, code, del, dfn, em, img, small, strike, strong, sub, sup, var, u, i, center, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, select, textarea, input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+button {
+    appearance: auto;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-variant-alternates: ;
+    font-variant-position: ;
+    font-variant-emoji: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    font-optical-sizing: ;
+    font-size-adjust: ;
+    font-kerning: ;
+    font-feature-settings: ;
+    font-variation-settings: ;
+    font-language-override: ;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em 0em 0em 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.Button-module_button__d78c2.Button-module_tint__04199.Button-module_mint__1c1d6 {
+    border-color: #e7f9f9;
+    background-color: #e7f9f9;
+    color: #00c4c4;
+}
+
+
+    /* 애니메이션 효과  */
+
+.Popper-module_fade-out__6d507 animation {
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+}
+
+
+.Popper-module_bounceTop__e1bf3 animation {
+    transform: translateY(0px);
+}
+
+
+.Popper-module_top-left__8a280:not(.Popper-module_remainVisible__8d0be), .Popper-module_top__e59f8:not(.Popper-module_remainVisible__8d0be), .Popper-module_top-right__38bdd:not(.Popper-module_remainVisible__8d0be) {
+    -webkit-animation: Popper-module_bouncetop__8e272 3s .3s ease-in-out both, Popper-module_fade-out__6d507 .5s ease 5s forwards;
+    animation: Popper-module_bounceTop__e1bf3 3s .3s ease-in-out both, Popper-module_fade-out__6d507 .5s ease 5s forwards;
+}
+
+/*
+.Popper-module_top__e59f8, .Popper-module_bottom__ecb62, .Popper-module_top__e59f8 .Popper-module_popperBox__87bbd, .Popper-module_top__e59f8 .Popper-module_arrow__3056d, .Popper-module_bottom__ecb62 .Popper-module_popperBox__87bbd, .Popper-module_bottom__ecb62 .Popper-module_arrow__3056d {
+    left: 50%;
+    transform: translate(-50%);
+}*/
+
+.Popper-module_top__e59f8,
+.Popper-module_bottom__ecb62 {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Popper-module_popperBox__87bbd {
+    position: relative;
+}
+
+.Popper-module_arrow__3056d {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Popper-module_top-left__8a280, .Popper-module_top__e59f8, .Popper-module_top-right__38bdd {
+    bottom: 100%;
+}
+
+.Popper-module_popperContainer__06ed1 {
+    position: absolute;
+    z-index: 8;
+}
+
+.Popper-module_popperContent__c7057 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+}
+
+/*
+.Popper-module_top__e59f8 {
+    opacity: 1;
+    visibility: visible;
+}*/
+
+/*
+.Popper-module_top__e59f8 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation: none !important;
+}*/
+
+.Popper-module_popperBox__87bbd {
+    background: #2b2b2b;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+.Popper-module_arrow__3056d {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #2b2b2b;
+}
+
+
+@keyframes Popper-module_bounceTop__e1bf3 {
+    0% {
+        transform: translateX(-50%) translateY(8px);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-4px);
+    }
+    70% {
+        transform: translateX(-50%) translateY(2px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes Popper-module_fade-out__6d507 {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.Popper-module_top__e59f8:not(.Popper-module_remainVisible__8d0be) {
+    animation:
+        Popper-module_bounceTop__e1bf3 0.6s ease-out both,
+        Popper-module_fade-out__6d507 0.4s ease 4.5s forwards;
+}
+
+.Button-module_button__d78c2.Button-module_mint__1c1d6 {
+    border-color: #00c4c4;
+    color: #00c4c4;
+}
+
+.Button-module_button__d78c2.Button-module_mint__1c1d6:hover {
+    background-color: #e7f9f9;
+    border-color: #00c4c4;
+    color: #00c4c4;
+}
+
+.Button-module_button__d78c2.Button-module_circular__e1a14 {
+    border-radius: 999em;
+}
+
+.Button-module_button__d78c2.Button-module_mint__1c1d6:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 196, 196, 0.25);
+}
+
+/*
+hr 아래
+*/
+
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_loginContainer__eae04 .LoginFormAndSocialButtons-module_divider__468a9 {
+height: 8px;
+}
+.Divider-module_divider__d1df8.Divider-module_horizontal__c3ba4.Divider-module_spacing7__a5688 {
+margin-block: 32px;
+}
+.Divider-module_divider__d1df8.Divider-module_lightBG__48c8b {
+background-color: #f2f4f6;
+opacity: 1;
+}
+.Divider-module_divider__d1df8.Divider-module_horizontal__c3ba4 {
+margin-block: 16px;
+background-color: #f2f4f6;
+}
+.Divider-module_divider__d1df8.Divider-module_spacing7__a5688 {
+margin-block: 32px;
+}
+.Divider-module_divider__d1df8 {
+position: relative;
+margin: 0;
+border: 0;
+width: 100%;
+height: 1px;
+background-color: #f2f4f6;
+}
+hr {
+display: block;
+margin-block-start: 0.5em;
+margin-block-end: 0.5em;
+margin-inline-start: auto;
+margin-inline-end: auto;
+color: gray;
+unicode-bidi: isolate;
+overflow: hidden;
+border-style: inset;
+border-width: 1px;
+}
+
+/*
+로그인 유지 
+*/
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_loginContainer__eae04 .LoginFormAndSocialButtons-module_rememberMe__1c8e4 {
+display: flex;
+flex-direction: row;
+height: 21px;
+justify-content: flex-end;
+}
+.Checkbox-module_checkbox__69023.Checkbox-module_labeled__89ffe {
+display: inline-flex;
+align-items: center;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.5;
+}
+.Checkbox-module_checkbox__69023 {
+display: flex;
+align-items: center;
+position: relative;
+margin-right: 0;
+}
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+margin: 0;
+opacity: 0;
+cursor: pointer;
+z-index: 1;
+}
+input, textarea {
+background: none;
+}
+address, article, aside, b, body, a, button, canvas, caption, dl, dt, dd, div, html, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, big, cite, code, del, dfn, em, img, small, strike, strong, sub, sup, var, u, i, center, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, select, textarea, input {
+margin: 0;
+border: 0;
+padding: 0;
+vertical-align: baseline;
+}
+*, *:before, *:after {
+box-sizing: border-box;
+}
+
+input:not([type="image" i]) {
+box-sizing: border-box;
+}
+input[type="checkbox" i] {
+background-color: initial;
+cursor: default;
+appearance: auto;
+box-sizing: border-box;
+margin: 3px 3px 3px 4px;
+padding: initial;
+border: initial;
+}
+
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d:checked+.Checkbox-module_icon__cf099, .Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d:indeterminate+.Checkbox-module_icon__cf099 {
+border: solid 1px #00b2b2;
+background-color: #00c4c4;
+}
+.Checkbox-module_checkbox__69023.Checkbox-module_sm__1dbd2 .Checkbox-module_icon__cf099 {
+width: 16px;
+height: 16px;
+}
+
+.Checkbox-module_checkbox__69023.Checkbox-module_labeled__89ffe .Checkbox-module_icon__cf099 {
+display: inline-block;
+margin-right: 8px;
+vertical-align: middle;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_icon__cf099 {
+display: block;
+position: relative;
+flex-shrink: 0;
+transition-property: opacity, border-color, background-color;
+transition-duration: .15s;
+opacity: 1;
+z-index: 1;
+border: 1px solid #cdd3d8;
+border-radius: 2px;
+background-color: #fff;
+box-sizing: border-box;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_checkIcon__0ab64, .Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_removeIcon__06586 {
+opacity: 0;
+}
+
+.Checkbox-module_checkbox__69023.Checkbox-module_sm__1dbd2 svg {
+width: 10px;
+height: 10px;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_icon__cf099 svg {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+transition-property: opacity, width, fill;
+transition-duration: .15s;
+}
+
+.WithProps-module_icon__d564b {
+display: block;
+transform: scale(1);
+transition: transform .3s ease-out;
+fill: currentColor;
+width: 1em;
+height: 1em;
+}
+
+.Checkbox-module_checkbox__69023.Checkbox-module_labeled__89ffe {
+display: inline-flex;
+align-items: center;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.5;
+}
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_checkIcon__0ab64, .Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_removeIcon__06586 {
+opacity: 0;
+}
+.Checkbox-module_checkbox__69023.Checkbox-module_sm__1dbd2 svg {
+width: 10px;
+height: 10px;
+}
+.Checkbox-module_checkbox__69023 .Checkbox-module_icon__cf099 svg {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+transition-property: opacity, width, fill;
+transition-duration: .15s;
+}
+.WithProps-module_icon__d564b {
+display: block;
+transform: scale(1);
+transition: transform .3s ease-out;
+fill: currentColor;
+width: 1em;
+height: 1em;
+}
+
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d:checked+.Checkbox-module_icon__cf099 .Checkbox-module_checkIcon__0ab64 {
+opacity: 1;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_checkIcon__0ab64, .Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_removeIcon__06586 {
+opacity: 0;
+}
+
+.Checkbox-module_checkbox__69023.Checkbox-module_sm__1dbd2 svg {
+width: 10px;
+height: 10px;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_icon__cf099 svg {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+transition-property: opacity, width, fill;
+transition-duration: .15s;
+}
+
+.WithProps-module_icon__d564b {
+display: block;
+transform: scale(1);
+transition: transform .3s ease-out;
+fill: currentColor;
+width: 1em;
+height: 1em;
+}
+
+.Checkbox-module_checkbox__69023.Checkbox-module_labeled__89ffe {
+display: inline-flex;
+align-items: center;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.5;
+}
+/*
+로그인 유지 ? 버튼
+*/
+
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_loginContainer__eae04 .LoginFormAndSocialButtons-module_rememberMe__1c8e4 .LoginFormAndSocialButtons-module_tooltipWrapper__b7e7e {
+margin-top: -2px;
+margin-bottom: 4px;
+margin-left: 2px;
+padding: 1px;
+}        
+
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_loginContainer__eae04 .LoginFormAndSocialButtons-module_rememberMe__1c8e4 .LoginFormAndSocialButtons-module_tooltipWrapper__b7e7e .LoginFormAndSocialButtons-module_tooltip__a774f {
+height: 18px;
+margin-top: 2px;
+}
+.Tooltip-module_tootipWrapper__8f62a {
+position: relative;
+line-height: 0;
+}
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_loginContainer__eae04 .LoginFormAndSocialButtons-module_rememberMe__1c8e4 .LoginFormAndSocialButtons-module_tooltipWrapper__b7e7e .LoginFormAndSocialButtons-module_tooltip__a774f {
+height: 18px;
+margin-top: 2px;
+}
+button:not(:disabled) {
+cursor: pointer;
+}
+.Tooltip-module_button__1c562 {
+cursor: pointer;
+display: flex;
+gap: 4px;
+align-items: center;
+margin: 0;
+padding: 0;
+border: 0;
+color: inherit;
+background-color: transparent;
+outline: none;
+}
+button {
+font-size: inherit;
+}
+.Tooltip-module_button__1c562 .Tooltip-module_helpIconWrap__9aa41 {
+width: 16px;
+height: 16px;
+}
+button:not(:disabled) {
+cursor: pointer;
+}
+
+.Tooltip-module_button__1c562 {
+cursor: pointer;
+display: flex;
+gap: 4px;
+align-items: center;
+margin: 0;
+padding: 0;
+border: 0;
+color: inherit;
+background-color: transparent;
+outline: none;
+}
+.WithProps-module_icon__d564b {
+display: block;
+transform: scale(1);
+transition: transform .3s ease-out;
+fill: currentColor;
+width: 1em;
+height: 1em;
+}
+svg[Attributes Style] {
+width: 16;
+}
+svg:not(:root) {
+overflow-clip-margin: content-box;
+overflow: hidden;
+}
+
+.Tooltip-module_button__1c562 {
+cursor: pointer;
+display: flex;
+gap: 4px;
+align-items: center;
+margin: 0;
+padding: 0;
+border: 0;
+color: inherit;
+background-color: transparent;
+outline: none;
+}
+
+
+.WithProps-module_icon__d564b {
+display: block;
+transform: scale(1);
+transition: transform .3s ease-out;
+fill: currentColor;
+width: 1em;
+height: 1em;
+}
+
+.Tooltip-module_button__1c562 {
+cursor: pointer;
+display: flex;
+gap: 4px;
+align-items: center;
+margin: 0;
+padding: 0;
+border: 0;
+color: inherit;
+background-color: transparent;
+outline: none;
+}
+
+
+.LoginFormAndSocialButtons-module_rememberMe__1c8e4 {
+display: flex;
+justify-content: flex-end;
+}
+
+/*
+.Checkbox-module_labeled__89ffe {
+display: inline-flex;
+align-items: center;
+}*/
+
+.Checkbox-module_labeled__89ffe {
+display: inline-flex;       /* 전체를 flex 컨테이너로 */
+align-items: center;        /* 수직 중앙 맞춤 */
+gap: 4px;                   /* 체크박스-텍스트-? 버튼 간 간격 */
+}
+
+.LoginFormAndSocialButtons-module_tooltipWrapper__b7e7e {
+display: inline-flex;       /* ? 버튼도 flex 안에서 수직 중앙 */
+align-items: center;
+}
+
+/* ? 버튼 토글 상태  */
+.Tooltip-module_helpIcon__a2bd6 {
+display: none;
+}
+
+.Tooltip-module_helpOutlineIcon__399ac {
+display: block;
+}
+
+/* ? 버튼 토글 상태  */
+/* active 상태 */
+.Tooltip-module_button__1c562.active .Tooltip-module_helpOutlineIcon__399ac {
+display: none;
+}
+
+.Tooltip-module_button__1c562.active .Tooltip-module_helpIcon__a2bd6 {
+display: block;
+}
+
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_content__5843f .LoginFormAndSocialButtons-module_socialContainer__a4f39 .LoginFormAndSocialButtons-module_fullWidthButtonList__2755b {
+display: flex;
+flex-direction: column;
+row-gap: 12px;
+margin-top: 24px;
+}
+
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_loginContainer__eae04 .LoginFormAndSocialButtons-module_divider__468a9 {
+height: 8px;
+}
+
+
+.LoginFormAndSocialButtons-module_container__5a647 .LoginFormAndSocialButtons-module_loginContainer__eae04 .LoginFormAndSocialButtons-module_rememberMe__1c8e4 .LoginFormAndSocialButtons-module_tooltipWrapper__b7e7e {
+margin-top: -2px;
+margin-bottom: 4px;
+margin-left: 2px;
+padding: 1px;
+}
+
+element.style {
+inset: 0px auto auto 0px;
+transform: translate(calc(-100% + 399px), 282px);
+}
+
+.Tooltip-module_tooltip__74452 {
+font-size: 12px;
+font-weight: 400;
+line-height: 1.5;
+position: absolute;
+z-index: 8;
+box-sizing: border-box;
+max-width: 288px;
+padding: 12px;
+border-radius: 4px;
+color: #fff;
+word-break: keep-all;
+overflow-wrap: break-word;
+white-space: normal;
+background-color: #343a40;
+}
+
+
+/* 말풍선 기준점 */
+.Tooltip-wrapper {
+position: relative;
+display: inline-flex;
+justify-content: flex-end;
+}
+
+/* 말풍선 */
+.Tooltip-module_tooltip__74452 {
+text-align: left;
+position: absolute;
+width: 288px;
+top: 22px;
+right: -4px;
+padding: 12px 14px;
+border-radius: 4px;
+background: #343a40;
+color: #fff;
+font-size: 11px;
+line-height: 1.5;
+white-space: normal;
+
+opacity: 0;
+visibility: hidden;
+transform: translateY(-4px);
+transition: opacity .15s ease, transform .15s ease;
+z-index: 100;
+}
+
+/* 열렸을 때 */
+.Tooltip-wrapper.active .Tooltip-module_tooltip__74452 {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+}
+
+
+
+.Tooltip-wrapper {
+position: relative;
+display: inline-flex;
+align-items: center;
+}

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>기업 - 검색 버튼(필터)</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
+        <!-- 폰트 -->
+        <link rel="stylesheet" href="/css/common/font.css" />
+        <!-- 스타일 초기화 css -->
+        <link rel="stylesheet" href="/css/common/reset.css" />
+        <!-- 공통 css -->
+        <link rel="stylesheet" href="/css/common/common.css">
+        <!-- fontawesome 꾸며진 폰트 -->
+        <link rel="stylesheet" href="/css/common/fontawesome.css">
+        <!-- 유틸 css -->
+        <link rel="stylesheet" href="/css/common/util.css" />
+        <!-- 개별 css 스타일 -->
+        <link rel="stylesheet" href="/css/company-admin/company-search-button.css" />
+
+        <link type="text/css" th:href="@{/css/company-admin/top.css}" rel="stylesheet" />
+        <link type="text/css" th:href="@{/css/company-admin/menu-flex.css}" rel="stylesheet" />
+
+    </head>
+    <body>
+
+    <div th:replace="/company-admin/top::top" style="margin-bottom: 20px;"></div>
+
+
+    <!-- 검색 필터 영역 -->
+        <form id="filter-form">
+            <div class="wrap-filter">
+                <div class="inner-filter">
+                    <div class="box-left">
+                        <div class="item-filter">
+                            <div class="filter-tit">
+                                <p class="fz-12 fc-2">필터</p>
+                            </div>
+
+                            <div class="box-filter">
+                                <!-- 검색 종류 (버튼) -->
+                                <!-- data-filter-mode: 어떤 검색 종류를 사용할지 구분하기 위한 내용 -->
+                                <!-- 재사용시 data-filter-mode 값 재정의 필요 + data-mode-ui와 통일 필요 -->
+                                <div class="filter-mode">
+                                    <button type="button" class="btn btn-secondary-outline filter-mode-btn is-active" data-filter-mode="installDate">설치일</button>
+                                    <button type="button" class="btn btn-secondary-outline filter-mode-btn" data-filter-mode="location">위치</button>
+                                    <button type="button" class="btn btn-secondary-outline filter-mode-btn" data-filter-mode="kwh">충전량</button>
+                                </div>
+                                
+                                <!-- 종류별 입력 영역 -->
+                                <!-- data-mode-ui: 선택된 검색 종류에 따라 화면에 보여줄 입력 영역의 내용 -->
+                                <!-- 재사용시 data-filter-mode 값 재정의 필요 + data-filter-mode와 통일 필요 -->
+
+                                <!-- 설치일 -->
+                                <div class="filter-panel" data-mode-ui="installDate">
+                                    <input type="date" id="install-from" class="tf-comm" />
+                                    <span class="fz-12 fc-2" style="margin: 0 8px">~</span>
+                                    <input type="date" id="install-to" class="tf-comm" />
+                                </div>
+
+                                <!-- 위치 -->
+                                <div class="filter-panel none" data-mode-ui="location">
+                                    <input type="text" id="loc-keyword" class="tf-comm" placeholder="예) 서울, 안양, 대전" />
+                                </div>
+
+                                <!-- 충전량(kWh) -->
+                                <div class="filter-panel none" data-mode-ui="kwh">
+                                    <input type="number" id="kwh-min" class="tf-comm" placeholder="최소" />
+                                    <span class="fz-12 fc-2" style="margin: 0 8px">~</span>
+                                    <input type="number" id="kwh-max" class="tf-comm" placeholder="최대" />
+                                    <span class="fz-12 fc-2" style="margin-left: 8px">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-right">
+                        <button type="submit" class="btn btn-tertiary-mint btn-icon" id="filter-search-btn">
+                            <i class="icon icon-filter"></i>
+                            조회
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

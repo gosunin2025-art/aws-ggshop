@@ -1,0 +1,103 @@
+/* 전체 래퍼 */
+.top-wrapper {
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+/* 상단 바 */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+}
+
+/* 로고 */
+.logo a {
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #222;
+}
+
+/* 로그인 영역 */
+.auth-area a {
+    margin-left: 16px;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+/* 네비게이션 */
+/*.nav {*/
+/*    background: #f8f8f8;*/
+/*}*/
+
+.menu {
+    display: flex;
+    /*justify-content: center;*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    display: block;
+    padding: 16px 24px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* 서브 메뉴 */
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 200px;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 8px 0;
+    z-index: 100;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sub-menu li a:hover {
+    background: #f0f0f0;
+}
+
+/* hover 시 열기 */
+.has-sub:hover .sub-menu {
+    display: block;
+}
+
+/* hover 효과 */
+.menu > li > a:hover {
+    color: #0066cc;
+}
+
+.nav .menu {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+}
+
+.nav {
+    background: #03C75A;
+    display: flex;              /* 추가 */
+    justify-content: center;    /* 🔥 핵심 */
+}

@@ -1,0 +1,332 @@
+.ConfirmModal_overlay__3JoaM {
+    display: inline-flex;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 32;
+    background-color: #0000;
+    overflow: hidden;
+    animation: ConfirmModal_overlayInit__2ef3D .25s;
+}
+
+a, address, article, aside, audio, b, big, blockquote, body, button, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, input, label, legend, li, mark, menu, nav, object, ol, p, pre, section, select, small, span, strike, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, tr, u, ul, var, video {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.ConfirmModal_sizeMobile__1GLwX, .ConfirmModal_sizeSm__3An-e {
+    width: 400px;
+}
+
+.ConfirmModal_sizeMobile__1GLwX, .ConfirmModal_sizeSm__3An-e, .ConfirmModal_sizeMd__2am1u, .ConfirmModal_sizeLg__hw5Mv, .ConfirmModal_sizeXl__2uUDz {
+    max-width: calc(100% - 32px);
+}
+
+.ConfirmModal_confirmModal__2YF-6 {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    outline: none;
+    border-radius: 16px;
+    box-shadow: 0 32px 40px -2px #0a16461f, 0 0 5px #0a16460f;
+    background: #fff;
+    padding-block: 24px;
+    max-height: calc(100vh - 160px);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    
+}
+
+.ConfirmModal_confirmModal__2YF-6 .ConfirmModal_header__3QYNv {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+
+    
+}
+
+.ConfirmModal_confirmModal__2YF-6 .ConfirmModal_closeIconRoot__2qHDe {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.Button_button__1U5se.Button_text__1eVrZ, .Button_button__1U5se.Button_textLink__3T2Bb {
+    border: 0;
+    border-color: #0000;
+    padding: 0;
+    height: auto;
+}
+
+.Button_button__1U5se.Button_md__3yvYX {
+    padding-inline: 16px;
+    height: 40px;
+    font-size: 14px;
+}
+
+.Button_button__1U5se {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: #0000;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+body, button, h1, h2, h3, h4, h5, h6, html, input, p, select, textarea {
+    color: inherit;
+    font-family: pretendard, -apple-system, blinkmacsystemfont, system-ui, roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+button {
+    background-color: transparent;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.Button_button__1U5se span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
+
+.Button_button__1U5se span svg {
+    display: inline-block;
+}
+
+.WithProps_icon__2zN1K {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.ConfirmModal_confirmModal__2YF-6 .ConfirmModal_title__g7w2K {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+
+    padding-top: 7px;
+}
+
+.ConfirmModal_confirmModal__2YF-6 .ConfirmModal_content__8zABq {
+    display: inline-flex;
+    flex-direction: column;
+    overflow: auto;
+    color: #495057;
+    margin-top: 12px;
+}
+
+.ReportModal_container__43-xQ {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.ReportModal_container__43-xQ .ReportModal_guideMessage__uz1l- {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.ReportModal_container__43-xQ .ReportModal_email__1-Qrd {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    color: #212529;
+    padding-block: 8px;
+}
+
+.WithProps_icon__2zN1K {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+.ReportModal_container__43-xQ .ReportModal_listWrapper__35Stn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #212529;
+}
+
+.ReportModal_container__43-xQ .ReportModal_listWrapper__35Stn h5 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.ReportModal_container__43-xQ .ReportModal_listWrapper__35Stn .ReportModal_list__U51Dq {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.MarkdownToHtml_container__3y6h7 {
+    position: relative;
+}
+
+.ReportModal_container__43-xQ .ReportModal_listWrapper__35Stn .ReportModal_list__U51Dq ol {
+    counter-reset: list-counter;
+}
+
+.MarkdownToHtml_container__3y6h7 ol {
+    counter-reset: item;
+}
+
+li, ol, ul {
+    list-style: none;
+}
+
+ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 5px;
+    unicode-bidi: isolate;
+}
+
+.ReportModal_container__43-xQ .ReportModal_listWrapper__35Stn .ReportModal_list__U51Dq ol>li {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    counter-increment: list-counter;
+}
+
+.MarkdownToHtml_container__3y6h7 ol>li {
+    position: relative;
+    padding-left: 1.2em;
+}
+
+li {
+    display: list-item;
+    unicode-bidi: isolate;
+}
+
+.ReportModal_container__43-xQ .ReportModal_listWrapper__35Stn .ReportModal_list__U51Dq ol>li:before {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    content: counter(list-counter) ".";
+}
+
+.MarkdownToHtml_container__3y6h7 ol>li:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: .2em;
+    font-size: 1em;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.ReportModal_container__43-xQ .ReportModal_infoMessage__2THgN {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #868e96;
+}
+
+body, button, h1, h2, h3, h4, h5, h6, html, input, p, select, textarea {
+    color: inherit;
+    font-family: pretendard, -apple-system, blinkmacsystemfont, system-ui, roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+.ReportModal_container__43-xQ .ReportModal_link__19zXY {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #00c4c4;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.WithProps_icon__2zN1K {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+.ConfirmModal_confirmModal__2YF-6 .ConfirmModal_footer__1T1CY {
+    position: relative;
+    margin-top: 24px;
+}
+
+.ConfirmModal_confirmModal__2YF-6 .ConfirmModal_footer__1T1CY .ConfirmModal_buttonGroup__1HxZh {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 8px;
+}
+

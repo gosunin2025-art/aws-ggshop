@@ -1,0 +1,188 @@
+#GNB {
+    position: fixed;
+    z-index: 16;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #f2f4f6;
+    background-color: #fff;
+}
+.NavigationTab-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-block: 8px;
+}
+
+.NavigationTab-icon {
+    display: flex;
+    align-items: center;
+}
+.NavigationTab-icon img {
+    /* width: 22px; */
+    height: 22px;
+}
+.NavigationTab-icon svg {
+    display: block;
+    height: 24px;
+    width: 38px;
+    fill: #6a737c;
+}
+.NavigationTab-icon svg g {
+    fill: #6a737c;
+}
+
+.NavigationTab-container.active .NavigationTab-icon svg g {
+    fill: #222;
+}
+
+.NavigationTab-icon i {
+    font-size: 1.5rem;
+    margin-top: 0px;
+    color: #6a737c;
+}
+.NavigationTab-container.active .NavigationTab-icon > i {
+    color: #222;
+}
+.NavigationTab-name {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #868e96;
+}
+.NavigationTab-name {
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #868e96;
+}
+.NavigationTab-container.active .NavigationTab-name {
+    font-weight: 700;
+    color: #212529;
+}
+.NotificationBadge {
+    position: absolute;
+    top: 1px;
+    right: calc(50% - 15px);
+    transform: translate(50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 0 4px;
+    border-radius: 100%;
+}
+.NotificationBadge.type-new {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-clip: padding-box;
+    background-color: #f66;
+    color: #fff;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.NotificationBadge.type-new {
+    display: none;
+}
+.NotificationBadge.type-new.active {
+    display: inline-flex;
+}
+
+/* 퀵메뉴 */
+.quickButton-container {
+    display: flex;
+    position: fixed;
+    right: 16px;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    flex-direction: column;
+    align-items: flex-end;
+    transform: translateY(-56px);
+    z-index: 16;
+    gap: 8px;
+}
+/* .quickButton-container button{
+    margin-bottom: 10px;
+}
+.quickButton-container button:last-child{
+    margin-bottom: 0px;
+} */
+/* .quickButton-container .quickButton-pageTop:hover{
+    
+} */
+/* 퀵메뉴 - 페이지탑 */
+.quickButton-container .quickButton-pageTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #dfdfdf;
+    width: 44px;
+    height: 44px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+.quickButton-container .quickButton-pageTop.active{visibility: visible; opacity: 0.6;pointer-events: auto;}
+
+.quickButton-container .quickButton-pageTop:hover {
+    background: #dfdfdf;
+}
+/* 퀵메뉴 - 쪽지 */
+.quickButton-container .quickButton-letter:hover {
+    background: #5f5f5f;
+}
+.quickButton-container .quickButton-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #222;
+    border-radius: 50%;
+    background-color: #666;
+    transition: background 0.3s;
+    width: 44px;
+    height: 44px;
+    color: #fff;
+}
+.quickButton-container .quickButton-letter i {
+    color: inherit;
+}
+/* 퀵메뉴 - ZZ1 간편 판매 */
+.quickButton-container .quickButton-V2G {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #333;
+    width: 44px;
+    height: 44px;
+}
+.quickButton-container .quickButton-V2G .zz1OpenButton_icon {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+}
+.quickButton-container .quickButton-V2G .zz1OpenButton_icon {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+}
+.zz1OpenButton_icon {
+    display: flex;
+    align-items: center;
+}
+.icon-zzone {
+    width: 100%;
+}
+.icon-zzone path {
+    fill: white;
+}

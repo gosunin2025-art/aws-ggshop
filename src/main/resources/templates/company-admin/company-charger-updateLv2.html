@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업 - 충전소 수정</title>
+    <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/common/font.css" />
+    <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/common/fontawesome.css">
+    <link rel="stylesheet" href="/css/common/util.css" />
+    <link rel="stylesheet" href="/css/company-admin/company-charger.css" />
+    <link type="text/css" th:href="@{/css/company-admin/top.css}" rel="stylesheet" />
+    <link type="text/css" th:href="@{/css/company-admin/menu-flex.css}" rel="stylesheet" />
+</head>
+
+<body>
+<div th:replace="/company-admin/top::top" style="margin-bottom: 20px;"></div>
+
+<main class="board">
+
+    <div class="ui-header" style="max-width: 600px; width: 100%; margin: 0 auto; padding: 24px 24px 0 24px; box-sizing: border-box;">
+        <h2 class="title">충전소 정보 수정</h2>
+    </div>
+
+    <div class="board-main" style="padding: 24px; display: flex; justify-content: center;">
+        <form id="update-request"
+              th:action="@{/ev/evcharger/update/{id}(id=${charger.id})}"
+              method="post"
+              style="max-width: 600px; width: 100%;">
+
+            <!-- 설치일자 (읽기 전용) -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">설치일자</label>
+                <input type="text"
+                       name="installDate"
+                       th:value="${charger.installDate}"
+                       readonly
+                       style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #f5f5f5; cursor: not-allowed;">
+                <p style="font-size: 13px; color: #888; margin-top: 4px;">※ 수정할 수 없는 정보입니다.</p>
+            </div>
+
+            <!-- 충전소 번호 (읽기 전용) -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">충전소 번호</label>
+                <input type="text"
+                       name="stationNumber"
+                       th:value="${charger.stationNumber}"
+                       readonly
+                       style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #f5f5f5; cursor: not-allowed;">
+                <p style="font-size: 13px; color: #888; margin-top: 4px;">※ 수정할 수 없는 정보입니다.</p>
+            </div>
+
+            <!-- 설치주소 (수정 가능) -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">설치주소</label>
+                <input id="addressInput"
+                       name="installAddress"
+                       type="text"
+                       th:value="${charger.installAddress}"
+                       placeholder="클릭하여 주소를 검색하세요"
+                       onclick="sample4_execDaumPostcode();"
+                       readonly
+                       style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; cursor: pointer; background: #fafafa;">
+            </div>
+
+            <!-- 특이사항 (수정 가능) -->
+            <div style="margin-bottom: 28px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">특이사항</label>
+                <textarea name="chargerNote"
+                          th:text="${charger.chargerNote}"
+                          placeholder="특이사항을 입력하세요"
+                          style="width: 100%; height: 100px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; resize: vertical; font-family: inherit;"></textarea>
+            </div>
+
+            <!-- 버튼 -->
+            <div style="display: flex; gap: 8px;">
+                <input type="button"
+                       value="취소"
+                       th:onclick="|location.href='@{/ev/evcharger/detail/{id}(id=${charger.id})}'|"
+                       style="flex: 1; height: 45px; background: white; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; cursor: pointer; color: #333;">
+                <input type="submit"
+                       value="수정 완료"
+                       style="flex: 1; height: 45px; background: #333; color: white; border: none; border-radius: 4px; font-size: 14px; cursor: pointer; font-weight: 600;">
+            </div>
+
+        </form>
+    </div>
+</main>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function (data) {
+                document.getElementById("addressInput").value = data.roadAddress;
+            }
+        }).open();
+    }
+</script>
+</body>
+</html>

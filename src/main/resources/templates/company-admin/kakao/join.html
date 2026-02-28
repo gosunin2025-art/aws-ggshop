@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>카카오 회원가입</title>
+    <link rel="stylesheet" href="/css/company-admin/join.css">
+</head>
+<body>
+<form action="/member/kakao/join" method="post" name="joinForm">
+    <h2>카카오 회원가입</h2>
+
+    <div>
+        <label>이메일</label>
+        <input type="text" name="memberEmail" th:value="${kakao.memberEmail}" readonly>
+    </div>
+
+    <div>
+        <label>이름</label>
+        <input type="text" name="memberName" th:value="${kakao.memberName}" readonly>
+    </div>
+
+    <div>
+        <label>프로필 이미지</label>
+        <img th:if="${kakao.profileImageUrl}" th:src="${kakao.profileImageUrl}" alt="프로필" style="width: 100px; border-radius: 50%;">
+        <input type="hidden" name="profileImageUrl" th:value="${kakao.profileImageUrl}">
+    </div>
+
+    <!--  type="submit"으로 바로 제출 -->
+    <button type="submit">가입 완료</button>
+    <a href="/ev/company/login">취소</a>
+</form>
+
+<!--  JavaScript 불필요 (카카오는 자동 가입이니까) -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

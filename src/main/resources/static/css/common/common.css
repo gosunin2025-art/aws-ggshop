@@ -1,0 +1,242 @@
+/* svg */
+.WithProps-icon{
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+.hidden{
+    overflow: hidden;
+}
+.none{
+    display: none !important;
+}
+.round-fix{
+    border-radius: 8px;
+}
+.__mobile.w-100{
+    width: 100% !important;
+}
+/* 뱃지(N, 숫자) */
+.NotificationBadge{
+    position: absolute;
+    top: 1px;
+    right: calc(50% - 15px);
+    transform: translate(50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 0 4px;
+    border-radius: 100%;
+}
+.NotificationBadge.type-new{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-clip: padding-box;
+    background-color: #f66;
+    color: #fff;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.NotificationBadge.type-number{
+    right: calc(50% - 11px);
+    width: auto;
+    border-radius: 9px;
+}
+.NotificationBadge.type-new{
+    display: none;
+}
+.NotificationBadge.type-new.active {
+    display: inline-flex;
+}
+.dummy-area{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ddd;
+}
+
+/* button Gruop */
+.buttonGroup{
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 8px;
+}
+.buttonGroup .button{
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+.buttonGroup .button-icon.button-inInput{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+.buttonGroup .button-confirm{
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+
+.button-submit{
+    margin-top: 16px;
+}
+.buttonGroup .button-size{
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+/* button */
+.button{
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+.button-close{
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+.button{
+    border: 0;
+    border-color: transparent;
+    padding: 0;
+    height: auto;
+}
+.button-inInput{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+.button-inInput svg{
+    width: 20px;
+    height: 20px;
+}
+.button.button-inInput path {
+    fill: #adb5bd;
+}
+.button-icon{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+.button-bg-white{
+    background: #fff;
+}
+.button.button-mint{
+    border: 1px solid #00c4c4;
+    background-color: #00c4c4;
+    color: #fff;
+}
+.button.button-bg-white{
+    background: white;
+}
+.button.button-mint.button-bg-white{
+    color: #00c4c4;
+}
+.button.button-contain{
+    width: 100%;
+}
+.button-disabled.button-mint,
+button[disabled].button-mint {
+    opacity: .4;
+    cursor: default;
+    pointer-events: none;
+}
+.button .WithProps-icon{
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+.button svg{
+    display: inline-block;
+}
+.button span{
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
+/* input util */
+.input.input-sm{height: 32px;min-height: 32px;font-size: 14px;font-weight: 400;line-height: 1.5;}
+.input.input-md{height: 40px;min-height: 40px;font-size: 14px;font-weight: 400;line-height: 1.5;}
+.input.input-lg{height: 48px;min-height: 48px;font-size: 16px;font-weight: 400;line-height: 1.5;}
+.input.input-xl{height: 56px;min-height: 56px;font-size: 18px;font-weight: 400;line-height: 1.5;}
+/* button util */
+.button-sm{height: 32px;min-height: 32px;font-size: 14px;font-weight: 400;line-height: 1.5;}
+.button-md{height: 40px;min-height: 40px;font-size: 14px;font-weight: 400;line-height: 1.5;}
+.button-lg{height: 48px;min-height: 48px;font-size: 16px;font-weight: 400;line-height: 1.5;}
+.button-xl{height: 56px;min-height: 56px;font-size: 18px;font-weight: 400;line-height: 1.5;}
+
+/* yearBtns */
+.yearBtns{gap: 8px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 4px;}
+.yearBtns > button{flex: none; border: 1px solid #eee;}
+
+/* 해드 배너 영역 */
+.headBanner-container{display: flex;align-items: center;justify-content: space-between;padding: 8px 16px;background-color: #212529; margin-top: -52px; transition: margin .3s;}
+.headBanner-container.active{margin-top: 0px;}
+.headBanner-left{display: flex;column-gap: 8px;align-items: center;}
+.headBanner-icon{display: flex;flex-grow: 0;align-items: center;justify-content: center;width: 32px;height: 32px;border-radius: 8px;}
+.headBanner-content{display: flex;flex-direction: column;flex-grow: 1;justify-content: flex-start;color: #fff;}
+.headBanner-title{font-size: 12px;font-weight: 700;line-height: 1.5;}
+.headBanner-right{display: flex;column-gap: 16px;align-items: center;}
+.headBanner-link{border-color: #00c4c4;background-color: #00c4c4;color: #fff;padding-inline: 12px;height: 32px;font-size: 14px;font-weight: 500;}
+.headBanner-close{margin-top: -2px;width: 16px;height: 16px;color: #fff;}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업 메인 - 거래목록</title>
+    <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/common/font.css" />
+    <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/common/fontawesome.css">
+    <link rel="stylesheet" href="/css/common/util.css" />
+    <link rel="stylesheet" href="/css/company-admin/company-charger.css" />
+    <link type="text/css" th:href="@{/css/company-admin/top.css}" rel="stylesheet" />
+    <link type="text/css" th:href="@{/css/company-admin/menu-flex.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div th:replace="~{/company-admin/top::top}" style="margin-bottom: 20px;"></div>
+
+<main class="board">
+    <div class="ui-header">
+        <h2 class="title">V2G 한전 전력 판매 거래 내역</h2>
+    </div>
+
+    <!-- 탭 -->
+    <div class="segmented-tabs">
+        <ul>
+            <li th:classappend="${tabType == 'all'} ? 'active'">
+                <a th:href="@{/vtog/transaction/list/all/1}">전체</a>
+            </li>
+            <li th:classappend="${tabType == 'daily'} ? 'active'">
+                <a th:href="@{/vtog/transaction/list/daily/1}">일간</a>
+            </li>
+            <li th:classappend="${tabType == 'weekly'} ? 'active'">
+                <a th:href="@{/vtog/transaction/list/weekly/1}">주간</a>
+            </li>
+            <li th:classappend="${tabType == 'monthly'} ? 'active'">
+                <a th:href="@{/vtog/transaction/list/monthly/1}">월간</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 날짜 조회 -->
+    <div class="board-main">
+        <form th:action="@{/vtog/transaction/list/search/1}" method="get" style="margin-bottom: 16px;">
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <input type="date"
+                       name="searchDate"
+                       th:value="${searchDate}"
+                       style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;" />
+                <button type="submit"
+                        style="padding: 8px 20px; background: #00c4c4; color: white; border: none; cursor: pointer; border-radius: 4px;">
+                    조회
+                </button>
+            </div>
+        </form>
+
+        <!-- 테이블 -->
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 12px 16px; text-align: left;">충전일자</th>
+                    <th style="padding: 12px 16px; text-align: center;">거래번호</th>
+                    <th style="padding: 12px 16px; text-align: center;">고객명</th>
+                    <th style="padding: 12px 16px; text-align: center;">충전기 번호</th>
+                    <th style="padding: 12px 16px; text-align: center;">충전량(kWh)</th>
+                    <th style="padding: 12px 16px; text-align: center;">V2G 전력 판매 금액</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="vtog : ${vtogList}" style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 12px 16px;" th:text="${vtog.createdDate}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${vtog.vtogTransactionNumber}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${vtog.memberName}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${vtog.evChargerUid}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${vtog.vtogPaymentSalesKwh}">-</td>
+                    <td style="padding: 12px 16px; text-align: center;" th:text="${vtog.vtogPaymentSalesPrice}">-</td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(vtogList)}">
+                    <td colspan="6" style="padding: 40px; text-align: center; color: #999;">거래 내역이 없습니다.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 페이지네이션 -->
+    <div class="board-footer">
+        <div class="pagination">
+            <div class="page">
+                <div class="desktop-only" style="display: flex; gap: 5px; align-items: center; justify-content: center;">
+
+                    <!-- 이전 버튼 -->
+                    <a th:if="${pagination.page > 1}"
+                       th:href="@{/vtog/transaction/list/{tabType}/{page}(tabType=${tabType}, page=${pagination.page - 1}, searchDate=${searchDate})}"
+                       style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #ddd; background: white; color: #333; text-decoration: none; border-radius: 4px; font-size: 18px;">
+                        ‹
+                    </a>
+                    <span th:unless="${pagination.page > 1}"
+                          style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #e5e5e5; background: #f9f9f9; color: #ccc; border-radius: 4px; font-size: 18px;">
+                        ‹
+                    </span>
+
+                    <!-- 페이지 번호 -->
+                    <th:block th:each="i : ${#numbers.sequence(pagination.startPage, pagination.endPage)}">
+                        <a th:href="@{/vtog/transaction/list/{tabType}/{page}(tabType=${tabType}, page=${i}, searchDate=${searchDate})}"
+                           th:style="${i == pagination.page} ?
+                               'display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 8px; background: #333; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;' :
+                               'display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 8px; border: 1px solid #ddd; background: white; color: #333; text-decoration: none; border-radius: 4px;'"
+                           th:text="${i}">1</a>
+                    </th:block>
+
+                    <!-- 다음 버튼 -->
+                    <a th:if="${pagination.page < pagination.realEnd}"
+                       th:href="@{/vtog/transaction/list/{tabType}/{page}(tabType=${tabType}, page=${pagination.page + 1}, searchDate=${searchDate})}"
+                       style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #ddd; background: white; color: #333; text-decoration: none; border-radius: 4px; font-size: 18px;">
+                        ›
+                    </a>
+                    <span th:unless="${pagination.page < pagination.realEnd}"
+                          style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #e5e5e5; background: #f9f9f9; color: #ccc; border-radius: 4px; font-size: 18px;">
+                        ›
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* 컨테이너 */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 2rem;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+/* 가로 정렬용 div */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* ---------------- */
+
+.align-items-center {
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lg\:col-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+/* 현재 페이지 안내 문구 */
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding: 0px;
+    list-style: none;
+}
+
+.breadcrumbs > * + * {
+    padding-left: 0.5rem;
+}
+
+.breadcrumbs li:last-child {
+    pointer-events: none;
+    color: #00c4c4;
+}
+
+.breadcrumbs > * + *::before {
+    content: '/';
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: #00c4c4;
+}
+
+.breadcrumbs li + li::before {
+    color: #4a5568;
+}
+
+/* 헤더: 제목 */
+.page-title {
+    font-size: 32px;
+}
+
+.header-style h1 {
+    margin: 0px 0px 16px 0px;
+}
+
+/* 바디: 작성 내용 */
+.form-field {
+    margin-bottom: 1.5rem;
+}
+
+.form-field > label {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* 필수 입력 표시 required */
+/* .form-field.required > label::after {
+    content: '*';
+    margin-left: 2px;
+    color: #fc8181;
+} */
+
+/* 필수 입력 표시 제거 */
+.form-field.no-required-mark > label::after {
+  content: none;
+}
+
+/* 기본 노출 / 오류 메세지 스타일 */
+/* 기본 노출 */
+.field-hint {
+    font-size: 12px;
+    color: #333;
+    margin-top: 4px;
+}
+
+/* 오류 */
+.form-field.is-error .field-error  {
+    font-size: 12px;
+    color: #fc8181;
+    margin-top: 4px;
+}
+
+/* 오류 상태 표시 on/off (js 활용)*/
+.form-field.is-error .field-hint{
+    display: none;
+}
+
+.form-field.is-error .field-error{
+    display: block;
+}
+
+
+.form-field select, .form-field .nesty-input, .form-field .hc-multiselect-toggle, .form-field > input, .form-field > textarea {
+    width: 100%;
+    height: 45px;
+    padding: 0.5em 0.75em;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: inherit;
+    background-color: #fff;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-field > p {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: rgba(199, 203, 199, 1);
+}
+
+.request-form p {
+    font-size: 13px;
+    color: #333;
+    white-space: pre-line;
+}
+
+/* textarea 영역 */
+.form-field select, .form-field .nesty-input, .form-field .hc-multiselect-toggle, .form-field > input, .form-field > textarea {
+    width: 100%;
+    padding: 0.5em 0.75em;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: inherit;
+    background-color: #fff;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-field > textarea {
+    min-height: 9em;
+}
+
+/* 푸터: 완료/취소 버튼 영역 */
+/* 버튼 오른쪽 정렬 */
+form footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form input[type='submit'] {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+    padding: 0.5em 1.25em;
+    padding: 0.5em 1.5em;
+    border: 1px solid #e2e8f0;
+    border-color: rgba(5, 5, 6, 1);
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #403b3b;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    background-color: rgba(5, 5, 6, 1);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: 0.15s ease-in-out;
+}
+
+/* 수정 불가 값 (읽기 전용) */
+input[readonly] {
+  background: #f7f7f7;
+  color: #a5a5a5;
+  cursor: not-allowed;
+}
+
+textarea {
+    resize: none;
+}

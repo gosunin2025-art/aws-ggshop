@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/assets/loginmobile.css">
+    <link rel="stylesheet" href="/css/login/login.css">
+    <title>Document</title>
+
+    <script>
+        function kakaoLogin() {
+            const REST_API_KEY = '6c18b17524346d570019e84351780311';
+            const REDIRECT_URI = 'http://localhost:10000/kakao/login';
+            const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+
+            location.href = KAKAO_AUTH_URL;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="root"> <!--ok-->
+        <main>
+            <div class="content-width-560 padding-y-0"> <!--ok-->
+                <div class="LoginFormAndSocialButtons-module_container__5a647"> <!--ok-->
+                    <header class="Header-module_container__da545"> <!--ok-->
+                        <div class="Header-module_content__31d4e"> <!--ok-->
+                            <div class="Header-module_left__45013"> <!--ok-->
+<!--                                <a class="Header-link" href="#">-->
+                                    <a class="Header-link" th:href="@{/ev/main}">
+                                    <svg
+                                      viewBox="0 0 115 40"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="73"
+                                      class="artwork"
+                                      role="img"
+                                      aria-label="GG# logo"
+                                      preserveAspectRatio="xMidYMid meet"
+                                    >
+                                      <path
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="
+                                          M20 4
+                                          C10 4 4 12 4 20
+                                          C4 28 10 36 20 36
+                                          C27 36 32 31 32 25
+                                          H20
+                                          V27
+                                          H28
+                                          C26 30 23 32 20 32
+                                          C13 32 9 27 9 20
+                                          C9 13 13 8 20 8
+                                          C23 8 26 10 28 12
+                                          L31 9
+                                          C28 6 24 4 20 4
+                                          Z
+                                  
+                                          M54 4
+                                          C44 4 38 12 38 20
+                                          C38 28 44 36 54 36
+                                          C61 36 66 31 66 25
+                                          H54
+                                          V27
+                                          H62
+                                          C60 30 57 32 54 32
+                                          C47 32 43 27 43 20
+                                          C43 13 47 8 54 8
+                                          C57 8 60 10 62 12
+                                          L65 9
+                                          C62 6 58 4 54 4
+                                          Z
+                                  
+                                          M74 8 H78 V32 H74 Z
+                                          M86 8 H90 V32 H86 Z
+                                          M70 14 H94 V18 H70 Z
+                                          M70 22 H94 V26 H70 Z
+                                        "
+                                      />
+                                    </svg>
+                                  </a>
+
+
+                            </div>
+
+                            <div class="Header-module_center__3afb0"></div> <!--ok-->
+                            <div class="Header-module_right__6c908"></div> <!--ok-->
+
+                        </div>
+                    </header>
+                    <div class="LoginFormAndSocialButtons-module_loginContainer__eae04"></div> <!--ok-->
+
+                    <div>
+                        <div class="AppLaunchButton-module_container__30af7"> <!--ok-->
+                            <div class="Popper-module_container__15a83"> <!--ok-->
+                                <div aria-describedby="Proper_44"> <!--ok-->
+
+                                    <button tabindex="-1" class="Button-module_button__d78c2 
+                                        Button-module_mint__1c1d6 
+                                        Button-module_tint__04199 
+                                        Button-module_lg__53dd9 
+                                        Button-module_circular__e1a14 
+                                        Button-module_block__d6eff 
+                                        LoginFormAndSocialButtons-module_innerButton__790a3" type="button"> <!--ok-->
+                                        <span><span>편하게 앱으로 시작하기</span></span>
+                                    </button>
+                                </div>
+
+                                <div class="Popper-module_popperContainer__06ed1 Popper-module_top__e59f8">
+                                    <div class="Popper-module_popperBox__87bbd">
+                                        <div class="Popper-module_arrow__3056d" aria-hidden="true"></div>
+                                        <div class="Popper-module_popperContent__c7057" role="tooltip">
+                                            앱 전용 쿠폰 최대 17,000원 혜택 받기 🎁
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+
+                    <hr class="Divider-module_divider__d1df8 Divider-module_horizontal__c3ba4 Divider-module_lightBG__48c8b Divider-module_spacing7__a5688 LoginFormAndSocialButtons-module_divider__468a9">
+<!---->
+                    <div class="LoginFormAndSocialButtons-module_rememberMe__1c8e4">
+
+                        <label class="Checkbox-module_checkbox__69023 
+                                        Checkbox-module_sm__1dbd2 
+                                        Checkbox-module_labeled__89ffe">
+                            <input class="Checkbox-module_input__7487d" type="checkbox" checked>
+                            <span aria-hidden="true" class="Checkbox-module_icon__cf099">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" 
+                                    class="WithProps-module_icon__d564b Checkbox-module_removeIcon__06586">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 11.4L22 11.4L22 12.6L2 12.6L2 11.4Z" fill="#495057">
+                                    </path>
+                                </svg>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" 
+                                    class="WithProps-module_icon__d564b Checkbox-module_checkIcon__0ab64">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.8485 6.84852L8.99999 19.697L2.15146 12.8485L3.84852 11.1515L8.99999 16.3029L20.1515 5.15146L21.8485 6.84852Z" fill="#495057">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="Checkbox-module_content__942dc">
+                                <span class="Checkbox-module_text__82fcd">로그인 유지</span>
+                            </span>
+                        </label>
+                        <div class="LoginFormAndSocialButtons-module_tooltipWrapper__b7e7e">
+                            <div class="Tooltip-module_tootipWrapper__8f62a 
+                                        LoginFormAndSocialButtons-module_tooltip__a774f">
+                                <div class="Tooltip-wrapper">
+                                    <button type="button" 
+                                            class="Tooltip-module_button__1c562 
+                                                    LoginFormAndSocialButtons-module_tooltip__a774f" 
+                                            aria-describedby="Tooltip_352">
+
+                                        <span class="Tooltip-module_helpIconWrap__9aa41" 
+                                            style = "margin-top: 1px;
+                                                    margin-bottom: 4px;
+                                                    margin-left: 2px;
+                                                    padding: 1px;">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16" 
+                                                class="WithProps-module_icon__d564b Tooltip-module_helpOutlineIcon__399ac" 
+                                                style="height: 16px; width: 16px;">
+                                                <path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#495057">
+                                                </path>
+                                                <path d="M9.60002 8.50002C9.60002 7.17454 10.6745 6.10002 12 6.10002C13.3255 6.10002 14.4 7.17454 14.4 8.50002C14.4 9.26494 14.0429 9.94609 13.4838 10.3866C13.0487 10.7294 12.5378 11.1492 12.1367 11.6426C11.7329 12.1392 11.4 12.7592 11.4 13.5V14.5H12.6V13.5C12.6 13.1363 12.7609 12.777 13.0678 12.3996C13.3773 12.0189 13.794 11.6699 14.2265 11.3291C15.0619 10.6709 15.6 9.64815 15.6 8.50002C15.6 6.5118 13.9882 4.90002 12 4.90002C10.0118 4.90002 8.40002 6.5118 8.40002 8.50002H9.60002Z" fill="#495057">
+                                                </path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.40002 12C1.40002 6.14581 6.14581 1.40002 12 1.40002C17.8542 1.40002 22.6 6.14581 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM12 2.60002C6.80855 2.60002 2.60002 6.80855 2.60002 12C2.60002 17.1915 6.80855 21.4 12 21.4C17.1915 21.4 21.4 17.1915 21.4 12C21.4 6.80855 17.1915 2.60002 12 2.60002Z" fill="#495057">
+                                                </path>
+                                            </svg>
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16" class="WithProps-module_icon__d564b Tooltip-module_helpIcon__a2bd6" style="height: 16px; width: 16px;">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.40002 12C1.40002 6.14578 6.14581 1.39999 12 1.39999C17.8542 1.39999 22.6 6.14578 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM12 6.09999C10.6745 6.09999 9.60002 7.17451 9.60002 8.49999H8.40002C8.40002 6.51177 10.0118 4.89999 12 4.89999C13.9882 4.89999 15.6 6.51177 15.6 8.49999C15.6 9.64812 15.0619 10.6709 14.2265 11.3291C13.794 11.6699 13.3773 12.0189 13.0678 12.3995C12.7609 12.777 12.6 13.1363 12.6 13.5V14.5H11.4V13.5C11.4 12.7591 11.7329 12.1391 12.1367 11.6425C12.5378 11.1491 13.0487 10.7294 13.4838 10.3865C14.0429 9.94606 14.4 9.26491 14.4 8.49999C14.4 7.17451 13.3255 6.09999 12 6.09999ZM13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#495057">
+                                                </path>
+                                            </svg>
+                                        </span>                             
+                                        <div class="Tooltip-module_tooltip__74452" id="Tooltip_2">
+                                            이메일 또는 간편 로그인이 유지돼요. 보안을 위해 개인 기기에서 사용해 주세요.
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!---->
+                    <div class="LoginFormAndSocialButtons-module_content__5843f">
+                        <div class="LoginFormAndSocialButtons-module_socialContainer__a4f39">
+                            <div class="LoginFormAndSocialButtons-module_fullWidthButtonList__2755b">
+
+                                <button aria-label="카카오로 시작하기"
+                                        class="Button-module_button__d78c2
+                                        Button-module_xl__6be7d
+                                        Button-module_block__d6eff
+                                        LoginFormAndSocialButtons-module_fullWidthButton__92ef8"
+                                        type="button"
+                                        onclick="kakaoLogin()">
+                                    <!-- SVG 및 내용 동일 -->
+                                    <span>
+                                            <span>
+                                                <div class="LoginFormAndSocialButtons-module_buttonContents__68303">
+                                                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" class="artwork">
+                                                        <rect x="1.66666" y="1.66675" width="36.6667" height="36.6667" rx="5" fill="#FFDE00"></rect>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 18.4988C5 11.964 11.7155 6.66675 20 6.66675C28.2845 6.66675 35 11.9648 35 18.4988C35 25.0328 28.2845 30.3309 20 30.3309C19.0481 30.3309 18.1179 30.2603 17.2157 30.1269C15.5535 31.2551 11.7008 33.8681 11.4428 34.0394C11.1141 34.2589 10.6121 34.2697 10.8149 33.4556C10.9796 32.7996 11.8018 29.7346 12.1157 28.5654C7.84567 26.4796 5 22.7524 5 18.4988Z" fill="#3C1E1E">
+                                                        </path>
+                                                    </svg>카카오로 시작하기
+                                                </div>
+                                            </span>
+                                    </span>
+                                </button>
+
+
+                                <button aria-label="이메일로 시작하기" class="Button-module_button__d78c2 Button-module_xl__6be7d Button-module_block__d6eff LoginFormAndSocialButtons-module_fullWidthButton__92ef8" type="button">
+                                    <a  th:href="@{/ev/company/loginLv2}">
+                                        <span>
+                                            <span>
+                                                <div class="LoginFormAndSocialButtons-module_buttonContents__68303">
+                                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" class="WithProps-module_icon__d564b LoginFormAndSocialButtons-module_emailIcon__984d8" style="height: 20px; width: 20px;">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 5.85719L12 15.3072L22.5 5.85724V19.5H1.5V5.85719ZM1.78582 4.5H22.2142L12 13.6928L1.78582 4.5Z" fill="#00c4c4">        <!-- #495057 -->
+                                                        </path>
+                                                    </svg>이메일로 시작하기
+                                                </div>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<!--
+    <div class="Tooltip-wrapper">
+        <div class="Tooltip-module_tooltip__74452" role="tooltip">
+          이메일 또는 간편 로그인이 유지돼요.<br>
+          보안을 위해 개인 기기에서 사용해 주세요.
+        </div>
+    </div>-->
+</body>
+<script type="text/javascript" src="/js/login/login.js"></script>
+</html>

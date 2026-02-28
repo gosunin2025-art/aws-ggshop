@@ -1,0 +1,1007 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+a,
+address,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+button,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+input,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+section,
+select,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+textarea,
+tfoot,
+th,
+thead,
+time,
+tr,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+    display: block
+}
+
+li,
+ol,
+ul {
+    list-style: none
+}
+
+blockquote,
+q {
+    quotes: none
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+    content: "";
+    content: none
+}
+
+canvas,
+img,
+picture,
+video {
+    max-width: 100%
+}
+
+iframe,
+img,
+video {
+    vertical-align: top
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto
+}
+
+address,
+em,
+var {
+    font-weight: inherit;
+    font-style: normal
+}
+
+a,
+button {
+    outline: none;
+    -webkit-appearance: none
+}
+
+a[data-ga-action] *,
+a[data-ga-category] *,
+a[data-ga-label] *,
+button[data-ga-action] *,
+button[data-ga-category] *,
+button[data-ga-label] * {
+    pointer-events: none
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit
+}
+
+button {
+    background-color: transparent
+}
+
+button:not(:disabled) {
+    cursor: pointer
+}
+
+input,
+textarea {
+    background: none
+}
+
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+input,
+p,
+select,
+textarea {
+    color: inherit;
+    font-family: pretendard, -apple-system, blinkmacsystemfont, system-ui, roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit
+}
+
+input::-webkit-input-placeholder {
+    color: inherit
+}
+
+input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none
+}
+
+input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+input[type=text]::-ms-clear {
+    display: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+body,
+table th {
+    font-weight: 400
+}
+
+body {
+    font-size: 15px;
+    line-height: inherit;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -o-text-size-adjust: none
+}
+
+:root {
+    --scrollbar-width: 0;
+    --safe-area-inset-top: env(safe-area-inset-top);
+    --safe-area-inset-right: env(safe-area-inset-right);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    --safe-area-inset-left: env(safe-area-inset-left)
+}
+
+body {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    font-feature-settings: "case"
+}
+
+.Header_container.Header_sticky {
+    position: sticky;
+    z-index: 16;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    transition: top .25s;
+}
+
+.Header_container {
+    background-color: #fff;
+}
+
+.Header_container .Header_content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: content-box;
+    max-width: 1296px;
+    height: 56px;
+    margin: auto;
+    padding-inline: 8px;
+}
+
+.Header_container .Header_content .Header_left {
+    display: flex;
+    align-items: center;
+}
+
+.StyledComponent_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+}
+
+
+.Header_container .Header_content .Header_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Title_container.Title_center {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.MessageBox_messageBox .MessageBox_content {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 1px;
+    line-height: 21px;
+    color: #495057;
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.Title_container {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    white-space: nowrap;
+    display: block;
+    text-align: center;
+}
+
+.StyledComponent_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+}
+
+.Header_container .Header_content .Header_right {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.StyledComponent_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+}
+
+.MySimplePaySettingApp_container {
+    padding: 24px 16px 0;
+    width: 100%;
+}
+
+.MySimplePaySettingApp_title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: none;
+    padding: 0 0 32px;
+    text-align: center;
+}
+
+.MySimplePaySettingApp_column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 29px;
+}
+
+.MySimplePaySettingApp_simplePayInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 560px;
+}
+
+.SimplePayCard_root {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.SimplePayCard_container .SimplePayCard_empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.SimplePayCard_container .SimplePayCard_empty .SimplePayCard_addIcon {
+    color: #00c4c4;
+}
+
+
+.SimplePayCard_container .SimplePayCard_empty .SimplePayCard_description {
+    color: #212529;
+    text-align: center
+}
+
+.SimplePayCard_container {
+    position: relative;
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    cursor: pointer;
+    min-height: 150px;
+    border-radius: 8px;
+    border: 1px solid #00c4c4;
+}
+
+.Button_button span svg {
+    display: inline-block;
+}
+
+.MessageBox_messageBox.MessageBox_basic {
+    background-color: #f9fafb;
+}
+
+.MessageBox_messageBox.MessageBox_vertical {
+    flex-direction: column;
+    gap: 8px;
+}
+
+.MessageBox_messageBox.MessageBox_noTitle {
+    flex-direction: row;
+    gap: 8px;
+}
+
+
+.MessageBox_messageBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.MessageBox_messageBox.MessageBox_vertical .MessageBox_header {
+    width: 100%;
+}
+
+.MessageBox_messageBox.MessageBox_noTitle .MessageBox_header {
+    width: auto;
+    margin-top: 10px;
+}
+
+.MessageBox_messageBox .MessageBox_header {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    text-align: left;
+}
+
+.MessageBox_messageBox.MessageBox_basic .MessageBox_icon {
+    color: #868e96;
+}
+
+.MessageBox_messageBox .MessageBox_header .MessageBox_icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.WithProps_icon>path {
+    fill: currentColor;
+}
+
+
+.MessageBox_messageBox .MessageBox_content ul {
+    margin: 0;
+    padding: 0;
+}
+
+.MessageBox_messageBox .MessageBox_content ul li:before {
+    content: "\2022";
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 18px;
+    height: 12px;
+    padding-left: 6px;
+    text-align: center;
+}
+
+.ConfirmModal_overlay {
+    display: inline-flex;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 32;
+    background-color: #0000;
+    overflow: hidden;
+    animation: ConfirmModal_overlayInit .25s;
+}
+
+
+.MySimplePaySettingApp_container:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+
+.ConfirmModal_sizeSheet.ConfirmModal_contentAfterOpen,
+.ConfirmModal_sizeSheetMD_ks.ConfirmModal_contentAfterOpen,
+.ConfirmModal_sizeFull.ConfirmModal_contentAfterOpen {
+    transform: translateY(0px);
+    transition-timing-function: ease-in;
+    transition-delay: 0ms;
+}
+
+.ConfirmModal_sizeSheet,
+.ConfirmModal_sizeSheetMD_ks,
+.ConfirmModal_sizeFull {
+    transform: translateY(55%);
+    transition: transform 0.15s ease-out 50ms;
+    transition-property: transform;
+}
+
+.ConfirmModal_sizeSheet .ConfirmModal_header,
+.ConfirmModal_sizeSheetMD_ks .ConfirmModal_header {
+    padding-top: 24px;
+}
+
+
+.Button_button.Button_md {
+    height: 55px;
+    font-size: 14px;
+    padding-inline: 16px;
+}
+
+.Button_button.Button_text, .Button_button.Button_textLink {
+    border: 0;
+    border-color: #0000;
+    padding: 0;
+    height: auto;
+}
+
+.Button_button.Button_sm {
+    padding-inline: 12px;
+    height: 32px;
+    font-size: 14px;
+}
+
+.Button_button span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
+.SimplePayCard_container .SimplePayCard_registration {
+    background-color: #f9fafb;
+    border-radius: 4px;
+    padding: px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.SimplePayCard_container .SimplePayCard_registration .SimplePayCard_registrationDate {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+}
+
+
+.WithProps_icon {
+    display: block;
+    transform: scale(1);
+    fill: currentcolor;
+    width: 1em;
+    height: 1em;
+    transition: transform 0.3s ease-out;
+}
+
+.ConfirmModal_confirmModal-6 .ConfirmModal_title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: rgb(33, 37, 41);
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.CardRegistrationModal_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.CardInfoForm_container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.CardInfoForm_container .CardInfoForm_section__zvoOm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.CardInfoForm_container .CardInfoForm_cardInputs__GrNUI {
+    width: 170%;
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+
+
+.CardInfoForm_container .CardInfoForm_cardInput {
+    width: 100px;
+    flex-basis: 25%;
+    position: relative;
+    min-width: 0px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.Input_input.Input_md {
+    height: 40px;
+    min-height: 40px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+
+.Input_input {
+    display: block;
+    transition-property: border-color, background-color, color;
+    transition-duration: 0.15s;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 40px;
+    vertical-align: middle;
+    color: rgb(33, 37, 41);
+    appearance: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 226, 230);
+    border-image: initial;
+    border-radius: 4px;
+    padding: 0px 16px;
+}
+
+
+.CardInfoForm_container .CardInfoForm_cardInputs__GrNUI input {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.CardInfoForm_container .CardInfoForm_expirationWrap .CardInfoForm_expiration {
+    display: flex;
+    gap: 8px;
+}
+
+.CardInfoForm_container .CardInfoForm_expirationWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.CardInfoForm_container .CardInfoForm_section__zvoOm .CardInfoForm_title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+}
+.CardInfoForm_container .CardInfoForm_section__zvoOm .CardInfoForm_description {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(134, 142, 150);
+    margin-top: 4px;
+}
+
+.MessageBox_messageBox.MessageBox_noTitle .MessageBox_header {
+    width: auto;
+    margin-top: 2px;
+}
+
+.MessageBox_messageBox .MessageBox_header {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 4px;
+}
+.MessageBox_messageBox .MessageBox_content {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21px;
+    color: rgb(73, 80, 87);
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    margin: 0px;
+}
+
+.CardRegistrationModal_portal {
+    position: relative;
+    z-index: 10;
+    height: 170px;
+    pointer-events: none;
+    margin: 0px -24px;
+}
+.CardRegistrationModal_portal .CardRegistrationModal_portalContent {
+    pointer-events: all;
+}
+
+.CardRegistrationModal_container .CardRegistrationModal_buttonWrapper {
+    background-color: rgb(255, 255, 255);
+    position: sticky;
+    bottom: env(safe-area-inset-bottom);
+    left: 0px;
+    right: 0px;
+}
+
+.Button_button.Button_contained.Button_mint {
+    background-color: rgb(0, 196, 196);
+    color: rgb(255, 255, 255);
+    border-color: rgb(0, 196, 196);
+}
+.Button_button:not(.Button_loading).Button_disabled__dTtjo, .Button_button:not(.Button_loading):disabled, .Button_button:not(.Button_loading)[disabled] {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+}
+.Button_button.Button_mint {
+    color: rgb(0, 196, 196);
+    border-color: rgb(0, 196, 196);
+}
+.Button_button.Button_block {
+    width: 100%;
+}
+
+.CardInfoForm_container .CardInfoForm_expirationWrap .CardInfoForm_expiration .CardInfoForm_section__zvoOm {
+    flex: 1%;
+}
+
+.Button_button {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: 0.15s;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 48px;
+    vertical-align: middle;
+    color: rgb(73, 80, 87);
+    font-size: 16px;
+    appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(205, 211, 216);
+    border-image: initial;
+    border-radius: 4px;
+    padding-inline: 24px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+
+.ConfirmModal_confirmModal-6 {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    outline: none;
+    border-radius: 16px;
+    box-shadow: 0 32px 40px -2px #0a16461f, 0 0 5px #0a16460f;
+    background: #fff;
+    padding-block: 24px;
+    max-height: calc(100vh - 160px);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ConfirmModal_sizeSheet,
+.ConfirmModal_sizeSheetMD_ks {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 0px;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+    max-height: 90%;
+    border-radius: 16px 16px 0px 0px;
+    overflow: visible;
+}
+
+
+.ConfirmModal_sizeMobile, .ConfirmModal_sizeSm-e, .ConfirmModal_sizeMd, .ConfirmModal_sizeLg, .ConfirmModal_sizeXl {
+    max-width: calc(100% - 32px);
+}
+
+.ConfirmModal_sizeMobile, .ConfirmModal_sizeSm-e {
+    width: 400px;
+}
+
+.ConfirmModal_confirmModal-6 .ConfirmModal_header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.ConfirmModal_confirmModal-6 .ConfirmModal_closeIconRoot {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.ConfirmModal_confirmModal-6 .ConfirmModal_title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.ConfirmModal_confirmModal-6 .ConfirmModal_content {
+    display: inline-flex;
+    flex-direction: column;
+    overflow: auto;
+    color: #495057;
+    margin-top: 12px;
+}
+
+.ConfirmModal_confirmModal-6 .ConfirmModal_content .ConfirmModal_message {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 0;
+    width: 100%;
+    resize: none;
+}
+
+.ConfirmModal_confirmModal-6 .ConfirmModal_footer {
+    position: relative;
+    margin-top: 24px;
+}
+
+.ConfirmModal_confirmModal-6 .ConfirmModal_footer .ConfirmModal_buttonGroup {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 8px;
+}
+
+.Button_button.Button_lg {
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.ConfirmModal_overlay {
+    display: none;
+}
+
+#modal1 {
+    z-index: 1000;
+}
+
+#modal2 {
+    z-index: 1100;
+}
+
+.SimplePayCard_container .SimplePayCard_card_ {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.SimplePayCard_container .SimplePayCard_card_ .SimplePayCard_left {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f2f4f6;
+    padding: 8px;
+    flex-shrink: 0;
+}
+.SimplePayCard_container .SimplePayCard_card_ .SimplePayCard_middle {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.SimplePayCard_container .SimplePayCard_card_ .SimplePayCard_right {
+    flex-shrink: 0;
+}
+
+
+
+.Toast_content {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    pointer-events: all;
+}
+
+.Toast_container {
+    display: none; 
+    position: fixed;
+    top: 20px;
+    left: 16px;
+    right: 16px;
+    margin: 0 auto;
+    max-width: 400px;
+    background-color: #212529;
+    padding: 16px;
+    border-radius: 8px;
+    z-index: 10000;
+}
+
+.Toast_container.Toast_showMobile {
+    display: block !important; 
+    animation: toastFadeIn 1s ease forwards;
+}
+
+@keyframes toastFadeIn {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}

@@ -1,0 +1,194 @@
+.header-container{
+    position: sticky;
+    z-index: 16;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    transition: top .25s;
+}
+.header-wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: content-box;
+    max-width: 1296px;
+    height: 56px;
+    margin: auto;
+    padding-inline: 8px;
+}
+.service-container{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+/* 로고 부분 */
+/* .logo-container{} */
+.logo-container img{
+    width: 6em;
+}
+/* 서치 부분 */
+.search-container{
+    flex-grow: 1;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+    padding-block: 0px;
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+}
+.search-wrap{
+    display: inline-block;
+    position: relative;
+    visibility: visible;
+    padding: 8px 0;
+    height: 56px;
+    width: 100%;
+}
+.input-container{
+    border-radius: 20px;
+    height: 40px;
+    min-height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 40px;
+    display: flex;
+    position: relative;
+    transition-property: border-color, background-color, color;
+    transition-duration: .15s;
+    outline: none;
+    border: 1px solid #00c4c4;
+    background-color: #fff;
+    padding: 0 16px 0 0;
+    color: #212529;
+    -webkit-appearance: none;
+}
+.SearchTag-emptyTag{
+    position: relative;
+    width: 16px;
+}
+.input-keyword{
+    display: flex;
+    position: relative;
+    flex: 1 1 0%;
+}
+.input-keyword input{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    white-space: nowrap;
+    position: relative;
+    flex-grow: 1;
+    margin-right: 8px;
+    outline: none;
+    background: none;
+    padding-right: 16px;
+    width: 100%;
+    font-size: 14px;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+.input-control{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.input-control .input-divider{
+    background-color: #dde2e6;
+    width: 1px;
+    height: 16px;
+}
+.input-control .button_container{
+    z-index: 1;
+    pointer-events: visible;
+}
+.input-control .button_container svg{
+    display: block;
+}
+/* 나라 부분 */
+.country-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 4px;
+}
+.country-container .button_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: #f2f4f6;
+    transition: background-color .2s;
+}
+.country-container .button_container:hover{
+    background-color: #f2f4f6;
+}
+.country-container .button_container .CountryChangeButton_flag{
+    width: 24px;
+    height: 16px;
+}
+/* 맵핀 부분 */
+.addessPin-container{
+    display: flex;
+    padding: 8px;
+}
+/* .addessPin-container svg{} */
+.addessPin-container svg path{
+    fill:#333;
+}
+/* .addessPin-container i{
+    font-size: 22px;
+    color: #666;
+} */
+.addessPin-container p{
+    font-size: 22px;
+    color: #666;
+    line-height: 1;
+    margin-left: 2px;
+    margin-top: 3px;
+    white-space: nowrap;
+}
+.addessPin-container p.txt-left{
+    text-align: left;
+}
+.addessPin-container p.txt-right{
+    text-align: right;
+}
+/* 알림 부분 */
+.notice-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+}
+.notice-container .WithProps-icon{
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+.WithProps-icon {
+    fill: currentColor;
+}
+

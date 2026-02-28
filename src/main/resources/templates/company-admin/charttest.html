@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chart Test</title>
+</head>
+<body>
+
+<canvas id="myChart" height="120"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+
+<script type="module">
+
+    const url = "https://apis.data.go.kr/B552115/SmpWithForecastDemand/getSmpWithForecastDemand?serviceKey=cad6b49a2d56987689ed5b310c86ab5dab20fa983be99195e1e1cfe857170c8f&pageNo=1&numOfRows=24&dataType=json&date=20260223";
+
+    async function loadChart() {
+
+        const response = await fetch(url);
+        const result = await response.json();
+        console.log(result);
+        const items = result.response.body.items.item;
+
+        const labels = items.map(i => i.hour);
+        const values = items.map(i => i.smp);
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'SMP',
+                    data: values,
+                    borderColor: 'blue',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    zoom: {
+                        pan: {
+                            enabled: true,
+                            mode: 'x'
+                        },
+                        zoom: {
+                            wheel: { enabled: true },
+                            pinch: { enabled: true },
+                            mode: 'x'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    loadChart();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,860 @@
+:root {
+    --scrollbar-width: 0;
+    --safe-area-inset-top: env(safe-area-inset-top);
+    --safe-area-inset-right: env(safe-area-inset-right);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    --safe-area-inset-left: env(safe-area-inset-left);
+}
+
+@font-face {
+    font-family: Pretendard;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100;
+    src: url(woff2-dynamic-subset/Pretendard-Thin.subset.0.woff2) format('woff2'), url(woff-dynamic-subset/Pretendard-Thin.subset.0.woff) format('woff');
+    unicode-range: U + f9ca-fa0b, U + ff03-ff05, U + ff07, U + ff0a-ff0b, U + ff0d-ff19, U + ff1b, U + ff1d, U + ff20-ff5b, U + ff5d, U + ffe0-ffe3, U + ffe5-ffe6;
+}
+
+address, article, aside, b, body, a, button, canvas, caption, dl, dt, dd, div, html, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, big, cite, code, del, dfn, em, img, small, strike, strong, sub, sup, var, u, i, center, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, select, textarea, input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.padding-y-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.content-width-560 {
+    box-sizing: border-box;
+    margin-inline: auto;
+    padding: 16px;
+    max-width: 560px;
+}
+
+.EmailValidationForm-module_container__8fd6e {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_headerAndTitle__583ce {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_headerAndTitle__583ce .EmailValidationForm-module_header__ac5b4 {
+    margin-left: -24px;
+    margin-right: -24px;
+}
+
+.Header-module_container__da545 {
+    background-color: #fff;
+}
+
+article, aside, figcaption, figure, footer, header, main, nav, section {
+    display: block;
+}
+
+.Header-module_container__da545 .Header-module_content__31d4e {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: content-box;
+    max-width: 1296px;
+    height: 56px;
+    margin: auto;
+    padding-inline: 8px;
+}
+
+.Header-module_container__da545 .Header-module_content__31d4e .Header-module_left__45013 {
+    display: flex;
+    align-items: center;
+}
+
+.StyledComponent-module_container__2d5ce {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+element.style {
+    height: 24px;
+    width: 24px;
+}
+
+button {
+    background-color: transparent;
+}
+
+.WithProps-module_icon__d564b {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+.WithProps-module_icon__d564b>path {
+    fill: currentColor;
+}
+
+.Header-module_container__da545 .Header-module_content__31d4e .Header-module_center__3afb0 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Header-module_container__da545 .Header-module_content__31d4e .Header-module_right__6c908 {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.StyledComponent-module_container__2d5ce {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.WithProps-module_icon__d564b {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+a>svg {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.WithProps-module_icon__d564b>path {
+    fill: currentColor;
+}
+
+.WithProps-module_icon__d564b>path {
+    fill: currentColor;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_title__31f35 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+    max-width: 528px;
+    width: 100%;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 528px;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f .EmailValidationForm-module_emailGroup__1b759 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f .EmailValidationForm-module_emailGroup__1b759 .EmailValidationForm-module_emailInputWrapper__970d8 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f .EmailValidationForm-module_emailGroup__1b759 .EmailValidationForm-module_emailInputWrapper__970d8 .EmailValidationForm-module_inputFields__2aa2d {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f .EmailValidationForm-module_emailGroup__1b759 .EmailValidationForm-module_emailInputWrapper__970d8 .EmailValidationForm-module_inputFields__2aa2d .EmailValidationForm-module_emailTextField__afe05 {
+    flex-grow: 1;
+}
+
+.TextField-module_textField__404b4 {
+    display: block;
+    position: relative;
+}
+
+.TextField-module_textField__404b4.TextField-module_lg__11d56>label {
+    font-size: 16px;
+}
+
+.TextField-module_textField__404b4>label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 4px;
+}
+
+.TextField-module_textField__404b4>label .TextField-module_isRequired__294b9 {
+    color: #f66;
+}
+
+.TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_noEndTex {
+    padding-right: 0;
+}
+
+.TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_noStartText {
+    padding-left: 0;
+}
+
+.TextField-module_textField__404b4 .TextField-module_field__4d1fc {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-inline: 16px;
+    border: 1px solid #dde2e6;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_hidePassword__4d26c {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.TextField-module_textField__404b4 {
+    display: block;
+    position: relative;
+}
+
+/* Button */
+.Button-module_button__d78c2.Button-module_contained__ecf2a.Button-module_mint__1c1d6 {
+    border-color: #00c4c4;
+    background-color: #00c4c4;
+    color: #fff;
+}
+
+.Button-module_button__d78c2:not(.Button-module_loading__b3841).Button-module_disabled__2ebf2, .Button-module_button__d78c2:not(.Button-module_loading__b3841):disabled, .Button-module_button__d78c2:not(.Button-module_loading__b3841)[disabled] {
+    opacity: .4;
+    cursor: default;
+    pointer-events: none;
+}
+
+.Button-module_button__d78c2.Button-module_mint__1c1d6 {
+    border-color: #00c4c4;
+    color: #00c4c4;
+}
+
+.Button-module_button__d78c2.Button-module_lg__53dd9 {
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.Button-module_button__d78c2.Button-module_block__d6eff {
+    width: 100%;
+}
+
+.Button-module_button__d78c2 {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+.FindIDPasswordSection-module_signUpMessage__f968d {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+
+/* p tag style start */
+
+.EmailValidationForm-module_container__8fd6e 
+.EmailValidationForm-module_changeEmail__6c1fe 
+.EmailValidationForm-module_error__cbcb7 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #f66;
+}
+
+.EmailValidationForm-module_error__cbcb7 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #f66;
+    margin-top: -12px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+/* p tag style end */
+
+/*  지우기 X 버튼 style start */
+.TextField-module_textField__404b4 .TextField-module_field__4d1fc button {
+    border: 0;
+}
+
+.Button-module_button__d78c2.Button-module_iconOnly__0a115 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.Button-module_button__d78c2.Button-module_lg__53dd9 {
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.Button-module_button__d78c2 {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+/*  지우기 X 버튼 style end */
+
+
+.TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_hasEndIcon {
+    padding-right: 0;
+}
+
+
+.Input-module_input__210a1:focus, .Input-module_input__210a1 .Input-module_active__6d278 {
+    border-color : #00c4c4;
+}
+
+
+:root {
+            --scrollbar-width: 0;
+            --safe-area-inset-top: env(safe-area-inset-top);
+            --safe-area-inset-right: env(safe-area-inset-right);
+            --safe-area-inset-bottom: env(safe-area-inset-bottom);
+            --safe-area-inset-left: env(safe-area-inset-left);
+        }
+        
+        @font-face {
+            font-family: Pretendard;
+            font-style: normal;
+            font-display: swap;
+            font-weight: 100;
+            src: url(woff2-dynamic-subset/Pretendard-Thin.subset.0.woff2) format('woff2'), url(woff-dynamic-subset/Pretendard-Thin.subset.0.woff) format('woff');
+            unicode-range: U + f9ca-fa0b, U + ff03-ff05, U + ff07, U + ff0a-ff0b, U + ff0d-ff19, U + ff1b, U + ff1d, U + ff20-ff5b, U + ff5d, U + ffe0-ffe3, U + ffe5-ffe6;
+        }
+        
+        address, article, aside, b, body, a, button, canvas, caption, dl, dt, dd, div, html, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, big, cite, code, del, dfn, em, img, small, strike, strong, sub, sup, var, u, i, center, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, select, textarea, input {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            vertical-align: baseline;
+        }
+        
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+        
+        div {
+            display: block;
+            unicode-bidi: isolate;
+        }
+        
+        main {
+            display: block;
+            unicode-bidi: isolate;
+        }
+        
+        .padding-y-0 {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        .content-width-560 {
+            box-sizing: border-box;
+            margin-inline: auto;
+            padding: 16px;
+            max-width: 560px;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 40px;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_headerAndTitle__583ce {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 32px;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_headerAndTitle__583ce .EmailValidationForm-module_header__ac5b4 {
+            margin-left: -24px;
+            margin-right: -24px;
+        }
+        
+        .Header-module_container__da545 {
+            background-color: #fff;
+        }
+        
+        article, aside, figcaption, figure, footer, header, main, nav, section {
+            display: block;
+        }
+        
+        .StyledComponent-module_container__2d5ce {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
+            padding: 8px;
+        }
+        
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        a, button {
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .WithProps-module_icon__d564b {
+            display: block;
+            transform: scale(1);
+            transition: transform .3s ease-out;
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
+        }
+        
+        a>svg {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .WithProps-module_icon__d564b>path {
+            fill: currentColor;
+        }
+        
+        .WithProps-module_icon__d564b>path {
+            fill: currentColor;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_title__31f35 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #212529;
+            max-width: 528px;
+            width: 100%;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
+            max-width: 528px;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f .EmailValidationForm-module_emailGroup__1b759 {
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f .EmailValidationForm-module_emailGroup__1b759 .EmailValidationForm-module_emailInputWrapper__970d8 {
+            display: flex;
+            flex-direction: column;
+            row-gap: 40px;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f .EmailValidationForm-module_emailGroup__1b759 .EmailValidationForm-module_emailInputWrapper__970d8 .EmailValidationForm-module_inputFields__2aa2d {
+            display: flex;
+            flex-direction: column;
+            row-gap: 24px;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_changeEmail__6c1fe .EmailValidationForm-module_emailForm__a4d0f .EmailValidationForm-module_emailGroup__1b759 .EmailValidationForm-module_emailInputWrapper__970d8 .EmailValidationForm-module_inputFields__2aa2d .EmailValidationForm-module_emailTextField__afe05 {
+            flex-grow: 1;
+        }
+        
+        .TextField-module_textField__404b4 {
+            display: block;
+            position: relative;
+        }
+        
+        .TextField-module_textField__404b4.TextField-module_lg__11d56>label {
+            font-size: 16px;
+        }
+        
+        .TextField-module_textField__404b4>label {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding-bottom: 4px;
+        }
+        
+        .TextField-module_textField__404b4>label .TextField-module_isRequired__294b9 {
+            color: #f66;
+        }
+        
+        .TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_noEndTex {
+            padding-right: 0;
+        }
+        
+        .TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_noStartText {
+            padding-left: 0;
+        }
+        
+        .TextField-module_textField__404b4 .TextField-module_field__4d1fc {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-inline: 16px;
+            border: 1px solid #dde2e6;
+            border-radius: 4px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        
+        .EmailValidationForm-module_container__8fd6e .EmailValidationForm-module_hidePassword__4d26c {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .TextField-module_textField__404b4 {
+            display: block;
+            position: relative;
+        }
+        
+        /* Button */
+        .Button-module_button__d78c2.Button-module_contained__ecf2a.Button-module_mint__1c1d6 {
+            border-color: #00c4c4;
+            background-color: #00c4c4;
+            color: #fff;
+        }
+        
+        .Button-module_button__d78c2:not(.Button-module_loading__b3841).Button-module_disabled__2ebf2, .Button-module_button__d78c2:not(.Button-module_loading__b3841):disabled, .Button-module_button__d78c2:not(.Button-module_loading__b3841)[disabled] {
+            opacity: .4;
+            cursor: default;
+            pointer-events: none;
+        }
+        
+        .Button-module_button__d78c2.Button-module_mint__1c1d6 {
+            border-color: #00c4c4;
+            color: #00c4c4;
+        }
+        
+        .Button-module_button__d78c2.Button-module_lg__53dd9 {
+            padding-inline: 24px;
+            height: 48px;
+            font-size: 16px;
+        }
+        
+        .Button-module_button__d78c2.Button-module_block__d6eff {
+            width: 100%;
+        }
+        
+        .Button-module_button__d78c2 {
+            position: relative;
+            transition-property: background-color, border-color, color, opacity;
+            transition-duration: .15s;
+            border: 1px solid #cdd3d8;
+            border-radius: 4px;
+            background-color: transparent;
+            cursor: pointer;
+            padding-inline: 24px;
+            height: 48px;
+            vertical-align: middle;
+            text-decoration: none;
+            white-space: nowrap;
+            color: #495057;
+            font-size: 16px;
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+        
+        .FindIDPasswordSection-module_signUpMessage__f968d {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #495057;
+            text-align: center;
+        }
+        
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        a, button {
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        
+        /* p tag style start */
+        
+        .EmailValidationForm-module_container__8fd6e 
+        .EmailValidationForm-module_changeEmail__6c1fe 
+        .EmailValidationForm-module_error__cbcb7 {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #f66;
+        }
+        
+        .EmailValidationForm-module_error__cbcb7 {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #f66;
+            margin-top: -12px;
+        }
+        
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            unicode-bidi: isolate;
+        }
+        
+        /* p tag style end */
+        
+        /*  지우기 X 버튼 style start */
+        .TextField-module_textField__404b4 .TextField-module_field__4d1fc button {
+            border: 0;
+        }
+        
+        .Button-module_button__d78c2.Button-module_iconOnly__0a115 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        
+        .Button-module_button__d78c2.Button-module_lg__53dd9 {
+            padding-inline: 24px;
+            height: 48px;
+            font-size: 16px;
+        }
+        
+        button:not(:disabled) {
+            cursor: pointer;
+        }
+        
+        .Button-module_button__d78c2 {
+            position: relative;
+            transition-property: background-color, border-color, color, opacity;
+            transition-duration: .15s;
+            border: 1px solid #cdd3d8;
+            border-radius: 4px;
+            background-color: transparent;
+            cursor: pointer;
+            padding-inline: 24px;
+            height: 48px;
+            vertical-align: middle;
+            text-decoration: none;
+            white-space: nowrap;
+            color: #495057;
+            font-size: 16px;
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+        
+        /*  지우기 X 버튼 style end */
+        
+        
+        .TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_hasEndIcon {
+            padding-right: 0;
+        }
+        
+        .Input-module_input__210a1:focus, .Input-module_input__210a1 .Input-module_active__6d278 {
+            border-color : #00c4c4;
+        }
+
+        .TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_noEndTex input, .TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_noEndTex textarea {
+            padding-right: 16px;
+        }
+
+        .TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_noStartText input, .TextField-module_textField__404b4 .TextField-module_field__4d1fc.TextField-module_noStartText textarea {
+            padding-left: 16px;
+        }
+
+        .TextField-module_textField__404b4 .TextField-module_field__4d1fc input, .TextField-module_textField__404b4 .TextField-module_field__4d1fc textarea {
+            flex-grow: 1;
+            border: 0;
+            max-width: 100%;
+            border-radius: 0;
+        }
+
+        .TextField-module_textField__404b4 .TextField-module_field__4d1fc input {
+            padding: 0;
+        }
+
+        .Input-module_input__210a1.Input-module_lg__592e9 {
+            height: 48px;
+            min-height: 48px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .EmailValidationForm-module_inputError__22ea2 {
+            border-color: #f66;
+        }
+
+        .Input-module_input__210a1 {
+            display: block;
+            transition-property: border-color, background-color, color;
+            transition-duration: .15s;
+            outline: none;
+            border: 1px solid #dde2e6;
+            border-radius: 4px;
+            background-color: #fff;
+            padding: 0 16px;
+            width: 100%;
+            height: 40px;
+            vertical-align: middle;
+            color: #212529;
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+        }

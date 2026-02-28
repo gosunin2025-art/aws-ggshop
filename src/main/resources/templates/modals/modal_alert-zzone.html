@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/common/font.css"/>
+<link rel="stylesheet" href="/css/common/reset.css"/>
+<link rel="stylesheet" href="/css/common/fontawesome.css"/>
+<link rel="stylesheet" href="/css/common/common.css"/>
+<link rel="stylesheet" href="/css/common/util.css"/>
+<link rel="stylesheet" href="/css/components/modals/modal-m.css"/>
+<link rel="stylesheet" href="/css/common/chart.css">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<title>모달 - - ZZ1재확인</title>
+</head>
+<body>
+<!-- 예시 -->
+<div style="height: 200vh">
+    <div style="height: 100vh; background: #fff">
+        <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+            <span>
+                <span>비주얼 영역</span>
+            </span>
+        </div>
+    </div>
+    <div style="height: 100vh; background: #aaa">
+        <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+            <button class="button button-size button-mint button-confirm" onclick="modalOpen('modalConfirm')">
+                <span>
+                    <span>모달 열기</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- //예시 -->
+
+<!-- 모달 영역 - ZZ1컨펌 -->
+<div id="modalConfirm" class="modal active"> <!-- active 컨트롤 필요 -->
+    <div class="Modal_overlay">
+        <div class="confirmModal-container">
+            <div class="confirmModal-header">
+                <div class="confirmModal-button">
+                    <button class="button button-close" type="button" onclick=" modalCloses(); showToast('ZZ1Cancel'); ">
+                        <span>
+                            <span>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon" style="height: 24px; width: 24px">
+                                    <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+                <div class="confirmModal-title">ZZ1 판매 확인</div>
+            </div>
+            <div class="confirmModal-content">
+                <div class="confirmModal-message">
+                    <span class="notice-txt">
+                        안전한 에너지 거래를 위해 판매 내역을 확인해 주세요.
+                        <br />
+                        국가 전력망으로 전송된 에너지는 취소가 불가능합니다.
+                    </span>
+                </div>
+                <div class="confirmModal-message mv5">
+                    <strong>
+                        판매량:[999,999,999,999kwh]
+                        <br />
+                        정산 예정 금액:[9,999,999,999원]
+                        <br />
+                        (한전 단가 기준)
+                    </strong>
+                    <br />
+                </div>
+                <div class="confirmModal-message"><span class="notice-txt">판매된 전력은 다음 달 전기량에서 차감되거나 현금으로 정산됩니다.</span></div>
+            </div>
+            <div class="confirmModal-footer">
+                <div class="buttonGroup">
+                    <button class="button button-size button-confirm" onclick="modalCloses();">
+                        <span>
+                            <span>돌아가기</span>
+                        </span>
+                    </button>
+                    <!-- 토스트 기능 넣기 -->
+                    <button class="button button-size button-mint button-confirm" type="button" onclick="modalCloses();">
+                        <span>
+                            <span>에너지 기여하기</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/modals/modal-m.js"></script>
+<script src="/js/main/event.js"></script>
+</body>
+</html>

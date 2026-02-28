@@ -1,0 +1,10 @@
+.chart-wrap { background-color: #fff; padding: 24px; border-radius: 28px; width: 100%; max-width: 500px; margin: 0 auto; box-sizing: border-box; }
+.chart-shadow { box-shadow: 0 0 5px #0a16460f, 0 16px 16px -1px #0a16461a; }
+.chart-krw { font-size: 28px; font-weight: bold; color: #111; }
+.chart-percent { color: #f63131; font-size: 14px; font-weight: 500; }
+.chart-percent.down { color: #3182f6; }
+.chart-btn { background: none; border: none; color: #4e5968; font-size: 14px; font-weight: 600; padding: 8px 16px; cursor: pointer; border-radius: 8px; transition: all 0.2s; flex: 1; }
+.chart-btn.active { background-color: #1a1a1c; color: #3182f6; }
+.period-selector { display: flex; background-color: #1a1a1c; border-radius: 12px; padding: 4px; margin-top: 24px; }
+.periodTitle{color: #adb5bd; font-size: 14px; margin: 0; font-weight: 500}
+#tossStockChart { touch-action: none !important; }

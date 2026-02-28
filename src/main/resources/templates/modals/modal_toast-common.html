@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모달 - 비밀번호변경폼</title>
+<link rel="stylesheet" href="/css/common/font.css"/>
+<link rel="stylesheet" href="/css/common/reset.css"/>
+<link rel="stylesheet" href="/css/common/fontawesome.css"/>
+<link rel="stylesheet" href="/css/common/common.css"/>
+<link rel="stylesheet" href="/css/common/util.css"/>
+<link rel="stylesheet" href="/css/components/modals/modal-m.css">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/manifest.json">
+</head>
+<body>
+<!-- 예시 -->
+<div style="height: 200vh">
+    <div style="height: 100vh; background: #fff">
+        <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+            <span>
+                <span>비주얼 영역</span>
+            </span>
+        </div>
+    </div>
+    <div style="height: 100vh; background: #aaa">
+        <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+            <button class="button button-size button-mint button-confirm" onclick="showToast('wishAdd');">
+                <span>
+                    <span>위시리스트 추가</span>
+                </span>
+            </button>
+            <button class="button button-size button-mint button-confirm" onclick="showToast('wishRemove');">
+                <span>
+                    <span>위시리스트 제외</span>
+                </span>
+            </button>
+            <button class="button button-size button-mint button-confirm" onclick="showToast('alarmAdd');">
+                <span>
+                    <span>알림 신청 추가</span>
+                </span>
+            </button>
+            <button class="button button-size button-mint button-confirm" onclick="showToast('alarmRemove');">
+                <span>
+                    <span>알림 신청 삭제</span>
+                </span>
+            </button>
+            <button class="button button-size button-mint button-confirm" onclick="showToast('ZZ1Cancel');">
+                <span>
+                    <span>zz1 거래 취소</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- //예시 -->
+<!-- 토스트 영역 -->
+<div id="toast" class="toast-container"> <!-- active 컨트롤 필요 -->
+    <div class="toast-wrap">
+        <div id="wishAdd" class="toast_hide show-container none">
+            <div class="show-content">
+                <div class="Activity_container">
+                    <p class="Activity-text">위시리스트에 추가하였습니다. 위시리스트는 마이페이지에서 확인 할 수 있어요!</p>
+                    <a class="Activity-link" href="#!">바로 가기</a>
+                </div>
+            </div>
+        </div>
+        <div id="wishRemove" class="toast_hide show-container none"><div class="show-content">위시리스트를 제외했어요.</div></div>
+        <div id="alarmAdd" class="toast_hide show-container none">
+            <div class="show-content">
+                <div class="Activity_container">
+                    <p class="Activity-text">알림 신청을 완료했어요. 거래 진행 소식도 알려드릴게요.</p>
+                    <a class="Activity-link" href="#!">바로 가기</a>
+                </div>
+            </div>
+        </div>
+        <div id="alarmRemove" class="toast_hide show-container none"><div class="show-content">알람 신청을 취소했어요.</div></div>
+        <div id="ZZ1Cancel" class="toast_hide show-container none"><div class="show-content">ZZ1 거래를 취소하였어요.</div></div>
+        <!-- <div id="ZZ1Complete" class="toast_hide show-container none">
+            <div class="show-content">
+                <div class="Activity_container">
+                    <p class="Activity-text">ZZ1 거래가 완료되었어요. 거래 목록은 마이페이지에서 확인 할 수 있어요!</p>
+                    <a class="Activity-link" href="#!">마이페이지 바로 가기</a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+</body>
+<script src="/js/modals/modal-m.js"></script>
+</html>

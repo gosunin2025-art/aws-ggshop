@@ -1,0 +1,1203 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/common/font.css" />
+<link rel="stylesheet" href="/css/common/reset.css" />
+<link rel="stylesheet" href="/css/common/fontawesome.css" />
+<link rel="stylesheet" href="/css/common/common.css" />
+<link rel="stylesheet" href="/css/common/util.css" />
+<link rel="stylesheet" href="/css/components/headers/header-m.css" />
+<link rel="stylesheet" href="/css/components/navigations/navigation-m.css" />
+<link rel="stylesheet" href="/css/components/modals/modal-m.css" />
+<link rel="stylesheet" href="/css/main/style.css" />
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<!--    <img src="../../../../../../../Users/MS/AppData/Local/Temp/cdn3.wadiz.jpg" height="225" width="400"/>-->
+
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<title>Main</title>
+</head>
+<body>
+<div id="app" class="main">
+    <!-- 상단 배너 영역 -->
+    <div class="headBanner-container">
+        <div class="headBanner-left">
+            <div class="headBanner-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 654 363" class="WithProps-icon icon-zzone">
+                    <g transform="translate(0,382) scale(0.1,-0.1)" fill="#000000" stroke="none">
+                        <path d="M480 3809 c-167 -22 -317 -154 -370 -327 -25 -80 -27 -231 -5 -317 39 -149 150 -267 304 -321 56 -20 86 -24 193 -24 133 0 158 -4 158 -25 0 -14 -37 -97 -126 -280 -57 -118 -57 -121 -58 -210 -1 -75 3 -97 21 -130 44 -82 112 -132 189 -141 85 -9 94 -13 94 -35 0 -22 -48 -83 -456 -580 -291 -355 -305 -373 -339 -442 -39 -81 -59 -219 -45 -316 27 -180 108 -308 253 -395 114 -68 73 -66 1304 -66 1206 0 1160 -2 1275 56 77 39 162 129 203 216 117 247 29 550 -192 662 -100 50 -96 50 -673 55 -490 5 -545 8 -548 22 -2 9 67 102 154 210 255 313 1074 1337 1143 1427 76 100 124 200 145 304 20 96 20 147 1 240 -40 193 -165 342 -338 402 -62 21 -66 21 -1142 22 -594 1 -1109 -2 -1145 -7z m1522 -338 c12 -16 17 -33 13 -48 -3 -13 -96 -182 -207 -375 -154 -271 -198 -355 -191 -367 9 -14 48 -17 260 -21 271 -5 283 -8 283 -60 0 -35 6 -28 -390 -496 -144 -170 -229 -271 -436 -519 -222 -267 -408 -480 -421 -483 -7 -2 -13 1 -13 6 0 16 45 130 121 302 39 91 93 215 120 276 45 105 177 406 221 502 35 79 43 76 -224 82 -214 5 -238 7 -257 24 -30 27 -26 68 15 161 19 44 46 107 59 140 13 33 51 125 85 205 34 80 83 197 110 260 156 380 171 411 204 426 25 11 93 13 329 11 l299 -2 20 -24z" />
+                        <path d="M3860 3810 c-120 -21 -220 -83 -291 -179 -60 -82 -89 -162 -96 -267 -17 -250 104 -445 328 -526 63 -23 70 -23 599 -28 485 -5 535 -7 538 -21 2 -9 -19 -43 -46 -75 -109 -130 -396 -472 -542 -645 -85 -101 -224 -267 -309 -369 -85 -102 -234 -279 -331 -395 -97 -115 -191 -231 -208 -256 -44 -61 -83 -176 -89 -263 -7 -96 19 -234 59 -309 41 -76 129 -169 201 -211 118 -70 63 -67 1337 -64 l1145 3 57 22 c160 61 273 191 303 348 27 142 13 270 -41 377 -49 97 -164 187 -281 221 -24 7 -247 13 -613 16 -520 5 -575 8 -578 22 -2 10 71 106 170 225 96 115 210 254 255 309 44 55 140 172 213 260 72 88 174 212 225 275 52 63 145 176 207 251 365 441 383 467 414 584 19 68 18 237 -1 310 -46 176 -176 309 -365 371 -52 18 -117 19 -1135 20 -594 1 -1100 -2 -1125 -6z" />
+                    </g>
+                </svg>
+            </div>
+            <div class="headBanner-content">
+                <div class="headBanner-title">
+                    거래가 완료되었어요.<br>
+                    거래 목록은 마이페이지에서 확인 할 수 있어요!
+                </div>
+            </div>
+        </div>
+        <div class="headBanner-right">
+            <button class="headBanner-link button button-sm button-mint" href="#!"><span><span>바로 가기</span></span></button>
+            <div class="headBanner-close">
+                <button class="button button-close" type="button" onclick="bannerClose();">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon" style="height: 16px; width: 16px">
+                        <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#fff"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- 해더 영역 -->
+    <div class="header-container type1">
+        <div class="header-wrap">
+            <div class="logo-container">
+                <a class="addessPin-container" href="javascript:void(0);">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="currentColor" />
+                        <circle cx="12" cy="9" r="3" fill="white" />
+                    </svg>
+                    <p class="txt-left">강남구</p>
+                </a>
+            </div>
+            <div class="service-container">
+                <a class="notice-container" href="javascript:void(0);">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps_icon" style="height: 24px; width: 24px">
+                        <path d="M9.865 1.653c1.545-.338 2.725-.338 4.27 0 3.166.693 5.742 3.414 5.859 6.678.067 1.888.062 3.272.043 5.133-.014 1.348.694 2.716 1.42 4.113a.7.7 0 01-.621 1.022H3.164a.7.7 0 01-.621-1.022l.27-.522c.622-1.216 1.162-2.411 1.15-3.591-.02-1.861-.025-3.245.043-5.133.116-3.264 2.692-5.985 5.859-6.678zm4.014 1.173c-1.377-.301-2.382-.301-3.758 0-2.703.592-4.822 2.902-4.916 5.548-.067 1.86-.062 3.222-.042 5.077.014 1.406-.587 2.772-1.182 3.95h16.037c-.595-1.178-1.196-2.544-1.181-3.95.019-1.855.024-3.217-.042-5.077-.095-2.646-2.213-4.956-4.916-5.548z" fill="#495057"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.367 18.6a2.4 2.4 0 11-4.734 0h-1.21a3.6 3.6 0 107.156 0h-1.212z" fill="#495057"></path>
+                    </svg>
+                    <span class="NotificationBadge type-new type-number active">11</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 콘텐츠 영역 -->
+    <div class="main-container">
+        <div class="main-wrap">
+            <div class="main-content card-container">
+                <div class="section-wrap section-header mt5 mb15">
+                    <div class="sectionTitle-container">
+                        <h2 class="sectionTitle-txt title_md">찜한 구매 항목이에요.</h2>
+                        <!-- 이름 부분 작업 필요 -->
+                    </div>
+                </div>
+                <div class="card-wrap card_hasShadow">
+                    <a class="card-content" href="#!">
+                        <div class="thumb-container">
+                            <img class="thumb-img" src="/image/genesis.png" alt="" />
+                            <div class="thumb_overlay">
+                                <div class="thumb_topLeft"></div>
+                                <div class="thumb_topRight">
+                                    <button class="wishbtn" type="button">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon icon-wish" style="height: 24px; width: 24px">
+                                            <path d="M7 2.9c-1.696 0-3.377.845-4.426 2.314-1.06 1.484-1.448 3.563-.643 5.976.65 1.95 2.455 4.078 4.353 5.905a45.28 45.28 0 005.376 4.4.6.6 0 00.68 0 45.286 45.286 0 005.376-4.4c1.898-1.827 3.703-3.955 4.353-5.905.805-2.413.417-4.492-.643-5.976C20.376 3.745 18.696 2.9 17 2.9c-2.582 0-4.164 1.348-5 2.469C11.165 4.248 9.583 2.9 7 2.9z" fill="#495057"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_container">
+                            <div class="status_container">
+                                <div class="title title-mint title-lg">타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.</div>
+                                <!-- <div class="StatusBadgeGroup_container">
+                                    <span class="LabelBadge_container"><span class="LabelBadge LabelBadge_sm LabelBadge_mint StatusBadgeGroup_badge">1.8억 원+</span></span>
+                                    <span class="LabelBadge_container"><span class="LabelBadge LabelBadge_sm LabelBadge_mint StatusBadgeGroup_badge">4일 남음</span></span>
+                                </div> -->
+                            </div>
+                            <div class="title-container">[구매] 내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.</div>
+                            <div class="maker-container">
+                                <span class="maker-name">게시자 이름</span>
+                                <i class="fa-solid fa-battery-quarter mt1" style="display: flex; align-items: center; color: #ffc53d;"></i>
+                                <!-- color: red; -->
+                                <!-- color: #ffc53d; -->
+                                <!-- color: #e5e53d; -->
+                                <!-- color: #b9eb45; -->
+                                <!-- color: #52c41a; -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="main-content card-container">
+                <div class="card-wrap card_hasShadow">
+                    <a class="card-content" href="#!">
+                        <div class="thumb-container">
+                            <img class="thumb-img" src="/image/genesis.png" alt="" />
+                            <div class="thumb_overlay">
+                                <div class="thumb_topLeft"></div>
+                                <div class="thumb_topRight">
+                                    <button class="wishbtn" type="button">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon icon-wish" style="height: 24px; width: 24px">
+                                            <path d="M7 2.9c-1.696 0-3.377.845-4.426 2.314-1.06 1.484-1.448 3.563-.643 5.976.65 1.95 2.455 4.078 4.353 5.905a45.28 45.28 0 005.376 4.4.6.6 0 00.68 0 45.286 45.286 0 005.376-4.4c1.898-1.827 3.703-3.955 4.353-5.905.805-2.413.417-4.492-.643-5.976C20.376 3.745 18.696 2.9 17 2.9c-2.582 0-4.164 1.348-5 2.469C11.165 4.248 9.583 2.9 7 2.9z" fill="#495057"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_container">
+                            <div class="status_container">
+                                <div class="title title-mint title-lg">타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.타이틀영역입니다.</div>
+                                <!-- <div class="StatusBadgeGroup_container">
+                                    <span class="LabelBadge_container"><span class="LabelBadge LabelBadge_sm LabelBadge_mint StatusBadgeGroup_badge">1.8억 원+</span></span>
+                                    <span class="LabelBadge_container"><span class="LabelBadge LabelBadge_sm LabelBadge_mint StatusBadgeGroup_badge">4일 남음</span></span>
+                                </div> -->
+                            </div>
+                            <div class="title-container">[판매] 내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.</div>
+                            <div class="maker-container">
+                                <span class="maker-name">게시자 이름</span>
+                                <i class="fa-solid fa-battery-half mt1" style="display: flex; align-items: center; color: #e5e53d;"></i>
+                                <!-- color: red; -->
+                                <!-- color: #ffc53d; -->
+                                <!-- color: #e5e53d; -->
+                                <!-- color: #b9eb45; -->
+                                <!-- color: #52c41a; -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <button class="button button-contain button-mint button-lg button-submit button-link mb30" type="button">
+                <span><span>더 보기</span></span>
+            </button>
+            <div class="main-content section-container">
+                <div class="section-wrap section-header">
+                    <div class="sectionTitle-container">
+                        <h2 class="sectionTitle-txt title_md">구매/판매 실시간 베스트</h2>
+                    </div>
+                </div>
+                <div class="section-wrap section-content">
+
+                    <div class="content-container">
+                        <div class="scroll-edge-offset-16 flex-row-start-8" style="scroll-snap-type: x mandatory">
+                            <div class="content-wrap">
+                                <div class="content-left flex-column-start-16">
+                                    <div class="card-container">
+                                        <div class="card-wrap">
+                                            <a class="card-content card-horizontal" href="#!">
+                                                <div class="thumb-container thumb-round mh0 mv0">
+                                                    <img class="thumb-img" src="/image/genesis.png" alt="" />
+                                                    <div class="thumb_overlay">
+                                                        <div class="thumb_topLeft">
+                                                            <div class="emblem-container emblem-sm">
+                                                                <img class="emblem-img" src="/image/genesis.png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="content_container">
+                                                    <div class="title title-mint title-sm">타이틀 영역입니다. </div>
+                                                    <div class="title-container">[구매] 내용 영역입니다. 내용 영역입니다. 내용 영역입니다. 내용 영역입니다. 내용 영역입니다. 내용 영역입니다. 내용 영역입니다. </div>
+                                                    <div class="status_container">
+                                                        <div class="StatusBadgeGroup_container">
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_blue BadgeGroup_badge">
+                                                                    #메인태그
+                                                                </span>
+                                                            </span>
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_gray BadgeGroup_badge">
+                                                                    #해시태그
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-container">
+                                        <div class="card-wrap">
+                                            <a class="card-content card-horizontal" href="#!">
+                                                <div class="thumb-container thumb-round mh0 mv0">
+                                                    <img class="thumb-img" src="/image/genesis.png" alt="" />
+                                                    <div class="thumb_overlay">
+                                                        <div class="thumb_topLeft">
+                                                            <div class="emblem-container emblem-sm">
+                                                                <img class="emblem-img" src="/image/genesis.png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="content_container">
+                                                    <div class="title title-mint title-sm">타이틀 영역입니다. </div>
+                                                    <div class="title-container">[구매] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                                    <div class="status_container">
+                                                        <div class="StatusBadgeGroup_container">
+                                                            <div class="StatusBadgeGroup_container">
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_blue BadgeGroup_badge">
+                                                                    #메인태그
+                                                                </span>
+                                                            </span>
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_gray BadgeGroup_badge">
+                                                                    #해시태그
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-container">
+                                        <div class="card-wrap">
+                                            <a class="card-content card-horizontal" href="#!">
+                                                <div class="thumb-container thumb-round mh0 mv0">
+                                                    <img class="thumb-img" src="/image/genesis.png" alt="" />
+                                                    <div class="thumb_overlay">
+                                                        <div class="thumb_topLeft">
+                                                            <div class="emblem-container emblem-sm">
+                                                                <img class="emblem-img" src="/image/genesis.png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="content_container">
+                                                    <div class="title title-mint title-sm">타이틀 영역입니다. </div>
+                                                    <div class="title-container">[구매] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                                    <div class="status_container">
+                                                        <div class="StatusBadgeGroup_container">
+                                                            <div class="StatusBadgeGroup_container">
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_blue BadgeGroup_badge">
+                                                                    #메인태그
+                                                                </span>
+                                                            </span>
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_gray BadgeGroup_badge">
+                                                                    #해시태그
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-container">
+                                        <div class="card-wrap">
+                                            <a class="card-content card-horizontal" href="#!">
+                                                <div class="thumb-container thumb-round mh0 mv0">
+                                                    <img class="thumb-img" src="/image/genesis.png" alt="" />
+                                                    <div class="thumb_overlay">
+                                                        <div class="thumb_topLeft">
+                                                            <div class="emblem-container emblem-sm">
+                                                                <img class="emblem-img" src="/image/genesis.png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="content_container">
+                                                    <div class="title title-mint title-sm">타이틀 영역입니다. </div>
+                                                    <div class="title-container">[구매] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                                    <div class="status_container">
+                                                        <div class="StatusBadgeGroup_container">
+                                                            <div class="StatusBadgeGroup_container">
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_blue BadgeGroup_badge">
+                                                                    #메인태그
+                                                                </span>
+                                                            </span>
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_gray BadgeGroup_badge">
+                                                                    #해시태그
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-left flex-column-start-16">
+                                    <div class="card-container">
+                                        <div class="card-wrap">
+                                            <a class="card-content card-horizontal" href="#!">
+                                                <div class="thumb-container thumb-round mh0 mv0">
+                                                    <img class="thumb-img" src="/image/genesis.png" alt="" />
+                                                    <div class="thumb_overlay">
+                                                        <div class="thumb_topLeft">
+                                                            <div class="emblem-container emblem-sm">
+                                                                <img class="emblem-img" src="/image/genesis.png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="content_container">
+                                                    <div class="title title-mint title-sm">타이틀 영역입니다.</div>
+                                                    <div class="title-container">[판매] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                                    <div class="status_container">
+                                                        <div class="StatusBadgeGroup_container">
+                                                            <div class="StatusBadgeGroup_container">
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_blue BadgeGroup_badge">
+                                                                    #메인태그
+                                                                </span>
+                                                            </span>
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_gray BadgeGroup_badge">
+                                                                    #해시태그
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-container">
+                                        <div class="card-wrap">
+                                            <a class="card-content card-horizontal" href="#!">
+                                                <div class="thumb-container thumb-round mh0 mv0">
+                                                    <img class="thumb-img" src="/image/genesis.png" alt="" />
+                                                    <div class="thumb_overlay">
+                                                        <div class="thumb_topLeft">
+                                                            <div class="emblem-container emblem-sm">
+                                                                <img class="emblem-img" src="/image/genesis.png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="content_container">
+                                                    <div class="title title-mint title-sm">타이틀 영역입니다.</div>
+                                                    <div class="title-container">[판매] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                                    <div class="status_container">
+                                                        <div class="StatusBadgeGroup_container">
+                                                            <div class="StatusBadgeGroup_container">
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_blue BadgeGroup_badge">
+                                                                    #메인태그
+                                                                </span>
+                                                            </span>
+                                                            <span class="LabelBadge_container">
+                                                                <span class="LabelBadge_badge LabelBadge_sm LabelBadge_gray BadgeGroup_badge">
+                                                                    #해시태그
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="button button-contain button-mint button-lg button-submit button-link" type="button">
+                    <span><span>더 보기</span></span>
+                </button>
+            </div>
+            <div class="main-content section-container">
+                <div class="section-wrap section-header">
+                    <div class="sectionTitle-container">
+                        <h2 class="sectionTitle-txt title_md">이런 사람들을 추천해드려요.</h2>
+                        <!-- 이름 부분 작업 필요 -->
+                    </div>
+                </div>
+                <div class="section-wrap section-content">
+                    <div class="swiper-container">
+                        <div class="swiper-wrap scroll-edge-offset-16 flex-row-start-8 flex-row-start-undefined">
+                            <div class="swiper-item">
+                                <div class="thumb-container thumb-round">
+                                    <img alt="[품절대란] 두바이 쫀득모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악" class="thumb-img" loading="lazy" src="/image/genesis.png" />
+                                    <div class="thumb_overlay">
+                                        <div class="thumb_topLeft"></div>
+                                        <div class="thumb_topRight">
+                                            <button class="alarmbtn" data-index="2" type="button">
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon icon-alarm" style="height: 24px; width: 24px">
+                                                    <path d="M8.601 18.6a.192.192 0 00-.194.178 3.657 3.657 0 00.203 1.435 3.611 3.611 0 001.99 2.104 3.6 3.6 0 004.995-3.539.192.192 0 00-.196-.178H8.601zM4.006 8.331c.116-3.264 2.692-5.985 5.859-6.678 1.545-.338 2.725-.338 4.27 0 3.166.693 5.742 3.414 5.859 6.678.067 1.888.062 3.272.043 5.133-.013 1.204.55 2.422 1.187 3.664a.2.2 0 01-.178.292H2.953a.2.2 0 01-.178-.292l.038-.073c.622-1.216 1.162-2.411 1.15-3.591-.02-1.861-.025-3.245.043-5.133z" fill="#495057"></path>
+                                                    <path d="M8.601 18.6a.192.192 0 00-.194.178 3.657 3.657 0 00.203 1.435 3.611 3.611 0 001.99 2.104 3.6 3.6 0 004.995-3.539.192.192 0 00-.196-.178H8.601z" fill="#495057"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_container">
+                                    <div class="title title-mint title-md">타이틀 영역입니다.</div>
+                                    <div class="title-container">[품절대란] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                </div>
+                                <div class="StatusBadgeGroup_container">
+                                    <span class="LabelBadge_container">
+                                        <span class="LabelBadge_badge LabelBadge_sm LabelBadge_blue BadgeGroup_badge">
+                                            #메인태그
+                                        </span>
+                                    </span>
+                                    <span class="LabelBadge_container">
+                                        <span class="LabelBadge_badge LabelBadge_sm LabelBadge_gray BadgeGroup_badge">
+                                            #해시태그
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="swiper-item">
+                                <div class="thumb-container thumb-round">
+                                    <img alt="[품절대란] 두바이 쫀득모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악" class="thumb-img" loading="lazy" src="/image/genesis.png" />
+                                    <div class="thumb_overlay">
+                                        <div class="thumb_topLeft"></div>
+                                        <div class="thumb_topRight">
+                                            <button class="wishbtn" type="button">
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon icon-wish" style="height: 24px; width: 24px">
+                                                    <path d="M7 2.9c-1.696 0-3.377.845-4.426 2.314-1.06 1.484-1.448 3.563-.643 5.976.65 1.95 2.455 4.078 4.353 5.905a45.28 45.28 0 005.376 4.4.6.6 0 00.68 0 45.286 45.286 0 005.376-4.4c1.898-1.827 3.703-3.955 4.353-5.905.805-2.413.417-4.492-.643-5.976C20.376 3.745 18.696 2.9 17 2.9c-2.582 0-4.164 1.348-5 2.469C11.165 4.248 9.583 2.9 7 2.9z" fill="#495057"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_container">
+                                    <div class="title title-mint title-md">타이틀 영역입니다.</div>
+                                    <div class="title-container">[품절대란] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                </div>
+                            </div>
+                            <div class="swiper-item">
+                                <div class="thumb-container thumb-round">
+                                    <img alt="[품절대란] 두바이 쫀득모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악" class="thumb-img" loading="lazy" src="/image/genesis.png" />
+                                    <div class="thumb_overlay">
+                                        <div class="thumb_topLeft"></div>
+                                        <div class="thumb_topRight">
+                                            <button class="wishbtn" type="button">
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon icon-wish" style="height: 24px; width: 24px">
+                                                    <path d="M7 2.9c-1.696 0-3.377.845-4.426 2.314-1.06 1.484-1.448 3.563-.643 5.976.65 1.95 2.455 4.078 4.353 5.905a45.28 45.28 0 005.376 4.4.6.6 0 00.68 0 45.286 45.286 0 005.376-4.4c1.898-1.827 3.703-3.955 4.353-5.905.805-2.413.417-4.492-.643-5.976C20.376 3.745 18.696 2.9 17 2.9c-2.582 0-4.164 1.348-5 2.469C11.165 4.248 9.583 2.9 7 2.9z" fill="#495057"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_container">
+                                    <div class="title title-mint title-md">타이틀 영역입니다.</div>
+                                    <div class="title-container">[품절대란] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                </div>
+                            </div>
+                            <div class="swiper-item">
+                                <div class="thumb-container thumb-round">
+                                    <img alt="[품절대란] 두바이 쫀득모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악" class="thumb-img" loading="lazy" src="/image/genesis.png" />
+                                    <div class="thumb_overlay">
+                                        <div class="thumb_topLeft"></div>
+                                        <div class="thumb_topRight">
+                                            <button class="wishbtn" type="button">
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon icon-wish" style="height: 24px; width: 24px">
+                                                    <path d="M7 2.9c-1.696 0-3.377.845-4.426 2.314-1.06 1.484-1.448 3.563-.643 5.976.65 1.95 2.455 4.078 4.353 5.905a45.28 45.28 0 005.376 4.4.6.6 0 00.68 0 45.286 45.286 0 005.376-4.4c1.898-1.827 3.703-3.955 4.353-5.905.805-2.413.417-4.492-.643-5.976C20.376 3.745 18.696 2.9 17 2.9c-2.582 0-4.164 1.348-5 2.469C11.165 4.248 9.583 2.9 7 2.9z" fill="#495057"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_container">
+                                    <div class="title title-mint title-md">타이틀 영역입니다.</div>
+                                    <div class="title-container">[품절대란] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                </div>
+                            </div>
+                            <div class="swiper-item">
+                                <div class="thumb-container thumb-round">
+                                    <img alt="[품절대란] 두바이 쫀득모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악" class="thumb-img" loading="lazy" src="/image/genesis.png" />
+                                    <div class="thumb_overlay">
+                                        <div class="thumb_topLeft"></div>
+                                        <div class="thumb_topRight">
+                                            <button class="wishbtn" type="button">
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon icon-wish" style="height: 24px; width: 24px">
+                                                    <path d="M7 2.9c-1.696 0-3.377.845-4.426 2.314-1.06 1.484-1.448 3.563-.643 5.976.65 1.95 2.455 4.078 4.353 5.905a45.28 45.28 0 005.376 4.4.6.6 0 00.68 0 45.286 45.286 0 005.376-4.4c1.898-1.827 3.703-3.955 4.353-5.905.805-2.413.417-4.492-.643-5.976C20.376 3.745 18.696 2.9 17 2.9c-2.582 0-4.164 1.348-5 2.469C11.165 4.248 9.583 2.9 7 2.9z" fill="#495057"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_container">
+                                    <div class="title title-mint title-md">타이틀 영역입니다.</div>
+                                    <div class="title-container">[품절대란] 두바이 밀웜모찌, 차원이 다른 고소함! 줄서서 먹는 쭈악쭈악</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 하단 네비게이션 영역 -->
+    <div id="GNB" class="navigationBar-container">
+<!--        <a class="NavigationTab-container active" href="javascript:void(0);">-->
+        <a class="NavigationTab-container active" th:href="@{/ev/main}">
+            <div class="NavigationTab-icon">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1766.000000pt" height="960.000000pt" viewBox="0 0 1766.000000 960.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,960.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                        <path d="M4365 9569 c-55 -4 -129 -12 -165 -18 -36 -6 -108 -15 -160 -21 -132 -15 -230 -30 -265 -42 -16 -6 -68 -18 -115 -29 -47 -10 -114 -25 -150 -34 -36 -9 -87 -20 -115 -24 -27 -5 -72 -19 -98 -30 -27 -12 -62 -21 -78 -21 -25 0 -67 -12 -134 -40 -11 -5 -29 -10 -40 -13 -11 -3 -58 -19 -105 -37 -47 -17 -119 -44 -160 -59 -42 -15 -87 -35 -100 -43 -14 -9 -42 -21 -62 -28 -21 -6 -38 -16 -38 -21 0 -5 -5 -9 -11 -9 -15 0 -119 -45 -164 -72 -37 -21 -50 -28 -65 -35 -8 -4 -17 -10 -20 -14 -3 -4 -21 -14 -40 -23 -63 -30 -80 -41 -80 -48 0 -5 -7 -8 -15 -8 -8 0 -22 -8 -32 -19 -10 -10 -34 -24 -54 -30 -20 -6 -47 -23 -59 -36 -13 -14 -28 -25 -32 -25 -8 0 -75 -46 -88 -60 -3 -3 -26 -19 -52 -35 -27 -17 -48 -36 -48 -42 0 -7 -10 -13 -23 -13 -15 0 -29 -9 -37 -25 -7 -14 -19 -25 -26 -25 -7 0 -21 -11 -32 -25 -11 -14 -24 -25 -29 -25 -4 0 -33 -22 -63 -50 -30 -27 -58 -50 -62 -50 -5 0 -8 -7 -8 -15 0 -8 -6 -15 -13 -15 -7 0 -23 -11 -35 -25 -12 -14 -29 -25 -37 -25 -8 0 -15 -6 -15 -14 0 -8 -32 -45 -72 -82 -66 -64 -83 -81 -115 -116 -7 -7 -17 -17 -22 -23 -46 -45 -121 -128 -121 -132 0 -3 -11 -15 -23 -27 -13 -11 -37 -39 -53 -61 -16 -21 -35 -46 -42 -55 -31 -35 -95 -128 -113 -162 -11 -21 -24 -38 -29 -38 -5 0 -11 -8 -14 -18 -4 -10 -14 -27 -24 -38 -10 -10 -36 -48 -57 -84 -55 -90 -61 -100 -81 -140 -9 -19 -27 -48 -38 -65 -12 -16 -30 -47 -40 -67 -11 -21 -23 -38 -28 -38 -4 0 -8 -9 -8 -19 0 -23 -56 -147 -70 -156 -6 -3 -10 -17 -10 -31 0 -13 -4 -24 -8 -24 -5 0 -16 -19 -26 -42 -9 -24 -21 -50 -26 -58 -21 -33 -40 -84 -40 -105 0 -12 -9 -34 -20 -48 -11 -14 -23 -40 -26 -59 -8 -45 -35 -118 -44 -118 -4 0 -12 -31 -19 -68 -7 -38 -18 -81 -26 -95 -7 -15 -21 -59 -30 -99 -10 -40 -23 -93 -31 -118 -7 -25 -21 -79 -30 -120 -9 -41 -23 -104 -31 -140 -8 -36 -18 -105 -23 -155 -5 -49 -16 -133 -25 -185 -18 -101 -27 -209 -46 -549 -9 -169 -9 -250 0 -385 7 -94 17 -229 21 -301 5 -71 16 -184 25 -250 9 -66 20 -160 25 -210 4 -49 15 -119 25 -155 9 -36 19 -78 22 -95 22 -132 34 -184 47 -210 9 -16 21 -55 27 -85 6 -30 14 -64 18 -75 26 -71 64 -185 70 -210 4 -16 22 -61 39 -98 18 -38 32 -80 32 -94 0 -14 11 -41 25 -59 14 -18 25 -39 25 -47 0 -14 21 -65 39 -97 5 -8 16 -31 25 -50 9 -19 26 -53 37 -75 12 -22 29 -56 38 -75 9 -19 22 -41 28 -48 7 -7 13 -20 13 -28 0 -8 4 -14 8 -14 5 0 16 -19 26 -42 10 -24 28 -56 40 -73 12 -16 29 -46 38 -65 9 -19 26 -45 37 -57 12 -12 21 -27 21 -33 0 -5 3 -10 8 -10 4 0 16 -16 26 -34 10 -19 29 -45 42 -57 13 -12 24 -28 24 -35 0 -7 12 -26 28 -42 15 -16 50 -60 77 -98 28 -37 67 -85 88 -106 20 -21 37 -42 37 -48 0 -5 11 -17 25 -26 14 -9 25 -22 25 -29 0 -7 11 -20 25 -29 14 -9 25 -23 25 -31 0 -8 6 -15 14 -15 7 0 33 -24 56 -54 24 -30 54 -60 66 -66 12 -7 28 -23 35 -36 7 -13 18 -24 24 -24 6 0 18 -11 25 -25 7 -14 17 -25 22 -25 13 0 38 -26 38 -39 0 -6 8 -11 19 -11 10 0 26 -11 35 -25 9 -14 23 -25 31 -25 8 0 15 -6 16 -12 0 -11 78 -75 136 -113 9 -5 26 -20 39 -33 13 -12 28 -22 34 -22 6 0 21 -11 34 -25 13 -14 27 -25 32 -25 5 0 21 -11 36 -25 15 -14 33 -25 41 -25 7 0 24 -11 37 -25 13 -14 29 -25 35 -25 6 0 22 -11 35 -25 13 -14 28 -25 34 -25 6 0 29 -14 50 -30 22 -17 46 -30 53 -30 7 0 13 -3 13 -7 0 -5 10 -13 23 -19 35 -17 92 -49 97 -54 18 -18 367 -190 386 -190 5 0 26 -9 47 -20 20 -11 65 -29 99 -41 35 -11 72 -25 83 -31 51 -29 365 -131 418 -135 31 -3 57 -9 57 -14 0 -5 9 -9 21 -9 11 0 30 -5 42 -12 22 -11 61 -21 162 -37 28 -5 66 -14 85 -20 19 -6 53 -11 74 -11 51 0 197 -18 256 -31 158 -36 226 -39 933 -39 678 0 775 4 866 32 42 13 127 26 241 36 47 5 90 11 96 15 6 3 39 11 75 17 135 24 182 37 231 61 10 5 35 9 57 9 22 0 61 9 88 21 26 12 80 29 118 40 64 16 202 60 250 79 11 5 45 16 75 26 30 10 78 28 107 41 28 13 61 23 72 23 12 0 21 4 21 8 0 10 71 42 93 42 9 0 18 4 22 9 8 14 65 41 86 41 9 0 19 3 21 8 2 4 21 15 43 26 22 10 49 23 60 29 11 6 90 46 175 90 85 43 160 83 167 89 15 12 124 71 176 95 20 10 37 23 37 30 0 7 11 13 25 13 14 0 25 4 25 8 0 5 10 14 23 20 12 6 40 23 62 37 22 13 62 36 89 51 53 28 52 27 113 80 33 29 43 45 48 78 10 69 13 4109 3 4129 -8 16 -83 17 -1354 17 -1267 0 -1346 -1 -1362 -17 -21 -22 -36 -52 -57 -118 -9 -27 -26 -77 -40 -110 -13 -33 -36 -94 -50 -135 -15 -41 -33 -87 -41 -102 -8 -14 -14 -35 -14 -46 0 -12 -4 -24 -10 -27 -5 -3 -10 -15 -10 -26 0 -11 -7 -22 -15 -25 -8 -4 -15 -19 -15 -34 0 -16 -4 -32 -10 -35 -5 -3 -10 -19 -10 -34 0 -15 -11 -41 -25 -57 -14 -16 -25 -38 -25 -49 0 -24 -18 -76 -74 -215 -14 -36 -26 -72 -26 -80 0 -8 -12 -37 -26 -65 -14 -27 -32 -75 -40 -105 -8 -30 -19 -57 -23 -60 -13 -8 -41 -80 -41 -105 0 -12 -7 -28 -15 -35 -8 -7 -15 -21 -15 -31 0 -10 -4 -21 -10 -24 -5 -3 -10 -15 -10 -26 0 -11 -11 -44 -25 -73 -29 -61 -36 -133 -14 -147 8 -5 39 -7 69 -3 30 3 308 8 617 10 l562 5 15 -23 c12 -20 15 -123 17 -693 1 -368 -1 -677 -5 -686 -7 -16 -47 -39 -69 -39 -7 0 -34 -11 -62 -25 -27 -13 -61 -25 -75 -25 -14 0 -49 -11 -78 -25 -30 -14 -67 -25 -82 -25 -16 0 -31 -4 -34 -9 -4 -5 -29 -12 -56 -16 -27 -4 -52 -11 -56 -16 -3 -5 -15 -9 -27 -9 -12 0 -56 -9 -97 -21 -73 -19 -151 -31 -335 -48 -49 -5 -110 -15 -135 -21 -72 -21 -703 -18 -795 3 -38 9 -131 21 -205 27 -74 6 -149 17 -165 25 -17 7 -63 19 -103 26 -40 7 -72 17 -72 21 0 4 -6 8 -14 8 -15 0 -114 31 -161 50 -61 25 -71 29 -110 41 -22 6 -43 17 -47 24 -4 7 -25 16 -45 19 -21 4 -63 23 -95 42 -31 19 -59 34 -63 34 -3 0 -21 11 -39 25 -18 14 -40 25 -48 25 -8 0 -25 11 -38 25 -13 14 -31 25 -40 25 -9 0 -27 11 -39 24 -13 13 -33 27 -46 30 -13 3 -27 15 -30 26 -3 11 -12 20 -19 20 -7 0 -26 12 -43 28 -17 15 -45 38 -62 52 -122 98 -286 264 -351 354 -19 26 -45 58 -57 71 -13 12 -23 30 -23 39 0 9 -4 16 -10 16 -5 0 -10 7 -10 15 0 8 -4 15 -9 15 -5 0 -19 19 -31 42 -12 24 -25 45 -29 48 -11 9 -31 49 -31 64 0 8 -7 16 -15 20 -9 3 -24 25 -35 48 -10 24 -25 54 -33 68 -29 50 -76 156 -83 185 -4 17 -20 58 -35 92 -16 34 -29 69 -29 77 0 8 -6 27 -14 43 -26 53 -35 78 -39 118 -3 22 -14 72 -26 110 -11 39 -21 84 -21 102 0 18 -4 42 -9 55 -44 108 -67 557 -51 973 10 243 18 318 45 400 7 22 16 63 19 90 11 88 40 213 57 247 5 10 9 25 9 34 0 9 6 28 14 42 8 15 20 47 26 72 7 25 24 68 36 97 13 28 24 55 24 59 0 15 116 241 137 267 13 16 23 35 23 44 0 8 27 55 60 105 33 49 60 91 60 93 0 2 10 15 23 29 12 14 31 36 42 50 31 38 97 115 133 154 17 20 32 40 32 44 0 4 5 8 10 8 6 0 23 12 39 28 85 84 212 192 235 201 6 2 19 15 29 28 10 12 24 23 31 23 7 0 23 11 36 25 13 14 29 25 37 25 7 0 13 5 13 10 0 6 4 10 9 10 5 0 32 16 61 35 51 35 233 125 250 125 6 0 10 3 10 8 0 4 21 15 48 26 26 10 61 24 77 31 42 17 81 30 148 50 31 9 57 20 57 25 0 4 15 10 33 13 60 11 122 25 152 35 17 6 50 16 75 23 25 6 63 18 85 25 120 41 1213 44 1300 4 26 -12 95 -29 162 -40 28 -4 57 -11 63 -15 6 -4 44 -15 84 -25 39 -9 81 -22 91 -27 30 -16 89 -33 111 -33 28 0 114 -30 114 -40 0 -4 15 -10 33 -13 32 -5 64 -18 194 -78 34 -16 65 -29 68 -29 17 0 182 -86 196 -102 9 -10 24 -18 33 -18 9 0 29 -11 44 -25 15 -14 34 -25 44 -25 9 0 25 -11 36 -25 11 -14 25 -25 32 -25 7 0 34 -16 60 -35 26 -19 53 -35 59 -35 6 0 11 -4 11 -9 0 -5 15 -18 33 -30 17 -11 45 -29 60 -40 33 -22 63 -17 79 13 6 11 17 25 25 29 7 4 22 25 33 46 11 22 25 45 32 52 7 8 20 28 28 44 8 17 25 44 37 61 13 17 23 36 23 41 0 6 7 13 15 17 8 3 15 11 15 17 0 6 15 32 33 58 18 25 38 58 44 74 7 15 16 27 20 27 5 0 20 21 33 47 14 26 33 56 42 67 10 11 20 27 23 37 3 9 12 20 20 23 8 3 15 11 15 17 0 6 16 33 35 59 19 26 35 52 35 58 0 6 11 23 25 38 14 15 25 33 25 40 0 8 3 14 8 14 4 0 16 17 27 37 24 46 95 153 112 171 7 7 13 18 13 24 0 6 16 32 35 58 19 26 35 53 35 59 0 6 3 11 8 11 4 0 16 16 26 35 11 19 23 35 27 35 6 0 23 25 85 132 6 10 21 29 33 42 31 33 27 99 -6 104 -13 2 -23 9 -23 15 -1 16 -104 87 -125 87 -10 0 -26 11 -37 25 -11 14 -25 25 -32 25 -7 0 -21 9 -32 21 -10 11 -32 26 -49 33 -17 7 -38 20 -46 29 -9 8 -36 24 -62 36 -25 11 -48 25 -52 30 -3 6 -30 21 -60 35 -29 14 -57 31 -60 36 -3 6 -13 10 -21 10 -8 0 -32 11 -54 25 -22 14 -49 25 -60 25 -11 0 -20 3 -20 8 0 11 -59 42 -81 42 -10 0 -19 4 -19 8 0 5 -19 17 -42 27 -24 9 -72 30 -108 45 -36 16 -90 38 -120 50 -30 12 -64 26 -75 30 -11 4 -51 18 -90 30 -38 12 -74 26 -79 31 -6 5 -19 9 -30 9 -23 1 -123 33 -133 44 -3 3 -21 6 -38 6 -17 0 -35 3 -39 7 -7 7 -47 20 -173 52 -39 11 -77 22 -83 26 -6 4 -35 11 -63 16 -88 14 -141 26 -167 36 -23 10 -89 18 -350 43 -58 6 -132 15 -165 20 -33 6 -100 15 -150 20 -106 11 -935 10 -1080 -1z" /> <path d="M13530 9573 c-52 -3 -167 -20 -225 -34 -22 -5 -94 -13 -160 -19 -165 -15 -227 -25 -320 -48 -44 -12 -111 -28 -150 -37 -102 -23 -146 -35 -180 -47 -16 -5 -46 -14 -65 -19 -19 -4 -53 -12 -75 -18 -54 -13 -158 -49 -225 -77 -30 -13 -75 -29 -100 -35 -24 -6 -55 -19 -68 -30 -14 -10 -32 -19 -42 -19 -9 0 -38 -11 -63 -24 -25 -14 -64 -30 -86 -37 -23 -7 -41 -15 -41 -19 0 -3 -17 -13 -37 -22 -21 -8 -45 -18 -53 -22 -8 -3 -28 -15 -45 -25 -16 -11 -40 -20 -52 -20 -12 -1 -23 -5 -25 -10 -3 -7 -108 -71 -179 -108 -15 -7 -32 -20 -39 -28 -7 -8 -18 -15 -24 -15 -7 0 -30 -13 -52 -29 -21 -16 -49 -32 -61 -35 -13 -4 -23 -13 -23 -20 0 -8 -13 -19 -28 -25 -15 -7 -40 -23 -55 -36 -14 -14 -31 -25 -36 -25 -6 0 -21 -11 -35 -25 -14 -14 -28 -25 -32 -25 -4 0 -17 -11 -30 -25 -13 -14 -27 -25 -32 -25 -5 0 -19 -11 -32 -25 -13 -14 -27 -25 -31 -25 -5 0 -27 -18 -51 -40 -24 -22 -48 -40 -54 -40 -6 0 -17 -11 -24 -25 -7 -14 -19 -25 -25 -25 -6 0 -18 -11 -25 -25 -7 -14 -18 -25 -23 -25 -15 0 -347 -345 -384 -399 -9 -14 -24 -32 -32 -42 -9 -9 -29 -33 -46 -53 -16 -21 -37 -45 -45 -54 -9 -9 -22 -30 -30 -47 -8 -16 -25 -40 -37 -52 -13 -12 -23 -25 -23 -28 0 -3 -17 -29 -38 -58 -21 -29 -49 -74 -62 -101 -14 -26 -31 -50 -37 -53 -7 -3 -13 -12 -13 -20 0 -8 -13 -32 -29 -52 -15 -20 -32 -47 -36 -61 -4 -14 -15 -34 -25 -45 -9 -11 -23 -36 -30 -55 -8 -19 -20 -41 -27 -48 -7 -7 -13 -20 -13 -28 0 -8 -4 -14 -10 -14 -5 0 -10 -12 -10 -26 0 -14 -11 -40 -25 -58 -14 -18 -25 -37 -25 -42 0 -6 -22 -56 -50 -112 -27 -56 -50 -109 -50 -117 0 -17 -19 -64 -35 -85 -6 -8 -29 -69 -50 -135 -21 -66 -46 -138 -55 -160 -10 -22 -23 -65 -30 -95 -20 -94 -31 -134 -46 -168 -8 -18 -14 -46 -14 -63 0 -16 -10 -64 -21 -107 -12 -42 -25 -108 -30 -147 -21 -179 -29 -226 -37 -242 -22 -44 -36 -333 -36 -768 -1 -436 9 -642 35 -755 6 -25 15 -92 20 -150 12 -140 24 -204 48 -270 12 -30 21 -72 21 -94 0 -40 27 -152 40 -171 4 -5 11 -30 15 -55 4 -25 15 -67 25 -95 10 -27 26 -78 36 -112 10 -35 21 -63 25 -63 4 0 13 -24 19 -53 6 -29 17 -66 26 -82 21 -40 44 -106 44 -127 0 -9 3 -18 8 -20 10 -4 42 -67 42 -83 0 -8 11 -35 25 -61 14 -26 25 -52 25 -57 0 -6 11 -25 25 -43 14 -18 25 -40 25 -48 0 -9 18 -45 40 -80 21 -36 51 -89 66 -118 14 -29 37 -67 50 -85 13 -17 24 -38 24 -46 0 -8 7 -17 15 -21 8 -3 21 -18 28 -33 6 -15 22 -39 34 -53 13 -14 23 -30 23 -37 0 -7 5 -13 10 -13 6 0 10 -6 10 -14 0 -8 7 -16 15 -20 8 -3 15 -13 15 -22 0 -9 10 -26 23 -38 12 -12 31 -37 42 -56 10 -19 29 -45 42 -58 13 -13 23 -27 23 -31 0 -5 17 -26 38 -48 20 -22 53 -59 72 -83 39 -48 367 -377 426 -428 76 -64 99 -82 107 -82 4 0 7 -6 7 -14 0 -8 9 -18 21 -21 12 -4 37 -22 57 -41 20 -19 41 -34 47 -34 6 0 22 -11 35 -25 13 -14 27 -25 32 -25 5 0 21 -11 36 -25 15 -14 32 -25 39 -25 7 0 13 -4 13 -10 0 -5 5 -10 11 -10 13 0 81 -50 92 -67 4 -7 14 -13 22 -13 8 0 35 -15 59 -34 24 -18 56 -36 70 -40 14 -3 26 -10 26 -15 0 -11 57 -41 77 -41 7 0 16 -6 19 -14 3 -8 20 -20 37 -27 18 -7 46 -23 64 -36 17 -12 38 -23 46 -23 18 0 75 -28 82 -41 4 -5 17 -9 30 -9 13 0 27 -4 30 -10 3 -5 14 -10 24 -10 10 0 24 -6 30 -14 7 -8 41 -22 76 -31 36 -10 65 -21 65 -25 0 -4 30 -17 68 -29 37 -12 85 -31 107 -41 22 -10 81 -31 130 -46 50 -14 95 -29 100 -33 25 -14 113 -40 138 -41 15 0 35 -4 45 -9 49 -25 95 -41 117 -41 22 0 82 -14 165 -39 19 -6 53 -11 75 -11 53 0 185 -18 260 -35 137 -32 214 -35 901 -35 687 0 757 3 884 34 73 19 190 36 243 36 23 0 58 5 77 11 19 6 62 15 95 20 120 18 130 21 150 29 48 22 113 40 145 40 34 0 114 24 135 39 5 4 37 14 70 21 33 8 78 22 100 32 22 10 48 18 58 18 9 0 36 9 60 19 23 11 69 28 102 38 33 9 62 20 65 23 7 8 93 40 109 40 7 0 18 6 25 13 8 7 33 19 57 26 58 18 59 18 94 40 17 11 40 20 53 20 12 1 22 5 22 10 0 5 11 12 25 15 14 4 25 11 25 16 0 6 10 10 23 11 12 0 36 9 52 19 17 10 73 40 125 66 52 27 97 51 100 54 3 3 25 14 50 25 25 11 47 22 50 26 3 3 28 18 55 33 28 16 57 34 66 42 8 8 22 14 30 14 8 0 26 11 41 25 15 14 33 25 41 25 7 0 23 9 35 20 11 11 39 29 61 41 23 12 44 25 47 30 3 5 23 18 45 30 22 11 60 40 85 63 l44 43 0 2081 c0 1144 -3 2087 -6 2096 -6 15 -144 16 -1469 16 l-1463 0 -16 -25 c-9 -13 -16 -33 -16 -44 0 -11 -4 -30 -9 -43 -17 -43 -59 -183 -66 -218 -4 -19 -12 -41 -18 -49 -14 -17 -37 -80 -37 -103 0 -20 -32 -91 -42 -96 -5 -2 -8 -17 -8 -33 0 -16 -4 -37 -9 -47 -22 -43 -41 -92 -57 -150 -10 -35 -21 -65 -26 -68 -4 -3 -8 -18 -8 -34 0 -16 -4 -32 -10 -35 -5 -3 -10 -13 -10 -22 0 -9 -6 -24 -13 -32 -15 -18 -37 -88 -37 -119 0 -11 -7 -28 -16 -36 -8 -9 -24 -48 -35 -88 -11 -40 -27 -80 -35 -89 -8 -9 -17 -34 -21 -55 -3 -22 -16 -61 -29 -88 -13 -28 -24 -60 -24 -72 0 -20 -18 -67 -39 -104 -11 -19 -31 -83 -31 -99 0 -7 7 -20 16 -29 15 -14 28 -14 123 -4 71 8 310 12 707 12 l600 0 27 -31 27 -31 1 -517 c1 -284 3 -576 4 -649 2 -122 0 -136 -19 -165 -12 -18 -36 -36 -56 -42 -19 -6 -55 -21 -80 -33 -25 -12 -61 -22 -81 -22 -20 0 -39 -3 -43 -7 -16 -16 -110 -45 -210 -63 -27 -5 -54 -14 -60 -20 -5 -5 -20 -10 -33 -10 -12 0 -66 -11 -119 -25 -53 -14 -118 -25 -146 -25 -27 0 -79 -4 -116 -10 -288 -41 -298 -42 -507 -37 -115 2 -277 11 -360 20 -82 9 -186 20 -230 23 -44 3 -89 9 -100 14 -11 5 -60 16 -110 26 -49 9 -94 20 -100 24 -16 11 -112 40 -135 40 -11 0 -38 11 -60 25 -22 14 -50 25 -62 25 -13 0 -43 11 -67 25 -23 14 -49 25 -55 25 -11 0 -167 77 -246 121 -44 25 -145 94 -148 102 -2 4 -10 7 -17 7 -8 0 -22 11 -33 25 -11 14 -27 25 -35 25 -9 0 -24 11 -35 25 -11 14 -23 25 -26 25 -6 0 -49 36 -82 68 -7 6 -15 12 -19 12 -3 0 -30 25 -60 55 -31 30 -60 55 -65 55 -5 0 -11 8 -14 18 -4 11 -18 25 -31 32 -14 7 -25 17 -25 22 0 5 -12 21 -27 36 -16 16 -41 46 -58 67 -16 22 -42 54 -57 71 -16 17 -28 36 -28 40 0 5 -10 21 -22 35 -25 27 -44 56 -55 79 -4 8 -9 17 -13 20 -4 3 -26 43 -51 90 -24 47 -47 87 -51 90 -3 3 -14 25 -24 50 -9 25 -22 52 -28 60 -20 28 -36 60 -36 73 0 13 -19 59 -41 99 -5 10 -9 27 -9 38 0 11 -11 43 -25 72 -14 28 -25 61 -25 72 0 18 -18 76 -40 131 -5 11 -11 49 -15 84 -3 35 -15 87 -25 115 -30 80 -41 241 -47 646 -5 404 12 732 42 789 8 16 19 59 25 97 6 38 15 83 20 99 5 17 12 47 16 68 3 20 10 40 15 43 5 3 9 13 9 23 0 9 11 41 25 69 14 29 25 63 25 77 0 14 11 43 25 65 14 22 25 45 25 52 0 21 32 98 41 98 5 0 9 9 9 20 0 11 15 41 33 67 18 27 49 80 67 118 19 39 37 72 40 75 7 7 29 42 37 60 4 8 17 25 30 38 13 13 23 29 23 37 0 7 11 22 25 33 14 11 25 23 25 27 0 8 55 77 91 114 14 15 28 35 32 45 4 10 16 20 27 23 11 3 20 9 20 13 0 10 136 150 145 150 4 0 15 8 24 18 26 28 119 102 128 102 5 0 17 11 27 25 10 14 25 25 33 25 9 0 24 11 35 25 11 14 25 25 31 25 7 0 30 16 52 35 22 19 44 35 49 35 5 0 17 6 25 13 9 7 36 22 61 32 25 11 48 24 52 30 4 7 26 18 50 25 24 8 58 25 77 37 19 13 39 23 45 23 6 0 34 11 61 25 28 13 58 25 68 25 9 0 25 4 35 9 62 30 129 54 189 66 18 4 35 11 38 16 4 5 26 9 51 9 24 0 44 5 44 10 0 6 11 10 25 10 14 0 41 6 59 14 63 26 377 39 788 32 394 -7 470 -12 573 -41 33 -9 83 -21 110 -25 57 -9 83 -16 245 -66 204 -62 250 -79 325 -114 33 -16 78 -34 100 -41 22 -7 45 -17 51 -23 6 -7 31 -18 55 -26 24 -8 46 -17 49 -20 11 -12 60 -40 71 -40 6 0 24 -11 41 -25 16 -14 37 -25 47 -25 10 0 28 -11 41 -25 13 -14 31 -25 40 -25 10 0 26 -11 36 -25 10 -14 25 -25 32 -25 13 0 103 -56 135 -84 9 -9 21 -16 26 -16 5 0 26 -16 47 -35 45 -42 75 -45 94 -10 7 14 17 25 21 25 6 0 54 69 107 155 51 84 91 143 115 170 15 18 27 39 27 47 0 8 10 24 23 36 13 12 29 38 37 57 8 19 19 35 26 35 6 0 14 11 18 23 3 13 19 41 36 62 16 21 30 43 30 50 0 6 9 20 19 29 11 10 25 32 32 49 7 18 23 42 36 54 13 12 23 28 23 36 0 8 8 21 18 30 9 9 26 33 37 54 11 21 37 61 57 90 21 29 38 57 38 63 0 5 5 10 10 10 6 0 10 6 10 13 0 8 11 27 25 43 14 16 25 33 25 37 0 9 14 28 78 108 17 23 32 49 32 59 0 10 6 20 14 23 7 3 23 25 36 49 12 23 28 47 36 51 8 4 14 17 14 27 0 10 5 22 10 25 22 14 9 53 -30 88 -21 21 -43 37 -49 37 -5 0 -18 11 -29 25 -11 14 -27 25 -36 25 -9 0 -22 4 -29 10 -57 47 -76 60 -86 60 -6 0 -11 4 -11 8 0 5 -21 21 -47 36 -62 35 -194 113 -213 126 -8 6 -30 17 -49 26 -18 8 -50 26 -70 38 -20 13 -48 26 -64 30 -15 3 -36 15 -47 26 -11 11 -28 20 -38 20 -24 0 -82 29 -82 41 0 5 -11 9 -24 9 -14 0 -28 5 -31 10 -3 6 -15 10 -25 10 -10 0 -25 6 -32 13 -7 7 -40 21 -73 32 -32 10 -73 26 -90 36 -16 9 -46 20 -65 24 -19 4 -55 16 -80 27 -25 11 -70 26 -100 34 -91 24 -223 65 -258 80 -18 8 -44 14 -57 14 -14 0 -33 4 -43 9 -36 18 -89 33 -147 41 -114 17 -186 31 -203 39 -26 13 -154 31 -225 31 -34 0 -89 5 -122 10 -251 44 -334 48 -830 47 -253 0 -480 -2 -505 -4z" />
+                        <path d="M4570 6990 c0 -6 -11 -23 -25 -38 -14 -15 -25 -34 -25 -44 0 -9 -10 -29 -23 -45 -12 -15 -29 -41 -37 -58 -8 -16 -25 -44 -37 -61 -13 -17 -23 -36 -23 -42 0 -6 -6 -17 -14 -25 -8 -8 -29 -41 -47 -73 -17 -33 -57 -96 -88 -142 -31 -46 -63 -95 -71 -110 -8 -15 -21 -31 -27 -35 -7 -4 -13 -13 -13 -19 0 -6 -16 -33 -35 -59 -19 -27 -35 -55 -35 -63 0 -8 -7 -16 -15 -20 -8 -3 -21 -18 -27 -33 -7 -15 -15 -30 -18 -33 -17 -17 -50 -71 -50 -84 0 -7 -6 -16 -14 -19 -7 -3 -23 -26 -36 -51 -12 -25 -25 -46 -29 -46 -5 0 -16 -18 -26 -40 -10 -22 -22 -40 -26 -40 -4 0 -16 -17 -26 -37 -9 -21 -28 -49 -40 -63 -13 -14 -23 -30 -23 -37 0 -7 -4 -13 -8 -13 -5 0 -19 -21 -32 -47 -13 -27 -31 -55 -40 -63 -10 -8 -20 -24 -24 -35 -3 -11 -18 -33 -32 -50 -15 -16 -31 -42 -36 -57 -6 -16 -14 -28 -18 -28 -4 0 -22 -24 -39 -52 -42 -72 -53 -89 -73 -112 -10 -11 -20 -28 -24 -38 -3 -10 -10 -18 -15 -18 -6 0 -19 -20 -30 -45 -11 -25 -29 -51 -40 -58 -10 -6 -19 -21 -19 -32 0 -11 -9 -26 -21 -33 -11 -7 -29 -33 -40 -57 -10 -23 -26 -45 -34 -49 -8 -3 -15 -12 -15 -19 0 -8 -16 -34 -35 -58 -19 -24 -35 -51 -35 -61 0 -9 -4 -18 -9 -20 -5 -1 -27 -28 -50 -58 -44 -59 -53 -103 -24 -115 10 -3 217 -5 461 -4 372 2 445 0 453 -12 15 -24 10 -102 -12 -185 -12 -43 -25 -109 -30 -147 -8 -66 -23 -124 -40 -159 -5 -10 -13 -48 -19 -85 -5 -38 -12 -86 -16 -108 -3 -22 -10 -49 -14 -60 -17 -37 -40 -146 -40 -185 0 -21 -7 -51 -15 -66 -8 -16 -15 -39 -15 -51 0 -43 -22 -168 -35 -198 -31 -74 -35 -89 -35 -131 0 -51 -28 -184 -41 -199 -5 -5 -9 -34 -9 -65 l0 -55 49 53 c27 29 55 68 62 85 7 18 23 46 34 62 12 17 25 38 28 48 4 9 10 17 15 17 5 0 17 19 28 43 10 23 28 55 41 70 13 16 23 35 23 43 0 8 4 14 8 14 4 0 21 23 37 50 16 28 33 50 37 50 4 0 14 15 22 34 8 19 20 38 28 42 7 5 22 25 32 44 11 19 28 44 38 54 10 11 18 27 18 37 0 9 6 19 13 22 8 3 23 25 35 49 11 24 27 50 36 57 9 8 16 19 16 26 0 6 14 31 30 53 17 23 30 45 30 49 0 5 11 21 25 37 14 16 25 35 25 43 0 7 5 13 10 13 6 0 10 9 10 20 0 11 6 23 14 26 8 3 22 21 31 40 9 19 20 34 25 34 6 0 10 5 10 11 0 6 16 33 35 59 19 26 35 55 35 63 0 9 6 20 13 24 13 9 30 34 49 73 7 14 29 48 49 75 20 28 46 68 58 90 24 46 35 63 76 125 17 24 32 49 35 55 3 5 26 42 53 82 26 39 47 76 47 81 0 5 9 17 21 28 11 10 27 34 35 54 8 19 20 40 27 45 7 6 28 35 47 65 19 30 38 57 42 58 5 2 8 9 8 15 0 11 127 206 141 217 15 12 57 88 52 94 -4 3 -207 6 -453 6 l-447 0 -13 24 c-9 18 -11 52 -6 133 9 152 17 216 26 228 8 9 22 74 37 170 2 17 8 39 14 50 5 11 13 63 19 115 18 173 27 236 35 250 13 21 35 161 35 230 0 36 10 99 21 140 41 151 48 186 49 227 0 23 -4 45 -10 48 -5 3 -10 1 -10 -5z" />
+                    </g>
+                </svg>
+                <!-- <img src="../../../static/images/icon_ggshop.png" alt=""> -->
+            </div>
+            <div class="NavigationTab-name">홈</div>
+            <span class="NotificationBadge type-new">N</span>
+        </a>
+        <a class="NavigationTab-container"
+           th:href="@{/ev/p2p/list}">
+            <div class="NavigationTab-icon">
+                <i class="fa-solid fa-comments-dollar"></i>
+            </div>
+            <div class="NavigationTab-name">개인 거래</div>
+            <span class="NotificationBadge type-new active">N</span>
+        </a>
+<!--        <a class="NavigationTab-container" href="javascript:void(0);">-->
+<!--            <div class="NavigationTab-icon">-->
+<!--                <i class="fa-solid fa-comments-dollar"></i>-->
+<!--            </div>-->
+<!--            <div class="NavigationTab-name">개인 거래</div>-->
+<!--            <span class="NotificationBadge type-new">N</span>-->
+<!--        </a>-->
+        <a class="NavigationTab-container"
+           th:href="@{/ev/evcharger}">
+            <div class="NavigationTab-icon">
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="NavigationTab-name">마이GG#</div>
+            <span class="NotificationBadge type-new active">N</span>
+        </a>
+<!--        <a class="NavigationTab-container" href="javascript:void(0);">-->
+<!--            <div class="NavigationTab-icon">-->
+<!--                <i class="fa-regular fa-user"></i>-->
+<!--            </div>-->
+<!--            <div class="NavigationTab-name">마이GG#</div>-->
+<!--            <span class="NotificationBadge type-new active">N</span>-->
+<!--        </a>-->
+    </div>
+    <!-- 퀵메뉴 영역 -->
+    <aside id="Quick" class="quickButton-container">
+        <button type="button" class="quickButton-pageTop">
+            <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg" width="32" class="WithProps-icon" style="color: rgb(255, 255, 255); height: 32px; width: 32px">
+                <path d="M4 5.4h16v1.2H4V5.4zM5.424 18.424l-.848-.848L12 10.15l7.424 7.425-.848.848L12 11.85l-6.576 6.575z" fill="#222"></path>
+            </svg>
+        </button>
+        <button type="button" id="QuickV2G" class="quickButton-V2G" onclick="modalOpen('modalBottomSheet')">
+            <span class="zz1OpenButton_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 654 363" class="WithProps-icon icon-zzone">
+                    <g transform="translate(0,382) scale(0.1,-0.1)" fill="#000000" stroke="none">
+                        <path d="M480 3809 c-167 -22 -317 -154 -370 -327 -25 -80 -27 -231 -5 -317 39 -149 150 -267 304 -321 56 -20 86 -24 193 -24 133 0 158 -4 158 -25 0 -14 -37 -97 -126 -280 -57 -118 -57 -121 -58 -210 -1 -75 3 -97 21 -130 44 -82 112 -132 189 -141 85 -9 94 -13 94 -35 0 -22 -48 -83 -456 -580 -291 -355 -305 -373 -339 -442 -39 -81 -59 -219 -45 -316 27 -180 108 -308 253 -395 114 -68 73 -66 1304 -66 1206 0 1160 -2 1275 56 77 39 162 129 203 216 117 247 29 550 -192 662 -100 50 -96 50 -673 55 -490 5 -545 8 -548 22 -2 9 67 102 154 210 255 313 1074 1337 1143 1427 76 100 124 200 145 304 20 96 20 147 1 240 -40 193 -165 342 -338 402 -62 21 -66 21 -1142 22 -594 1 -1109 -2 -1145 -7z m1522 -338 c12 -16 17 -33 13 -48 -3 -13 -96 -182 -207 -375 -154 -271 -198 -355 -191 -367 9 -14 48 -17 260 -21 271 -5 283 -8 283 -60 0 -35 6 -28 -390 -496 -144 -170 -229 -271 -436 -519 -222 -267 -408 -480 -421 -483 -7 -2 -13 1 -13 6 0 16 45 130 121 302 39 91 93 215 120 276 45 105 177 406 221 502 35 79 43 76 -224 82 -214 5 -238 7 -257 24 -30 27 -26 68 15 161 19 44 46 107 59 140 13 33 51 125 85 205 34 80 83 197 110 260 156 380 171 411 204 426 25 11 93 13 329 11 l299 -2 20 -24z" />
+                        <path d="M3860 3810 c-120 -21 -220 -83 -291 -179 -60 -82 -89 -162 -96 -267 -17 -250 104 -445 328 -526 63 -23 70 -23 599 -28 485 -5 535 -7 538 -21 2 -9 -19 -43 -46 -75 -109 -130 -396 -472 -542 -645 -85 -101 -224 -267 -309 -369 -85 -102 -234 -279 -331 -395 -97 -115 -191 -231 -208 -256 -44 -61 -83 -176 -89 -263 -7 -96 19 -234 59 -309 41 -76 129 -169 201 -211 118 -70 63 -67 1337 -64 l1145 3 57 22 c160 61 273 191 303 348 27 142 13 270 -41 377 -49 97 -164 187 -281 221 -24 7 -247 13 -613 16 -520 5 -575 8 -578 22 -2 10 71 106 170 225 96 115 210 254 255 309 44 55 140 172 213 260 72 88 174 212 225 275 52 63 145 176 207 251 365 441 383 467 414 584 19 68 18 237 -1 310 -46 176 -176 309 -365 371 -52 18 -117 19 -1135 20 -594 1 -1100 -2 -1125 -6z" />
+                    </g>
+                </svg>
+            </span>
+        </button>
+        <span class="NotificationBadge type-new">N</span>
+    </aside>
+    <!-- 모달 영역 - zz1폼 -->
+    <div id="modalBottomSheet" class="modal bottomSheet">
+        <div class="Modal_overlay">
+            <div id="ZZ1Modal" class="ZZ1Modal-container">
+                <div class="ZZ1Modal-header">
+                    <div class="ZZ1Modal-button">
+                        <button class="button button-close" type="button" onclick="modalCloses()">
+                            <span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon" style="height: 24px; width: 24px">
+                                        <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <strong class="ZZ1Modal-title">한전에 전기를 팔 수 있어요!</strong>
+                </div>
+                <div class="ZZ1Modal-content mt0 pt0">
+                    <div class="ZZ1Modal-wrap mt0">
+                        <form action="" class="ZZOneForm">
+                            <div>
+                                <!-- main chart container -->
+                                <div class="main-content chart-container">
+                                    <div class="chart-wrap chart-shadow avgChart">
+                                        <div class="yearBtns">
+                                            <button onclick="changeAvgYear(this, '2024')" id="year-2024" class="chart-btn chart-avgBtn avg active" type="button">2024년</button>
+                                            <button onclick="changeAvgYear(this, '2025')" id="year-2025" class="chart-btn chart-avgBtn avg" type="button">2025년</button>
+                                            <button onclick="changeAvgYear(this, '2026')" id="year-2026" class="chart-btn chart-avgBtn avg" type="button">2026년</button>
+                                        </div>
+                                        <div class="mb25">
+                                            <h3 id="periodTitle" style="color: #adb5bd; font-size: 14px; margin: 0; font-weight: 500">오늘의 예상 수익</h3>
+                                            <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 4px">
+                                                <span id="profitAmount" class="chart-krw">0원</span>
+                                                <span id="profitPercent" class="chart-percent">+0.0%</span>
+                                                <!-- 이율 대입 필요 -->
+                                            </div>
+                                        </div>
+
+                                        <div style="height: 250px; position: relative">
+                                            <canvas id="avgChart"></canvas>
+                                        </div>
+
+                                        <div class="avg period-selector">
+                                            <button onclick="updateAvgChart('1D')" id="avgBtn-1D" class="chart-btn chart-avgBtn avg" type="button">1일</button>
+                                            <button onclick="updateAvgChart('1M')" id="avgBtn-1M" class="chart-btn chart-avgBtn avg" type="button">1달</button>
+                                            <button onclick="updateAvgChart('1Y')" id="avgBtn-1Y" class="chart-btn chart-avgBtn avg" type="button">1년</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 가격 컨테이너(돈) -->
+                            <div class="KRW-container">
+                                <div class="KRW-wrap">
+                                    <label for="KRW">
+                                        <span>가격(KRW)</span>
+                                    </label>
+                                    <div class="inputField mt6">
+                                        <input type="text" id="KRW" class="input input-lg input-ph-sm tr pr0" value="1,000,000" readonly />
+                                        <span>KRW</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 와트 컨테이너(내 전기량) -->
+                            <div class="MyKWH-container">
+                                <div class="MyKWH-wrap">
+                                    <label for="KWH">
+                                        <span>내 전기량(KWH)</span>
+                                    </label>
+                                    <div class="inputField mt6">
+                                        <input type="text" id="KWH" class="input input-lg input-ph-sm tr pr0" value="999,999" readonly />
+                                        <span>KWH</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 와트 컨테이너(입력 전기량) -->
+                            <div class="KWH-container">
+                                <div class="KWH-wrap">
+                                    <label for="KWH">
+                                        <!-- 판매 가능한 전기량 -->
+                                        <span>판매할 전기량(KWH)</span>
+                                    </label>
+                                    <div class="inputField mt6">
+                                        <input type="text" id="KWH_input" class="input input-lg input-ph-sm tr pr0" placeholder="와트를 입력해주세요." />
+                                        <span>KWH</span>
+                                    </div>
+                                    <p class="input-message color-mint tr">판매 가능한 전기량: 999,999KWH</p>
+                                </div>
+                            </div>
+                            <button class="button button-contain button-mint button-lg button-submit" type="button" onclick="modalOpen('modalConfirm')">
+                                <span><span>판매</span></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 모달 영역 - ZZ1컨펌 -->
+    <div id="modalConfirm" class="modal">
+        <div class="Modal_overlay">
+            <div class="confirmModal-container">
+                <div class="confirmModal-header">
+                    <div class="confirmModal-button">
+                        <button
+                            class="button button-close"
+                            type="button"
+                            onclick="
+                                modalCloses();
+                                showToast('ZZ1Cancel');
+                            ">
+                            <span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon" style="height: 24px; width: 24px">
+                                        <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="confirmModal-title">ZZ1 판매 확인</div>
+                </div>
+                <div class="confirmModal-content">
+                    <div class="confirmModal-message">
+                        <span class="notice-txt">
+                            안전한 에너지 거래를 위해 판매 내역을 확인해 주세요.
+                            <br />
+                            국가 전력망으로 전송된 에너지는 취소가 불가능합니다.
+                        </span>
+                    </div>
+                    <div class="confirmModal-message mv5">
+                        <strong>
+                            판매량:[999,999,999,999kwh]
+                            <br />
+                            정산 예정 금액:[9,999,999,999원]
+                            <br />
+                            (한전 단가 기준)
+                        </strong>
+                        <br />
+                    </div>
+                    <div class="confirmModal-message"><span class="notice-txt">판매된 전력은 다음 달 전기량에서 차감되거나 현금으로 정산됩니다.</span></div>
+                </div>
+                <div class="confirmModal-footer">
+                    <div class="buttonGroup">
+                        <button class="button button-size button-confirm" onclick="onlyClose('modalConfirm')">
+                            <span>
+                                <span>돌아가기</span>
+                            </span>
+                        </button>
+                        <!-- 토스트 기능 넣기 -->
+                        <button class="button button-size button-mint button-confirm" type="button" onclick="zzoneInsert();">
+                            <span>
+                                <span>에너지 기여하기</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 모달 영역 - alarm컨펌 -->
+    <div id="modalAlarmConfirm" class="modal">
+        <div class="Modal_overlay">
+            <div class="confirmModal-container">
+                <div class="confirmModal-header">
+                    <div class="confirmModal-button">
+                        <button class="button button-close" type="button" onclick="modalCloses()">
+                            <span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon" style="height: 24px; width: 24px">
+                                        <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="confirmModal-title">정말 취소하시겠어요?</div>
+                </div>
+                <div class="confirmModal-content">
+                    <div class="confirmModal-message">해당 거래 알림과 혜택을 받을 수 없어요.</div>
+                </div>
+                <div class="confirmModal-footer">
+                    <div class="buttonGroup">
+                        <!-- 토스트 기능 넣기 -->
+                        <button class="button button-size button-mint button-confirm button-contain" type="button" onclick="confirmAlarmCancel()">
+                            <span>
+                                <span>취소하기</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 토스트 영역 -->
+    <div id="toast" class="toast-container">
+        <div class="toast-wrap">
+            <div id="wishAdd" class="toast_hide show-container none">
+                <div class="show-content">
+                    <div class="Activity_container">
+                        <p class="Activity-text">위시리스트에 추가하였습니다. 위시리스트는 마이페이지에서 확인 할 수 있어요!</p>
+                        <a class="Activity-link" href="#!">바로 가기</a>
+                    </div>
+                </div>
+            </div>
+            <div id="wishRemove" class="toast_hide show-container none"><div class="show-content">위시리스트를 제외했어요.</div></div>
+            <div id="alarmAdd" class="toast_hide show-container none">
+                <div class="show-content">
+                    <div class="Activity_container">
+                        <p class="Activity-text">알림 신청을 완료했어요. 거래 진행 소식도 알려드릴게요.</p>
+                        <a class="Activity-link" href="#!">바로 가기</a>
+                    </div>
+                </div>
+            </div>
+            <div id="alarmRemove" class="toast_hide show-container none"><div class="show-content">알람 신청을 취소했어요.</div></div>
+            <div id="ZZ1Cancel" class="toast_hide show-container none"><div class="show-content">ZZ1 거래를 취소하였어요.</div></div>
+            <!-- <div id="ZZ1Complete" class="toast_hide show-container none">
+                <div class="show-content">
+                    <div class="Activity_container">
+                        <p class="Activity-text">ZZ1 거래가 완료되었어요. 거래 목록은 마이페이지에서 확인 할 수 있어요!</p>
+                        <a class="Activity-link" href="#!">마이페이지 바로 가기</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<script>
+    function zzoneInsert() {
+        const salesKwh   = document.getElementById('KWH_input').value.replace(/,/g, '');
+        const salesPrice = document.getElementById('KRW').value.replace(/,/g, '');
+
+        if (!salesKwh || parseInt(salesKwh) <= 0) {
+            alert('판매할 전기량을 입력해주세요.');
+            return;
+        }
+        fetch('/vtog/transaction/zzone/insert', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                salesKwh:   parseInt(salesKwh),
+                salesPrice: parseInt(salesPrice)
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    modalCloses();
+                    bannerOpen();
+                } else {
+                    alert('오류: ' + data.message);
+                }
+            })
+            .catch(() => {
+                alert('에너지 기여 중 오류가 발생했습니다.');
+            });
+    }
+</script>
+
+<!-- Event handler -->
+<script src="/js/headers/header-m.js"></script>
+<script src="/js/modals/modal-m.js"></script>
+<script src="/js/navigations/navigation-m.js"></script>
+<script src="/js/navigations/quick_navigation-m.js"></script>
+<script src="/js/main/event.js"></script>
+<script src="/js/banner/banner.js"></script>
+<!-- api -->
+<script src="/js/api/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+
+<script>
+    let zzOneData = null;
+    let currentYear = '2024';
+    let avgChart = null;
+    let totalChart = null;
+    const avgChartData = async () => {
+        try {
+            const url = "https://apis.data.go.kr/B552115/SmpWithForecastDemand/getSmpWithForecastDemand?serviceKey=cad6b49a2d56987689ed5b310c86ab5dab20fa983be99195e1e1cfe857170c8f&pageNo=1&numOfRows=24&dataType=json&date=20260223";
+            // const response = await fetch('/json/zzone_data.json');
+            const response = await fetch(url);
+            console.log(response);
+            zzOneData = await response.json();
+            const years = Object.keys(zzOneData).sort();
+            currentYear = years[years.length - 1];
+            const wrap = document.querySelector('.avgChart');
+            if (wrap) {
+                initAvgChart(wrap);
+            }
+        } catch (e) {
+            console.error('데이터 로드 실패:', e);
+        }
+    };
+    window.changeAvgYear = (btn, year) => {
+        const wrap = btn.closest('.avgChart');
+        currentYear = year;
+        wrap.querySelectorAll('[id^="year-"]').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const activeBtn = wrap.querySelector('.avg.period-selector .active');
+        const activePeriod = activeBtn ? activeBtn.id.replace('avgBtn-', '') : '1D';
+        updateAvgChart(activePeriod);
+    };
+    window.updateAvgChart = (period) => {
+        if (!zzOneData) return;
+        const wrap = document.querySelector('.avgChart');
+        const yearData = zzOneData[currentYear];
+
+        let labels, data, currentVal, prevVal, title;
+
+        if (period === '1D') {
+            // [1일] 가장 마지막 달의 '날짜별(days)' 평균 수치
+            const monthKeys = Object.keys(yearData.months).sort((a, b) => Number(a) - Number(b));
+            const lastMonthKey = monthKeys[monthKeys.length - 1];
+            const monthData = yearData.months[lastMonthKey];
+
+            const dayKeys = Object.keys(monthData.days).sort((a, b) => Number(a) - Number(b));
+            labels = dayKeys.map((d) => `${lastMonthKey}/${d}`);
+            data = dayKeys.map((d) => monthData.days[d].avg_hourly);
+
+            currentVal = monthData.avg_days;
+            title = `${lastMonthKey}월 일일 평균 흐름`;
+        } else if (period === '1M') {
+            // 실제 데이터가 있는 달
+            const monthKeys = Object.keys(yearData.months).sort((a, b) => Number(a) - Number(b));
+
+            // 해결책: 라벨은 1월부터 12월까지 미리 다 만들어둠
+            labels = Array.from({ length: 12 }, (_, i) => `${i + 1}월`);
+
+            // 데이터는 있는 달만 넣고 나머지는 null 처리 (그래프가 1월에서 멈춤)
+            data = Array.from({ length: 12 }, (_, i) => {
+                const mKey = (i + 1).toString();
+                return yearData.months[mKey] ? yearData.months[mKey].avg_days : null;
+            });
+
+            currentVal = yearData.avg_months;
+            title = `${currentYear}년 월별 수익 흐름`;
+        } else if (period === '1Y') {
+            // [1년] 2024, 2025... 연도별 'avg_months' 수치
+            const yearKeys = Object.keys(zzOneData).sort();
+
+            labels = yearKeys.map((y) => `${y}년`);
+            data = yearKeys.map((y) => zzOneData[y].avg_months);
+
+            currentVal = yearData.avg_months;
+            const currIdx = yearKeys.indexOf(currentYear);
+            prevVal = currIdx > 0 ? zzOneData[yearKeys[currIdx - 1]].avg_months : null;
+            title = '연도별 수익 평균';
+        }
+
+        avgDisplay(wrap, labels, data, currentVal, prevVal, title, period);
+    };
+    const avgDisplay = (wrap, labels, data, curr, prev, title, period) => {
+        wrap.querySelector('#periodTitle').innerText = title;
+        wrap.querySelector('#profitAmount').innerText = `${Math.floor(curr).toLocaleString()}원`;
+
+        const percentElem = wrap.querySelector('#profitPercent');
+        if (prev) {
+            const diff = (((curr - prev) / prev) * 100).toFixed(1);
+            const isUp = diff >= 0;
+            percentElem.innerText = `${isUp ? '+' : ''}${diff}%`;
+            percentElem.className = `chart-percent ${isUp ? '' : 'down'}`;
+        } else {
+            percentElem.innerText = '';
+        }
+
+        if (avgChart) {
+            avgChart.data.labels = labels;
+            avgChart.data.datasets[0].data = data;
+            avgChart.data.datasets[1].data = new Array(data.length).fill(curr);
+            avgChart.update();
+        }
+
+        wrap.querySelectorAll('.avg.period-selector .chart-avgBtn').forEach((btn) => btn.classList.remove('active'));
+        wrap.querySelector(`#avgBtn-${period}`).classList.add('active');
+    };
+    const initAvgChart = (wrap) => {
+        const canvas = wrap.querySelector('#avgChart');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        avgChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: '수익',
+                        data: [],
+                        borderWidth: 3,
+                        pointRadius: 0,
+                        hoverRadius: 6,
+                        tension: 0.4,
+                        borderColor: '#3182f6',
+                        segment: { borderColor: (ctx) => (ctx.p1.parsed.y > ctx.p0.parsed.y ? '#f63131' : '#3182f6') },
+                        zIndex: 2,
+                    },
+                    {
+                        label: '평균',
+                        data: [],
+                        borderWidth: 1,
+                        borderColor: '#adb5bd',
+                        borderDash: [5, 5], // 점선 효과
+                        pointRadius: 0,
+                        fill: false,
+                        zIndex: 1,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: '#1c1c1e',
+                        padding: 10,
+                        callbacks: {
+                            label: (c) => {
+                                if (c.datasetIndex === 1) return ` 평균: ${c.parsed.y.toLocaleString()}원`;
+                                return ` 수익: ${c.parsed.y.toLocaleString()}원`;
+                            },
+                        },
+                    },
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { color: '#4e5968' } },
+                    y: { display: false },
+                },
+            },
+        });
+        updateAvgChart('1D');
+    };
+    avgChartData();
+    // 하단에서 호출, 토마스 김
+    const chartData = async () => {
+        try {
+            // const response = await fetch('/json/zzone_data.json');
+            // const response = await fetch('/json/korea.json');
+            const url = "https://apis.data.go.kr/B552115/SmpWithForecastDemand/getSmpWithForecastDemand?serviceKey=cad6b49a2d56987689ed5b310c86ab5dab20fa983be99195e1e1cfe857170c8f&pageNo=1&numOfRows=24&dataType=json&date=20260223";
+            // const response = await fetch('/json/zzone_data.json');
+            const response = await fetch(url);
+            console.log(response);
+            zzOneData = await response.json();
+            const years = Object.keys(zzOneData).sort();
+            currentYear = years[years.length - 1];
+            const wrap = document.querySelector('.totalChart');
+            if (wrap) {
+                totalChartYearSelectors(wrap, years);
+                initTotalChart(wrap);
+            }
+        } catch (e) {
+            console.error('데이터 로드 실패:', e);
+        }
+    };
+    const totalChartYearSelectors = (wrap, years) => {
+        const selector = document.createElement('div');
+        selector.style.cssText = 'display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch;';
+        selector.innerHTML = years.map((y) => `<button onclick="changeTotalYear(this, '${y}')" id="year-${y}" class="chart-totalBtn chart-btn total ${y === currentYear ? 'active' : ''}" style="flex: none; border: 1px solid #eee;" type="button">${y}년</button>`).join('');
+        wrap.prepend(selector);
+    };
+    window.changeTotalYear = (btn, year) => {
+        const wrap = btn.closest('.totalChart');
+        currentYear = year;
+        wrap.querySelectorAll('[id^="year-"]').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const activeBtn = wrap.querySelector('.total.period-selector .active');
+        const activePeriod = activeBtn ? activeBtn.id.replace('totalBtn-', '') : '1D';
+        updateTotalChart(activePeriod);
+    };
+    window.updateTotalChart = (period) => {
+        if (!zzOneData) return;
+        const wrap = document.querySelector('.totalChart');
+        const yearData = zzOneData[currentYear];
+
+        let labels, data, currentVal, prevVal, title;
+
+        if (period === '1D') {
+            // [1일] 가장 마지막 달의 '날짜별(days)' 평균 수치
+            const monthKeys = Object.keys(yearData.months).sort((a, b) => Number(a) - Number(b));
+            const lastMonthKey = monthKeys[monthKeys.length - 1];
+            const monthData = yearData.months[lastMonthKey];
+
+            const dayKeys = Object.keys(monthData.days).sort((a, b) => Number(a) - Number(b));
+            labels = dayKeys.map((d) => `${lastMonthKey}/${d}`);
+            data = dayKeys.map((d) => monthData.days[d].avg_hourly);
+
+            currentVal = monthData.avg_days;
+            title = `${lastMonthKey}월 일일 평균 흐름`;
+        } else if (period === '1M') {
+            // 실제 데이터가 있는 달
+            const monthKeys = Object.keys(yearData.months).sort((a, b) => Number(a) - Number(b));
+
+            // 해결책: 라벨은 1월부터 12월까지 미리 다 만들어둠
+            labels = Array.from({ length: 12 }, (_, i) => `${i + 1}월`);
+
+            // 데이터는 있는 달만 넣고 나머지는 null 처리 (그래프가 1월에서 멈춤)
+            data = Array.from({ length: 12 }, (_, i) => {
+                const mKey = (i + 1).toString();
+                return yearData.months[mKey] ? yearData.months[mKey].avg_days : null;
+            });
+            currentVal = yearData.avg_months;
+            title = `${currentYear}년 월별 수익 흐름`;
+        } else if (period === '1Y') {
+            // [1년] 2024, 2025... 연도별 'avg_months' 수치
+            const yearKeys = Object.keys(zzOneData).sort();
+
+            labels = yearKeys.map((y) => `${y}년`);
+            data = yearKeys.map((y) => zzOneData[y].avg_months);
+
+            currentVal = yearData.avg_months;
+            const currIdx = yearKeys.indexOf(currentYear);
+            prevVal = currIdx > 0 ? zzOneData[yearKeys[currIdx - 1]].avg_months : null;
+            title = '연도별 수익 평균';
+        }
+        totalDisplay(wrap, labels, data, currentVal, prevVal, title, period);
+    };
+    const totalDisplay = (wrap, labels, data, curr, prev, title, period) => {
+        wrap.querySelector('#periodTitle').innerText = title;
+        wrap.querySelector('#profitAmount').innerText = `${Math.floor(curr).toLocaleString()}원`;
+        const percentElem = wrap.querySelector('#profitPercent');
+        if (prev) {
+            const diff = (((curr - prev) / prev) * 100).toFixed(1);
+            const isUp = diff >= 0;
+            percentElem.innerText = `${isUp ? '+' : ''}${diff}%`;
+            percentElem.className = `chart-percent ${isUp ? '' : 'down'}`;
+        } else {
+            percentElem.innerText = '';
+        }
+        if (totalChart) {
+            totalChart.data.labels = labels;
+            totalChart.data.datasets[0].data = data;
+            totalChart.data.datasets[1].data = new Array(data.length).fill(curr);
+            totalChart.update();
+        }
+        wrap.querySelectorAll('.total.period-selector .chart-totalBtn').forEach((btn) => btn.classList.remove('active'));
+        wrap.querySelector(`#totalBtn-${period}`).classList.add('active');
+    };
+    const initTotalChart = (wrap) => {
+        const canvas = wrap.querySelector('#totalChart');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        totalChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: '수익',
+                        data: [],
+                        borderWidth: 3,
+                        pointRadius: 0,
+                        hoverRadius: 6,
+                        tension: 0.4,
+                        borderColor: '#3182f6',
+                        segment: { borderColor: (ctx) => (ctx.p1.parsed.y > ctx.p0.parsed.y ? '#f63131' : '#3182f6') },
+                        zIndex: 2,
+                    },
+                    {
+                        label: '평균',
+                        data: [],
+                        borderWidth: 1,
+                        borderColor: '#adb5bd',
+                        borderDash: [5, 5], // 점선 효과
+                        pointRadius: 0,
+                        fill: false,
+                        zIndex: 1,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: '#1c1c1e',
+                        padding: 10,
+                        callbacks: {
+                            label: (c) => {
+                                if (c.datasetIndex === 1) return ` 평균: ${c.parsed.y.toLocaleString()}원`;
+                                return ` 수익: ${c.parsed.y.toLocaleString()}원`;
+                            },
+                        },
+                    },
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { color: '#4e5968' } },
+                    y: { display: false },
+                },
+            },
+        });
+        updateTotalChart('1D');
+    };
+    chartData();
+</script>
+</body>
+</html>

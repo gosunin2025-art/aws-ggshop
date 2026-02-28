@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업 - 회원(직원) 등록</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+
+    <link rel="stylesheet" href="/css/common/font.css" />
+    <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/common/fontawesome.css">
+    <link rel="stylesheet" href="/css/common/util.css" />
+    <link rel="stylesheet" href="/css/company-admin/company-charger.css" />
+    <link type="text/css" th:href="@{/css/company-admin/top.css}" rel="stylesheet" />
+    <link type="text/css" th:href="@{/css/company-admin/menu-flex.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div th:replace="/company-admin/top::top" style="margin-bottom: 20px;"></div>
+
+<main class="board">
+
+    <div class="ui-header" style="max-width: 600px; width: 100%; margin: 0 auto; padding: 24px 24px 0 24px; box-sizing: border-box;">
+        <h2 class="title">임직원 등록</h2>
+    </div>
+
+    <div class="board-main" style="padding: 24px; display: flex; justify-content: center;">
+        <form th:action="@{/ev/company/write}"
+              method="post"
+              style="max-width: 600px; width: 100%;">
+
+            <!-- 가입일자 -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">가입일자</label>
+                <input type="date" name="joinDate" required
+                       style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+            </div>
+
+            <!-- 사원번호 -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">사원번호</label>
+                <input type="text" name="employeeNumber" required
+                       style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+            </div>
+
+            <!-- 이름 -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">이름</label>
+                <input type="text" name="employeeName" required
+                       style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+            </div>
+
+            <!-- 소속 부서 -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">소속 부서</label>
+                <input type="text" name="department" placeholder="예) 고객지원팀" required
+                       style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+            </div>
+
+            <!-- 직급 -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">직급</label>
+                <input type="text" name="position" placeholder="예) 사원" required
+                       style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+            </div>
+
+            <!-- 이메일 -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">이메일</label>
+                <input type="email" name="email" required
+                       style="width: 100%; height: 45px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+            </div>
+
+            <!-- 특이사항 -->
+            <div style="margin-bottom: 28px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">특이사항</label>
+                <textarea name="employeeNote"
+                          style="width: 100%; height: 100px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; resize: vertical; font-family: inherit;"></textarea>
+                <p style="font-size: 13px; color: #888; margin-top: 4px;">* 추가로 확인이 필요하거나, 관리가 필요한 내용이 있을 경우 작성해주세요.</p>
+            </div>
+
+            <!-- 버튼 -->
+            <div style="display: flex; gap: 8px;">
+                <input type="button"
+                       value="취소"
+                       onclick="location.href='/ev/main'"
+                       style="flex: 1; height: 45px; background: white; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; cursor: pointer; color: #333;">
+                <input type="submit"
+                       value="등록 완료"
+                       style="flex: 1; height: 45px; background: #333; color: white; border: none; border-radius: 4px; font-size: 14px; cursor: pointer; font-weight: 600;">
+            </div>
+
+        </form>
+    </div>
+</main>
+
+</body>
+</html>

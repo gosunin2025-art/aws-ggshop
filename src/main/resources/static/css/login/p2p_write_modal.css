@@ -1,0 +1,136 @@
+.ConfirmModal_overlay__MThlZ {
+    display: inline-flex;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 32;
+    background-color: transparent;
+    overflow: hidden;
+    animation: ConfirmModal_overlayInit__ZTQ5M .25s;
+}
+
+.ConfirmModal_sizeMd__Mjk1Z {
+    width: 560px;
+}
+
+.ConfirmModal_sizeMobile__ZTYwN, .ConfirmModal_sizeSm__YmMyZ, .ConfirmModal_sizeMd__Mjk1Z, .ConfirmModal_sizeLg__NzQ2M, .ConfirmModal_sizeXl__MDM4M {
+    max-width: calc(100% - 32px);
+}
+
+.ConfirmModal_confirmModal__M2IzZ {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    outline: none;
+    border-radius: 16px;
+    box-shadow: 0 32px 40px -2px #0a16461f, 0 0 5px #0a16460f;
+    background: #fff;
+    padding-block: 24px;
+    max-height: calc(100vh - 160px);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ConfirmModal_confirmModal__M2IzZ .ConfirmModal_header__MmJjO {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+address, article, aside, b, body, a, button, canvas, caption, dl, dt, dd, div, html, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, big, cite, code, del, dfn, em, img, small, strike, strong, sub, sup, var, u, i, center, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, select, textarea, input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, button, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, input, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, select, small, span, strike, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.ConfirmModal_confirmModal__M2IzZ .ConfirmModal_content__ODY3N {
+    display: inline-flex;
+    flex-direction: column;
+    overflow: auto;
+    color: #495057;
+    margin-top: 12px;
+}
+
+.Button_button__OGUxN.Button_contained__OTFhN.Button_mint__MDExN {
+    border-color: #00c4c4;
+    background-color: #00c4c4;
+    color: #fff;
+}
+
+.Button_button__OGUxN.Button_mint__MDExN {
+    border-color: #00c4c4;
+    color: #00c4c4;
+}
+
+.Button_button__OGUxN.Button_lg__ZWM1O {
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.Button_button__OGUxN.Button_block__MDAyN {
+    width: 100%;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.Button_button__OGUxN {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+button {
+    background-color: transparent;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+body, button, input {
+    background: none;
+}
+
+.Button_button__OGUxN span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
+
+.ConfirmModal_sizeMd__Mjk1Z .ConfirmModal_title__Y2NjM {
+    font-size: 24px;
+}
+

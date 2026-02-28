@@ -1,0 +1,258 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "OK"
+    },
+    "body": {
+      "dataType": "JSON",
+      "totalCount": "48",
+      "numOfRows": "24",
+      "pageNo": "1",
+      "items": {
+        "item": [
+          {
+            "date": "20260223",
+            "jlfd": 809,
+            "slfd": 56399,
+            "hour": 1,
+            "areaName": "육지",
+            "smp": 113.29,
+            "rn": 1,
+            "mlfd": 55590
+          },
+          {
+            "date": "20260223",
+            "jlfd": 809,
+            "slfd": 56399,
+            "hour": 1,
+            "areaName": "제주",
+            "smp": 113.29,
+            "rn": 2,
+            "mlfd": 55590
+          },
+          {
+            "date": "20260223",
+            "jlfd": 773,
+            "slfd": 54104,
+            "hour": 2,
+            "areaName": "육지",
+            "smp": 86.93,
+            "rn": 3,
+            "mlfd": 53331
+          },
+          {
+            "date": "20260223",
+            "jlfd": 773,
+            "slfd": 54104,
+            "hour": 2,
+            "areaName": "제주",
+            "smp": 86.93,
+            "rn": 4,
+            "mlfd": 53331
+          },
+          {
+            "date": "20260223",
+            "jlfd": 745,
+            "slfd": 52660,
+            "hour": 3,
+            "areaName": "육지",
+            "smp": 78.58,
+            "rn": 5,
+            "mlfd": 51915
+          },
+          {
+            "date": "20260223",
+            "jlfd": 745,
+            "slfd": 52660,
+            "hour": 3,
+            "areaName": "제주",
+            "smp": 78.58,
+            "rn": 6,
+            "mlfd": 51915
+          },
+          {
+            "date": "20260223",
+            "jlfd": 732,
+            "slfd": 52436,
+            "hour": 4,
+            "areaName": "육지",
+            "smp": 78.58,
+            "rn": 7,
+            "mlfd": 51704
+          },
+          {
+            "date": "20260223",
+            "jlfd": 732,
+            "slfd": 52436,
+            "hour": 4,
+            "areaName": "제주",
+            "smp": 78.58,
+            "rn": 8,
+            "mlfd": 51704
+          },
+          {
+            "date": "20260223",
+            "jlfd": 741,
+            "slfd": 52823,
+            "hour": 5,
+            "areaName": "육지",
+            "smp": 78.58,
+            "rn": 9,
+            "mlfd": 52082
+          },
+          {
+            "date": "20260223",
+            "jlfd": 741,
+            "slfd": 52823,
+            "hour": 5,
+            "areaName": "제주",
+            "smp": 78.58,
+            "rn": 10,
+            "mlfd": 52082
+          },
+          {
+            "date": "20260223",
+            "jlfd": 751,
+            "slfd": 55439,
+            "hour": 6,
+            "areaName": "육지",
+            "smp": 81.16,
+            "rn": 11,
+            "mlfd": 54688
+          },
+          {
+            "date": "20260223",
+            "jlfd": 751,
+            "slfd": 55439,
+            "hour": 6,
+            "areaName": "제주",
+            "smp": 81.16,
+            "rn": 12,
+            "mlfd": 54688
+          },
+          {
+            "date": "20260223",
+            "jlfd": 793,
+            "slfd": 60168,
+            "hour": 7,
+            "areaName": "육지",
+            "smp": 112.01,
+            "rn": 13,
+            "mlfd": 59375
+          },
+          {
+            "date": "20260223",
+            "jlfd": 793,
+            "slfd": 60168,
+            "hour": 7,
+            "areaName": "제주",
+            "smp": 112.01,
+            "rn": 14,
+            "mlfd": 59375
+          },
+          {
+            "date": "20260223",
+            "jlfd": 839,
+            "slfd": 66970,
+            "hour": 8,
+            "areaName": "육지",
+            "smp": 113,
+            "rn": 15,
+            "mlfd": 66131
+          },
+          {
+            "date": "20260223",
+            "jlfd": 839,
+            "slfd": 66970,
+            "hour": 8,
+            "areaName": "제주",
+            "smp": 113,
+            "rn": 16,
+            "mlfd": 66131
+          },
+          {
+            "date": "20260223",
+            "jlfd": 860,
+            "slfd": 72375,
+            "hour": 9,
+            "areaName": "육지",
+            "smp": 131.56,
+            "rn": 17,
+            "mlfd": 71515
+          },
+          {
+            "date": "20260223",
+            "jlfd": 860,
+            "slfd": 72375,
+            "hour": 9,
+            "areaName": "제주",
+            "smp": 131.56,
+            "rn": 18,
+            "mlfd": 71515
+          },
+          {
+            "date": "20260223",
+            "jlfd": 812,
+            "slfd": 71985,
+            "hour": 10,
+            "areaName": "육지",
+            "smp": 122.9,
+            "rn": 19,
+            "mlfd": 71173
+          },
+          {
+            "date": "20260223",
+            "jlfd": 812,
+            "slfd": 71985,
+            "hour": 10,
+            "areaName": "제주",
+            "smp": 122.9,
+            "rn": 20,
+            "mlfd": 71173
+          },
+          {
+            "date": "20260223",
+            "jlfd": 731,
+            "slfd": 68617,
+            "hour": 11,
+            "areaName": "육지",
+            "smp": 116.8,
+            "rn": 21,
+            "mlfd": 67886
+          },
+          {
+            "date": "20260223",
+            "jlfd": 731,
+            "slfd": 68617,
+            "hour": 11,
+            "areaName": "제주",
+            "smp": 116.8,
+            "rn": 22,
+            "mlfd": 67886
+          },
+          {
+            "date": "20260223",
+            "jlfd": 684,
+            "slfd": 64698,
+            "hour": 12,
+            "areaName": "육지",
+            "smp": 106.8,
+            "rn": 23,
+            "mlfd": 64014
+          },
+          {
+            "date": "20260223",
+            "jlfd": 684,
+            "slfd": 64698,
+            "hour": 12,
+            "areaName": "제주",
+            "smp": 106.8,
+            "rn": 24,
+            "mlfd": 64014
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.app.ggshop.v1.mapper.VtogMapper">
+
+    <!-- ======================================================
+         EvChargerDTO ResultMap
+         - EvChargerDTO 필드명이 DB 컬럼명과 다르므로 매핑 필요
+    ====================================================== -->
+    <resultMap id="EvChargerResultMap" type="com.app.ggshop.v1.dto.EvChargerDTO">
+        <id     property="id"              column="id"/>
+        <result property="stationNumber"   column="ev_charger_uid"/>
+        <result property="installAddress"  column="ev_charger_address"/>
+        <result property="chargerNote"     column="ev_charger_content"/>
+        <result property="evChargerStatus" column="ev_charger_status"/>
+        <result property="evChargerMod"    column="ev_charger_mod"/>
+        <result property="installDate"     column="setup_date"/>
+        <result property="companyId"       column="company_id"/>
+    </resultMap>
+
+    <!-- ======================================================
+         ② tbl_car INSERT
+         - car_filter = '양방향' 고정 (V2G)
+         - car_status = 'active'  고정
+         - useGeneratedKeys : INSERT 후 생성된 car.id → carId 자동 세팅
+    ====================================================== -->
+    <insert id="insertCar"
+            parameterType="com.app.ggshop.v1.dto.VtogInsertDTO"
+            useGeneratedKeys="true"
+            keyProperty="carId">
+        INSERT INTO tbl_car (
+            car_plate_number,
+            car_energy_gauge,
+            car_filter,
+            car_status,
+            car_member_id
+        ) VALUES (
+                     #{carPlateNumber},
+                     #{carEnergyGauge},
+                     '양방향',
+                     'active',
+                     #{memberId}
+                 )
+    </insert>
+
+    <!-- ======================================================
+         ③ tbl_ev_charger 조회 (INSERT 아님!)
+         - 충전기 UID로 기존 충전기 조회
+         - active 상태인 충전기만 조회
+    ====================================================== -->
+    <select id="findEvChargerByUid"
+            parameterType="String"
+            resultMap="EvChargerResultMap">
+        SELECT
+            id,
+            ev_charger_uid,
+            ev_charger_address,
+            ev_charger_content,
+            ev_charger_status,
+            ev_charger_mod,
+            setup_date,
+            company_id
+        FROM tbl_ev_charger
+        WHERE ev_charger_uid = #{evChargerUid}
+          AND ev_charger_status = 'active'
+        LIMIT 1
+    </select>
+
+    <!-- ======================================================
+         ④ tbl_vtog_payment INSERT
+         - vtog_car_id             = ②에서 생성된 carId
+         - vtog_ev_charger_id      = ③에서 조회된 chargerId
+         - vtog_transaction_number = 자동생성 V2G-yyyyMMdd-000001
+    ====================================================== -->
+    <insert id="insertVtogPayment"
+            parameterType="com.app.ggshop.v1.dto.VtogInsertDTO">
+        INSERT INTO tbl_vtog_payment (
+            vtog_payment_sales_kwh,
+            vtog_payment_sales_price,
+            vtog_car_id,
+            vtog_ev_charger_id,
+            vtog_transaction_number
+        ) VALUES (
+                     #{vtogPaymentSalesKwh},
+                     #{vtogPaymentSalesPrice},
+                     #{carId},
+                     #{vtogEvChargerId},
+                     #{vtogTransactionNumber}
+                 )
+    </insert>
+
+
+    <!-- V2G 거래내역 전체 조회 (페이징) -->
+    <select id="findAll" resultType="com.app.ggshop.v1.dto.VtogPaymentDTO">
+        SELECT
+            v.id,
+            v.created_date                AS createdDate,
+            v.vtog_transaction_number     AS vtogTransactionNumber,
+            m.member_name                 AS memberName,
+            e.ev_charger_uid              AS evChargerUid,
+            v.vtog_payment_sales_kwh      AS vtogPaymentSalesKwh,
+            v.vtog_payment_sales_price    AS vtogPaymentSalesPrice
+        FROM tbl_vtog_payment v
+                 JOIN tbl_car c        ON v.vtog_car_id = c.id
+                 JOIN tbl_member m     ON c.car_member_id = m.id
+                 JOIN tbl_ev_charger e ON v.vtog_ev_charger_id = e.id
+        ORDER BY v.created_date DESC
+        LIMIT #{rowCount} OFFSET #{offset}
+    </select>
+
+    <!-- V2G 거래내역 전체 카운트 -->
+    <select id="countAll" resultType="int">
+        SELECT COUNT(*)
+        FROM tbl_vtog_payment v
+                 JOIN tbl_car c        ON v.vtog_car_id = c.id
+                 JOIN tbl_member m     ON c.car_member_id = m.id
+                 JOIN tbl_ev_charger e ON v.vtog_ev_charger_id = e.id
+    </select>
+
+
+</mapper>

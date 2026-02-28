@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/common/font.css"/>
+<link rel="stylesheet" href="/css/common/reset.css"/>
+<link rel="stylesheet" href="/css/common/fontawesome.css"/>
+<link rel="stylesheet" href="/css/common/common.css"/>
+<link rel="stylesheet" href="/css/common/util.css"/>
+<link rel="stylesheet" href="/css/components/modals/modal-m.css"/>
+<link rel="stylesheet" href="/css/common/chart.css">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<title>모달 - zz1폼</title>
+</head>
+<body>
+<!-- 예시 -->
+<div style="height: 200vh">
+    <div style="height: 100vh; background: #fff">
+        <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+            <span>
+                <span>비주얼 영역</span>
+            </span>
+        </div>
+    </div>
+    <div style="height: 100vh; background: #aaa">
+        <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+            <button class="button button-size button-mint button-confirm" onclick="modalOpen('modalBottomSheet')">
+                <span>
+                    <span>모달 열기</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- //예시 -->
+
+<!-- 모달 영역 - zz1폼 -->
+<div id="modalBottomSheet" class="modal active"> <!-- active 컨트롤 필요 -->
+    <div class="Modal_overlay">
+        <div id="ZZ1Modal" class="ZZ1Modal-container">
+            <div class="ZZ1Modal-header">
+                <div class="ZZ1Modal-button">
+                    <button class="button button-close" type="button" onclick="modalCloses()">
+                        <span>
+                            <span>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon" style="height: 24px; width: 24px">
+                                    <path d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z" fill="#495057"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+                <strong class="ZZ1Modal-title">한전에 전기를 팔 수 있어요!</strong>
+            </div>
+            <div class="ZZ1Modal-content mt0 pt0">
+                <div class="ZZ1Modal-wrap mt0">
+                    <form action="" class="ZZOneForm">
+                        <div>
+                            <!-- main chart container -->
+                            <div class="main-content chart-container">
+                                <div class="chart-wrap chart-shadow avgChart">
+                                    <div class="yearBtns">
+                                        <button onclick="changeAvgYear(this, '2024')" id="year-2024" class="chart-btn chart-avgBtn avg active" type="button">2024년</button>
+                                        <button onclick="changeAvgYear(this, '2025')" id="year-2025" class="chart-btn chart-avgBtn avg" type="button">2025년</button>
+                                        <button onclick="changeAvgYear(this, '2026')" id="year-2026" class="chart-btn chart-avgBtn avg" type="button">2026년</button>
+                                    </div>
+                                    <div class="mb25">
+                                        <h3 id="periodTitle" style="color: #adb5bd; font-size: 14px; margin: 0; font-weight: 500">오늘의 예상 수익</h3>
+                                        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 4px">
+                                            <span id="profitAmount" class="chart-krw">0원</span>
+                                            <span id="profitPercent" class="chart-percent">+0.0%</span>
+                                            <!-- 이율 대입 필요 -->
+                                        </div>
+                                    </div>
+
+                                    <div style="height: 250px; position: relative">
+                                        <canvas id="avgChart"></canvas>
+                                    </div>
+
+                                    <div class="avg period-selector">
+                                        <button onclick="updateAvgChart('1D')" id="avgBtn-1D" class="chart-btn chart-avgBtn avg" type="button">1일</button>
+                                        <button onclick="updateAvgChart('1M')" id="avgBtn-1M" class="chart-btn chart-avgBtn avg" type="button">1달</button>
+                                        <button onclick="updateAvgChart('1Y')" id="avgBtn-1Y" class="chart-btn chart-avgBtn avg" type="button">1년</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 가격 컨테이너(돈) -->
+                        <div class="KRW-container">
+                            <div class="KRW-wrap">
+                                <label for="KRW">
+                                    <span>가격(KRW)</span>
+                                </label>
+                                <div class="inputField mt6">
+                                    <input type="text" id="KRW" class="input input-lg input-ph-sm tr pr0" value="1,000,000" readonly />
+                                    <span>KRW</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 와트 컨테이너(내 전기량) -->
+                        <div class="MyKWH-container">
+                            <div class="MyKWH-wrap">
+                                <label for="KWH">
+                                    <span>내 전기량(KWH)</span>
+                                </label>
+                                <div class="inputField mt6">
+                                    <input type="text" id="KWH" class="input input-lg input-ph-sm tr pr0" value="999,999" readonly />
+                                    <span>KWH</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 와트 컨테이너(입력 전기량) -->
+                        <div class="KWH-container">
+                            <div class="KWH-wrap">
+                                <label for="KWH">
+                                    <!-- 판매 가능한 전기량 -->
+                                    <span>판매할 전기량(KWH)</span>
+                                </label>
+                                <div class="inputField mt6">
+                                    <input type="text" id="KWH" class="input input-lg input-ph-sm tr pr0" placeholder="와트를 입력해주세요." />
+                                    <span>KWH</span>
+                                </div>
+                                <p class="input-message color-mint tr">판매 가능한 전기량: 999,999KWH</p>
+                            </div>
+                        </div>
+                        <button class="button button-cntain button-mint button-lg button-submit" type="button" onclick="modalCloses()">
+                            <span><span>판매</span></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- api -->
+<script src="/js/api/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+<script>
+    let zzOneData = null;
+    let currentYear = '2024';
+    let avgChart = null;
+    let totalChart = null;
+    const avgChartData = async () => {
+        try {
+            const response = await fetch('/json/zzone_data.json');
+            zzOneData = await response.json();
+            const years = Object.keys(zzOneData).sort();
+            currentYear = years[years.length - 1];
+            const wrap = document.querySelector('.avgChart');
+            if (wrap) {
+                initAvgChart(wrap);
+            }
+        } catch (e) {
+            console.error('데이터 로드 실패:', e);
+        }
+    };
+    window.changeAvgYear = (btn, year) => {
+        const wrap = btn.closest('.avgChart');
+        currentYear = year;
+        wrap.querySelectorAll('[id^="year-"]').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const activeBtn = wrap.querySelector('.avg.period-selector .active');
+        const activePeriod = activeBtn ? activeBtn.id.replace('avgBtn-', '') : '1D';
+        updateAvgChart(activePeriod);
+    };
+    window.updateAvgChart = (period) => {
+        if (!zzOneData) return;
+        const wrap = document.querySelector('.avgChart');
+        const yearData = zzOneData[currentYear];
+
+        let labels, data, currentVal, prevVal, title;
+
+        if (period === '1D') {
+            const monthKeys = Object.keys(yearData.months).sort((a, b) => Number(a) - Number(b));
+            const lastMonthKey = monthKeys[monthKeys.length - 1];
+            const monthData = yearData.months[lastMonthKey];
+
+            const dayKeys = Object.keys(monthData.days).sort((a, b) => Number(a) - Number(b));
+            labels = dayKeys.map((d) => `${lastMonthKey}/${d}`);
+            data = dayKeys.map((d) => monthData.days[d].avg_hourly);
+
+            currentVal = monthData.avg_days;
+            title = `${lastMonthKey}월 일일 평균 흐름`;
+        } else if (period === '1M') {
+            const monthKeys = Object.keys(yearData.months).sort((a, b) => Number(a) - Number(b));
+
+            labels = Array.from({ length: 12 }, (_, i) => `${i + 1}월`);
+
+            data = Array.from({ length: 12 }, (_, i) => {
+                const mKey = (i + 1).toString();
+                return yearData.months[mKey] ? yearData.months[mKey].avg_days : null;
+            });
+
+            currentVal = yearData.avg_months;
+            title = `${currentYear}년 월별 수익 흐름`;
+        } else if (period === '1Y') {
+            const yearKeys = Object.keys(zzOneData).sort();
+
+            labels = yearKeys.map((y) => `${y}년`);
+            data = yearKeys.map((y) => zzOneData[y].avg_months);
+
+            currentVal = yearData.avg_months;
+            const currIdx = yearKeys.indexOf(currentYear);
+            prevVal = currIdx > 0 ? zzOneData[yearKeys[currIdx - 1]].avg_months : null;
+            title = '연도별 수익 평균';
+        }
+
+        avgDisplay(wrap, labels, data, currentVal, prevVal, title, period);
+    };
+    const avgDisplay = (wrap, labels, data, curr, prev, title, period) => {
+        wrap.querySelector('#periodTitle').innerText = title;
+        wrap.querySelector('#profitAmount').innerText = `${Math.floor(curr).toLocaleString()}원`;
+
+        const percentElem = wrap.querySelector('#profitPercent');
+        if (prev) {
+            const diff = (((curr - prev) / prev) * 100).toFixed(1);
+            const isUp = diff >= 0;
+            percentElem.innerText = `${isUp ? '+' : ''}${diff}%`;
+            percentElem.className = `chart-percent ${isUp ? '' : 'down'}`;
+        } else {
+            percentElem.innerText = '';
+        }
+
+        if (avgChart) {
+            avgChart.data.labels = labels;
+            avgChart.data.datasets[0].data = data;
+            avgChart.data.datasets[1].data = new Array(data.length).fill(curr);
+            avgChart.update();
+        }
+
+        wrap.querySelectorAll('.avg.period-selector .chart-avgBtn').forEach((btn) => btn.classList.remove('active'));
+        wrap.querySelector(`#avgBtn-${period}`).classList.add('active');
+    };
+    const initAvgChart = (wrap) => {
+        const canvas = wrap.querySelector('#avgChart');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        avgChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: '수익',
+                        data: [],
+                        borderWidth: 3,
+                        pointRadius: 0,
+                        hoverRadius: 6,
+                        tension: 0.4,
+                        borderColor: '#3182f6',
+                        segment: { borderColor: (ctx) => (ctx.p1.parsed.y > ctx.p0.parsed.y ? '#f63131' : '#3182f6') },
+                        zIndex: 2,
+                    },
+                    {
+                        label: '평균',
+                        data: [],
+                        borderWidth: 1,
+                        borderColor: '#adb5bd',
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        fill: false,
+                        zIndex: 1,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: '#1c1c1e',
+                        padding: 10,
+                        callbacks: {
+                            label: (c) => {
+                                if (c.datasetIndex === 1) return ` 평균: ${c.parsed.y.toLocaleString()}원`;
+                                return ` 수익: ${c.parsed.y.toLocaleString()}원`;
+                            },
+                        },
+                    },
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { color: '#4e5968' } },
+                    y: { display: false },
+                },
+            },
+        });
+        updateAvgChart('1D');
+    };
+    avgChartData();
+</script>
+<script src="/js/modals/modal-m.js"></script>
+<script src="/js/main/event.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기업 - V2G 거래 등록</title>
+  <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/common/font.css" />
+  <link rel="stylesheet" href="/css/common/reset.css" />
+  <link rel="stylesheet" href="/css/common/common.css">
+  <link rel="stylesheet" href="/css/common/fontawesome.css">
+  <link rel="stylesheet" href="/css/common/util.css" />
+  <link rel="stylesheet" href="/css/company-admin/company-utill.css">
+  <link rel="stylesheet" href="/css/company-admin/company-employee-create.css" />
+  <link type="text/css" th:href="@{/css/company-admin/top.css}" rel="stylesheet" />
+  <link type="text/css" th:href="@{/css/company-admin/menu-flex.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div th:replace="~{/company-admin/top::top}" style="margin-bottom: 20px;"></div>
+
+<main role="main">
+  <div class="container flex-1 quiry-contents-box" id="page-container">
+    <div class="row">
+      <div class="lg:col-9">
+
+        <!-- 헤더 -->
+        <header class="mb-5 header-style page-title">
+          <h1>V2G 거래 등록</h1>
+        </header>
+
+        <!-- 등록 폼 -->
+        <div class="form height-fixed">
+          <form class="request-form"
+                th:action="@{/vtog/transaction/insert}"
+                method="post">
+
+            <!-- 회원 선택 -->
+            <div class="form-field string required">
+              <label for="memberSelect">회원 선택</label>
+              <select id="memberSelect" name="memberId" onchange="loadCars(this.value)" required>
+                <option value="">회원을 선택하세요</option>
+                <option th:each="member : ${memberList}"
+                        th:value="${member.id}"
+                        th:text="|${member.memberName} (${member.memberEmail})|">
+                </option>
+              </select>
+              <p class="field-hint">거래 회원을 선택해주세요.</p>
+            </div>
+
+            <!-- 차량 선택 -->
+            <div class="form-field string required">
+              <label for="carSelect">차량 선택</label>
+              <select id="carSelect" name="vtogCarId" required>
+                <option value="">회원을 먼저 선택하세요</option>
+              </select>
+              <p class="field-hint">회원 선택 시 차량 목록이 표시됩니다.</p>
+            </div>
+
+            <!-- 충전기 선택 -->
+            <div class="form-field string required">
+              <label for="chargerSelect">충전기 선택</label>
+              <select id="chargerSelect" name="vtogEvChargerId" required>
+                <option value="">충전기를 선택하세요</option>
+                <option th:each="charger : ${chargerList}"
+                        th:value="${charger.id}"
+                        th:text="${charger.evChargerUid}">
+                </option>
+              </select>
+              <p class="field-hint">충전기를 선택해주세요.</p>
+            </div>
+
+            <!-- 충전량 -->
+            <div class="form-field string required">
+              <label for="salesKwh">충전량 (kWh)</label>
+              <input type="number"
+                     id="salesKwh"
+                     name="vtogPaymentSalesKwh"
+                     placeholder="충전량을 입력하세요"
+                     min="1"
+                     required>
+              <p class="field-hint">충전량을 입력해주세요.</p>
+            </div>
+
+            <!-- 판매금액 -->
+            <div class="form-field string required">
+              <label for="salesPrice">V2G 전력 판매 금액 (원)</label>
+              <input type="number"
+                     id="salesPrice"
+                     name="vtogPaymentSalesPrice"
+                     placeholder="판매금액을 입력하세요"
+                     min="1"
+                     required>
+              <p class="field-hint">판매금액을 입력해주세요.</p>
+            </div>
+
+            <!-- 푸터 -->
+            <footer>
+              <input class="btn-cancel"
+                     type="button"
+                     value="취소"
+                     onclick="location.href='/vtog/transaction/list'">
+              <input class="btn-submit"
+                     type="submit"
+                     value="등록 완료">
+            </footer>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+
+<script>
+  function loadCars(memberId) {
+    if (!memberId) {
+      document.getElementById('carSelect').innerHTML = '<option value="">회원을 먼저 선택하세요</option>';
+      return;
+    }
+    fetch('/vtog/transaction/cars?memberId=' + memberId)
+            .then(res => res.json())
+            .then(cars => {
+              let options = '<option value="">차량을 선택하세요</option>';
+              cars.forEach(car => {
+                options += `<option value="${car.id}">${car.carPlateNumber}</option>`;
+              });
+              document.getElementById('carSelect').innerHTML = options;
+            });
+  }
+</script>
+</html>

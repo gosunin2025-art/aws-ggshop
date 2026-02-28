@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동차등록/삭제</title>
+    <link rel="stylesheet" href="/static/css/carSettings/carSettings.css">
+</head>
+
+<body>
+    <div id="GGSH-toast-container-component">
+        <div class="ToastContainer_container">
+            <div class="Toast_container">
+                <div id="toast1" class="Toast_content">차량등록 완료 했습니다.</div>
+                <div id="toast2" class="Toast_content">차량변경 완료 했습니다.</div>
+                <div id="toast3" class="Toast_content">차량 삭제 완료되었습니다..</div>
+            </div>
+        </div>
+    </div>
+    <div id="main-app" class="page-wrapper">
+        <header class="Header_container Header_sticky">
+            <div class="Header_content">
+                <div class="Header_left"><button class="StyledComponent_container" aria-label="뒤로 가기" type="button"><svg
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps_icon"
+                            style="height: 24px; width: 24px;">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.076 2.576l.848.848L8.35 12l8.575 8.576-.848.848L6.65 12l9.425-9.424z"
+                                fill="#495057"></path>
+                        </svg></button></div>
+                <div class="Header_center" style="max-width: calc(-160px + 100vw);">
+                    <h1 class="StyledComponent_container Title_container Title_center">차량 등록 관리
+                    </h1>
+                </div>
+                <div class="Header_right"><a class="StyledComponent_container" aria-label="홈으로 가기" href="/web/main"><svg
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps_icon"
+                            style="height: 24px; width: 24px;">
+                            <path d="M21.6 7.679l-9.6-6.4-9.6 6.4V21h1.2V8.321l8.4-5.6 8.4 5.6V21h1.2V7.679z"
+                                fill="#495057"></path>
+                            <path d="M15.6 21v-8.6H8.4V21h1.2v-7.4h4.8V21h1.2z" fill="#495057"></path>
+                        </svg></a></div>
+            </div>
+        </header>
+        <main>
+            <div class="MySimplePaySettingApp_container">
+                <h2 class="MySimplePaySettingApp_title">차량 정보 관리</h2>
+                <div class="MySimplePaySettingApp_column">
+                    <div class="MySimplePaySettingApp_simplePayInfo" id="registCardInfo">
+                        <div class="SimplePayCard_root">
+                            <div class="SimplePayCard_container">
+                                <div class="SimplePayCard_card_">
+                                    <div class="SimplePayCard_left"><svg viewBox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" class="artwork">
+                                            <rect x="1.667" y="8.255" width="36.515" height="25.026" rx="2.574"
+                                                fill="#00C4C4"></rect>
+                                            <rect x="5.47" y="26.131" width="5.477" height="3.575" rx="0.644"
+                                                fill="#fff"></rect>
+                                            <path fill="#212529" d="M1.667 12.726h36.515v3.575H1.667z"></path>
+                                        </svg></div>
+                                    <div class="SimplePayCard_middle"></div>
+                                    <div class="SimplePayCard_right"><button
+                                            class="Button_button Button_text Button_md deletbutton"
+                                            type="button"><span><span>삭제</span></span></button></div>
+                                </div>
+                                <div class="SimplePayCard_registration">
+                                    <div class="SimplePayCard_infoWrap SimplePayCard_registrationDate">000수00000
+                                        <br>차량
+                                        등록일 YYYY년 MM월 DD일</div><button
+                                        class="Button_button Button_mint Button_text Button_sm undefined Vehiclechange"
+                                        type="button"><span><span>차량변경</span><svg viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg" class="WithProps_icon Button_icon">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M7.924 2.576l-.848.848L15.65 12l-8.575 8.576.848.848L17.35 12 7.924 2.576z"
+                                                    fill="#495057"></path>
+                                            </svg></span></button>
+                                </div>
+                            </div>
+                            <div class="SimplePayCard_container VehicleRegistration" data-target="modal1">
+                                <div class="SimplePayCard_empty"><svg viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                        class="WithProps_icon SimplePayCard_addIcon" style="height: 24px; width: 24px;">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M1.4 12C1.4 6.146 6.146 1.4 12 1.4c5.854 0 10.6 4.746 10.6 10.6 0 5.854-4.746 10.6-10.6 10.6-5.854 0-10.6-4.746-10.6-10.6zm10 6v-5.4H6v-1.2h5.4V6h1.2v5.4H18v1.2h-5.4V18h-1.2z"
+                                            fill="#495057"></path>
+                                    </svg>
+                                    <div class="SimplePayCard_description">차량 등록하고 빠르게<br>ㅇㅇㅇㅇ</div>
+                                </div>
+                            </div>
+                            <div class="MySimplePaySettingApp_simplePayInfo" id="registCardInfo">
+                                <div class="SimplePayCard_root">
+                                    <div class="SimplePayCard_container VehicleRegistration" data-target="modal1">
+                                        <div class="SimplePayCard_empty"><svg viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                class="WithProps_icon SimplePayCard_addIcon"
+                                                style="height: 24px; width: 24px;">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M1.4 12C1.4 6.146 6.146 1.4 12 1.4c5.854 0 10.6 4.746 10.6 10.6 0 5.854-4.746 10.6-10.6 10.6-5.854 0-10.6-4.746-10.6-10.6zm10 6v-5.4H6v-1.2h5.4V6h1.2v5.4H18v1.2h-5.4V18h-1.2z"
+                                                    fill="#495057"></path>
+                                            </svg>
+                                            <div class="SimplePayCard_description">차량 등록하고 빠르게<br>ㅇㅇㅇㅇ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div color="basic"
+                            class="MessageBox_messageBox MessageBox_basic MessageBox_vertical MessageBox_noTitle">
+                            <div class="MessageBox_header"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                    class="WithProps_icon MessageBox_icon">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M1.4 12C1.4 6.146 6.146 1.4 12 1.4c5.854 0 10.6 4.746 10.6 10.6 0 5.854-4.746 10.6-10.6 10.6-5.854 0-10.6-4.746-10.6-10.6zM13 7a1 1 0 10-2 0 1 1 0 002 0zm-1.6 3v8h1.2v-8h-1.2z"
+                                        fill="#495057"></path>
+                                </svg></div>
+                            <div class="MessageBox_content">
+                                <ul>
+                                    <li>와디즈에서는 카드 번호를 저장하지 않으니 안심하세요.</li>
+                                    <li>간편결제 카드 등록은 1개만 가능해요.</li>
+                                    <li>결제 비밀번호를 잊어버렸거나 변경을 원한다면, 기존 등록되었던 결제 정보를 삭제하고 다시 등록해 주세요.</li>
+                                    <li>간편결제 번호를 변경하더라도 변경 전 참여한 프로젝트의 결제 정보는 변경되지 않아요.<br>이미 참여한 프로젝트의 결제 정보 변경은 프로젝트
+                                        내역에서
+                                        변경할 수 있어요.</li>
+                                    <li>할부는 직접 입력으로만 이용 가능합니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+    <div class="ReactModalPortal">
+        <div id="modal1" class="ConfirmModal_overlay waffle__modal__overlay "
+            style="background-color: rgba(0, 0, 0, 0.2);">
+            <div class="ConfirmModal_confirmModal-6 ConfirmModal_sizeSheet ConfirmModal_contentAfterOpen" tabindex="-1"
+                role="dialog" aria-modal="true" style="padding-bottom: 0px;">
+                <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
+                            class="Button_button Button_text Button_md closemodal VehicleRegistration"
+                            data-target="modal2" type="button"><span><span><svg viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps_icon"
+                                        style="height: 24px; width: 24px;">
+                                        <path
+                                            d="M12 11.152L4.424 3.576l-.849.848L11.151 12l-7.576 7.576.849.848L12 12.85l7.576 7.575.848-.848L12.848 12l7.576-7.576-.848-.848L12 11.15z"
+                                            fill="#495057"></path>
+                                    </svg></span></span></button></div>
+                    <div class="ConfirmModal_title">차량 등록하기</div>
+                </div>
+                <div class="ConfirmModal_content undefined" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="CardRegistrationModal_container">
+                        <div class="CardInfoForm_container">
+                            <div class="CardInfoForm_section__zvoOm">
+                                <div class="CardInfoForm_title">차량 번호</div>
+                                <div>
+                                    <div class="CardInfoForm_cardInputs__GrNUI"><input autocomplete="off"
+                                            inputmode="numeric" maxlength="8" placeholder="OOO가 OOOO" plname="cardNum1"
+                                            type="text" class="Input_input Input_md CardInfoForm_cardInput"
+                                            aria-invalid="false" value="">
+                                    </div>
+                                    <input hidden="" name="cardNum2" readonly="" value=""
+                                        style="visibility: hidden; position: absolute;"><input hidden="" name="cardNum3"
+                                        readonly="" value="" style="visibility: hidden; position: absolute;">
+                                </div>
+                            </div>
+                            <div class="CardInfoForm_expirationWrap">
+                                <div class="CardInfoForm_expiration">
+                                    <div class="CardInfoForm_section__zvoOm">
+                                        <div class="CardInfoForm_title">소유주명</div>
+                                        <div><input autocomplete="off" name="cardExp" inputmode="numeric" maxlength="5"
+                                                type="text" class="Input_input Input_md" aria-invalid="false" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="CardInfoForm_section__zvoOm">
+                                <div class="CardInfoForm_title">생년월일</div>
+                                <div><input autocomplete="off" inputmode="numeric" maxlength="10" name="buyerAuthNum"
+                                        placeholder="주민번호 앞 6자리" type="text" class="Input_input Input_md"
+                                        aria-invalid="false" value="">
+                                    <div class="CardInfoForm_description">무기명 법인카드는 사업자등록번호 10자리를 입력하세요.</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div color="basic" class="MessageBox_messageBox MessageBox_basic MessageBox_noTitle">
+                                    <div class="MessageBox_header"><svg viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg" class="WithProps_icon MessageBox_icon">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.4 12C1.4 6.146 6.146 1.4 12 1.4c5.854 0 10.6 4.746 10.6 10.6 0 5.854-4.746 10.6-10.6 10.6-5.854 0-10.6-4.746-10.6-10.6zM13 7a1 1 0 10-2 0 1 1 0 002 0zm-1.6 3v8h1.2v-8h-1.2z"
+                                                fill="#495057"></path>
+                                        </svg></div>
+                                    <div class="MessageBox_content">카드사에서 제공하는 암호화된 정보만 저장하기 때문에 카드번호를 저장하지 않아요.
+                                    </div>
+                                </div>
+                            </div><input name="isValidForm" type="hidden" value="false">
+                        </div>
+                        <div class="CardRegistrationModal_portal">
+                            <div></div>
+                            <div class="CardRegistrationModal_portalContent"></div>
+                        </div>
+                        <div class="CardRegistrationModal_buttonWrapper"><button
+                                class="Button_button Button_mint Button_contained Button_md Button_block Button_disabled__dTtjo okayButton"
+                                disabled="" type="button"><span><span>등록하기</span></span></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal2" class="ConfirmModal_overlay waffle__modal__overlay "
+            style="background-color: rgba(0, 0, 0, 0.2);">
+            <div class="ConfirmModal_confirmModal-6 ConfirmModal_sizeSm-e ConfirmModal_contentAfterOpen" tabindex="-1"
+                role="dialog" aria-modal="true">
+                <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
+                            class="Button_button Button_text Button_md  closebutton" type="button"><span><span><svg
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        class="WithProps_icon " style="height: 24px; width: 24px;">
+                                        <path
+                                            d="M12 11.152L4.424 3.576l-.849.848L11.151 12l-7.576 7.576.849.848L12 12.85l7.576 7.575.848-.848L12.848 12l7.576-7.576-.848-.848L12 11.15z"
+                                            fill="#495057"></path>
+                                    </svg></span></span></button></div>
+                    <div class="ConfirmModal_title">차량 등록을 취소하겠습니까?</div>
+                </div>
+                <div class="ConfirmModal_content undefined" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_message">차량 등록을 이용하시려면 처음부터 다시 차량 등록해야 합니다.</div>
+                </div>
+                <div class="ConfirmModal_footer" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_buttonGroup"><button
+                            class="Button_button Button_lg ConfirmModal_negativeButton closebutton"
+                            type="button"><span><span>취소</span></span></button><button
+                            class="Button_button Button_mint Button_contained Button_lg  ButtonNickName"
+                            type="button"><span><span>확인</span></span></button></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal5" class="ConfirmModal_overlay waffle__modal__overlay "
+            style="background-color: rgba(0, 0, 0, 0.2);">
+            <div class="ConfirmModal_confirmModal-6 ConfirmModal_sizeSm-e ConfirmModal_contentAfterOpen" tabindex="-1"
+                role="dialog" aria-modal="true" data-target="modal2">
+                <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
+                            class="Button_button Button_text Button_md  closebutton" type="button"><span><span><svg
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        class="WithProps_icon " style="height: 24px; width: 24px;">
+                                        <path
+                                            d="M12 11.152L4.424 3.576l-.849.848L11.151 12l-7.576 7.576.849.848L12 12.85l7.576 7.575.848-.848L12.848 12l7.576-7.576-.848-.848L12 11.15z"
+                                            fill="#495057"></path>
+                                    </svg></span></span></button></div>
+                    <div class="ConfirmModal_title">차량 변경을 취소하겠습니까?</div>
+                </div>
+                <div class="ConfirmModal_content undefined" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_message">차량 변경을 이용하시려면 처음부터 다시 차량 등록해야 합니다.</div>
+                </div>
+                <div class="ConfirmModal_footer" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_buttonGroup"><button
+                            class="Button_button Button_lg ConfirmModal_negativeButton closebutton"
+                            type="button"><span><span>취소</span></span></button><button
+                            class="Button_button Button_mint Button_contained Button_lg  ButtonNickName"
+                            type="button"><span><span>확인</span></span></button></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal3" class="ConfirmModal_overlay waffle__modal__overlay "
+            style="background-color: rgba(0, 0, 0, 0.2);">
+            <div class="ConfirmModal_confirmModal-6 ConfirmModal_sizeSm-e ConfirmModal_contentAfterOpen" tabindex="-1"
+                role="dialog" aria-modal="true">
+                <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
+                            class="Button_button Button_text Button_md closebutton" type="button"><span><span><svg
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        class="WithProps_icon" style="height: 24px; width: 24px;">
+                                        <path
+                                            d="M12 11.152L4.424 3.576l-.849.848L11.151 12l-7.576 7.576.849.848L12 12.85l7.576 7.575.848-.848L12.848 12l7.576-7.576-.848-.848L12 11.15z"
+                                            fill="#495057"></path>
+                                    </svg></span></span></button></div>
+                    <div class="ConfirmModal_title">결제 정보를 삭제하시겠어요?</div>
+                </div>
+                <div class="ConfirmModal_content undefined" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_message">결제 정보를 삭제해도 결제 예약 상태인 프로젝트의 결제 정보는 유지돼요.<br>변경 및 삭제를 원하다면
+                        참여 내역에서 변경해 주세요.</div>
+                </div>
+                <div class="ConfirmModal_footer" style="padding-left: 24px; padding-right: 24px;">
+                    <div class="ConfirmModal_buttonGroup"><button
+                            class="Button_button Button_lg ConfirmModal_negativeButton closebutton"
+                            type="button"><span><span>취소</span></span></button><button
+                            class="Button_button Button_mint Button_contained Button_lg deletOkayButton"
+                            type="button"><span><span>확인</span></span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal4" class="ConfirmModal_overlay waffle__modal__overlay " style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="ConfirmModal_confirmModal-6 ConfirmModal_sizeSheet ConfirmModal_contentAfterOpen" tabindex="-1"
+            role="dialog" aria-modal="true" style="padding-bottom: 0px;">
+            <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
+                <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
+                        class="Button_button Button_text Button_md  Vehiclechange closebutton1" data-target="modal5"
+                        type="button"><span><span><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    class="WithProps_icon" style="height: 24px; width: 24px;">
+                                    <path
+                                        d="M12 11.152L4.424 3.576l-.849.848L11.151 12l-7.576 7.576.849.848L12 12.85l7.576 7.575.848-.848L12.848 12l7.576-7.576-.848-.848L12 11.15z"
+                                        fill="#495057"></path>
+                                </svg></span></span></button></div>
+                <div class="ConfirmModal_title">차량 변경하기</div>
+            </div>
+            <div class="ConfirmModal_content undefined" style="padding-left: 24px; padding-right: 24px;">
+                <div class="CardRegistrationModal_container">
+                    <div class="CardInfoForm_container">
+                        <div class="CardInfoForm_section__zvoOm">
+                            <div class="CardInfoForm_title">차량 번호</div>
+                            <div>
+                                <div class="CardInfoForm_cardInputs__GrNUI"><input autocomplete="off"
+                                        inputmode="numeric" maxlength="8" placeholder="OOO가 OOOO" plname="cardNum1"
+                                        type="text" class="Input_input Input_md CardInfoForm_cardInput"
+                                        aria-invalid="false" value="">
+                                </div>
+                                <input hidden="" name="cardNum2" readonly="" value=""
+                                    style="visibility: hidden; position: absolute;"><input hidden="" name="cardNum3"
+                                    readonly="" value="" style="visibility: hidden; position: absolute;">
+                            </div>
+                        </div>
+                        <div class="CardInfoForm_expirationWrap">
+                            <div class="CardInfoForm_expiration">
+                                <div class="CardInfoForm_section__zvoOm">
+                                    <div class="CardInfoForm_title">소유주명</div>
+                                    <div><input autocomplete="off" name="cardExp" inputmode="numeric" maxlength="5"
+                                            type="text" class="Input_input Input_md" aria-invalid="false" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="CardInfoForm_section__zvoOm">
+                            <div class="CardInfoForm_title">생년월일</div>
+                            <div><input autocomplete="off" inputmode="numeric" maxlength="10" name="buyerAuthNum"
+                                    placeholder="주민번호 앞 6자리" type="text" class="Input_input Input_md"
+                                    aria-invalid="false" value="">
+                                <div class="CardInfoForm_description">무기명 법인카드는 사업자등록번호 10자리를 입력하세요.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div color="basic" class="MessageBox_messageBox MessageBox_basic MessageBox_noTitle">
+                                <div class="MessageBox_header"><svg viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" class="WithProps_icon MessageBox_icon">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M1.4 12C1.4 6.146 6.146 1.4 12 1.4c5.854 0 10.6 4.746 10.6 10.6 0 5.854-4.746 10.6-10.6 10.6-5.854 0-10.6-4.746-10.6-10.6zM13 7a1 1 0 10-2 0 1 1 0 002 0zm-1.6 3v8h1.2v-8h-1.2z"
+                                            fill="#495057"></path>
+                                    </svg></div>
+                                <div class="MessageBox_content">카드사에서 제공하는 암호화된 정보만 저장하기 때문에 카드번호를 저장하지 않아요.
+                                </div>
+                            </div>
+                        </div><input name="isValidForm" type="hidden" value="false">
+                    </div>
+                    <div class="CardRegistrationModal_portal">
+                        <div></div>
+                        <div class="CardRegistrationModal_portalContent"></div>
+                    </div>
+                    <div class="CardRegistrationModal_buttonWrapper"><button
+                            class="Button_button Button_mint Button_contained Button_md Button_block Button_disabled__dTtjo changeButton"
+                            disabled="" type="button"><span><span>등록하기</span></span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/js/carSettings/carSettings.js"></script>
+
+</html>

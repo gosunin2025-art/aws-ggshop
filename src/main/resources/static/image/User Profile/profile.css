@@ -1,0 +1,1154 @@
+body {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    font-feature-settings: "case";
+}@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+#GNB{
+    position: fixed;
+    z-index: 16;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #f2f4f6;
+    background-color: #fff;
+}
+.NavigationTab-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-block: 8px;
+}
+.NavigationTab-icon{
+    display: flex;
+    align-items: center;
+}
+.NavigationTab-name{
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #868e96;
+}
+.NotificationBadge{
+
+}
+.NotificationBadge{
+    position: absolute;
+    top: 1px;
+    right: calc(50% - 15px);
+    transform: translate(50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 0 4px;
+    border-radius: 100%;
+}
+.NotificationBadge.type-new{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-clip: padding-box;
+    background-color: #f66;
+    color: #fff;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.NavigationTab-name{
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #868e96;
+}
+.NavigationTab-name.active{
+    font-weight: 700;
+    color: #212529;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    line-height: inherit;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -o-text-size-adjust: none;
+}
+
+body,
+table th {
+    font-weight: 400;
+}
+
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+input,
+p,
+select,
+textarea {
+    color: inherit;
+    font-family: pretendard, -apple-system, blinkmacsystemfont, system-ui, roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+a,
+address,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+button,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+input,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+section,
+select,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+textarea,
+tfoot,
+th,
+thead,
+time,
+tr,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+body {
+    display: block;
+    margin: 8px;
+}
+
+.Header_container.Header_sticky {
+    position: sticky;
+    z-index: 16;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    transition: top .25s;
+}
+
+.Header_container {
+    background-color: #fff;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+    display: block;
+}
+
+.Header_container .Header_content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: content-box;
+    max-width: 1296px;
+    height: 56px;
+    margin: auto;
+    padding-inline: 8px;
+}
+
+.Header_container .Header_content .header_left {
+    display: flex;
+    align-items: center;
+}
+
+.Header_container .Header_content .Header_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Header_container .Header_content .header_right {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.StyledComponent_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.CountryChangeButton_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: #f2f4f6;
+    transition: background-color .2s;
+}
+
+a,
+button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.CountryChangeButton_container .CountryChangeButton_flag {
+    width: 24px;
+    height: 16px;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe,
+img,
+video {
+    vertical-align: top;
+}
+
+.NotificationButton_container {
+    position: relative;
+    display: flex;
+    padding: 8px;
+}
+
+.StyledComponent_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 8px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+a,
+button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.WithProps_icon {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+.NotificationBadge_badge.NotificationBadge_overlay.NotificationBadge_circular.NotificationBadge_sm {
+    width: 18px;
+}
+
+.NotificationBadge_badge.NotificationBadge_overlay.NotificationBadge_circular {
+    border-radius: 100%;
+}
+
+.NotificationBadge_badge.NotificationBadge_overlay.NotificationBadge_sm {
+    border-radius: 11px;
+    height: 18px;
+}
+
+.NotificationBadge_badge.NotificationBadge_circular.NotificationBadge_sm {
+    width: 18px;
+}
+
+.NotificationBadge_badge.NotificationBadge_overlay {
+    border: 2px solid #fff;
+}
+
+.NotificationBadge_badge.NotificationBadge_sm {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    border-radius: 11px;
+    padding: 0 4px;
+    height: 18px;
+}
+
+.NotificationButton_container .NotificationButton_badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+}
+
+
+.NotificationBadge_badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-clip: padding-box;
+    background-color: #f66;
+    color: #fff;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.MyGGshUserTypeSwitch_container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 100px;
+    background-color: #e9ecef;
+    width: 160px;
+}
+
+.MyGGshMainLayout_userTypeSwitch {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.MyGGshUserTypeSwitch_container .MyGGshUserTypeSwitch_button.MyGGshUserTypeSwitch_active.MyGGshUserTypeSwitch_supporter {
+    transform: translate(0);
+    background-color: #00c4c4;
+    color: #fff;
+    font-weight: 700;
+}
+
+.MyGGshUserTypeSwitch_container .MyGGshUserTypeSwitch_button.MyGGshUserTypeSwitch_active {
+    animation-duration: .3s;
+    animation-timing-function: ease-in-out;
+    z-index: 1;
+}
+
+.MyGGshUserTypeSwitch_container .MyGGshUserTypeSwitch_button {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    position: relative;
+    z-index: 0;
+    border-radius: 100px;
+    padding: 2px 16px;
+    width: 80px;
+    text-align: center;
+    line-height: 28px;
+    color: #495057;
+}
+
+.MyGGshUserTypeSwitch_container .MyGGshUserTypeSwitch_button {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    position: relative;
+    z-index: 0;
+    border-radius: 100px;
+    padding: 2px 16px;
+    width: 80px;
+    text-align: center;
+    line-height: 28px;
+    color: #495057;
+}
+
+.MyGGshMainLayout_myGGshPage {
+    padding-bottom: 58px;
+}
+
+.Heading_heading.Heading_invisible,
+.DescriptionList_descriptionList .DescriptionList_invisible {
+    position: absolute;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.MyGGshSupporter_mobileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 16px 0;
+}
+
+.MyGGshSupporter_mobileContainer .MyGGshSupporter_contents {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 24px;
+}
+
+.MyGGshSupporterProfileCard_profileContainer {
+    position: relative;
+    margin-bottom: -10px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.BlindText_textBlind {
+    position: absolute;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.MyGGshSupporterProfileCard_supporterInfo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.MyGGshSupporterProfileCard_profileImage {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.MyGGshSupporterProfileCard_detailProfile {
+    display: inline-block;
+    border: 1px solid #dde2e6;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    vertical-align: top;
+}
+
+.MyGGshSupporterProfileCard_profileUser {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    flex: 1;
+    min-width: 0;
+}
+
+.MyGGshSupporterProfileCard_supporterInfo .MyGGshSupporterProfileCard_profileUser .MyGGshSupporterProfileCard_icon {
+    flex-shrink: 0;
+    color: #868e96;
+}
+
+.WithProps_icon .WithProps_inline {
+    display: inline;
+}
+
+
+.MyGGshSupporterProfileCard_supporterInfo .MyGGshSupporterProfileCard_profileUser .MyGGshSupporterProfileCard_userName {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 0;
+    max-width: 100%;
+    color: #212529;
+    gap: 2px;
+}
+
+.MyGGshSupporterProfileCard_supporterInfo .MyGGshSupporterProfileCard_profileUser .MyGGshSupporterProfileCard_textBox {
+    display: flex;
+    min-width: 0;
+    text-align: left;
+    color: #495057;
+    pointer-events: none;
+}
+
+.MyGGshSupporterProfileCard_supporterInfo .MyGGshSupporterProfileCard_profileUser .MyGGshSupporterProfileCard_textBox span:last-child {
+    flex-shrink: 0;
+}
+
+.MyGGshSupporterProfileCard_supporterInfo .MyGGshSupporterProfileCard_profileUser .MyGGshSupporterProfileCard_textBox .MyGGshSupporterProfileCard_name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.MyGGshMainLayout_myGGshPage {
+    padding-bottom: 58px;
+}
+
+.MyGGshSupporterProfileCard_supporterInfo .MyGGshSupporterProfileCard_profileUser .MyGGshSupporterProfileCard_profileUserLabel {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #868e96;
+}
+
+.Button_button.Button_gray {
+    border-color: #cdd3d8;
+    color: #495057;
+}
+
+.Button_button.Button_circular_8Y {
+    border-radius: 999em;
+}
+
+.Button_button.Button_sm__ll {
+    padding-inline: 12px;
+    height: 32px;
+    font-size: 14px;
+}
+
+a.Button_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.MyGGshSupporterProfileCard_profileContainer::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.Button_button {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: #0000;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+.Button_button span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
+
+.MyGGshSupporterProjectInfoCard_container {
+    display: flex;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    margin-bottom: -14px;
+}
+
+.MyGGshSupporterProjectInfoCard_project {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding-top: 8px;
+    padding-bottom: 4px;
+}
+
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 64px;
+}
+
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link {
+    display: flex;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 2px;
+}
+
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link .MyGGshSupporterProjectInfoCard_img__wjeUK {
+    margin-bottom: 2px;
+    width: 24px;
+}
+
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link .MyGGshSupporterProjectInfoCard_text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #343a40;
+}
+
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link .MyGGshSupporterProjectInfoCard_count {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.LabelBadge_container {
+    position: relative;
+    flex-shrink: 0;
+    vertical-align: middle;
+    line-height: 0;
+}
+
+.LabelBadge_badge.LabelBadge_gray.LabelBadge_tint {
+    border: solid 1px #f2f4f6;
+    background-color: #f2f4f6;
+    color: #495057;
+}
+
+.LabelBadge_badge.LabelBadge_circular {
+    border-radius: 16px;
+}
+
+.LabelBadge_badge.LabelBadge_sm {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0 4px;
+    height: 18px;
+}
+
+.LabelBadge_badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.MyGGshSupporterBenefitCard_container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.MyGGshSupporterBenefitCard_container .MyGGshSupporterBenefitCard_value__DMzPb {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.MyGGshSupporterAccumulate_containerLink {
+    cursor: pointer;
+}
+
+.MyGGshSupporterAccumulate_container {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.MyGGshSupporterAccumulate_info .MyGGshSupporterAccumulate_title {
+    display: inline-block;
+    width: 40px;
+}
+
+.MyGGshSupporterAccumulate_info .MyGGshSupporterAccumulate_title .MyGGshSupporterAccumulate_name {
+    font-size: 12px;
+    line-height: 1.5;
+    line-height: 20px;
+    white-space: nowrap;
+    color: #868e96;
+    font-weight: 500;
+}
+
+.MyGGshSupporterAccumulate_info .MyGGshSupporterAccumulate_value__v_UcY {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: inline-block;
+    width: 80%;
+    width: calc(100% - 40px);
+    min-width: fit-content;
+    text-align: right;
+    word-break: keep-all;
+    color: #343a40;
+}
+
+.MyGGshSupporterBenefitCard_container .MyGGshSupporterBenefitCard_value__DMzPb .MyGGshSupporterBenefitCard_accumulateDivider {
+    margin: 0 12px;
+    height: auto;
+}
+
+.Divider_divider.Divider_vertical.Divider_spacing5 {
+    margin-inline: 16px;
+    margin-block: 0;
+}
+
+.Divider_divider.Divider_lightBG {
+    background-color: #f2f4f6;
+    opacity: 1;
+}
+
+.Divider_divider.Divider_horizontal.Divider_spacing {
+    margin-block: 0;
+}
+
+.Divider_divider.Divider_vertical {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+
+.MyGGshSupporterAccumulate_info {
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+}
+
+.RollingBannerCard_container {
+    overflow: hidden;
+}
+
+.RollingBannerCard_container .RollingBannerCard_bannerWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 300%;
+}
+
+.Section_container .Section_header .Section_titleWrapper .Section_title__Wrlok.Section_sm {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.PriceKeyTitle_container .PriceKeyTitle_price {
+    color: #00c4c4;
+}
+
+.Title_container {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    min-height: 3em;
+    line-height: 1.5em;
+    overflow-wrap: anywhere;
+}
+
+.WishIconButton_container .WishIconButton_icon path {
+    fill: #21252966;
+    stroke: #fff;
+    transition: fill .25s ease-in-out;
+}
+
+.WithProps_icon>path {
+    fill: currentColor;
+}
+
+.ThumbnailImage_container .ThumbnailImage_overlay__PwkuO>div {
+    position: absolute;
+    z-index: 1;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.ThumbnailImage_container .ThumbnailImage_overlay__PwkuO .ThumbnailImage_topLeft {
+    top: 8px;
+    left: 8px;
+}
+
+.ThumbnailImage_container .ThumbnailImage_overlay__PwkuO .ThumbnailImage_topRight {
+    top: 0;
+    right: 0;
+}
+
+button {
+    background-color: transparent;
+}
+
+.WishIconButton_container {
+    padding: 8px;
+}
+
+.ThumbnailImage_container {
+    position: relative;
+    overflow: hidden;
+    flex: none;
+    aspect-ratio: 16 / 9;
+    background-color: #f2f4f6;
+}
+
+.ThumbnailImage_container.ThumbnailImage_round {
+    border-radius: 8px;
+}
+
+.ThumbnailImage_container .ThumbnailImage_image {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+}
+
+.ThumbnailImage_container .ThumbnailImage_image.ThumbnailImage_isLoaded {
+    opacity: 1;
+}
+
+.Section_container .Section_header .Section_titleWrapper .Section_title__Wrlok {
+    width: 100%;
+    color: #212529;
+}
+
+.Divider_divider {
+    position: relative;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #f2f4f6;
+}
+
+.RollingBannerCard_banner {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    height: fit-content;
+    min-height: 72px;
+    color: #495057;
+}
+
+.RollingBannerCard_banner.RollingBannerCard_rollingFirst {
+    animation: RollingBannerCard_rollingFirst 3s 0s forwards;
+}
+
+.RollingBannerCard_navigationWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 16px;
+    width: 100%;
+    gap: 6px;
+}
+
+.RollingBannerCard_navigationWrapper .RollingBannerCard_navigationDot {
+    border-radius: 3px;
+    background-color: #dde2e6;
+    width: 6px;
+    height: 6px;
+}
+
+.RollingBannerCard_navigationWrapper .RollingBannerCard_navigationDot.RollingBannerCard_currentIndex {
+    background-color: #343a40;
+}
+
+.Section_container {
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    padding-block: 8px;
+}
+
+.Section_container .Section_header .Section_titleWrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Section_container .Section_content {
+    position: relative;
+    margin-top: 16px;
+}
+
+.scroll-edge-offset {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-right: -16px;
+    margin-left: -16px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.flex-row-start {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.Card_container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 16px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Card_container .Card_content.Card_vertical {
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Card_container .Card_content {
+    display: flex;
+}
+
+.MultiBoardAdBannerDisplay_container {
+    display: flex;
+    gap: 16px;
+}
+
+.MyGGshSupporter_mobileContainer .MyGGshSupporter_divString {
+    margin-right: -16px;
+    margin-left: -16px;
+}
+
+.MyGGshSupporterMenuWrapper_container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.MyGGshSupporterMenuWrapper_container .MyGGshSupporterMenuWrapper_title- {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #adb5bd;
+}
+
+.MyGGshSupporterMenuWrapper_container .MyGGshSupporterMenuWrapper_menuWrapper {
+    display: grid;
+    flex-direction: column;
+    gap: 1px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.MyGGshSupporterMenu_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 16px 0;
+    width: 100%;
+    gap: 16px;
+}
+
+.MyGGshSupporterMenu_container .MyGGshSupporterMenu_content {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    color: #343a40;
+    gap: 4px;
+}
+
+.LoginLogoutButton_buttonWrapper {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.Button_button {
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: #0000;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
